@@ -1,3 +1,55 @@
+.wrapper {
+  width: 100%;
+  padding: 0 5rem;
+  //background-color: #272727;
+}
+
 .container {
-  background-color: #272727;
+  width: 100%;
+  display: flex;
+  height: 5rem;
+  justify-content: space-between;
+  border-bottom: solid 1px #E5E5E5;
+}
+.block {
+  display: flex;
+  align-items: center;
+
+  .item {
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #E5E5E5;
+    margin: 0 2rem;
+  }
+  .phone {
+    color: #E88D06;
+  }
+}
+
+.burger {
+  cursor: pointer;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("../../static/icons/menu.svg") no-repeat center;
+  background-size: contain;
+  transition: all 200ms ease-in;
+
+  &__open {
+    composes: burger;
+    background-image: url("../../static/icons/close.svg");
+  }
+}
+
+.search {
+  display: block;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url("../../static/icons/search.svg") no-repeat center;
+    background-size: contain;
+  }
 }

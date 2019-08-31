@@ -2,12 +2,13 @@
 import React from 'react'
 // components
 import s from './pageHomeDesktop.module.scss'
-import Layout from 'components/Layout/Layout'
+import ContainerBannerWithVideoDesktop
+  from '../../../containers/ContainerBannerWithVideo/ContainerBannerWithVideoDesktop'
 
 const PageHomeDesktop = () => (
-  <Layout className={s.container}>
-    desktop
-  </Layout>
+  <div className={s.container}>
+    <ContainerBannerWithVideoDesktop />
+  </div>
 )
 
 export default React.memo(PageHomeDesktop)

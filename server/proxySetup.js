@@ -17,7 +17,7 @@ module.exports = (app) => {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     method: 'post',
-    url: ''
+    url: 'api'
   }).catch(console.error)
 
   const proxy = httpProxy.createProxyServer()
@@ -25,10 +25,6 @@ module.exports = (app) => {
   proxy.on('error', (err, req, res) => {
     console.log('Error', err.message)
     res.end()
-  })
-  // add proxy like this
-  app.use('/api/', (req, res) => {
-    proxy.web(req, res, { changeOrigin: true, target: process.env.REACT_APP_API_URL })
   })
 
   app.use('/samo/:method', bodyParser.text(), (req, res) => {

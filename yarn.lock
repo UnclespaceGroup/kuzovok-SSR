@@ -8860,6 +8860,11 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
+load-script@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
+  integrity sha1-BJGTngvuVkPuSUp+PaPSuscMbKQ=
+
 loader-fs-cache@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/loader-fs-cache/-/loader-fs-cache-1.0.2.tgz#54cedf6b727e1779fd8f01205f05f6e88706f086"
@@ -11455,7 +11460,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@15.7.2, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@15.7.2, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.3, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -12213,6 +12218,15 @@ react-yandex-maps@^4.0.1:
     create-react-context "^0.2.3"
     prop-types "^15.7.2"
     react-display-name "^0.2.4"
+
+react-youtube@^7.9.0:
+  version "7.9.0"
+  resolved "https://registry.yarnpkg.com/react-youtube/-/react-youtube-7.9.0.tgz#cf513c253581e1e45aa412a77d03420dfd7f7ba7"
+  integrity sha512-2+nBF4qP8nStYEILIO1/SylKOCnnJUxuZm+qCeWA0eeZxnWZIIixfAeAqbzblwx5L1n/26ACocy3epm9Glox8w==
+  dependencies:
+    fast-deep-equal "^2.0.1"
+    prop-types "^15.5.3"
+    youtube-player "^5.5.1"
 
 react@^16.8.1, react@^16.8.3, react@^16.8.6:
   version "16.9.0"
@@ -13220,6 +13234,11 @@ simplebar@^4.1.0:
     lodash.memoize "^4.1.2"
     lodash.throttle "^4.1.1"
     resize-observer-polyfill "^1.5.1"
+
+sister@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/sister/-/sister-3.0.2.tgz#bb3e39f07b1f75bbe1945f29a27ff1e5a2f26be4"
+  integrity sha512-p19rtTs+NksBRKW9qn0UhZ8/TUI9BPw9lmtHny+Y3TinWlOa9jWh9xB0AtPSdmOy49NJJJSSe0Ey4C7h0TrcYA==
 
 sisteransi@^0.1.1:
   version "0.1.1"
@@ -15464,6 +15483,15 @@ yarn@^1.5.1:
   version "1.17.3"
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.17.3.tgz#60e0b77d079eb78e753bb616f7592b51b6a9adce"
   integrity sha512-CgA8o7nRZaQvmeF/WBx2FC7f9W/0X59T2IaLYqgMo6637wfp5mMEsM3YXoJtKUspnpmDJKl/gGFhnqS+sON7hA==
+
+youtube-player@^5.5.1:
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/youtube-player/-/youtube-player-5.5.2.tgz#052b86b1eabe21ff331095ffffeae285fa7f7cb5"
+  integrity sha512-ZGtsemSpXnDky2AUYWgxjaopgB+shFHgXVpiJFeNB5nWEugpW1KWYDaHKuLqh2b67r24GtP6HoSW5swvf0fFIQ==
+  dependencies:
+    debug "^2.6.6"
+    load-script "^1.0.0"
+    sister "^3.0.0"
 
 yup@^0.26.10:
   version "0.26.10"
