@@ -2,11 +2,12 @@
 import React from 'react'
 // components
 import s from './pageHomeDesktop.module.scss'
+import Layout from 'components/Layout/Layout'
 
 const PageHomeDesktop = () => (
-  <div className={s.container}>
+  <Layout className={s.container}>
     desktop
-  </div>
+  </Layout>
 )
 
 export default React.memo(PageHomeDesktop)
