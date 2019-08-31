@@ -3,9 +3,13 @@ import React from 'react'
 import { compose } from 'redux'
 import { hot } from 'react-hot-loader'
 import RoutesDesktop from 'pages/RoutesDesktop'
+import SectionHeaderDesktop from '../components/SectionHeader/SectionHeaderDesktop'
 
 const AppDesktop = () => (
-  <RoutesDesktop />
+  <>
+    <SectionHeaderDesktop />
+    <RoutesDesktop />
+  </>
 )
 
 export default compose(

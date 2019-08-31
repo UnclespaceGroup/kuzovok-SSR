@@ -26,9 +26,9 @@
   "rules": {
     "no-console": "off",
     "sort-keys": "off",
-    "react/sort-prop-types": "error",
-    "react/jsx-sort-default-props": "error",
-    "react/jsx-sort-props": "error",
+    "react/sort-prop-types": "off",
+    "react/jsx-sort-default-props": "off",
+    "react/jsx-sort-props": "off",
     "react/boolean-prop-naming": "error",
     "react/button-has-type": "error",
     "react/destructuring-assignment": "error",
@@ -49,7 +49,7 @@
     "react/jsx-handler-names": "error",
     "react/jsx-indent": "error",
     "react/jsx-indent-props": "error",
-    "react/jsx-max-props-per-line": "error",
+    "react/jsx-max-props-per-line": "off",
     "react/jsx-no-bind": "error",
     "react/jsx-pascal-case": "error",
     "react-hooks/rules-of-hooks": "error"

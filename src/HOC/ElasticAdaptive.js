@@ -18,25 +18,23 @@ const ElasticAdaptive = ({
   useEffect(
     () => {
       if (!isServer) {
-        changeSize()
+        // changeSize()
       }
     },
     [currentWindowWidth]
   )
 
-  const changeSize = () => {
-    const html = document.documentElement
-    const { baseSize, baseWidth, widthLimit } = elasticConfig[currentSize]
-    let width = currentWindowWidth
-    if (widthLimit) {
-      width = Math.min(width, widthLimit)
-    }
-
-    const currentFontSize = width / baseWidth * baseSize
-    console.log(currentFontSize)
-
-    html.style.fontSize = currentFontSize + 'px'
-  }
+  // const changeSize = () => {
+  //   const html = document.documentElement
+  //   const { baseSize, baseWidth, widthLimit } = elasticConfig[currentSize]
+  //   let width = currentWindowWidth
+  //   if (widthLimit) {
+  //     width = Math.min(width, widthLimit)
+  //   }
+  //   const currentFontSize = width / baseWidth * baseSize
+  //
+  //   html.style.fontSize = currentFontSize + 'px'
+  // }
 
   return <ViewContext.Provider value={context}>{children}</ViewContext.Provider>
 }
@@ -60,16 +58,14 @@ export default compose(
   withSizes(({ width: currentWindowWidth }) => {
     const isMobile = currentWindowWidth < stringToNumber('768px')
     const isDesktop = currentWindowWidth > stringToNumber('1024px')
-    const isTablet = !isMobile && !isDesktop
-    const currentSize = isDesktop ? 'desktop' : isTablet ? 'tablet' : 'mobile'
+    const currentSize = isDesktop ? 'desktop' : 'mobile'
 
     return {
       currentSize,
       currentWindowWidth,
       sizes: {
         isDesktop,
-        isMobile,
-        isTablet
+        isMobile
       }
     }
   }),

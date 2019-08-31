@@ -17,7 +17,7 @@ module.exports = (app) => {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     method: 'post',
-    url: 'http://searchtour.anextour.com/token.ip.update.php'
+    url: ''
   }).catch(console.error)
 
   const proxy = httpProxy.createProxyServer()
