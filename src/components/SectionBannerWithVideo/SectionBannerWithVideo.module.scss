@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -36,10 +36,47 @@
   font-size: 2.4rem;
   line-height: 2.8rem;
   color: #E5E5E5;
+  margin-bottom: 6rem;
 }
 
 .video {
   pointer-events: none;
   width: 100%;
   height: 100vh;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 5rem;
+  display: flex;
+  right: 9rem;
+
+  .prev, .next {
+    position: relative;
+    height: 4rem;
+    border: 1px solid #FFFFFF;
+    border-radius: 2rem;
+    min-width: 4rem;
+    color: white;
+    font-weight: 300;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    transition: all 200ms ease-in;
+
+    &:last-child {
+      margin-left: 2rem;
+    }
+
+    &:hover {
+      color: #E88D06;
+      border-color: #E88D06;
+    }
+  }
+  .next {
+    padding: 0 2rem;
+  }
 }

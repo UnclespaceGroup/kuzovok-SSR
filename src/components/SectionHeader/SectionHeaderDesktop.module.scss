@@ -42,14 +42,9 @@
 }
 
 .search {
-  display: block;
-
-  &:before {
-    content: '';
-    display: block;
-    width: 2.4rem;
-    height: 2.4rem;
-    background: url("../../static/icons/search.svg") no-repeat center;
-    background-size: contain;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+  &:hover {
+    color: #E88D06!important;
   }
 }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import css from './SectionBannerWithVideo.module.scss'
 import Layout from '../Layout/Layout'
 import YouTube from 'react-youtube'
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md'
 
 const opts = {
   height: '100vh',
@@ -35,6 +36,10 @@ const SectionBannerWithVideoDesktop = ({ url, title, text, button }) => (
         <div className={css.title}>{title}</div>
         <div className={css.text}>{text}</div>
         <div className={css.button}>{button}</div>
+      </div>
+      <div className={css.buttons}>
+        <div className={css.prev} ><MdKeyboardArrowLeft size={'2rem'} /></div>
+        <div className={css.next} >Следующее видео<MdKeyboardArrowRight size={'2rem'} /></div>
       </div>
     </Layout>
   </div>
