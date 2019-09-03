@@ -35,7 +35,6 @@ const printBuildError = require('react-dev-utils/printBuildError')
 const getClientEnvironment = require('../config/env')
 const env = getClientEnvironment('')
 
-
 // set defaults to node env
 config.plugins.push(
   new webpack.DefinePlugin(

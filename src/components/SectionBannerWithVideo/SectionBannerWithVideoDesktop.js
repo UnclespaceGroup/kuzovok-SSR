@@ -28,7 +28,7 @@ const SectionBannerWithVideoDesktop = ({ url, title, text, button }) => (
       allowfullscreen='allowfullscreen'
       videoId='GJAvbThKKro'
       opts={opts}
-      onReady
+      // onReady
       className={css.video}
     />
     <Layout>
