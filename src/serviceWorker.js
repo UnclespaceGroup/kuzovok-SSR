@@ -115,7 +115,7 @@ function checkValidServiceWorker (swUrl, config) {
           })
         })
       } else {
-        // Service worker found. Proceed as normal.
+        // ContainerService worker found. Proceed as normal.
         registerValidSW(swUrl, config)
       }
     })

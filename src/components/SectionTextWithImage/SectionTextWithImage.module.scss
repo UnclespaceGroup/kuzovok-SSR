@@ -1,0 +1,33 @@
+.container {
+  padding: 10rem 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col {
+  width: 45%;
+}
+
+.title {
+  font-size: 4.8rem;
+  line-height: 3.6rem;
+  color: #000000;
+  margin-bottom: 5.6rem;
+}
+
+.text {
+  font-size: 1.8rem;
+  line-height: 3.6rem;
+  color: #000000;
+}
+
+.img {
+  width: 50rem;
+  height: 50rem;
+  background: no-repeat center;
+  background-size: cover;
+}

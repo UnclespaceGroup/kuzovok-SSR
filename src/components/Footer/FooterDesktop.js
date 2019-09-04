@@ -89,6 +89,9 @@ const FooterDesktop = () => (
           )
         }
       </div>
+      <div className={css.row}>
+        Контактный блок
+      </div>
     </Layout>
   </div>
 )

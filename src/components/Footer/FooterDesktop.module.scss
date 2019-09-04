@@ -26,6 +26,11 @@
 
 .row {
   display: flex;
+  padding-bottom: 10rem;
+
+  &:not(:last-child) {
+    border-bottom: solid 1px #E5E5E5;
+  }
 }
 
 .column {
