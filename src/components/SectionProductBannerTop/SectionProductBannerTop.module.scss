@@ -1,0 +1,19 @@
+.container {
+  background-color: #272727;
+  padding-top: 10rem;
+  padding-bottom: 6.2rem;
+}
+
+.title {
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  color: #FFFFFF;
+
+  &:after {
+    content: '';
+    height: 0.2rem;
+    width: 20rem;
+    background-color: #c37306;
+    display: block;
+  }
+}
