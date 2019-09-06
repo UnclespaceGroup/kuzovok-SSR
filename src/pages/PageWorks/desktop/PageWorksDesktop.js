@@ -1,12 +1,15 @@
 import React from 'react'
 import s from './PageWorksDesktop.module.scss'
 import Padding from '../../../components/Padding/Padding'
+import ContainerWorks from '../../../containers/ContainerWorks/ContainerWorks'
+import SectionMainMenuDesktop from '../../../components/SectionMainMenu/SectionMainMenuDesktop'
 
 const PageWorksDesktop = () => (
   <div className={s.container}>
-    service
+    <SectionMainMenuDesktop />
+    <ContainerWorks />
     <Padding value={80} />
   </div>
 )
 
-export default React.memo(PageWorksDesktop)
+export default PageWorksDesktop

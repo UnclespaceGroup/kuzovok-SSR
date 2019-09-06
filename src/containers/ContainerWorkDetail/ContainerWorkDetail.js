@@ -19,7 +19,7 @@ const header = {
 
 const ContainerWorkDetail = () => (
   <>
-    <SectionProductBannerTop {...header} />
+    <SectionProductBannerTop withArrowBack {...header} />
     <Padding value={100} />
     <SectionProductVideoBanner {...banner} />
     <Padding value={100} />

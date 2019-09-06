@@ -3,6 +3,34 @@
   z-index: 100;
 }
 
+.black {
+  background-color: #2a2a2f!important;
+}
+
+.menu {
+  width: 100vw;
+  z-index: 100;
+  &__absolute {
+    composes: menu;
+    position: absolute;
+    top: 0;
+  }
+
+  &__static {
+    composes: menu;
+    position: fixed;
+    background-color: #272727;
+    top: 0;
+    transition: all 200ms ease-in;
+  }
+}
+
+.invisible {
+  top: -5rem!important;
+}
+
+
+
 .container {
   position: fixed;
   top: 0;

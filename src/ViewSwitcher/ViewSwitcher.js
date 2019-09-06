@@ -7,9 +7,10 @@ import Helmet from 'react-helmet/lib/Helmet'
 import MobileView from './LoadableMobileView'
 import DesktopView from './LoadableDesktopView'
 import { withViewContext } from 'HOC/ViewContext'
+import ScrollToTop from '../HOC/ScrollToTop'
 
 const ViewSwitcher = ({ sizes: { isDesktop, isMobile } }) => (
-  <>
+  <ScrollToTop>
     <Helmet>
       <html
         className={`elastic-${
@@ -18,7 +19,7 @@ const ViewSwitcher = ({ sizes: { isDesktop, isMobile } }) => (
       />
     </Helmet>
     {isMobile ? <MobileView /> : <DesktopView />}
-  </>
+  </ScrollToTop>
 )
 
 ViewSwitcher.propTypes = {

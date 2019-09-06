@@ -1,0 +1,29 @@
+.container {
+  h2 {
+    font-size: 3.6rem;
+    line-height: 4.2rem;
+
+    span {
+      margin-left: 2rem;
+      font-weight: 500;
+      font-size: 4.8rem;
+      line-height: 5.6rem;
+      color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  width: 32%;
+  &:not(:nth-child(3n)) {
+    margin-right: 2rem;
+  }
+  &:nth-child(n + 4) {
+    margin-top: 2.4rem;
+  }
+}

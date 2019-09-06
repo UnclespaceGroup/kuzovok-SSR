@@ -1,24 +1,12 @@
-// packages
 import React from 'react'
-// components
-import s from './pageHomeDesktop.module.scss'
-import ContainerBannerWithVideoDesktop
-  from '../../../containers/ContainerBannerWithVideo/ContainerBannerWithVideoDesktop'
-import SectionMainChooseAutoTypeDesktop
-  from '../../../components/SectionMainChooseAutoType/SectionMainChooseAutoTypeDesktop'
-import Padding from '../../../components/Padding/Padding'
-import SectionMainServiceCatalogDesktop
-  from '../../../components/SectionMainServiceCatalog/SectionMainServiceCatalogDesktop'
+import ContainerHome from '../../../containers/ContainerHome/ContainerHome'
+import SectionMainMenuDesktop from '../../../components/SectionMainMenu/SectionMainMenuDesktop'
 
 const PageHomeDesktop = () => (
-  <div className={s.container}>
-    <ContainerBannerWithVideoDesktop />
-    <Padding value={80} />
-    <SectionMainChooseAutoTypeDesktop />
-    <Padding value={80} />
-    <SectionMainServiceCatalogDesktop />
-    <Padding value={80} />
-  </div>
+  <>
+    <SectionMainMenuDesktop />
+    <ContainerHome />
+  </>
 )
 
 export default React.memo(PageHomeDesktop)

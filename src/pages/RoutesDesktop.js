@@ -21,7 +21,7 @@ const RoutesDesktop = () => (
     />
     <Route component={PageServiceDesktop}
       exact
-      path={PAGE_SERVICE}
+      path={PAGE_SERVICE + ':id'}
     />
     <Route component={PageWorksDesktop}
       exact

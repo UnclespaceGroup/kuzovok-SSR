@@ -4,6 +4,7 @@ import css from './FooterDesktop.module.scss'
 import im from 'static/images/1517716721790_big_vlru.jpg'
 import Layout from '../Layout/Layout'
 import { Link } from 'react-router-dom'
+import { PAGE_ABOUT, PAGE_SERVICE, PAGE_WORKS } from '../../constants/ROUTES'
 
 const items = [
   {
@@ -11,23 +12,23 @@ const items = [
     items: [
       {
         title: 'Покраска авто',
-        to: '/'
+        to: PAGE_SERVICE
       },
       {
         title: 'Ремонт кузовов',
-        to: '/'
+        to: PAGE_SERVICE
       },
       {
         title: 'Сварочные работы',
-        to: '/'
+        to: PAGE_SERVICE
       },
       {
         title: 'Антикоррозийные обработки',
-        to: '/'
+        to: PAGE_SERVICE
       },
       {
         title: 'Ремонт бамперов',
-        to: '/'
+        to: PAGE_SERVICE
       }
     ]
   },
@@ -36,19 +37,19 @@ const items = [
     items: [
       {
         title: 'Автомобили в ремонте',
-        to: '/'
+        to: PAGE_WORKS
       },
       {
         title: 'Наши работы',
-        to: '/'
+        to: PAGE_WORKS
       },
       {
         title: 'Отзывы',
-        to: '/'
+        to: PAGE_ABOUT
       },
       {
         title: 'FAQ',
-        to: '/'
+        to: PAGE_ABOUT
       }
     ]
   },
@@ -57,15 +58,15 @@ const items = [
     items: [
       {
         title: 'Как добраться',
-        to: '/'
+        to: PAGE_ABOUT
       },
       {
         title: 'Мы на карте',
-        to: '/'
+        to: PAGE_ABOUT
       },
       {
         title: 'О нас',
-        to: '/'
+        to: PAGE_ABOUT
       }
     ]
   }

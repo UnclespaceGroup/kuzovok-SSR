@@ -6,12 +6,12 @@ import { MdArrowBack } from 'react-icons/md'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
 
-const SectionProductBannerTop = ({ title, text, history }) => (
+const SectionProductBannerTop = ({ title, text, history, status, withArrowBack }) => (
   <div className={css.container}>
     <Layout>
       <div className={css.title}>
-        <div className={css.back} onClick={() => history.goBack()}><MdArrowBack size={'3rem'} /></div>
-        {title}<span>Сейчас в работе</span></div>
+        { withArrowBack && <div className={css.back} onClick={() => history.goBack()}><MdArrowBack size={'3rem'} /></div>}
+        {title}<span>{status}</span></div>
       <div className={css.text}>{text}</div>
     </Layout>
   </div>
@@ -19,7 +19,9 @@ const SectionProductBannerTop = ({ title, text, history }) => (
 SectionProductBannerTop.propTypes = {
   title: PropTypes.node,
   text: PropTypes.node,
-  history: PropTypes.object
+  history: PropTypes.object,
+  status: PropTypes.node,
+  withArrowBack: PropTypes.bool
 }
 
 export default compose(
