@@ -2,6 +2,7 @@ import React from 'react'
 import SectionProductVideoBanner from '../../components/SectionProductVideoBanner/SectionProductVideoBanner'
 import Padding from '../../components/Padding/Padding'
 import SectionProductBannerTop from '../../components/SectionProductBannerTop/SectionProductBannerTop'
+import SectionGallery from '../../components/SectionGallery/SectionGallery'
 
 const banner = {
   videoId: 'GJAvbThKKro',
@@ -9,7 +10,11 @@ const banner = {
 }
 
 const header = {
-  title: 'Лада Приора'
+  title: 'Лада Приора',
+  text: <ul>
+    <li>Полная покраска автомобиля</li>
+    <li>Замена заднего бампера</li>
+  </ul>
 }
 
 const ContainerWorkDetail = () => (
@@ -17,6 +22,8 @@ const ContainerWorkDetail = () => (
     <SectionProductBannerTop {...header} />
     <Padding value={100} />
     <SectionProductVideoBanner {...banner} />
+    <Padding value={100} />
+    <SectionGallery />
   </>
 )
 

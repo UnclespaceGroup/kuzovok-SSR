@@ -5,15 +5,42 @@
 }
 
 .title {
+  position: relative;
   font-size: 6.4rem;
   line-height: 7.5rem;
   color: #FFFFFF;
 
+  .back {
+    position: absolute;
+    left: -5rem;
+    cursor: pointer;
+
+    &:hover {
+      color: #c37306;
+    }
+  }
+
   &:after {
     content: '';
+    margin-top: 1rem;
     height: 0.2rem;
-    width: 20rem;
-    background-color: #c37306;
+    width: 30rem;
+    background-color: #E88D06;
     display: block;
   }
+
+  span {
+    margin-left: 3rem;
+    color: #c37306;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    margin-top: 3rem;
+  }
+}
+.text {
+  margin-top: 3rem;
+  color: white;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
 }
