@@ -7,6 +7,8 @@ import SectionMainChooseAutoTypeDesktop
 import SectionMainServiceCatalogDesktop
   from '../../components/SectionMainServiceCatalog/SectionMainServiceCatalogDesktop'
 import SectionCardsRow from '../../components/SectionCardsRow/SectionCardsRow'
+import SectionContacts from '../../components/SectionContacts/SectionContacts'
+// import Section2GIS from '../../components/Section2GIS/Section2GIS'
 
 const last = {
   title: 'Последние работы',
@@ -47,6 +49,8 @@ const ContainerHome = () => (
     <SectionMainServiceCatalogDesktop />
     <Padding value={80} />
     <SectionCardsRow {...last} />
+    <Padding value={80} />
+    <SectionContacts />
     <Padding value={120} />
   </div>
 )

@@ -37,7 +37,7 @@ const serverConfig = require('../config/webpack.config.server')
 const clearConsole = require('react-dev-utils/clearConsole')
 const isInteractive = process.stdout.isTTY
 const openBrowser = require('react-dev-utils/openBrowser')
-const proxySetup = require('../server/proxySetup')
+// const proxySetup = require('../server/proxySetup')
 
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs, paths.appServerIndexJs])) {
@@ -108,7 +108,7 @@ choosePort(HOST, DEFAULT_PORT)
           })
         }
       })
-      proxySetup(app)
+      // proxySetup(app)
       app.use('/', express.static('public'))
       app.use(noopServiceWorkerMiddleware())
       app.use(webpackDevMiddleware(compiler, devConfig))

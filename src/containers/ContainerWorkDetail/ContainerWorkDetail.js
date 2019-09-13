@@ -3,6 +3,8 @@ import SectionProductVideoBanner from '../../components/SectionProductVideoBanne
 import Padding from '../../components/Padding/Padding'
 import SectionProductBannerTop from '../../components/SectionProductBannerTop/SectionProductBannerTop'
 import SectionGallery from '../../components/SectionGallery/SectionGallery'
+import SectionContacts from '../../components/SectionContacts/SectionContacts'
+import { PAGE_WORKS } from '../../constants/ROUTES'
 
 const banner = {
   videoId: 'GJAvbThKKro',
@@ -19,11 +21,13 @@ const header = {
 
 const ContainerWorkDetail = () => (
   <>
-    <SectionProductBannerTop withArrowBack {...header} />
+    <SectionProductBannerTop backLink={PAGE_WORKS} {...header} />
     <Padding value={100} />
     <SectionProductVideoBanner {...banner} />
     <Padding value={100} />
     <SectionGallery />
+    <Padding value={150} />
+    <SectionContacts />
   </>
 )
 

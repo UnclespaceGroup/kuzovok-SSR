@@ -46,12 +46,12 @@
     "react/sort-comp": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/jsx-handler-names": "error",
-    "react/jsx-indent": "error",
-    "react/jsx-indent-props": "error",
+    "react/jsx-handler-names": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off",
     "react/jsx-max-props-per-line": "off",
-    "react/jsx-no-bind": "error",
+    "react/jsx-no-bind": "off",
     "react/jsx-pascal-case": "error",
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "off"
   }
 }

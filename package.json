@@ -1,5 +1,5 @@
 {
-  "name": "anex",
+  "name": "kozovok",
   "version": "0.1.0",
   "scripts": {
     "start": "node scripts/start.js",
@@ -51,13 +51,11 @@
       "web.jsx",
       "jsx",
       "node"
-    ],
-    "watchPlugins": [
-      "/Users/sedlukha/WebstormProjects/anexb2c/node_modules/jest-watch-typeahead/filename.js",
-      "/Users/sedlukha/WebstormProjects/anexb2c/node_modules/jest-watch-typeahead/testname.js"
     ]
   },
   "dependencies": {
+    "2gis-maps": "^3.5.12",
+    "2gis-maps-react": "^0.0.4",
     "@emotion/core": "^10.0.9",
     "@emotion/styled": "^10.0.9",
     "@storybook/theming": "^5.0.2",
@@ -108,7 +106,7 @@
     "react-sticky-box": "^0.8.0",
     "react-tabs": "^3.0.0",
     "react-tooltip": "^3.10.0",
-    "react-universal-component": "^3.0.3",
+    "react-universal-component": "^4.0.0",
     "react-yandex-maps": "^4.0.1",
     "react-youtube": "^7.9.0",
     "recompose": "^0.30.0",

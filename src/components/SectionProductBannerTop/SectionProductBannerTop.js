@@ -4,13 +4,13 @@ import css from './SectionProductBannerTop.module.scss'
 import Layout from '../Layout/Layout'
 import { MdArrowBack } from 'react-icons/md'
 import { compose } from 'redux'
-import { withRouter } from 'react-router'
+import { Link } from 'react-router-dom'
 
-const SectionProductBannerTop = ({ title, text, history, status, withArrowBack }) => (
+const SectionProductBannerTop = ({ title, text, status, backLink }) => (
   <div className={css.container}>
     <Layout>
       <div className={css.title}>
-        { withArrowBack && <div className={css.back} onClick={() => history.goBack()}><MdArrowBack size={'3rem'} /></div>}
+        { backLink && <Link className={css.back} to={backLink} ><MdArrowBack size={'3rem'} /></Link>}
         {title}<span>{status}</span></div>
       <div className={css.text}>{text}</div>
     </Layout>
@@ -19,12 +19,10 @@ const SectionProductBannerTop = ({ title, text, history, status, withArrowBack }
 SectionProductBannerTop.propTypes = {
   title: PropTypes.node,
   text: PropTypes.node,
-  history: PropTypes.object,
   status: PropTypes.node,
-  withArrowBack: PropTypes.bool
+  backLink: PropTypes.string
 }
 
 export default compose(
-  withRouter,
   React.memo
 )(SectionProductBannerTop)

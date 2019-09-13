@@ -45,7 +45,7 @@ const SectionMainMenuDesktop = ({ location }) => {
   const [ visibleHeader, setVisibleHeader ] = useState(false)
 
   return (
-    <div className={cn(css.wrapper)}>
+    <div className={css.wrapper}>
       <div className={css.menu__absolute}>
         <SectionHeaderDesktop {...{ setOpen: openMenu, open }} />
       </div>
