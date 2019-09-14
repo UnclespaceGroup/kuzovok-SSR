@@ -4,7 +4,7 @@ import {
   PAGE_ABOUT_US,
   PAGE_SERVICE,
   PAGE_WORKS, PAGE_WORKS_CURRENT,
-  PAPER
+  PAGE_PAPER
 } from './ROUTES'
 
 export const items = [
@@ -58,7 +58,7 @@ export const items = [
   },
   {
     title: {
-      to: PAPER,
+      to: PAGE_PAPER,
       text: 'Интересные статьи'
     }
   },

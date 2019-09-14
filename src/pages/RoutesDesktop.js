@@ -10,7 +10,7 @@ import {
   PAGE_ABOUT_US,
   PAGE_WORK_DETAIL_DAYS,
   PAGE_WORKS_CURRENT,
-  PAPER, PAPER_DETAIL
+  PAGE_PAPER, PAGE_PAPER_DETAIL
 } from 'constants/ROUTES'
 import PageHomeDesktop from './PageHome/desktop/PageHomeDesktop'
 import PageServiceDesktop from './PageService/desktop/PageServiceDesktop'
@@ -69,11 +69,11 @@ const RoutesDesktop = () => (
     />
     <Route component={PagePaperDesktop} // Статьи
       exact
-      path={PAPER}
+      path={PAGE_PAPER}
     />
     <Route component={PagePaperDetailDesktop} // Статьи - деталка
       exact
-      path={PAPER_DETAIL}
+      path={PAGE_PAPER_DETAIL}
     />
   </Switch>
 )
