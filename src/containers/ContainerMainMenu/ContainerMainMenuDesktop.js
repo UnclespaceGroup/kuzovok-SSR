@@ -12,19 +12,21 @@ const ContainerMainMenuDesktop = ({ location }) => {
   const [ visibleHeader, setVisibleHeader ] = useState(false)
   // Подписываемся на скрол
   useEffect(() => {
-    if (document) {
+    if (typeof document !== 'undefined') {
       document.getElementsByTagName('body')[0].style.overflow = 'auto'
       document.addEventListener('scroll', handleScroll)
     }
     return () => {
-      if (document) document.getElementsByTagName('body')[0].style.overflow = 'auto'
-      document.removeEventListener('scroll', handleScroll)
+      if (typeof document !== 'undefined') {
+        document.getElementsByTagName('body')[0].style.overflow = 'auto'
+        document.removeEventListener('scroll', handleScroll)
+      }
     }
   }, [])
 
   // Убираем скрол, когда меню открыто
-  const openMenu = (_open) => {
-    if (open) {
+  const openMenu = (_open, first) => {
+    if (open || first) {
       if (typeof document !== 'undefined') document.getElementsByTagName('body')[0].style.overflow = 'auto'
     } else {
       if (typeof document !== 'undefined') document.getElementsByTagName('body')[0].style.overflow = 'hidden'
@@ -44,7 +46,7 @@ const ContainerMainMenuDesktop = ({ location }) => {
 
   // Перестраховываемся, если меню перерендериться, возвращаем исходные данные
   useMemo(() => {
-    openMenu(false)
+    openMenu(false, true)
     setVisibleHeader(false)
   }, [location])
 
