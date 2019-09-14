@@ -10,11 +10,6 @@ import { withRouter } from 'react-router'
 const ContainerMainMenuDesktop = ({ location }) => {
   const [ open, setOpen ] = useState(false)
   const [ visibleHeader, setVisibleHeader ] = useState(false)
-  // Перестраховываемся, если меню перерендериться, возвращаем исходные данные
-  useMemo(() => {
-    setOpen(false)
-    setVisibleHeader(false)
-  }, [location])
   // Подписываемся на скрол
   useEffect(() => {
     if (document) {
@@ -30,9 +25,9 @@ const ContainerMainMenuDesktop = ({ location }) => {
   // Убираем скрол, когда меню открыто
   const openMenu = (_open) => {
     if (open) {
-      if (document) document.getElementsByTagName('body')[0].style.overflow = 'auto'
+      if (typeof document !== 'undefined') document.getElementsByTagName('body')[0].style.overflow = 'auto'
     } else {
-      if (document) document.getElementsByTagName('body')[0].style.overflow = 'hidden'
+      if (typeof document !== 'undefined') document.getElementsByTagName('body')[0].style.overflow = 'hidden'
     }
     setOpen(_open)
   }
@@ -46,6 +41,12 @@ const ContainerMainMenuDesktop = ({ location }) => {
     else setVisibleHeader(true)
     prevPosition = window.pageYOffset
   }
+
+  // Перестраховываемся, если меню перерендериться, возвращаем исходные данные
+  useMemo(() => {
+    openMenu(false)
+    setVisibleHeader(false)
+  }, [location])
 
   return (
     <div className={css.wrapper}>
