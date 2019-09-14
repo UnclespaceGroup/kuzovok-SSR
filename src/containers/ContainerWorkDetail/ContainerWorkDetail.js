@@ -1,6 +1,5 @@
 import React from 'react'
 import Padding from '../../components/Padding/Padding'
-import SectionGallery from '../../components/SectionGallery/SectionGallery'
 import SectionContacts from '../../components/SectionContacts/SectionContacts'
 import { PAGE_WORKS } from '../../constants/ROUTES'
 import SectionTopBanner from '../../components/SectionTopBanner/SectionTopBanner'
@@ -34,8 +33,7 @@ const ContainerWorkDetail = () => (
         }
       ]}
     />
-    <Padding value={100} />
-    <SectionGallery />
+
     <Padding value={150} />
     <SectionContacts />
   </>

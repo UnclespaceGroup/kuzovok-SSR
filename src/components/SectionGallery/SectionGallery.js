@@ -23,11 +23,11 @@ const photos = [
     src: 'https://lh3.googleusercontent.com/EACYumdRIenDKdzDghT1b9xz1Uec9nmNsSZ-4t_Zot6GXG65PSR6FG2vZJx8UNJZwAqch0fmwdy8QIxjOozcj2bGbyPe4utI24rClTztuDrBGXQGBBWNt3H2KiNa-Js3OONRtaekizSWuqT-IVIpx50AVFPb5-e271v8-lfwk1ylFOX1KeTFtYbA6JqfKxhmQz3plnkv--9l71eDkOuS8C8ndB-zTX4Z7g4HRaacb_H5FUrusAoZSJYip5LTs9a333kY0N0SZE214wCpCbO-CRb5ThCsuMCC5aDAJ2yQVSpYsIt7fM1wZtS-x2l11kJVm6N-w1Je2_-cEqnUxp8Q8jDuqZ4RgZzeG08i7scZbvUkcT-ivs2mZ0GWXAnAX5WJ8OG08zMwH0F8gi4UuxPJeMPBlS3f1AqQQlRwhM8dePsJJEu-MYYN87lScgdATTW0i357q83l9XZ9-JLphmq4Xw4iRDbh6AZaA7hOxsxuD7CkaBBY997U5-9kXay3Q_fb_sDwJh6f4Fd-8NQuCuKsPv7ScyybID3GQYEuoWyk3ezSOQq1ANOIIAidbAIK3v6j6STajUISdY8CD1UXZpN5v9ZNQa1IwJkGCRjpKbYYgW_8Ufws4LCfl1qRrbz8BTX8vIz08Z3posaBjRdLiALxuqcLCSEfsrTJDoOi066vvntgqKFI2Zl9VJs=w1292-h969-no'
   }
 ]
-const SectionGallery = ({ items }) => {
+const SectionGallery = ({ title, text }) => {
   const [currentImage, setCurrentImage] = useState(0)
   const [viewerIsOpen, setViewerIsOpen] = useState(false)
 
-  const openLightbox = useCallback((event, { photo, index }) => {
+  const openLightbox = useCallback((event, { index }) => {
     setCurrentImage(index)
     setViewerIsOpen(true)
   }, [])
@@ -39,7 +39,9 @@ const SectionGallery = ({ items }) => {
   return (
     <div className={css.container}>
       <Layout>
-        <h2>Фотогалерея</h2>
+        <h2 className={css.title}>{title}</h2>
+        <Padding value={40} />
+        <div className={css.text}>{text}</div>
         <Padding value={40} />
         <Gallery photos={photos} onClick={openLightbox} />
       </Layout>
@@ -61,7 +63,8 @@ const SectionGallery = ({ items }) => {
   )
 }
 SectionGallery.propTypes = {
-  items: PropTypes.node
+  title: PropTypes.node,
+  text: PropTypes.node
 }
 
 export default React.memo(SectionGallery)
