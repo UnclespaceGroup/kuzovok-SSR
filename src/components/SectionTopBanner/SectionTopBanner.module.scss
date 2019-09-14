@@ -42,8 +42,14 @@
   color: white;
   font-weight: 300;
   font-size: 1.8rem;
-  line-height: 2.8rem;
+  line-height: 3.2rem;
+  width: 60%;
   margin-bottom: 3.8rem;
+
+  p {
+    font-size: inherit;
+    font-weight: inherit;
+  }
 }
 
 .side {

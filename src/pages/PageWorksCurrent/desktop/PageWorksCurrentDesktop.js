@@ -1,9 +1,9 @@
 import React from 'react'
-import ContainerWorks from '../../../containers/ContainerWorks/ContainerWorks'
+import ContainerWorksCurrent from '../../../containers/ContainerWorksCurrent/ContainerWorksCurrent'
 
 const PageWorksCurrentDesktop = () => (
   <>
-    <ContainerWorks />
+    <ContainerWorksCurrent />
   </>
 )
 
