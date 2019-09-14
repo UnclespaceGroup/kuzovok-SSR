@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './PageAboutReviewsDesktop.module.scss'
 import Padding from '../../../components/Padding/Padding'
-import SectionMainMenuDesktop from '../../../components/SectionMainMenu/SectionMainMenuDesktop'
+import SectionMainMenuDesktop from '../../../containers/ContainerMainMenu/ContainerMainMenuDesktop'
 
 const PageAboutReviewsDesktop = () => (
   <div className={s.container}>

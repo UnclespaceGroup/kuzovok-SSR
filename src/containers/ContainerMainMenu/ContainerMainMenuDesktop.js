@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
-import css from './SectionMainMenuDesktop.module.scss'
-import SectionHeaderDesktop from '../SectionHeader/SectionHeaderDesktop'
-import SectionOpenMainMenuDesktop from '../SectionOpenMainMenu/SectionOpenMainMenuDesktop'
+import css from './ContainerMainMenuDesktop.module.scss'
+import SectionHeaderDesktop from '../../components/SectionHeader/SectionHeaderDesktop'
+import SectionOpenMainMenuDesktop from '../../components/SectionOpenMainMenu/SectionOpenMainMenuDesktop'
 import Collapse from 'react-collapse'
 import { withRouter } from 'react-router'
 
-const SectionMainMenuDesktop = ({ location }) => {
+const ContainerMainMenuDesktop = ({ location }) => {
+  const [ open, setOpen ] = useState(false)
+  const [ visibleHeader, setVisibleHeader ] = useState(false)
   // Перестраховываемся, если меню перерендериться, возвращаем исходные данные
+  useMemo(() => {
+    setOpen(false)
+    setVisibleHeader(false)
+  }, [location])
   // Подписываемся на скрол
   useEffect(() => {
     if (document) {
@@ -34,15 +40,12 @@ const SectionMainMenuDesktop = ({ location }) => {
   // Предыдущая позиция скрола
   let prevPosition = 0
   // Если крутили вверх, то показываем хедер
-  const handleScroll = e => {
+  const handleScroll = () => {
     if (!window) return
     if (window.pageYOffset > prevPosition) setVisibleHeader(false)
     else setVisibleHeader(true)
     prevPosition = window.pageYOffset
   }
-
-  const [ open, setOpen ] = useState(false)
-  const [ visibleHeader, setVisibleHeader ] = useState(false)
 
   return (
     <div className={css.wrapper}>
@@ -60,8 +63,8 @@ const SectionMainMenuDesktop = ({ location }) => {
     </div>
   )
 }
-SectionMainMenuDesktop.propTypes = {
+ContainerMainMenuDesktop.propTypes = {
   location: PropTypes.object
 }
 
-export default withRouter(SectionMainMenuDesktop)
+export default withRouter(ContainerMainMenuDesktop)

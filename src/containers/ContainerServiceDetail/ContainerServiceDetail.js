@@ -1,5 +1,4 @@
 import React from 'react'
-import SectionBannerTop from '../../components/SectionBannerTop/SectionBannerTop'
 import im from 'static/images/Pokraska-3.jpg'
 import im1 from 'static/images/bba649u-960.jpg'
 import SectionTextWithImage from '../../components/SectionTextWithImage/SectionTextWithImage'
@@ -7,6 +6,8 @@ import Padding from '../../components/Padding/Padding'
 import SectionTextWithImageBlack from '../../components/SectionTextWithImageBlack/SectionTextWithImageBlack'
 import SectionTable from '../../components/SectionTable/SectionTable'
 import SectionContacts from '../../components/SectionContacts/SectionContacts'
+import SectionTopBanner from '../../components/SectionTopBanner/SectionTopBanner'
+import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
 
 const banner = {
   title: 'Покраска автомобилей',
@@ -15,7 +16,8 @@ const banner = {
     <li>Работа любой сложности</li>
     <li>Гарантия - полтора года</li>
     <li>Что то ещё</li>
-  </ul>
+  </ul>,
+  sideBlock: <ControllerSideMenu />
 }
 const textBlock1 = {
   title: 'Интересный заголовок',
@@ -34,7 +36,7 @@ const table = {
 
 const ContainerServiceDetail = () => (
   <>
-    <SectionBannerTop {...banner} />
+    <SectionTopBanner {...banner} />
     <Padding value={64} />
     <SectionTextWithImage {...textBlock1} />
     <Padding value={64} />

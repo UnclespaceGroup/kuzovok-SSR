@@ -1,6 +1,6 @@
 import React from 'react'
 import ContainerHome from '../../../containers/ContainerHome/ContainerHome'
-import SectionMainMenuDesktop from '../../../components/SectionMainMenu/SectionMainMenuDesktop'
+import SectionMainMenuDesktop from '../../../containers/ContainerMainMenu/ContainerMainMenuDesktop'
 
 const PageHomeDesktop = () => (
   <>

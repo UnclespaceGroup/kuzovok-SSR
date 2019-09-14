@@ -2,7 +2,7 @@ import React from 'react'
 import s from './PageWorkDetailDesktop.module.scss'
 import Padding from '../../../components/Padding/Padding'
 import ContainerWorkDetail from '../../../containers/ContainerWorkDetail/ContainerWorkDetail'
-import SectionMainMenuDesktop from '../../../components/SectionMainMenu/SectionMainMenuDesktop'
+import SectionMainMenuDesktop from '../../../containers/ContainerMainMenu/ContainerMainMenuDesktop'
 
 const PageWorkDetailDesktop = () => (
   <div className={s.container}>

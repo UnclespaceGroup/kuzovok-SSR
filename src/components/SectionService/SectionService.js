@@ -42,9 +42,9 @@ const SectionService = ({ banner, mainCards, cards }) => (
   </div>
 )
 SectionService.propTypes = {
-  banner: PropTypes.node,
-  cards: PropTypes.node,
-  mainCards: PropTypes.node
+  banner: PropTypes.object,
+  cards: PropTypes.object,
+  mainCards: PropTypes.object
 }
 
 export default React.memo(SectionService)
