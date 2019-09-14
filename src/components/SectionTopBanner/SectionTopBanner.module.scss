@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  background-color: rgba(0,0,0,0.7);
+}
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.side {
+  width: 8rem;
+}
+
+.content {
+  margin-top: 50vh;
+}
+
+.title {
+  color: white;
+  font-weight: normal;
+  margin-bottom: 2.4rem;
+}
+
+.text {
+  color: white;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  margin-bottom: 3.8rem;
+}

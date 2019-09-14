@@ -21,11 +21,17 @@
 }
 
 .title {
+  display: block;
   padding: 4rem 0 0;
   color: #858585;
   font-size: 2.4rem;
   line-height: 2.8rem;
   //border-bottom: solid 1px #E5E5E5;
+  transition: all 200ms ease-in;
+
+  &:hover {
+    color: #c37306;
+  }
 }
 
 .item {

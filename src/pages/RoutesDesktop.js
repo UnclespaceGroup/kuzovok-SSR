@@ -5,35 +5,75 @@ import {
   PAGE_ABOUT,
   PAGE_SERVICE,
   PAGE_WORKS,
-  PAGE_WORK_DETAIL
+  PAGE_WORK_DETAIL,
+  PAGE_ABOUT_REVIEWS,
+  PAGE_ABOUT_US,
+  PAGE_WORK_DETAIL_DAYS,
+  PAGE_WORKS_CURRENT,
+  PAPER, PAPER_DETAIL
 } from 'constants/ROUTES'
 import PageHomeDesktop from './PageHome/desktop/PageHomeDesktop'
 import PageServiceDesktop from './PageService/desktop/PageServiceDesktop'
 import PageWorksDesktop from './PageWorks/desktop/PageWorksDesktop'
 import PageWorkDetailDesktop from './PageWorkDetail/desktop/PageWorkDetailDesktop'
 import PageAboutDesktop from './PageAbout/desktop/PageAboutDesktop'
+import PageServiceDetailDesktop from './PageServiceDetail/desktop/PageServiceDetailDesktop'
+import PageWorksCurrentDesktop from './PageWorksCurrent/desktop/PageWorksCurrentDesktop'
+import PageWorkDetailDayDesktop from './PageWorkDetailDay/desktop/PageWorkDetailDesktop'
+import PageAboutContactsDesktop from './PageAboutContacts/desktop/PageAboutContactsDesktop'
+import PageAboutReviewsDesktop from './PageAboutReviews/desktop/PageAboutReviewsDesktop'
+import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
+import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
 
 const RoutesDesktop = () => (
   <Switch>
-    <Route component={PageHomeDesktop}
+    <Route component={PageHomeDesktop} // Главная страницв
       exact
       path={PAGE_HOME}
     />
-    <Route component={PageServiceDesktop}
+    <Route component={PageServiceDesktop} // Услуги - разводящая
+      exact
+      path={PAGE_SERVICE}
+    />
+    <Route component={PageServiceDetailDesktop} // Услуги - деталка
       exact
       path={PAGE_SERVICE + ':id'}
     />
-    <Route component={PageWorksDesktop}
+    <Route component={PageWorksCurrentDesktop} // Текущие работы
+      exact
+      path={PAGE_WORKS_CURRENT}
+    />
+    <Route component={PageWorksDesktop} // Все работы
       exact
       path={PAGE_WORKS}
     />
-    <Route component={PageWorkDetailDesktop}
+    <Route component={PageWorkDetailDesktop} // Деталка работы
       exact
       path={PAGE_WORK_DETAIL}
     />
-    <Route component={PageAboutDesktop}
+    <Route component={PageWorkDetailDayDesktop} // Деталка работы - отчет по дням
+      exact
+      path={PAGE_WORK_DETAIL_DAYS}
+    />
+    <Route component={PageAboutContactsDesktop} // О нас - контактная информация
       exact
       path={PAGE_ABOUT}
+    />
+    <Route component={PageAboutDesktop} // О нас
+      exact
+      path={PAGE_ABOUT_US}
+    />
+    <Route component={PageAboutReviewsDesktop} // О нас - отзывы
+      exact
+      path={PAGE_ABOUT_REVIEWS}
+    />
+    <Route component={PagePaperDesktop} // Статьи
+      exact
+      path={PAPER}
+    />
+    <Route component={PagePaperDetailDesktop} // Статьи - деталка
+      exact
+      path={PAPER_DETAIL}
     />
   </Switch>
 )

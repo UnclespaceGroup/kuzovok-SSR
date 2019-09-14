@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom'
 import { MdSearch, MdMenu, MdClose } from 'react-icons/md'
 
 const items = [
-  {
-    title: 'Услуги', href: ''
-  },
-  {
-    title: 'Сейчас в работе', href: ''
-  },
-  {
-    title: 'О нас', href: ''
-  }
+  // {
+  //   title: 'Услуги', href: ''
+  // },
+  // {
+  //   title: 'Сейчас в работе', href: ''
+  // },
+  // {
+  //   title: 'О нас', href: ''
+  // }
 ]
 
 const SectionHeaderDesktop = ({ setOpen, open }) => (

@@ -1,0 +1,29 @@
+.container {
+  background-color: #E2E2E2;
+
+  h1 {
+    font-size: 4.8rem;
+  }
+}
+
+.form {
+  width: 100%;
+  display: flex;
+
+  input {
+    border-radius: 0.8rem 0 0 0.8rem!important;
+  }
+}
+
+.main {
+  position: relative;
+  z-index: 20;
+  margin: 0 auto 0;
+}
+
+.cards {
+
+  h2 {
+    margin-bottom: 4rem;
+  }
+}

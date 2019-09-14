@@ -1,0 +1,35 @@
+.container {
+  width: 32rem;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: black;
+  height: 32rem;
+  transition: all 100ms ease-in;
+
+  &:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.50);
+  }
+}
+
+.img {
+  height: 18rem;
+  margin-bottom: 2rem;
+}
+
+.content {
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  text-align: center;
+}
