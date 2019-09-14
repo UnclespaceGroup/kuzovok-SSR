@@ -29,7 +29,7 @@ const SectionTable = ({ table }) => (
   </Layout>
 )
 SectionTable.propTypes = {
-  table: PropTypes.objectOf({
+  table: PropTypes.shape({
     titles: PropTypes.array,
     body: PropTypes.array
   })

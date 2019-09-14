@@ -1,29 +1,26 @@
 import React from 'react'
-import SectionProductVideoBanner from '../../components/SectionProductVideoBanner/SectionProductVideoBanner'
 import Padding from '../../components/Padding/Padding'
-import SectionProductBannerTop from '../../components/SectionProductBannerTop/SectionProductBannerTop'
 import SectionGallery from '../../components/SectionGallery/SectionGallery'
 import SectionContacts from '../../components/SectionContacts/SectionContacts'
 import { PAGE_WORKS } from '../../constants/ROUTES'
-
-const banner = {
-  videoId: 'GJAvbThKKro',
-  text: '/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. */'
-}
+import SectionTopBanner from '../../components/SectionTopBanner/SectionTopBanner'
+import im1 from '../../static/images/lada-vaz-lada-vaz-mashina-avto-2103.jpg'
+import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
 
 const header = {
   title: 'Лада Приора',
+  status: 'В работе',
+  img: im1,
   text: <ul>
     <li>Полная покраска автомобиля</li>
     <li>Замена заднего бампера</li>
-  </ul>
+  </ul>,
+  sideBlock: <ControllerSideMenu />
 }
 
 const ContainerWorkDetail = () => (
   <>
-    <SectionProductBannerTop backLink={PAGE_WORKS} {...header} />
-    <Padding value={100} />
-    <SectionProductVideoBanner {...banner} />
+    <SectionTopBanner backLink={PAGE_WORKS} {...header} />
     <Padding value={100} />
     <SectionGallery />
     <Padding value={150} />

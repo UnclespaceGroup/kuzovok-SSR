@@ -3,6 +3,11 @@
   height: 100vh;
   display: flex;
   background-color: rgba(0,0,0,0.7);
+
+  li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
 }
 .wrapper {
   position: absolute;
@@ -18,12 +23,19 @@
 
 .content {
   margin-top: 50vh;
+  margin-right: 5rem;
 }
 
 .title {
   color: white;
   font-weight: normal;
   margin-bottom: 2.4rem;
+
+  span {
+    font-size: 2.6rem;
+    margin-left: 2rem;
+    color: #c37306;
+  }
 }
 
 .text {
@@ -32,4 +44,25 @@
   font-size: 1.8rem;
   line-height: 2.8rem;
   margin-bottom: 3.8rem;
+}
+
+.side {
+  position: absolute;
+  top: 0;
+}
+
+.backLink {
+  display: block;
+  position: absolute;
+  top: 10vh;
+  color: white;
+
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  &:hover {
+    color: #c37306;
+  }
 }

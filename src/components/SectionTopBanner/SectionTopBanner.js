@@ -3,13 +3,16 @@ import PropTypes from 'prop-types'
 import css from './SectionTopBanner.module.scss'
 import Layout from '../Layout/Layout'
 import BgImage from '../BgImage/BgImage'
+import { Link } from 'react-router-dom'
+import { MdArrowBack } from 'react-icons/md'
 
-const SectionTopBanner = ({ img, title, text, children, sideBlock }) => (
+const SectionTopBanner = ({ img, title, text, children, sideBlock, backLink, status }) => (
   <BgImage img={img}>
     <div className={css.container}>
       <div className={css.side}>{sideBlock}</div>
       <Layout className={css.content}>
-        <h1 className={css.title}>{title}</h1>
+        { backLink && <Link className={css.backLink} to={backLink}><MdArrowBack /></Link> }
+        <h1 className={css.title}>{title}<span>{status}</span></h1>
         <div className={css.text}>{text}</div>
         <div>{children}</div>
       </Layout>
@@ -21,7 +24,9 @@ SectionTopBanner.propTypes = {
   title: PropTypes.node,
   text: PropTypes.node,
   sideBlock: PropTypes.node,
-  img: PropTypes.node
+  img: PropTypes.node,
+  backLink: PropTypes.string,
+  status: PropTypes.node
 }
 
 export default React.memo(SectionTopBanner)
