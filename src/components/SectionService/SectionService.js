@@ -35,10 +35,12 @@ const SectionService = ({ banner, mainCards, cards }) => (
           <CardCatalogIcon />
         </RowCards>
       </div>
+      <Padding value={120} />
     </Layout>
-    <Padding value={120} />
-    <SectionContacts />
-    <Padding value={120} />
+    <div className={css.bottom}>
+      <SectionContacts />
+      <Padding value={120} />
+    </div>
   </div>
 )
 SectionService.propTypes = {

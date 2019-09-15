@@ -1,8 +1,9 @@
 import React from 'react'
+import ContainerPaperDetail from '../../../containers/ContainerPaperDetail/ContainerPaperDetail'
 
 const PagePaperDetailDesktop = () => (
   <>
-    service
+    <ContainerPaperDetail />
   </>
 )
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionTopBanner.module.scss'
-import Layout from '../Layout/Layout'
 import BgImage from '../BgImage/BgImage'
 import { Link } from 'react-router-dom'
 import { MdArrowBack } from 'react-icons/md'
@@ -10,12 +9,12 @@ const SectionTopBanner = ({ img, title, text, children, sideBlock, backLink, sta
   <BgImage img={img}>
     <div className={css.container}>
       <div className={css.side}>{sideBlock}</div>
-      <Layout className={css.content}>
+      <div className={css.content}>
         { backLink && <Link className={css.backLink} to={backLink}><MdArrowBack /></Link> }
         <h1 className={css.title}>{title}<span>{status}</span></h1>
         <div className={css.text}>{text}</div>
-        <div>{children}</div>
-      </Layout>
+        <div className={css.children}>{children}</div>
+      </div>
     </div>
   </BgImage>
 )
