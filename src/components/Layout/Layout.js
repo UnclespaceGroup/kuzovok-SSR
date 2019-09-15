@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import css from './Layout.module.scss'
 import cn from 'classnames'
 
-const Layout = ({ children, className }) => (
-  <div className={cn(css.container, className)}>
+const Layout = ({ children, className, width }) => (
+  <div className={cn(css.container, className)} style={width && { width: `${width / 10}rem` }}>
     {children}
   </div>
 )
 Layout.propTypes = {
   children: PropTypes.node,
+  width: PropTypes.number,
   className: PropTypes.string
 }
 
