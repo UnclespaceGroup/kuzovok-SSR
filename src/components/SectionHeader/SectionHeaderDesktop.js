@@ -26,6 +26,7 @@ const SectionHeaderDesktop = ({ setOpen, open }) => (
             ? <MdClose className={css.search} onClick={() => setOpen(!open)} color={'white'} size={'2.4rem'} />
             : <MdMenu onClick={() => setOpen(!open)} className={css.search} color={'white'} size={'2.4rem'} />
         }
+        <Link to={'/'} className={css.logo} >КузовОК<span> - станция кузовного ремонта</span></Link>
       </div>
       <div className={css.block}>
         {

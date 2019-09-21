@@ -36,6 +36,20 @@
   }
 }
 
+.logo {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: #E5E5E5;
+  margin: 0 2rem;
+
+  span {
+    color: #767676;
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+}
+
 .burger {
   cursor: pointer;
   width: 2.4rem;
