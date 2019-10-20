@@ -16,7 +16,7 @@ const SectionContacts = () => (
             <MdLocationOn className={css.icon} size={'2rem'} />
             <div className={css.address}>
               <div>Сыктывкар, ул. Тентюковская, д.22</div>
-              <a >Показать на карте</a>
+              <a>Показать на карте</a>
             </div>
           </li>
           <li>
