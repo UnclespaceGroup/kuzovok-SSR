@@ -116,17 +116,14 @@ const ContainerWorks = () => {
   useMemo(() => {
     fetchDataList(`/work/`)
       .then(data => {
-        console.log(data)
         const items = _.map(data, item => ({
-          id: item.ID,
-          title: item.FIELD_TITLE,
-          status: item.FIELD_STATUS,
-          text: item.FIELD_ANNOTATION,
-          img: item.FIELD_BANNER,
-          data: moment(item.FIELD_DATA)
+          ...item,
+          text: item.annotation,
+          img: item.banner,
+          date: moment(item.date).format('LL')
         }))
         setItems(items)
-        setLastItems(items.slice(3))
+        setLastItems(items.slice(0, 3))
       })
   }, [])
   return (

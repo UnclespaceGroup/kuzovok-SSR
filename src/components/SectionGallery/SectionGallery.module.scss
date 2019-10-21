@@ -1,5 +1,10 @@
 .container {
+  position: relative;
+
   :global {
+    .react-images__blanket {
+      z-index: 100000;
+    }
     .fullscreen {
       position: relative;
       z-index: 1000000;
@@ -21,3 +26,30 @@
   line-height: 2.7rem;
   color: #323232;
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.image {
+  height: 40rem;
+  width: auto;
+  background: no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  box-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.25);
+  border: solid 1px #c8c8c8;
+}
+
+.mini {
+  width: 33%;
+  height: 30rem;
+}
+
+.big {
+  width: 49.5%;
+}
+

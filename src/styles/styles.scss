@@ -11,6 +11,11 @@ html {
   }
 }
 
+.fullscreen {
+  position: relative;
+  z-index: 1000000;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -62,9 +67,8 @@ h4 {
 }
 
 p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 img {

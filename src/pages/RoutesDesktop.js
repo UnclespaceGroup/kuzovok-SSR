@@ -8,7 +8,6 @@ import {
   PAGE_WORK_DETAIL,
   PAGE_ABOUT_REVIEWS,
   PAGE_ABOUT_US,
-  PAGE_WORK_DETAIL_DAYS,
   PAGE_WORKS_CURRENT,
   PAGE_PAPER, PAGE_PAPER_DETAIL
 } from 'constants/ROUTES'
@@ -19,7 +18,6 @@ import PageWorkDetailDesktop from './PageWorkDetail/desktop/PageWorkDetailDeskto
 import PageAboutDesktop from './PageAbout/desktop/PageAboutDesktop'
 import PageServiceDetailDesktop from './PageServiceDetail/desktop/PageServiceDetailDesktop'
 import PageWorksCurrentDesktop from './PageWorksCurrent/desktop/PageWorksCurrentDesktop'
-import PageWorkDetailDayDesktop from './PageWorkDetailDay/desktop/PageWorkDetailDesktop'
 import PageAboutContactsDesktop from './PageAboutContacts/desktop/PageAboutContactsDesktop'
 import PageAboutReviewsDesktop from './PageAboutReviews/desktop/PageAboutReviewsDesktop'
 import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
@@ -51,10 +49,10 @@ const RoutesDesktop = () => (
       exact
       path={PAGE_WORK_DETAIL}
     />
-    <Route component={PageWorkDetailDayDesktop} // Деталка работы - отчет по дням
-      exact
-      path={PAGE_WORK_DETAIL_DAYS}
-    />
+    {/* <Route component={PageWorkDetailDayDesktop} // Деталка работы - отчет по дням */}
+    {/*  exact */}
+    {/*  path={PAGE_WORK_DETAIL_DAYS} */}
+    {/* /> */}
     <Route component={PageAboutContactsDesktop} // О нас - контактная информация
       exact
       path={PAGE_ABOUT}
