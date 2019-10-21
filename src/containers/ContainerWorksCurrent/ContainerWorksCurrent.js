@@ -26,7 +26,6 @@ const ContainerWorksCurrent = () => {
         })))
       })
   }, [])
-  console.log(items)
   return (
   <>
     <SectionTopBanner {...header} />
