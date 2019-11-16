@@ -1,6 +1,9 @@
 .container {
+  position: relative;
+  z-index: 10;
   width: 100%;
-  height: 100vh;
+  //height: 100vh;
+  padding: 10rem 0;
   background-color: #272727;
   display: flex;
   flex-direction: column;
@@ -12,12 +15,12 @@
 }
 
 .row {
-  //display: flex;
+  display: flex;
   justify-content: space-between;
 }
 
 .column {
-  width: 30%;
+  width: 25%;
 }
 
 .title {
@@ -35,7 +38,6 @@
 }
 
 .item {
-  margin-left: 4rem;
   color: white;
   font-size: 1.8rem;
   line-height: 2.1rem;
@@ -43,5 +45,22 @@
 
   &:hover {
     color: #c37306;
+  }
+}
+
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: all 200ms ease-in;
+  background-color: rgba(0,0,0,0.5);
+
+
+  &__active {
+    composes: back;
+    opacity: 1;
   }
 }

@@ -1,7 +1,10 @@
 .container {
   padding: 5rem 0 10rem;
-  margin-bottom: 5rem;
-  border-bottom: solid 1px rgba(0,0,0,0.2);
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+    border-bottom: solid 1px rgba(0,0,0,0.2);
+  }
 }
 
 .title {
@@ -18,4 +21,11 @@
   color: #323232;
   margin-bottom: 4.2rem;
   width: 60%;
+}
+
+.date {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #c37306;
 }

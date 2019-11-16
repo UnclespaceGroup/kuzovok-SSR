@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+}
+
+.last {
+  margin-right: 0;
+}
+
+.size_1 {
+  width: 27rem;
+}
+
+.size_2 {
+  width: 58rem;
+}

@@ -5,6 +5,8 @@ import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
 import SectionSimplePost from '../../components/SectionSimplePost/SectionSimplePost'
 import List from '../../components/List/List'
 import { fetchDataList } from '../../axios/fetchData'
+import ContainerLastWorks from '../ContainerLastWorks/ContainerLastWorks'
+import IconCount from '../../components/IconCount/IconCount'
 
 const header = {
   title: 'Сделано за сегодня',
@@ -28,12 +30,21 @@ const ContainerWorksCurrent = () => {
   }, [])
   return (
   <>
-    <SectionTopBanner {...header} />
+    <SectionTopBanner
+      {...header}
+      addIcon={
+        <IconCount
+          count={items.length}
+          texts={['запись', 'записи', 'записей']}
+        />
+      }
+    />
     <List
       items={items}
     >
-      <SectionSimplePost />
+      <SectionSimplePost withUrl />
     </List>
+    <ContainerLastWorks />
   </>
   )
 }

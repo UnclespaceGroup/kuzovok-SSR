@@ -4,29 +4,20 @@
 }
 
 .black {
-  background-color: #2a2a2f!important;
+
 }
 
 .menu {
   width: 100vw;
   z-index: 100;
-  &__absolute {
-    composes: menu;
-    position: absolute;
-    top: 0;
-  }
-
-  &__static {
-    composes: menu;
-    position: fixed;
-    background-color: #272727;
-    top: 0;
-    transition: all 200ms ease-in;
-  }
+  position: fixed;
+  top: 0;
+  background-color: rgba(0,0,0,0);
+  transition: background-color 200ms ease-in;
 }
 
-.invisible {
-  top: -5rem!important;
+.visible {
+  background-color: #2a2a2f!important;
 }
 
 
@@ -35,4 +26,5 @@
   position: fixed;
   top: 0;
   width: 100vw;
+  box-shadow: 0.4rem 0.4rem 0.4rem rgba(0,0,0,0.5);
 }

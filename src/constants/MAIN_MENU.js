@@ -2,7 +2,7 @@ import {
   PAGE_ABOUT,
   PAGE_ABOUT_REVIEWS,
   PAGE_ABOUT_US,
-  PAGE_SERVICE,
+  PAGE_SERVICES,
   PAGE_WORKS, PAGE_WORKS_CURRENT,
   PAGE_PAPER
 } from './ROUTES'
@@ -10,45 +10,45 @@ import {
 export const items = [
   {
     title: {
-      to: PAGE_SERVICE,
+      to: PAGE_SERVICES,
       text: 'Услуги'
     },
     items: [
       {
         title: 'Покраска авто',
-        to: PAGE_SERVICE + 1
+        to: PAGE_SERVICES + 1
       },
       {
         title: 'Ремонт кузовов',
-        to: PAGE_SERVICE + 2
+        to: PAGE_SERVICES + 2
       },
       {
         title: 'Сварочные работы',
-        to: PAGE_SERVICE + 3
+        to: PAGE_SERVICES + 3
       },
       {
         title: 'Антикоррозийные обработки',
-        to: PAGE_SERVICE + 4
+        to: PAGE_SERVICES + 4
       },
       {
         title: 'Ремонт бамперов',
-        to: PAGE_SERVICE + 5
+        to: PAGE_SERVICES + 5
       }
     ]
   },
   {
     title: {
-      to: PAGE_WORKS_CURRENT,
+      to: PAGE_WORKS,
       text: 'Работы'
     },
     items: [
       {
-        title: 'Сделано сегодня',
-        to: PAGE_WORKS_CURRENT
+        title: 'Посмотреть все работы',
+        to: PAGE_WORKS
       },
       {
-        title: 'Ваш автомобиль',
-        to: PAGE_WORKS + 1
+        title: 'Сделано сегодня',
+        to: PAGE_WORKS_CURRENT
       },
       {
         title: 'Архив работ',
@@ -60,7 +60,13 @@ export const items = [
     title: {
       to: PAGE_PAPER,
       text: 'Интересные статьи'
-    }
+    },
+    items: [
+      {
+        title: 'Популярное',
+        to: PAGE_PAPER
+      }
+    ]
   },
   {
     title: {

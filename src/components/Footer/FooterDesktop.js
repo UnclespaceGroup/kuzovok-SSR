@@ -4,7 +4,7 @@ import css from './FooterDesktop.module.scss'
 import im from 'static/images/1517716721790_big_vlru.jpg'
 import Layout from '../Layout/Layout'
 import { Link } from 'react-router-dom'
-import { PAGE_ABOUT, PAGE_SERVICE, PAGE_WORKS } from '../../constants/ROUTES'
+import { PAGE_ABOUT, PAGE_SERVICES, PAGE_WORKS } from '../../constants/ROUTES'
 
 const items = [
   {
@@ -12,23 +12,23 @@ const items = [
     items: [
       {
         title: 'Покраска авто',
-        to: PAGE_SERVICE
+        to: PAGE_SERVICES
       },
       {
         title: 'Ремонт кузовов',
-        to: PAGE_SERVICE
+        to: PAGE_SERVICES
       },
       {
         title: 'Сварочные работы',
-        to: PAGE_SERVICE
+        to: PAGE_SERVICES
       },
       {
         title: 'Антикоррозийные обработки',
-        to: PAGE_SERVICE
+        to: PAGE_SERVICES
       },
       {
         title: 'Ремонт бамперов',
-        to: PAGE_SERVICE
+        to: PAGE_SERVICES
       }
     ]
   },

@@ -8,7 +8,7 @@ const FieldInput = ({ input, ...props }) => (
   </div>
 )
 FieldInput.propTypes = {
-  input: PropTypes.node
+  input: PropTypes.any
 }
 
 export default React.memo(FieldInput)

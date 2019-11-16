@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import {
   PAGE_HOME,
   PAGE_ABOUT,
-  PAGE_SERVICE,
+  PAGE_SERVICES,
   PAGE_WORKS,
   PAGE_WORK_DETAIL,
   PAGE_ABOUT_REVIEWS,
@@ -31,11 +31,11 @@ const RoutesDesktop = () => (
     />
     <Route component={PageServiceDesktop} // Услуги - разводящая
       exact
-      path={PAGE_SERVICE}
+      path={PAGE_SERVICES}
     />
     <Route component={PageServiceDetailDesktop} // Услуги - деталка
       exact
-      path={PAGE_SERVICE + ':id'}
+      path={PAGE_SERVICES + ':id'}
     />
     <Route component={PageWorksCurrentDesktop} // Текущие работы
       exact

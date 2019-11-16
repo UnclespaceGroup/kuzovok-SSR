@@ -12,12 +12,14 @@ const SectionSideMenu = ({ icons, bottomIcon }) => (
         _.map(icons, (item, key) => (
           <Link to={item.to} className={css.item} key={key}>
             {item.icon}
+            <div className={css.text}>{item.text}</div>
           </Link>
         ))
       }
     </div>
     <Link to={bottomIcon.to} className={css.item}>
       {bottomIcon.icon}
+      <div className={css.text}>{bottomIcon.text}</div>
     </Link>
   </div>
 )

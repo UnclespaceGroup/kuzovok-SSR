@@ -1,0 +1,70 @@
+.container {
+  width: 32rem;
+  height: 27rem;
+  position: relative;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  transition: all 100ms ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.50);
+
+    .image {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: no-repeat center;
+  background-size: cover;
+  transition: all 200ms ease-in;
+}
+
+.wrapper {
+  background-color: rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 5;
+  padding: 5rem 0;
+  height: 27rem;
+  transition: all 200ms ease-in;
+}
+
+.img {
+  height: 6rem;
+  width: 100%;
+  background: no-repeat center;
+  background-size: contain;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.4rem;
+  line-height: 2.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.big {
+
+}
+
+.small {
+  width: 27rem;
+
+}

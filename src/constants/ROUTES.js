@@ -1,5 +1,5 @@
 export const PAGE_HOME = '/'
-export const PAGE_SERVICE = '/service/'
+export const PAGE_SERVICES = '/services/'
 export const PAGE_WORKS = '/works/'
 export const PAGE_WORKS_CURRENT = '/current-works/'
 export const PAGE_WORK_DETAIL = '/works/:id'

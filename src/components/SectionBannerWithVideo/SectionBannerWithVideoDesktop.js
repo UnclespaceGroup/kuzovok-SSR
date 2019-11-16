@@ -15,7 +15,7 @@ const opts = {
     fs: 0,
     iv_load_policy: 3,
     loop: 1,
-    playlist: 'mhqlDa12BHE',
+    playlist: 'GzR5lOxhzO8',
     modestbranding: 1,
     mute: 1,
     showinfo: 0
@@ -26,7 +26,7 @@ const SectionBannerWithVideoDesktop = ({ url, title, text, button }) => (
   <div className={css.container}>
     <YouTube
       allowfullscreen='allowfullscreen'
-      videoId='mhqlDa12BHE'
+      videoId='GzR5lOxhzO8'
       opts={opts}
       // onReady
       className={css.video}

@@ -4,47 +4,54 @@ import SectionContacts from '../../components/SectionContacts/SectionContacts'
 import { PAGE_WORKS } from '../../constants/ROUTES'
 import SectionTopBanner from '../../components/SectionTopBanner/SectionTopBanner'
 import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
-import { fetchDataList, fetchDataSingle } from '../../axios/fetchData'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
 import PropTypes from 'prop-types'
 import SectionSimplePost from '../../components/SectionSimplePost/SectionSimplePost'
 import List from '../../components/List/List'
+import Layout from '../../components/Layout/Layout'
+import TextBlock from '../../components/TextBlock/TextBlock'
+import useWorkDetail from './useWorkDetail'
+import IconCount from '../../components/IconCount/IconCount'
+import ContainerLastWorks from '../ContainerLastWorks/ContainerLastWorks'
 
 const ContainerWorkDetail = ({ match }) => {
-  const [ header, setHeader ] = useState()
-  const [ items, setItems ] = useState()
+  const [ pageData, setPageData ] = useState({})
   const id = match?.params?.id
   useMemo(() => {
     if (!id) return
-    fetchDataSingle(`/work/${id}`)
+    useWorkDetail({ id })
       .then(data => {
-        console.log(data)
-        setHeader({
-          ...data,
-          text: data.annotation,
-          img: data.banner
-        })
-      })
-    fetchDataList(`/report?parentId=${id}`)
-      .then(data => {
-        setItems(data.map(item => ({
-          ...item,
-          galleryData: { photos: item.images && JSON.parse(item.images) }
-        })))
+        setPageData(data)
       })
   }, [])
-
+  const {
+    header = {},
+    items = [],
+    data = {}
+  } = pageData
   return (
     <>
-      <SectionTopBanner backLink={PAGE_WORKS} {...header} sideBlock={<ControllerSideMenu />} />
-      <Padding value={150} />
+      <SectionTopBanner
+        addIcon={
+          <IconCount
+            count={items.length}
+            texts={['запись', 'записи', 'записей']}
+          />
+        }
+        backLink={PAGE_WORKS} {...header} sideBlock={<ControllerSideMenu />} />
+      <Padding value={40} />
+      <Layout>
+        <TextBlock width={'70%'} text={data?.text} />
+      </Layout>
       <List
         items={items}
       >
         <SectionSimplePost />
       </List>
-      <Padding value={150} />
+      <Padding value={80} />
+      <ContainerLastWorks />
+      <Padding value={80} />
       <SectionContacts />
     </>
   )

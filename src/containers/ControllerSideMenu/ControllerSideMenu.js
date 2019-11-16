@@ -7,23 +7,28 @@ const ControllerSideMenu = () => (
     icons={[
       {
         icon: <MdDirectionsCar />,
+        text: 'Авто в ремонте',
         to: '/'
       },
       {
         icon: <MdBuild />,
+        text: 'Услуги',
         to: '/'
       },
       {
         icon: <MdStoreMallDirectory />,
+        text: 'О компании',
         to: '/'
       },
       {
         icon: <MdFormatAlignLeft />,
+        text: 'Полезные статьи',
         to: '/'
       }
     ]}
     bottomIcon={{
       icon: <MdPhotoLibrary />,
+      text: 'Медиа',
       to: '/'
     }}
   />

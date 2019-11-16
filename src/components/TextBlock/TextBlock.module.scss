@@ -1,0 +1,25 @@
+.container {
+  font-size: 1.8rem;
+
+  ul {
+    margin: 2rem 0;
+  }
+
+  li {
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      content: '';
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-color: #c37306;
+      border-radius: 50%;
+    }
+  }
+}

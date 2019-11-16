@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+}
+
+.tag {
+  margin-right: 1rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+
+  &:hover {
+    color: #c37306;
+  }
+}

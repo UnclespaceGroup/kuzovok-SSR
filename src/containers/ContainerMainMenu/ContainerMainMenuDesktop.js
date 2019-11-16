@@ -6,10 +6,11 @@ import SectionHeaderDesktop from '../../components/SectionHeader/SectionHeaderDe
 import SectionOpenMainMenuDesktop from '../../components/SectionOpenMainMenu/SectionOpenMainMenuDesktop'
 import Collapse from 'react-collapse'
 import { withRouter } from 'react-router'
+import { menuItems } from './data'
 
 const ContainerMainMenuDesktop = ({ location }) => {
   const [ open, setOpen ] = useState(false)
-  const [ visibleHeader, setVisibleHeader ] = useState(false)
+  const [ visibleHeader, setVisibleHeader ] = useState(true)
   // Подписываемся на скрол
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -35,32 +36,34 @@ const ContainerMainMenuDesktop = ({ location }) => {
   }
 
   // Предыдущая позиция скрола
-  let prevPosition = 0
+  // let prevPosition = 0
   // Если крутили вверх, то показываем хедер
   const handleScroll = () => {
+    const OFFSET = 100
     if (!window) return
-    if (window.pageYOffset > prevPosition) setVisibleHeader(false)
-    else setVisibleHeader(true)
-    prevPosition = window.pageYOffset
+    if (window.pageYOffset > OFFSET) {
+      visibleHeader && setVisibleHeader(false)
+    }
+    if (window.pageYOffset < OFFSET) {
+      !visibleHeader && setVisibleHeader(true)
+    }
   }
 
-  // Перестраховываемся, если меню перерендериться, возвращаем исходные данные
   useMemo(() => {
     openMenu(false, true)
-    setVisibleHeader(false)
   }, [location])
 
   return (
     <div className={css.wrapper}>
-      <div className={css.menu__absolute}>
-        <SectionHeaderDesktop {...{ setOpen: openMenu, open }} />
-      </div>
-      <div className={cn(css.menu__static, { [css.invisible]: !visibleHeader })}>
-        <SectionHeaderDesktop {...{ setOpen: openMenu, open }} />
+      {/* <div className={css.menu__absolute}> */}
+      {/*  <SectionHeaderDesktop {...{ setOpen: openMenu, open }} /> */}
+      {/* </div> */}
+      <div className={cn(css.menu, { [css.visible]: !visibleHeader })}>
+        <SectionHeaderDesktop {...{ setOpen: openMenu, open, menuItems }} />
       </div>
       <div className={css.container}>
         <Collapse isOpened={open} >
-          <SectionOpenMainMenuDesktop />
+          <SectionOpenMainMenuDesktop openMenu={openMenu} />
         </Collapse>
       </div>
     </div>
