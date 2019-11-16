@@ -14,15 +14,15 @@ export const items = [
     items: [
       {
         title: 'Покраска авто',
-        to: PAGE_SERVICES + 1
+        to: PAGE_SERVICES + 'pokraska-avto'
       },
       {
         title: 'Ремонт кузовов',
-        to: PAGE_SERVICES + 2
+        to: PAGE_SERVICES + 'kuzovnoi-remont'
       },
       {
-        title: 'Сварочные работы',
-        to: PAGE_SERVICES + 3
+        title: 'Антигравий',
+        to: PAGE_SERVICES + 'antigraviy'
       },
       {
         title: 'Антикоррозийные обработки',

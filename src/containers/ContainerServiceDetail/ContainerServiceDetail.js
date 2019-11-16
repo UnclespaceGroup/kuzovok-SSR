@@ -10,6 +10,7 @@ import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
 import useServiceDetail from './useServiceDetail'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
+import { PAGE_SERVICES } from '../../constants/ROUTES'
 
 const textBlock1 = {
   title: 'Интересный заголовок',
@@ -22,6 +23,7 @@ const ContainerServiceDetail = ({ match }) => {
   return (
   <>
     <SectionTopBanner
+      backLink={PAGE_SERVICES}
       sideBlock={<ControllerSideMenu />}
       {...bannerData} />
     <Padding value={64} />

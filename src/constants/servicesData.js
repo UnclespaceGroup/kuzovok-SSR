@@ -1,6 +1,6 @@
 export const mainServices = [
   {
-    id: '0',
+    id: 'pokraska-avto',
     banner: 'https://md-gazeta.ru/wp-content/uploads/2017/11/Priora-e1511252012133.jpg',
     title: 'Покраска авто',
     annotation: '',
@@ -10,7 +10,7 @@ export const mainServices = [
     }
   },
   {
-    id: '1',
+    id: 'kuzovnoi-remont',
     banner: 'http://ooobelcolor.by/upload/resize_cache/iblock/b7e/715_715_1/b7eaf4d0b811aead9c69a3625dc14fdb.jpg',
     title: 'Кузовной ремонт',
     annotation: '',

@@ -7,6 +7,7 @@ import { MdArrowBack } from 'react-icons/md'
 import TagsBlock from '../TagsBlock/TagsBlock'
 import List from '../List/List'
 import TextIcon from '../TextIcon/TextIcon'
+import ControllerSideMenu from '../../containers/ControllerSideMenu/ControllerSideMenu'
 
 const SectionTopBanner = ({ img, title, text, children, sideBlock, backLink, status, tags, icons, addIcon }) => (
   <BgImage img={img}>
@@ -37,6 +38,9 @@ SectionTopBanner.propTypes = {
   tags: PropTypes.array,
   icons: PropTypes.array,
   addIcon: PropTypes.node
+}
+SectionTopBanner.defaultProps = {
+  sideBlock: <ControllerSideMenu />
 }
 
 export default React.memo(SectionTopBanner)

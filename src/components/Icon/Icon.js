@@ -14,7 +14,7 @@ const Icon = ({ name }) => {
     return (
       <IconComponent className={css.icon} />
     )
-  } else if (typeof name === 'object') {
+  } else if (typeof name === 'object' && name?.title) {
     const IconComponent = (typeof icons[name.title] === 'function') ? icons[name.title](name.params) : 'div'
     if (!IconComponent) return <span />
     return (

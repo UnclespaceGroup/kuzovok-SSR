@@ -7,8 +7,8 @@ const useServiceDetail = ({ params }) => {
   return {
     bannerData: {
       ...currentData?.bannerData,
-      title: currentData.title,
-      img: currentData.banner
+      title: currentData?.title,
+      img: currentData?.banner
     }
   }
 }

@@ -23,13 +23,11 @@ export const fetchDataList = async (url) => {
   let data = []
   await axios.get(url)
     .then(res => {
-      console.log(res.data)
       data = res.data
     })
     .catch(e => {
       console.log(e)
     })
-  console.log(data)
   return data
 }
 
@@ -37,12 +35,10 @@ export const fetchDataListParams = async (url, params = {}) => {
   let data = []
   await axios.post(url, params)
     .then(res => {
-      console.log(res.data)
       data = res.data
     })
     .catch(e => {
       console.log(e)
     })
-  console.log(data)
   return data
 }
