@@ -17,10 +17,6 @@
   }
 }
 
-.icon {
-  margin-right: 2rem;
-}
-
 .social {
 
   a {
@@ -37,11 +33,9 @@
   display: flex;
 }
 
-.img {
+.map {
   width: 60%;
-  min-height: 40rem;
-  background: url("../../static/images/bba649u-960.jpg") no-repeat center;
-  background-size: cover;
+  height: 40rem;
 }
 
 .content {
@@ -69,9 +63,18 @@
 
   a {
     display: inline-block;
-    font-weight: 300;
-    margin-top: 1rem;
+    font-weight: 500;
     border-bottom: solid 1px ;
+
+    &:hover {
+      color: #c37306;
+    }
+  }
+
+  svg {
+    margin-right: 2rem;
+    width: 2rem;
+    height: 2rem;
   }
 }
 

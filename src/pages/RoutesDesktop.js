@@ -6,8 +6,6 @@ import {
   PAGE_SERVICES,
   PAGE_WORKS,
   PAGE_WORK_DETAIL,
-  PAGE_ABOUT_REVIEWS,
-  PAGE_ABOUT_US,
   PAGE_WORKS_CURRENT,
   PAGE_PAPER, PAGE_PAPER_DETAIL
 } from 'constants/ROUTES'
@@ -18,8 +16,6 @@ import PageWorkDetailDesktop from './PageWorkDetail/desktop/PageWorkDetailDeskto
 import PageAboutDesktop from './PageAbout/desktop/PageAboutDesktop'
 import PageServiceDetailDesktop from './PageServiceDetail/desktop/PageServiceDetailDesktop'
 import PageWorksCurrentDesktop from './PageWorksCurrent/desktop/PageWorksCurrentDesktop'
-import PageAboutContactsDesktop from './PageAboutContacts/desktop/PageAboutContactsDesktop'
-import PageAboutReviewsDesktop from './PageAboutReviews/desktop/PageAboutReviewsDesktop'
 import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
 import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
 
@@ -53,17 +49,9 @@ const RoutesDesktop = () => (
     {/*  exact */}
     {/*  path={PAGE_WORK_DETAIL_DAYS} */}
     {/* /> */}
-    <Route component={PageAboutContactsDesktop} // О нас - контактная информация
-      exact
-      path={PAGE_ABOUT}
-    />
     <Route component={PageAboutDesktop} // О нас
       exact
-      path={PAGE_ABOUT_US}
-    />
-    <Route component={PageAboutReviewsDesktop} // О нас - отзывы
-      exact
-      path={PAGE_ABOUT_REVIEWS}
+      path={PAGE_ABOUT}
     />
     <Route component={PagePaperDesktop} // Статьи
       exact

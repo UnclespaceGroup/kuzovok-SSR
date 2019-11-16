@@ -1,7 +1,5 @@
 import {
   PAGE_ABOUT,
-  PAGE_ABOUT_REVIEWS,
-  PAGE_ABOUT_US,
   PAGE_SERVICES,
   PAGE_WORKS, PAGE_WORKS_CURRENT,
   PAGE_PAPER
@@ -70,7 +68,7 @@ export const items = [
   },
   {
     title: {
-      to: PAGE_ABOUT_US,
+      to: PAGE_ABOUT,
       text: 'О нас'
     },
     items: [
@@ -81,10 +79,6 @@ export const items = [
       {
         title: 'Контактная информация',
         to: PAGE_ABOUT
-      },
-      {
-        title: 'Отзывы',
-        to: PAGE_ABOUT_REVIEWS
       }
     ]
   }

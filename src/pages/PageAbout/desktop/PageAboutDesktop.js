@@ -1,9 +1,8 @@
 import React from 'react'
+import ContainerAbout from '../../../containers/ContainerAbout/ContainerAbout'
 
 const PageAboutDesktop = () => (
-  <>
-    service
-  </>
+  <ContainerAbout />
 )
 
 export default PageAboutDesktop
