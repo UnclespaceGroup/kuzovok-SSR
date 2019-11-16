@@ -4,7 +4,7 @@ import SectionService from '../../components/SectionServices/SectionServices'
 import img from 'static/images/allfons.jpg'
 import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
 // import { PAGE_SERVICES } from '../../constants/ROUTES'
-import { mainServices, services } from './servicesData'
+import { mainServices, services } from '../../constants/servicesData'
 
 const ContainerServices = () => {
   const [ mainCards, setMainCards ] = useState({})

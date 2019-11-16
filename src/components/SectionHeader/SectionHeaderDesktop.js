@@ -4,6 +4,7 @@ import cn from 'classnames'
 import css from './SectionHeaderDesktop.module.scss'
 import { Link } from 'react-router-dom'
 import { MdSearch, MdMenu, MdClose } from 'react-icons/md'
+import { MAIN_PHONE } from '../../constants/phones'
 
 const SectionHeaderDesktop = ({ setOpen, open, menuItems = [] }) => (
   <div className={css.wrapper}>
@@ -22,7 +23,7 @@ const SectionHeaderDesktop = ({ setOpen, open, menuItems = [] }) => (
             <Link to={href} className={css.item} key={key} >{title}</Link>
           ))
         }
-        <a href={'tel:89042222222'} className={cn(css.item, css.phone)}>8(904) 555 35 36</a>
+        <div className={cn(css.item, css.phone)}>{MAIN_PHONE}</div>
         <MdSearch className={css.search} color={'white'} size={'2.4rem'} />
       </div>
     </div>
