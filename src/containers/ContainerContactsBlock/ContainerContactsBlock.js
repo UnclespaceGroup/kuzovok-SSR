@@ -1,7 +1,7 @@
 import React from 'react'
 import SectionContacts from '../../components/SectionContacts/SectionContacts'
 import { MdAccessTime, MdLocationOn, MdPhone } from 'react-icons/md'
-import { MAIN_PHONE } from '../../constants/phones'
+import { MAIN_PHONE } from '../../constants/contacts'
 
 const ContainerContactsBlock = () => {
   return (

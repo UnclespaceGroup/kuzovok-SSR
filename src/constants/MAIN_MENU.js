@@ -1,7 +1,7 @@
 import {
   PAGE_ABOUT,
   PAGE_SERVICES,
-  PAGE_WORKS, PAGE_WORKS_CURRENT,
+  PAGE_WORKS, PAGE_REVIEWS,
   PAGE_PAPER
 } from './ROUTES'
 
@@ -46,7 +46,7 @@ export const items = [
       },
       {
         title: 'Сделано сегодня',
-        to: PAGE_WORKS_CURRENT
+        to: PAGE_REVIEWS
       },
       {
         title: 'Архив работ',

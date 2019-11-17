@@ -6,7 +6,7 @@ import {
   PAGE_SERVICES,
   PAGE_WORKS,
   PAGE_WORK_DETAIL,
-  PAGE_WORKS_CURRENT,
+  PAGE_REVIEWS,
   PAGE_PAPER, PAGE_PAPER_DETAIL
 } from 'constants/ROUTES'
 import PageHomeDesktop from './PageHome/desktop/PageHomeDesktop'
@@ -34,8 +34,7 @@ const RoutesDesktop = () => (
       path={PAGE_SERVICES + ':id'}
     />
     <Route component={PageWorksCurrentDesktop} // Текущие работы
-      exact
-      path={PAGE_WORKS_CURRENT}
+      path={PAGE_REVIEWS}
     />
     <Route component={PageWorksDesktop} // Все работы
       exact
@@ -45,12 +44,7 @@ const RoutesDesktop = () => (
       exact
       path={PAGE_WORK_DETAIL}
     />
-    {/* <Route component={PageWorkDetailDayDesktop} // Деталка работы - отчет по дням */}
-    {/*  exact */}
-    {/*  path={PAGE_WORK_DETAIL_DAYS} */}
-    {/* /> */}
     <Route component={PageAboutDesktop} // О нас
-      exact
       path={PAGE_ABOUT}
     />
     <Route component={PagePaperDesktop} // Статьи

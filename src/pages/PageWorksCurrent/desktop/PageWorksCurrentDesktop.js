@@ -1,5 +1,5 @@
 import React from 'react'
-import ContainerWorksCurrent from '../../../containers/ContainerWorksCurrent/ContainerWorksCurrent'
+import ContainerWorksCurrent from '../../../containers/ContainerReviews/ContainerReviews'
 
 const PageWorksCurrentDesktop = () => (
   <>

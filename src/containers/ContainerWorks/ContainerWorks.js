@@ -1,39 +1,17 @@
-import React, { useMemo, useState } from 'react'
-import SectionProductBannerTop from '../../components/SectionProductBannerTop/SectionProductBannerTop'
+import React from 'react'
+import Banner from '../../components/Banner/Banner'
 import SectionCardsRow from '../../components/SectionCardsRow/SectionCardsRow'
 import Padding from '../../components/Padding/Padding'
 import { PAGE_WORKS } from '../../constants/ROUTES'
-import { fetchDataList } from '../../axios/fetchData'
-import _ from 'lodash'
-import { getStatusByCode } from '../../utils/getNameByValue'
-
-const header = {
-  title: 'Все работы',
-  text: <div>
-    <p>Здесь вы можете ознакомиться с нашими работами</p>
-  </div>
-}
+import useWorks from './useWorks'
+import SectionTabs from '../../components/SectionTabs/SectionTabs'
 
 const ContainerWorks = () => {
-  const [ items, setItems ] = useState([])
-  const [ lastItems, setLastItems ] = useState([])
-  useMemo(() => {
-    fetchDataList(`/work/`)
-      .then(data => {
-        const items = _.map(data, item => ({
-          ...item,
-          text: item.annotation,
-          img: item.banner,
-          subtitle: getStatusByCode(item.status),
-          date: item.createdAt
-        }))
-        setItems(items)
-        setLastItems(items.slice(0, 3))
-      })
-  }, [])
+  const { items, lastItems, header, tabs } = useWorks()
   return (
   <>
-    <SectionProductBannerTop {...header} />
+    <Banner {...header} />
+    <SectionTabs items={tabs} />
     <Padding value={80} />
     <SectionCardsRow title={'Последние'} items={lastItems} url={PAGE_WORKS} />
     <Padding value={120} />

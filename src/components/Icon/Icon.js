@@ -5,12 +5,16 @@ import * as IconMd from 'react-icons/md'
 
 const icons = {
   info: IconMd.MdInfo,
+  phone: IconMd.MdPhone,
+  address: IconMd.MdPlace,
+  mail: IconMd.MdMail,
   count: ({ count }) => IconMd[`MdFilter${count.toString()}`]
 }
 
 const Icon = ({ name }) => {
   if (typeof name === 'string') {
     const IconComponent = icons[name]
+    if (!IconComponent) return <div />
     return (
       <IconComponent className={css.icon} />
     )

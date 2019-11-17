@@ -1,16 +1,18 @@
 .container {
+  background-color: #272727;
+}
+
+.wrapper {
   display: flex;
   justify-content: center;
-  border-bottom: solid 1px rgba(0,0,0,0.1);
 }
 
 .item {
-  font-size: 1.8rem;
-  line-height: 2.1rem;
-  color: #000000;
+  font-size: 1.6rem;
+  color: white;
   padding: 2rem 4rem;
 
   &__active {
-    border-bottom: solid 3px #E88D06;
+    background-color: #4d4d4d;
   }
 }

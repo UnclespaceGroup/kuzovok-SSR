@@ -1,23 +1,60 @@
 import React from 'react'
 import useAbout from './useAbout'
-import SectionTextWithImage from '../../components/SectionTextWithImage/SectionTextWithImage'
-import SectionTextWithImageBlack from '../../components/SectionTextWithImageBlack/SectionTextWithImageBlack'
 import Padding from '../../components/Padding/Padding'
-import ContainerContactsBlock from '../ContainerContactsBlock/ContainerContactsBlock'
-import SectionServicesSliderBanner from '../../components/SectionServicesSliderBanner/SectionServicesSliderBanner'
 import Banner from '../../components/Banner/Banner'
+import useAboutMain from './useAboutMain'
+import SectionAboutMain from '../../components/SectionAboutMain/SectionAboutMain'
+import SectionTabs from '../../components/SectionTabs/SectionTabs'
+import { Route, Switch } from 'react-router'
+import SectionAboutContacts from '../../components/SectionAboutContacts/SectionAboutContacts'
+import {
+  PAGE_ABOUT,
+  PAGE_ABOUT_CONTACTS,
+  PAGE_ABOUT_MAP,
+  PAGE_ABOUT_PHOTOS,
+  PAGE_ABOUT_VIDEO
+} from '../../constants/ROUTES'
+import useAboutContacts from './useAboutContacts'
+import SectionAboutPhotos from '../../components/SectionAboutPhotos/SectionAboutPhotos'
+import useAboutPhotos from './useAboutPhotos'
 
 const ContainerAbout = () => {
-  const { block1, block2, bannerData } = useAbout()
+  const { bannerData, items: itemsTabs } = useAbout()
+  const { data: dataMain } = useAboutMain()
+  const { data: dataContacts } = useAboutContacts()
+  const { data: dataPhotos } = useAboutPhotos()
   return (
   <>
-    <Padding value={60} />
     <Banner {...bannerData} />
-    <SectionServicesSliderBanner />
-    <SectionTextWithImage {...block1} />
-    <SectionTextWithImageBlack {...block2} />
+    <SectionTabs items={itemsTabs} />
     <Padding value={60} />
-    <ContainerContactsBlock />
+    <Switch>
+      <Route
+        exact
+        path={PAGE_ABOUT}
+        render={() => <SectionAboutMain {...dataMain} />}
+      />
+      <Route
+        exact
+        path={PAGE_ABOUT_CONTACTS}
+        render={() => <SectionAboutContacts {...dataContacts} />}
+      />
+      <Route
+        exact
+        path={PAGE_ABOUT_PHOTOS}
+        render={() => <SectionAboutPhotos {...dataPhotos} />}
+      />
+      <Route
+        exact
+        path={PAGE_ABOUT_VIDEO}
+        render={() => <SectionAboutPhotos {...dataPhotos} />}
+      />
+      <Route
+        exact
+        path={PAGE_ABOUT_MAP}
+        render={() => <SectionAboutPhotos {...dataPhotos} />}
+      />
+    </Switch>
     <Padding value={120} />
   </>
   )
