@@ -16,6 +16,7 @@ import IconCount from '../../components/IconCount/IconCount'
 import ContainerLastWorks from '../ContainerLastWorks/ContainerLastWorks'
 
 const ContainerWorkDetail = ({ match }) => {
+  console.log(match)
   const [ pageData, setPageData ] = useState({})
   const id = match?.params?.id
   useMemo(() => {

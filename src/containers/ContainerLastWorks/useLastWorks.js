@@ -1,4 +1,5 @@
 import { fetchDataListParams } from '../../axios/fetchData'
+import _ from 'lodash'
 
 const useLastWorks = async () => {
   const pageData = {}
@@ -8,8 +9,9 @@ const useLastWorks = async () => {
     }
   })
     .then(data => {
-      pageData.items = data.map(item => ({
+      pageData.items = _.map(data, item => ({
         ...item,
+        date: item.createdAt,
         img: item.banner
       }))
     })

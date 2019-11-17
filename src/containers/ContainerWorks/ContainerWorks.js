@@ -5,7 +5,7 @@ import Padding from '../../components/Padding/Padding'
 import { PAGE_WORKS } from '../../constants/ROUTES'
 import { fetchDataList } from '../../axios/fetchData'
 import _ from 'lodash'
-import { getDate, getStatusByCode } from '../../utils/getNameByValue'
+import { getStatusByCode } from '../../utils/getNameByValue'
 
 const header = {
   title: 'Все работы',
@@ -25,7 +25,7 @@ const ContainerWorks = () => {
           text: item.annotation,
           img: item.banner,
           subtitle: getStatusByCode(item.status),
-          date: getDate(item.date)
+          date: item.createdAt
         }))
         setItems(items)
         setLastItems(items.slice(0, 3))

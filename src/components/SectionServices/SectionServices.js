@@ -12,7 +12,9 @@ import ContainerContactsBlock from '../../containers/ContainerContactsBlock/Cont
 const SectionServices = ({ mainCards, cards }) => (
   <div className={css.container}>
     <Layout >
-      <Padding value={120} />
+      <Padding value={60} />
+      <h1>Услуги компании</h1>
+      <Padding value={60} />
       <div className={css.main} >
         <RowCards {...mainCards}>
           <CardCatalogImage />

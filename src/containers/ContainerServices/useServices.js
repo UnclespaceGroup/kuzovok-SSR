@@ -19,18 +19,18 @@ const useServices = () => {
 
   const bannerItems = [
     {
-      title: 'Что то',
+      title: 'Афигенная акция',
       text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eum ex excepturi illum laboriosam, laborum minima minus nobis nostrum placeat quasi quisquam repellendus, sed suscipit ut vel veniam veritatis voluptatum!',
       img: image
     },
     {
-      title: 'Что то',
-      text: 'Что то',
+      title: 'Афигенная акция',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eum ex excepturi illum laboriosam, ',
       img: image
     },
     {
-      title: 'Что то',
-      text: 'Что то',
+      title: 'Афигенная акция',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eum ex excepturi illum laboriosam, ',
       img: image
     }
   ]
