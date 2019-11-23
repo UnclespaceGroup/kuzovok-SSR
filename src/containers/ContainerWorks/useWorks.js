@@ -3,10 +3,11 @@ import { fetchDataList } from '../../axios/fetchData'
 import _ from 'lodash'
 import { getStatusByCode } from '../../utils/getNameByValue'
 import photo from 'static/images/Pokraska-3.jpg'
+import { PAGE_WORKS } from '../../constants/ROUTES'
 
 const useWorks = () => {
   const [ items, setItems ] = useState([])
-  const [ lastItems, setLastItems ] = useState([])
+  const [ lastItems ] = useState([])
 
   const header = {
     title: 'Все работы',
@@ -17,23 +18,23 @@ const useWorks = () => {
   const tabs = [
     {
       title: 'Последние',
-      to: '/'
+      to: PAGE_WORKS + 'last'
     },
     {
       title: 'Покраска',
-      to: '/'
+      to: PAGE_WORKS + 'pokraska'
     },
     {
       title: 'Кузовной ремонт',
-      to: '/'
+      to: PAGE_WORKS + 'kuzovnoy-remont'
     },
     {
       title: 'Покрытие актигравием',
-      to: '/'
+      to: PAGE_WORKS + 'antigraviy'
     },
     {
-      title: 'Фильтр',
-      to: '/'
+      title: 'Все работы',
+      to: PAGE_WORKS
     }
   ]
 
@@ -48,7 +49,6 @@ const useWorks = () => {
           date: item.createdAt
         }))
         setItems(items)
-        setLastItems(items.slice(0, 3))
       })
   }, [])
 

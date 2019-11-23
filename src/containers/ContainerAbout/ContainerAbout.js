@@ -17,12 +17,16 @@ import {
 import useAboutContacts from './useAboutContacts'
 import SectionAboutPhotos from '../../components/SectionAboutPhotos/SectionAboutPhotos'
 import useAboutPhotos from './useAboutPhotos'
+import SectionHowFind from '../../components/SectionHowFind/SectionHowFind'
+import SectionAboutVideo from '../../components/SectionAboutVideo/SectionAboutVideo'
+import useAboutVideos from './useAboutVideos'
 
 const ContainerAbout = () => {
   const { bannerData, items: itemsTabs } = useAbout()
   const { data: dataMain } = useAboutMain()
   const { data: dataContacts } = useAboutContacts()
   const { data: dataPhotos } = useAboutPhotos()
+  const { data: dataVideos } = useAboutVideos()
   return (
   <>
     <Banner {...bannerData} />
@@ -47,12 +51,12 @@ const ContainerAbout = () => {
       <Route
         exact
         path={PAGE_ABOUT_VIDEO}
-        render={() => <SectionAboutPhotos {...dataPhotos} />}
+        render={() => <SectionAboutVideo {...dataVideos} />}
       />
       <Route
         exact
         path={PAGE_ABOUT_MAP}
-        render={() => <SectionAboutPhotos {...dataPhotos} />}
+        render={() => <SectionHowFind />}
       />
     </Switch>
     <Padding value={120} />

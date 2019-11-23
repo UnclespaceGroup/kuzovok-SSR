@@ -8,13 +8,13 @@ import Padding from '../Padding/Padding'
 import CardCatalogSizeble from '../CardCatalogSizeble/CardCatalogSizeble'
 import RowSizeble from '../RowSizeble/RowSizeble'
 import ContainerContactsBlock from '../../containers/ContainerContactsBlock/ContainerContactsBlock'
+import SectionTitle from '../SectionTitle/SectionTitle'
 
 const SectionServices = ({ mainCards, cards }) => (
   <div className={css.container}>
     <Layout >
       <Padding value={60} />
-      <h1>Услуги компании</h1>
-      <Padding value={60} />
+      <SectionTitle title={'Основные услуги'} count={mainCards?.items?.length} />
       <div className={css.main} >
         <RowCards {...mainCards}>
           <CardCatalogImage />
@@ -22,7 +22,7 @@ const SectionServices = ({ mainCards, cards }) => (
       </div>
       <Padding value={120} />
       <div className={css.cards} >
-        <h2>Все услуги</h2>
+        <SectionTitle title={'Все услуги'} count={cards?.items?.length} />
         <RowSizeble {...cards}>
           <CardCatalogSizeble />
         </RowSizeble>

@@ -4,73 +4,8 @@ import css from './FooterDesktop.module.scss'
 import im from 'static/images/1517716721790_big_vlru.jpg'
 import Layout from '../Layout/Layout'
 import { Link } from 'react-router-dom'
-import { PAGE_ABOUT, PAGE_SERVICES, PAGE_WORKS } from '../../constants/ROUTES'
-
-const items = [
-  {
-    title: 'Услуги',
-    items: [
-      {
-        title: 'Покраска авто',
-        to: PAGE_SERVICES
-      },
-      {
-        title: 'Ремонт кузовов',
-        to: PAGE_SERVICES
-      },
-      {
-        title: 'Сварочные работы',
-        to: PAGE_SERVICES
-      },
-      {
-        title: 'Антикоррозийные обработки',
-        to: PAGE_SERVICES
-      },
-      {
-        title: 'Ремонт бамперов',
-        to: PAGE_SERVICES
-      }
-    ]
-  },
-  {
-    title: 'Форум',
-    items: [
-      {
-        title: 'Автомобили в ремонте',
-        to: PAGE_WORKS
-      },
-      {
-        title: 'Наши работы',
-        to: PAGE_WORKS
-      },
-      {
-        title: 'Отзывы',
-        to: PAGE_ABOUT
-      },
-      {
-        title: 'FAQ',
-        to: PAGE_ABOUT
-      }
-    ]
-  },
-  {
-    title: 'Контакты',
-    items: [
-      {
-        title: 'Как добраться',
-        to: PAGE_ABOUT
-      },
-      {
-        title: 'Мы на карте',
-        to: PAGE_ABOUT
-      },
-      {
-        title: 'О нас',
-        to: PAGE_ABOUT
-      }
-    ]
-  }
-]
+import { items } from 'constants/MAIN_MENU'
+import _ from 'lodash'
 
 const FooterDesktop = () => (
   <div className={css.container} style={{ backgroundImage: `url(${im})` }}>
@@ -79,10 +14,11 @@ const FooterDesktop = () => (
         {
           items.map((item, key) => (
             <div className={css.column} key={key}>
-              <div className={css.title}>{item.title}</div>
+              <Link className={css.title} to={item.title.to}>{item.title.text}</Link>
               <ul>
                 {
-                  item.items.map((it, k) => <li key={k}><Link to={it.to} className={css.item}>{it.title}</Link></li>)
+                  _.map(item?.items, (it, k) => <li key={k}><Link to={it.to} className={css.item}>{it.title}</Link>
+                  </li>)
                 }
               </ul>
             </div>

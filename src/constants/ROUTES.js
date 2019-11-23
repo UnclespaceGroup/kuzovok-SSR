@@ -1,13 +1,13 @@
 export const PAGE_HOME = '/'
 export const PAGE_SERVICES = '/services/'
 export const PAGE_WORKS = '/works/'
+export const PAGE_WORK_DETAIL = '/works-detail/'
 
 export const PAGE_REVIEWS = '/reviews/'
 export const PAGE_REVIEWS_TODAY = '/reviews/today'
 export const PAGE_REVIEWS_WEEK = '/reviews/week'
 export const PAGE_REVIEWS_MOUTH = '/reviews/mouth'
 
-export const PAGE_WORK_DETAIL = '/works/:id'
 export const PAGE_WORK_DETAIL_DAYS = '/works/:id/days'
 export const PAGE_ABOUT = '/about/'
 export const PAGE_ABOUT_CONTACTS = '/about/contacts'

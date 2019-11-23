@@ -37,12 +37,11 @@ const RoutesDesktop = () => (
       path={PAGE_REVIEWS}
     />
     <Route component={PageWorksDesktop} // Все работы
-      exact
       path={PAGE_WORKS}
     />
     <Route component={PageWorkDetailDesktop} // Деталка работы
       exact
-      path={PAGE_WORK_DETAIL}
+      path={PAGE_WORK_DETAIL + ':id'}
     />
     <Route component={PageAboutDesktop} // О нас
       path={PAGE_ABOUT}

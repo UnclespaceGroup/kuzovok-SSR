@@ -2,12 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from './Icon.module.scss'
 import * as IconMd from 'react-icons/md'
+import * as IconFa from 'react-icons/fa'
 
 const icons = {
   info: IconMd.MdInfo,
   phone: IconMd.MdPhone,
   address: IconMd.MdPlace,
   mail: IconMd.MdMail,
+  vk: IconFa.FaVk,
   count: ({ count }) => IconMd[`MdFilter${count.toString()}`]
 }
 

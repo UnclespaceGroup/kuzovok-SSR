@@ -28,19 +28,19 @@ const ContainerReviews = ({ location }) => {
     <Switch>
       <Route
         path={PAGE_REVIEWS_TODAY}
-        render={() => <SectionReviews items={items} />}
+        render={() => <SectionReviews title={'Работы за сегодня'} items={items} />}
       />
       <Route
         path={PAGE_REVIEWS_WEEK}
-        render={() => <SectionReviews items={items} />}
+        render={() => <SectionReviews title={'Работы за неделю'} items={items} />}
       />
       <Route
         path={PAGE_REVIEWS_MOUTH}
-        render={() => <SectionReviews items={items} />}
+        render={() => <SectionReviews title={'Работы за месяц'} items={items} />}
       />
       <Route
         path={PAGE_REVIEWS}
-        render={() => <SectionReviews items={items} />}
+        render={() => <SectionReviews title={'Все работы'} items={items} />}
       />
     </Switch>
     <ContainerLastWorks />

@@ -1,0 +1,12 @@
+.container {
+
+}
+
+.block {
+  padding: 10rem 0;
+  border-bottom: solid 1px darkgray;
+
+  &:first-child {
+    padding-top: 0rem;
+  }
+}

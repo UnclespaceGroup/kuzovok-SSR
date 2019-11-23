@@ -1,21 +1,31 @@
 import React from 'react'
+import _ from 'lodash'
 import Banner from '../../components/Banner/Banner'
-import SectionCardsRow from '../../components/SectionCardsRow/SectionCardsRow'
 import Padding from '../../components/Padding/Padding'
-import { PAGE_WORKS } from '../../constants/ROUTES'
 import useWorks from './useWorks'
 import SectionTabs from '../../components/SectionTabs/SectionTabs'
+import { Route, Switch } from 'react-router'
+import SectionWorks from '../../components/SectionWorks/SectionWorks'
 
 const ContainerWorks = () => {
-  const { items, lastItems, header, tabs } = useWorks()
+  const { header, tabs, ...works } = useWorks()
   return (
   <>
     <Banner {...header} />
     <SectionTabs items={tabs} />
     <Padding value={80} />
-    <SectionCardsRow title={'Последние'} items={lastItems} url={PAGE_WORKS} />
-    <Padding value={120} />
-    <SectionCardsRow count items={items} title={'Все работы'} url={PAGE_WORKS} />
+    <Switch>
+      {
+        _.map(tabs, (tab, key) => (
+          <Route
+            key={key}
+            path={tab.to}
+            render={() => <SectionWorks {...works} />}
+          />
+        ))
+      }
+    </Switch>
+    <Padding value={80} />
     <Padding value={120} />
   </>
   )

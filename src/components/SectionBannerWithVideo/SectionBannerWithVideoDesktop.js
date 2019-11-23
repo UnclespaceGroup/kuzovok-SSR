@@ -34,7 +34,13 @@ const SectionBannerWithVideoDesktop = ({ url, title, text, button }) => (
     <Layout>
       <div className={css.wrapper}>
         <div className={css.title}>{title}</div>
-        <div className={css.text}>{text}</div>
+        <div className={css.text}>
+          <ul>
+            <li>Наблюдайте за ходом ремонта вашего автомобиля на нашем сайте.</li>
+            <li>Гарантия на выполненные работы 1.5 года.</li>
+            <li>Оптимальное отношение цена - качество.</li>
+          </ul>
+        </div>
         <div className={css.button}>{button}</div>
       </div>
       <div className={css.buttons}>

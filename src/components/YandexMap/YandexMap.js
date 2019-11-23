@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './YandexMap.module.scss'
-import { Map, YMaps } from 'react-yandex-maps'
+import { Map, YMaps, ZoomControl, Placemark, GeolocationControl, RouteButton } from 'react-yandex-maps'
 
 const options = {
   suppressMapOpenBlock: true
 }
+
+const MAP_COORD = [61.681086561770314, 50.79997199999999]
 
 const YandexMap = ({ children }) => (
   <div className={css.container}>
@@ -18,11 +20,22 @@ const YandexMap = ({ children }) => (
         height={'100%'}
         options={options}
         state={{
-          center: [61.660366, 50.79911089999996],
-          zoom: 16
+          center: MAP_COORD,
+          zoom: 16,
+          behaviors: ["disable('scrollZoom')", 'drag']
         }}
         width={'100%'}
-      />
+      >
+        <Placemark
+          geometry={MAP_COORD}
+          options={{
+            preset: 'islands#blueHomeCircleIcon'
+          }}
+        />
+        <GeolocationControl options={{ float: 'left' }} />
+        <RouteButton options={{ float: 'right' }} />
+        <ZoomControl options={{ float: 'right' }} />
+      </Map>
     </YMaps>
   </div>
 )

@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import { mainServices, services } from '../../constants/servicesData'
-import image from 'static/images/im4.jpg'
 import { PAGE_SERVICES } from '../../constants/ROUTES'
 
 const useServices = () => {
@@ -19,19 +18,19 @@ const useServices = () => {
 
   const bannerItems = [
     {
-      title: 'Афигенная акция',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eum ex excepturi illum laboriosam, laborum minima minus nobis nostrum placeat quasi quisquam repellendus, sed suscipit ut vel veniam veritatis voluptatum!',
-      img: image
+      title: 'Кузовной ремонт без покраски',
+      text: '',
+      img: 'https://www.bmw-borishof.ru/upload/iblock/c39/c39af7edb07d59c97bba191edccb0d1d.jpg'
     },
     {
-      title: 'Афигенная акция',
+      title: 'Обработка кузова Раптором',
       text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eum ex excepturi illum laboriosam, ',
-      img: image
+      img: 'https://a.d-cd.net/e95a38as-960.jpg'
     },
     {
-      title: 'Афигенная акция',
+      title: 'Диагностика днища автомобиля',
       text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eum ex excepturi illum laboriosam, ',
-      img: image
+      img: 'https://marafet.pro/images/antikor-avto2.jpg'
     }
   ]
 

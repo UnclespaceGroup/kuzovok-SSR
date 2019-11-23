@@ -23,7 +23,7 @@
 .title {
   font-size: 6.4rem;
   line-height: 7.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   color: #FFFFFF;
 
   span {
@@ -37,6 +37,10 @@
   line-height: 2.8rem;
   color: #E5E5E5;
   margin-bottom: 6rem;
+
+  li {
+    margin: 1rem 0;
+  }
 }
 
 .video {

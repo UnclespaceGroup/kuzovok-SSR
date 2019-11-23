@@ -1,23 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionAboutMain.module.scss'
-import SectionTextWithImage from '../SectionTextWithImage/SectionTextWithImage'
 import SectionTextWithImageBlack from '../SectionTextWithImageBlack/SectionTextWithImageBlack'
 import Layout from '../Layout/Layout'
 import Wysiwyg from '../Wysiwyg/Wysiwyg'
 import Content from '../Content/Content'
+import Padding from '../Padding/Padding'
 
-const SectionAboutMain = ({ block1, block2 }) => (
+const SectionAboutMain = ({ block2 }) => (
   <div className={css.container}>
     <Layout >
       <Content width={'60%'}>
         <Wysiwyg>
-          <h2>Сервис кузовного ремонта Кузовок</h2>
-          <p>Veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetu</p>
+          <h2>Станция кузовного ремонта Кузовок</h2>
+          <p>Предлагаем все виды кузовных и покрасочных работ в городе Сыктывкар</p>
+          <ul>
+            <li>Покарска автомобиля</li>
+          </ul>
         </Wysiwyg>
       </Content>
     </Layout>
-    <SectionTextWithImage {...block1} />
+    <Padding value={40} />
     <SectionTextWithImageBlack {...block2} />
   </div>
 )

@@ -53,7 +53,7 @@ const useReviews = ({ location }) => {
       to: PAGE_REVIEWS_MOUTH
     },
     {
-      title: 'Выбрать период',
+      title: 'Все работы',
       to: PAGE_REVIEWS
     }
   ]

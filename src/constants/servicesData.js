@@ -1,7 +1,7 @@
 export const mainServices = [
   {
     id: 'pokraska-avto',
-    banner: 'https://md-gazeta.ru/wp-content/uploads/2017/11/Priora-e1511252012133.jpg',
+    banner: 'https://carpod.ru/sites/default/files/field/image/1/image_172.jpg',
     title: 'Покраска авто',
     annotation: '',
     to: '',
@@ -17,23 +17,23 @@ export const mainServices = [
     to: ''
   },
   {
-    id: '2',
-    banner: 'http://carsmotion.ru/wp-content/uploads/2016/07/antigraviy-v-ballonchikakh.jpg',
-    title: 'Антигравий',
+    id: 'swarichnye-raboty',
+    banner: 'http://autorem27.ru/images/svarochnye-raboty.jpg',
+    title: 'Сварочные работы',
     annotation: '',
     to: ''
   },
   {
-    id: '3',
-    banner: 'https://md-gazeta.ru/wp-content/uploads/2017/11/Priora-e1511252012133.jpg',
-    title: 'Покраска авто',
+    id: 'srochniy-remont',
+    banner: 'https://avto-diagnostika24.ru/wp-content/uploads/2018/08/2-1.jpg',
+    title: 'Срочный ремонт',
     annotation: '',
     to: ''
   },
   {
-    id: '4',
-    banner: 'http://ooobelcolor.by/upload/resize_cache/iblock/b7e/715_715_1/b7eaf4d0b811aead9c69a3625dc14fdb.jpg',
-    title: 'Кузовной ремонт',
+    id: 'zapchasti',
+    banner: 'http://volinauto.ru/wp-content/uploads/2014/01/235.jpg',
+    title: 'Продажа кузовных деталей',
     annotation: '',
     to: ''
   },

@@ -5,10 +5,10 @@ export const menuItems = [
     title: 'Услуги', href: PAGE_SERVICES
   },
   {
-    title: 'Работы за сегодня', href: PAGE_REVIEWS
+    title: 'Работы за сегодня', href: PAGE_REVIEWS + 'today'
   },
   {
-    title: 'Машины в ремонте', href: PAGE_WORKS
+    title: 'Машины в ремонте', href: PAGE_WORKS + 'last'
   },
   {
     title: 'Контакты', href: PAGE_ABOUT

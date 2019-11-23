@@ -6,7 +6,7 @@ import Layout from '../Layout/Layout'
 import _ from 'lodash'
 import cn from 'classnames'
 
-const SectionGallery = ({ photos = [] }) => {
+const SectionGallery = ({ photos = [], className }) => {
   const [currentImage, setCurrentImage] = useState(0)
   const [viewerIsOpen, setViewerIsOpen] = useState(false)
 
@@ -21,7 +21,7 @@ const SectionGallery = ({ photos = [] }) => {
   }
 
   return (
-    <div className={css.container}>
+    <div className={cn(css.container, className)}>
       <Layout className={css.row}>
         {
           _.map(photos, (item, key) => (
@@ -50,7 +50,8 @@ const SectionGallery = ({ photos = [] }) => {
   )
 }
 SectionGallery.propTypes = {
-  photos: PropTypes.array
+  photos: PropTypes.array,
+  className: PropTypes.string
 }
 
 export default React.memo(SectionGallery)

@@ -6,10 +6,11 @@ import Layout from '../Layout/Layout'
 import CardWorkItem from '../CardWorkItem/CardWorkItem'
 import Padding from '../Padding/Padding'
 import { PAGE_WORKS } from '../../constants/ROUTES'
+import SectionTitle from '../SectionTitle/SectionTitle'
 
 const SectionCardsRow = ({ items, title, count, url = PAGE_WORKS }) => (
   <Layout className={css.container}>
-    <h2>{title}<span>{count && items.length}</span></h2>
+    <SectionTitle title={title} count={items.length} />
     <Padding value={40} />
     <div className={css.row}>
       {
@@ -18,6 +19,7 @@ const SectionCardsRow = ({ items, title, count, url = PAGE_WORKS }) => (
         ))
       }
     </div>
+    <Padding value={120} />
   </Layout>
 )
 SectionCardsRow.propTypes = {
