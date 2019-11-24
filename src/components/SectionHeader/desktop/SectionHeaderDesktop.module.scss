@@ -1,0 +1,68 @@
+.wrapper {
+  width: 100%;
+  padding: 0 4rem 0 3rem;
+  background-color: #282828;
+  border-bottom: solid 1px #4d4d4d;
+
+  a:hover {
+    color: #c37306;
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+}
+.block {
+  display: flex;
+  align-items: center;
+
+  .item {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #E5E5E5;
+    margin: 0 2rem;
+  }
+  .phone {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #E88D06;
+  }
+}
+
+.logo {
+  font-weight: 400;
+  font-size: 2.8rem;
+  color: #E5E5E5;
+  margin: 0 2rem;
+
+  span {
+    color: #767676;
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+}
+
+.burger {
+  cursor: pointer;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("../../../static/icons/menu.svg") no-repeat center;
+  background-size: contain;
+  transition: all 200ms ease-in;
+
+  &__open {
+    composes: burger;
+    background-image: url("../../../static/icons/close.svg");
+  }
+}
+
+.search {
+  cursor: pointer;
+  transition: all 200ms ease-in;
+  &:hover {
+    color: #E88D06!important;
+  }
+}

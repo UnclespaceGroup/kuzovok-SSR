@@ -2,11 +2,11 @@ import React, { useState, useEffect, useMemo } from 'react'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
 import css from './ContainerMainMenuDesktop.module.scss'
-import SectionHeaderDesktop from '../../components/SectionHeader/SectionHeaderDesktop'
-import SectionOpenMainMenuDesktop from '../../components/SectionOpenMainMenu/SectionOpenMainMenuDesktop'
+import SectionHeaderDesktop from '../../../components/SectionHeader/desktop/SectionHeaderDesktop'
+import SectionOpenMainMenuDesktop from '../../../components/SectionOpenMainMenu/desktop/SectionOpenMainMenuDesktop'
 import Collapse from 'react-collapse'
 import { withRouter } from 'react-router'
-import { menuItems } from './data'
+import { menuItems } from '../data'
 
 const ContainerMainMenuDesktop = ({ location }) => {
   const [ open, setOpen ] = useState(false)

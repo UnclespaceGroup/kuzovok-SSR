@@ -4,7 +4,7 @@ import cn from 'classnames'
 import css from './SectionHeaderDesktop.module.scss'
 import { Link } from 'react-router-dom'
 import { MdSearch, MdMenu, MdClose } from 'react-icons/md'
-import { MAIN_PHONE } from '../../constants/contacts'
+import { MAIN_PHONE } from '../../../constants/contacts'
 
 const SectionHeaderDesktop = ({ setOpen, open, menuItems = [] }) => (
   <div className={css.wrapper}>

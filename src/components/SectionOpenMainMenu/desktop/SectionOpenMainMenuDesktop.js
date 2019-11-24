@@ -2,7 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
 import css from './SectionOpenMainMenuDesktop.module.scss'
-import Layout from '../Layout/Layout'
+import Layout from '../../Layout/Layout'
 import { Link } from 'react-router-dom'
 import { items } from 'constants/MAIN_MENU'
 
