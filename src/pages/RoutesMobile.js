@@ -10,7 +10,6 @@ import {
   PAGE_WORK_DETAIL,
   PAGE_WORKS
 } from '../constants/ROUTES'
-import PageServiceDesktop from './PageService/desktop/PageServiceDesktop'
 import PageServiceDetailDesktop from './PageServiceDetail/desktop/PageServiceDetailDesktop'
 import PageReviewsDesktop from './PageReviews/desktop/PageReviewsDesktop'
 import PageWorksDesktop from './PageWorks/desktop/PageWorksDesktop'
@@ -19,6 +18,7 @@ import PageAboutDesktop from './PageAbout/desktop/PageAboutDesktop'
 import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
 import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
 import PageHomeMobile from './PageHome/mobile/PageHomeMobile'
+import PageServiceMobile from './PageService/mobile/PageServiceMobile'
 // import { Switch } from 'react-router-dom'
 
 const RoutesMobile = () => (
@@ -27,7 +27,7 @@ const RoutesMobile = () => (
       exact
       path={PAGE_HOME}
     />
-    <Route component={PageServiceDesktop} // Услуги - разводящая
+    <Route component={PageServiceMobile} // Услуги - разводящая
       exact
       path={PAGE_SERVICES}
     />

@@ -1,9 +1,9 @@
 import React from 'react'
-import SectionService from '../../components/SectionServices/SectionServices'
-import useServices from './useServices'
-import { PAGE_SERVICES } from '../../constants/ROUTES'
-import SectionServicesSliderBanner from '../../components/SectionServicesSliderBanner/SectionServicesSliderBanner'
-import Padding from '../../components/Padding/Padding'
+import SectionService from '../../../components/SectionServices/desktop/SectionServices'
+import useServices from '../useServices'
+import { PAGE_SERVICES } from '../../../constants/ROUTES'
+import SectionServicesSliderBanner from '../../../components/SectionServicesSliderBanner/desktop/SectionServicesSliderBanner'
+import Padding from '../../../components/Padding/Padding'
 
 const ContainerServices = () => {
   const { mainCards = [], cards = [], bannerItems } = useServices()

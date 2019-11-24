@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 import css from './CardCatalogImage.module.scss'
 import { Link } from 'react-router-dom'
-import BgImage from '../BgImage/BgImage'
+import BgImage from '../../BgImage/BgImage'
 
 const CardCatalogImage = ({ banner, title, annotation, to, className }) => (
   <Link to={to} className={cn(css.container, className)}>

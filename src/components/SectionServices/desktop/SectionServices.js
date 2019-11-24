@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionServices.module.scss'
-import RowCards from '../RowCards/RowCards'
-import CardCatalogImage from '../CardCatalogImage/CardCatalogImage'
-import Layout from '../Layout/Layout'
-import Padding from '../Padding/Padding'
-import CardCatalogSizeble from '../CardCatalogSizeble/CardCatalogSizeble'
-import RowSizeble from '../RowSizeble/RowSizeble'
-import ContainerContactsBlock from '../../containers/ContainerContactsBlock/desktop/ContainerContactsBlock'
-import SectionTitle from '../SectionTitle/desktop/SectionTitle'
+import RowCards from '../../RowCards/desktop/RowCards'
+import CardCatalogImage from '../../CardCatalogImage/desktop/CardCatalogImage'
+import Layout from '../../Layout/Layout'
+import Padding from '../../Padding/Padding'
+import CardCatalogSizeble from '../../CardCatalogSizeble/desktop/CardCatalogSizeble'
+import RowSizeble from '../../RowSizeble/RowSizeble'
+import ContainerContactsBlock from '../../../containers/ContainerContactsBlock/desktop/ContainerContactsBlock'
+import SectionTitle from '../../SectionTitle/desktop/SectionTitle'
 
 const SectionServices = ({ mainCards, cards }) => (
   <div className={css.container}>

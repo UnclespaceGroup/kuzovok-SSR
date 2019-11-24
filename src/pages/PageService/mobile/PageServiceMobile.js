@@ -1,10 +1,10 @@
-// packages
 import React from 'react'
+import ContainerServicesMobile from '../../../containers/ContainerServices/mobile/ContainerServicesMobile'
 
 const PageServiceMobile = () => (
-  <div>
-    home
-  </div>
+  <>
+    <ContainerServicesMobile />
+  </>
 )
 
-export default React.memo(PageServiceMobile)
+export default PageServiceMobile
