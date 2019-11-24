@@ -31,7 +31,7 @@ export const fetchDataList = async (url) => {
   return data
 }
 
-export const fetchDataListParams = async (url, params = {}) => {
+export const fetchDataListParams = async (url, params = { params: {} }) => {
   let data = []
   await axios.post(url, params)
     .then(res => {

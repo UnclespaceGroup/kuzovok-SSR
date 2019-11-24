@@ -1,34 +1,31 @@
 import React from 'react'
-import _ from 'lodash'
+import PropTypes from 'prop-types'
 import Banner from '../../components/Banner/Banner'
 import Padding from '../../components/Padding/Padding'
 import useWorks from './useWorks'
 import SectionTabs from '../../components/SectionTabs/SectionTabs'
-import { Route, Switch } from 'react-router'
+import { withRouter } from 'react-router'
 import SectionWorks from '../../components/SectionWorks/SectionWorks'
+import { compose } from 'redux'
 
-const ContainerWorks = () => {
-  const { header, tabs, ...works } = useWorks()
+const ContainerWorks = ({ match }) => {
+  const { header, tabs, pending, ...works } = useWorks({ ...match })
   return (
   <>
     <Banner {...header} />
-    <SectionTabs items={tabs} />
+    <SectionTabs items={tabs} pending={pending} />
     <Padding value={80} />
-    <Switch>
-      {
-        _.map(tabs, (tab, key) => (
-          <Route
-            key={key}
-            path={tab.to}
-            render={() => <SectionWorks {...works} />}
-          />
-        ))
-      }
-    </Switch>
+    <SectionWorks {...works} />
     <Padding value={80} />
     <Padding value={120} />
   </>
   )
 }
+ContainerWorks.propTypes = {
+  match: PropTypes.object
+}
 
-export default React.memo(ContainerWorks)
+export default compose(
+  withRouter,
+  React.memo
+)(ContainerWorks)

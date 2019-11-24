@@ -8,8 +8,10 @@ import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK
 
 const useReviews = ({ location }) => {
   const [ items, setItems ] = useState([])
+  const [ pending, setPending ] = useState(false)
   useMemo(() => {
     const reportsParams = getPerionParams(location)
+    setPending(true)
     fetchDataListParams('/report',
       {
         params: {
@@ -21,6 +23,9 @@ const useReviews = ({ location }) => {
           ...item,
           galleryData: { photos: item.images && JSON.parse(item.images) }
         })))
+        setPending(false)
+      }).catch(e => {
+        setPending(false)
       })
   }, [location])
 
@@ -61,7 +66,8 @@ const useReviews = ({ location }) => {
   return {
     items,
     headerData,
-    tabs
+    tabs,
+    pending
   }
 }
 

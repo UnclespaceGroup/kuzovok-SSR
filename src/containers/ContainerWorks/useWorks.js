@@ -1,13 +1,48 @@
 import { useMemo, useState } from 'react'
-import { fetchDataList } from '../../axios/fetchData'
 import _ from 'lodash'
-import { getStatusByCode } from '../../utils/getNameByValue'
+import { getStatusByCode } from 'utils/getNameByValue'
 import photo from 'static/images/Pokraska-3.jpg'
-import { PAGE_WORKS } from '../../constants/ROUTES'
+import { PAGE_WORKS } from 'constants/ROUTES'
+import { fetchDataListParams } from '../../axios/fetchData'
 
-const useWorks = () => {
+const slugs = [
+  {
+    id: 0,
+    slug: 'last',
+    title: 'Последние',
+    params: { limit: 5 }
+  },
+  {
+    id: 1,
+    slug: 'svarochnye-raboty',
+    title: 'Сварочные работы',
+    params: { where: { type: 1 } }
+  },
+  {
+    id: 2,
+    slug: 'pokraska',
+    title: 'Покраска',
+    params: { where: { type: 2 } }
+  },
+  {
+    id: 3,
+    slug: 'kuzovnoy-remont',
+    title: 'Кузовной ремонт',
+    params: { where: { type: 3 } }
+  },
+  {
+    id: 4,
+    slug: 'obrabotka-porogov-i-dnisha',
+    title: 'Обработка порогов',
+    params: { where: { type: 4 } }
+  }
+]
+
+const useWorks = ({ params = {} }) => {
+  const { slug } = params
   const [ items, setItems ] = useState([])
   const [ lastItems ] = useState([])
+  const [ pending, setPending ] = useState(false)
 
   const header = {
     title: 'Все работы',
@@ -15,31 +50,25 @@ const useWorks = () => {
     img: photo
   }
 
-  const tabs = [
-    {
-      title: 'Последние',
-      to: PAGE_WORKS + 'last'
-    },
-    {
-      title: 'Покраска',
-      to: PAGE_WORKS + 'pokraska'
-    },
-    {
-      title: 'Кузовной ремонт',
-      to: PAGE_WORKS + 'kuzovnoy-remont'
-    },
-    {
-      title: 'Покрытие актигравием',
-      to: PAGE_WORKS + 'antigraviy'
-    },
-    {
+  const typeTabs = _.map(slugs, item => ({
+    title: item.title,
+    to: PAGE_WORKS + item.slug
+  }))
+
+  const tabs = [].concat(
+    typeTabs,
+    [{
       title: 'Все работы',
-      to: PAGE_WORKS
-    }
-  ]
+      to: PAGE_WORKS + 'all'
+    }]
+  )
 
   useMemo(() => {
-    fetchDataList(`/work/`)
+    const typeId = slugs.find(item => item.slug === slug)
+    setPending(true)
+    fetchDataListParams(`/work/`, typeId && {
+      params: { ...typeId.params }
+    })
       .then(data => {
         const items = _.map(data, item => ({
           ...item,
@@ -48,15 +77,20 @@ const useWorks = () => {
           subtitle: getStatusByCode(item.status),
           date: item.createdAt
         }))
+        setPending(false)
         setItems(items)
       })
-  }, [])
+      .catch(e => {
+        setPending(false)
+      })
+  }, [params])
 
   return {
     header,
     items,
     lastItems,
-    tabs
+    tabs,
+    pending
   }
 }
 

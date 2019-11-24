@@ -2,14 +2,21 @@
   background-color: #272727;
 }
 
+.pending {
+  pointer-events: none;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .item {
   font-size: 1.6rem;
   color: white;
+  height: 100%;
   padding: 2rem 4rem;
 
   &__active {

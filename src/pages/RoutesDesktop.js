@@ -15,7 +15,7 @@ import PageWorksDesktop from './PageWorks/desktop/PageWorksDesktop'
 import PageWorkDetailDesktop from './PageWorkDetail/desktop/PageWorkDetailDesktop'
 import PageAboutDesktop from './PageAbout/desktop/PageAboutDesktop'
 import PageServiceDetailDesktop from './PageServiceDetail/desktop/PageServiceDetailDesktop'
-import PageWorksCurrentDesktop from './PageWorksCurrent/desktop/PageWorksCurrentDesktop'
+import PageReviewsDesktop from './PageReviews/desktop/PageReviewsDesktop'
 import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
 import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
 
@@ -33,11 +33,11 @@ const RoutesDesktop = () => (
       exact
       path={PAGE_SERVICES + ':id'}
     />
-    <Route component={PageWorksCurrentDesktop} // Текущие работы
+    <Route component={PageReviewsDesktop} // Текущие работы
       path={PAGE_REVIEWS}
     />
     <Route component={PageWorksDesktop} // Все работы
-      path={PAGE_WORKS}
+      path={PAGE_WORKS + ':slug'}
     />
     <Route component={PageWorkDetailDesktop} // Деталка работы
       exact

@@ -11,7 +11,7 @@ import { compose } from 'redux'
 import SectionReviews from '../../components/SectionReviews/SectionReviews'
 
 const ContainerReviews = ({ location }) => {
-  const { items = [], headerData, tabs } = useReviews({ location })
+  const { items = [], headerData, tabs, pending } = useReviews({ location })
 
   return (
   <>
@@ -24,7 +24,7 @@ const ContainerReviews = ({ location }) => {
         />
       }
     />
-    <SectionTabs items={tabs} />
+    <SectionTabs items={tabs} pending={pending} />
     <Switch>
       <Route
         path={PAGE_REVIEWS_TODAY}

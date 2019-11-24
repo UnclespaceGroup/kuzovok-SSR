@@ -24,7 +24,7 @@ const SectionGalleryVertical = ({ photos = [], className }) => {
 
   return (
     <div className={cn(css.container, className)}>
-      <div className={css.images}>
+      <div>
         {
           _.map(viewAll ? photos : photos.slice(0, 2), (item, key) => (
             <div key={key} onClick={() => openLightbox(key)} className={css.image} style={{ backgroundImage: `url(${item})` }} >
