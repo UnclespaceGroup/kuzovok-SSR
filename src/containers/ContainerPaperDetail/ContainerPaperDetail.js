@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionTopBanner from '../../components/SectionTopBanner/SectionTopBanner'
+import SectionTopBanner from '../../components/SectionTopBanner/desktop/SectionTopBanner'
 import img from '../../static/images/allfons.jpg'
 import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
 import Layout from '../../components/Layout/Layout'

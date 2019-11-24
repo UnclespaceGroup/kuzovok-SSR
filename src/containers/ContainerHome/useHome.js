@@ -1,5 +1,6 @@
 import { mainServices } from '../../constants/servicesData'
 import { PAGE_SERVICES } from '../../constants/ROUTES'
+import React from 'react'
 
 const useHome = () => {
   const services = mainServices.map(item => ({
@@ -26,9 +27,20 @@ const useHome = () => {
     )
   }
 
+  const mainBanner = {
+    title: 'Кузовок',
+    img: 'https://avatars.mds.yandex.net/get-altay/239474/2a0000015debac50310cc28649dbbbd50215/XXL',
+    text: <ul>
+      <li>Наблюдайте за ходом ремонта вашего автомобиля на нашем сайте.</li>
+      <li>Гарантия на выполненные работы 1.5 года.</li>
+      <li>Оптимальное отношение цена - качество.</li>
+    </ul>
+  }
+
   return {
     services,
-    bigBlockServices
+    bigBlockServices,
+    mainBanner
   }
 }
 export default useHome

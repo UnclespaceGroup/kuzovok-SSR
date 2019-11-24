@@ -1,18 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import css from './SectionTopBanner.module.scss'
-import BgImage from '../BgImage/BgImage'
+import css from './SectionTopBannerMobile.module.scss'
+import BgImage from '../../BgImage/BgImage'
 import { Link } from 'react-router-dom'
 import { MdArrowBack } from 'react-icons/md'
-import TagsBlock from '../TagsBlock/TagsBlock'
-import List from '../List/List'
-import TextIcon from '../TextIcon/TextIcon'
-import ControllerSideMenu from '../../containers/ControllerSideMenu/ControllerSideMenu'
+import TagsBlock from '../../TagsBlock/TagsBlock'
+import List from '../../List/List'
+import TextIcon from '../../TextIcon/TextIcon'
+import LayoutMobile from '../../Layout/LayoutMobile'
 
-const SectionTopBanner = ({ img, title, text, children, sideBlock, backLink, status, tags, icons, addIcon }) => (
+const SectionTopBannerMobile = ({ img, title, text, children, backLink, status, tags, icons, addIcon }) => (
   <BgImage img={img}>
-    <div className={css.container}>
-      <div className={css.side}>{sideBlock}</div>
+    <LayoutMobile className={css.container}>
       <div className={css.content}>
         { backLink && <Link className={css.backLink} to={backLink}><MdArrowBack /></Link> }
         { tags && <TagsBlock tags={tags} />}
@@ -24,14 +23,13 @@ const SectionTopBanner = ({ img, title, text, children, sideBlock, backLink, sta
         {addIcon && addIcon}
         <div className={css.children}>{children}</div>
       </div>
-    </div>
+    </LayoutMobile>
   </BgImage>
 )
-SectionTopBanner.propTypes = {
+SectionTopBannerMobile.propTypes = {
   children: PropTypes.node,
   title: PropTypes.node,
   text: PropTypes.node,
-  sideBlock: PropTypes.node,
   img: PropTypes.node,
   backLink: PropTypes.string,
   status: PropTypes.node,
@@ -39,8 +37,5 @@ SectionTopBanner.propTypes = {
   icons: PropTypes.array,
   addIcon: PropTypes.node
 }
-SectionTopBanner.defaultProps = {
-  sideBlock: <ControllerSideMenu />
-}
 
-export default React.memo(SectionTopBanner)
+export default React.memo(SectionTopBannerMobile)

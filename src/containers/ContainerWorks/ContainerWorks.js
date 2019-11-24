@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Banner from '../../components/Banner/Banner'
+import Banner from '../../components/Banner/desktop/Banner'
 import Padding from '../../components/Padding/Padding'
 import useWorks from './useWorks'
 import SectionTabs from '../../components/SectionTabs/SectionTabs'

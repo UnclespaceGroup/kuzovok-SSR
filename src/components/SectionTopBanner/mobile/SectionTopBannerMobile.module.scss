@@ -1,0 +1,73 @@
+.container {
+  position: relative;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+
+  li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+}
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.content {
+  padding-top: 50vh;
+  color: white;
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+
+}
+
+.title {
+  font-size: 4.8rem;
+  color: white;
+  font-weight: normal;
+  margin-bottom: 2.4rem;
+
+  span {
+    font-size: 2.6rem;
+    margin-left: 2rem;
+    color: #c37306;
+  }
+}
+
+.text {
+  color: white;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  margin-bottom: 2.4rem;
+
+  p {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+.backLink {
+  display: block;
+  position: absolute;
+  top: 10vh;
+  color: white;
+
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  &:hover {
+    color: #c37306;
+  }
+}
+
+.children {
+
+
+}

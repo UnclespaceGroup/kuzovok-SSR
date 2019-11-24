@@ -6,11 +6,13 @@ import SectionMainChooseAutoTypeMobile from 'components/SectionMainChooseAutoTyp
 import SectionMainServiceCatalogMobile from 'components/SectionMainServiceCatalog/mobile/SectionMainServiceCatalogMobile'
 import ContainerLastWorksMobile from '../../ContainerLastWorks/mobile/ContainerLastWorksMobile'
 import ContainerContactsBlockMobile from '../../ContainerContactsBlock/mobile/ContainerContactsBlockMobile'
+import SectionTopBannerMobile from '../../../components/SectionTopBanner/mobile/SectionTopBannerMobile'
 
 const ContainerHomeMobile = () => {
-  const { services, bigBlockServices } = useHome()
+  const { services, bigBlockServices, mainBanner } = useHome()
   return (
     <div className={css.container}>
+      <SectionTopBannerMobile {...mainBanner} />
       <Padding value={80} />
       <SectionMainChooseAutoTypeMobile {...bigBlockServices} />
       <Padding value={80} />

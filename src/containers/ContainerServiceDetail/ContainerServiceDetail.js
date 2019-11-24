@@ -5,7 +5,7 @@ import SectionTextWithImage from '../../components/SectionTextWithImage/SectionT
 import Padding from '../../components/Padding/Padding'
 import SectionTextWithImageBlack from '../../components/SectionTextWithImageBlack/SectionTextWithImageBlack'
 import SectionContacts from '../../components/SectionContacts/desktop/SectionContacts'
-import SectionTopBanner from '../../components/SectionTopBanner/SectionTopBanner'
+import SectionTopBanner from '../../components/SectionTopBanner/desktop/SectionTopBanner'
 import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
 import useServiceDetail from './useServiceDetail'
 import { compose } from 'redux'
