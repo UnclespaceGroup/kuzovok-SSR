@@ -1,15 +1,15 @@
 import React from 'react'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
-import css from './SectionContacts.module.scss'
-import Layout from '../Layout/Layout'
+import css from './SectionContactsMobile.module.scss'
 import { MdMail } from 'react-icons/md'
 import { FaVk, FaInstagram } from 'react-icons/fa'
-import YandexMap from '../YandexMap/YandexMap'
+import YandexMap from '../../YandexMap/YandexMap'
+import LayoutMobile from '../../Layout/LayoutMobile'
 
-const SectionContacts = ({ items }) => (
+const SectionContactsMobile = ({ items }) => (
   <div className={css.container}>
-    <Layout className={css.wrapper}>
+    <LayoutMobile >
       <div className={css.map} >
         <YandexMap />
       </div>
@@ -32,11 +32,11 @@ const SectionContacts = ({ items }) => (
           </li>
         </ul>
       </div>
-    </Layout>
+    </LayoutMobile>
   </div>
 )
-SectionContacts.propTypes = {
+SectionContactsMobile.propTypes = {
   items: PropTypes.array
 }
 
-export default React.memo(SectionContacts)
+export default React.memo(SectionContactsMobile)

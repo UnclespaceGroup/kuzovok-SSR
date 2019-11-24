@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import css from './SectionAboutVideo.module.scss'
-import SectionTitle from '../SectionTitle/SectionTitle'
+import SectionTitle from '../SectionTitle/desktop/SectionTitle'
 import YouTube from '../YouTube/YouTubeComponent'
 import Layout from '../Layout/Layout'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import ContainerHome from '../../../containers/ContainerHome/ContainerHome'
+import ContainerHome from '../../../containers/ContainerHome/desktop/ContainerHome'
 
 const PageHomeDesktop = () => (
   <>

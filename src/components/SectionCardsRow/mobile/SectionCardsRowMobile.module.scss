@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  overflow: auto;
+}
+
+.row {
+  overflow: auto;
+  display: flex;
+  margin: 0 -2rem;
+  padding: 0 2rem;
+}
+
+.col {
+  width: 80vw;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}

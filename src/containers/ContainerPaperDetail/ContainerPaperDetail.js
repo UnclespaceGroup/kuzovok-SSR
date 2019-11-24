@@ -6,7 +6,7 @@ import Layout from '../../components/Layout/Layout'
 import Padding from '../../components/Padding/Padding'
 import { MdVideoLibrary, MdAccessTime } from 'react-icons/md'
 import TextIcon from '../../components/TextIcon/TextIcon'
-import SectionContacts from '../../components/SectionContacts/SectionContacts'
+import SectionContacts from '../../components/SectionContacts/desktop/SectionContacts'
 import SectionPaperDetail from '../../components/SectionPaperDetail/SectionPaperDetail'
 
 const img1 = 'https://lh3.googleusercontent.com/nR1gVDct70WoCxOJ-l6SiH32NAXvbbWyBtv-8BDPeQp66RDtBNWtsYy1B5todVxMpOY4iJ4kCN3m-eISZi4egRKRSEoR5sEU4gxiXdauwxc9kKEaXUZFplYxRlUWLy9XI7HXd61exbl7RxleFpC7O0aQk8AoqHTlMB_TfGSWTh13Ttb89MfMQoCvpLAQSzOLYrojcSJqa2G9vkMsgoZFBKqmLs6ID5tkm3VrTkn5Kbepp9PRpwBdjserw_6Nn_JaN5yrocwaJ-xRO2ugeCTLh816Z7QwbDlJH5KBVqgMgIvtq7mlWhcMV6bas6Ic4RwiVMCDU1GGnoiN2aet7kc7yka100LV4P2eVJnsZhEztSxlgvvoK7s05WDl5x2kX9ZpjkPl6AcjR3vA3nmWyqTYtnepNu5gvCDIQcv31flKELjsF443oVe_fbu35X4LUqXECVSw8I7pki-EsSSwpjiTpJdwiu4iPN6xZ_hMLAxYgEHJF5EKruvfnEkRpmcbjrN8zARo0TGbPqn5WoD6x37WgCi1FIDEesNEeRa1Sv7bYvUBVA1wgFvgxuQF33J1WID7kzYwlC7HusP2RR4zvAtWYL-cOgpPIymkE_JIF1aEoauOoei4SbBG_f1tOpStm4KDuUj-kC28A_L82oUIaHZa7us74JInWJFz1noRmxAkCPNn0zgTkzLYUUANUTfX4lpDuPdPrmfaYSRVx2H8OsalpLa2qUKOTnek9mcZuUiGnYhKzGqE=w1292-h969-no'

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionWorks.module.scss'
-import SectionCardsRow from '../SectionCardsRow/SectionCardsRow'
+import SectionCardsRow from '../SectionCardsRow/desktop/SectionCardsRow'
 import { PAGE_WORK_DETAIL } from '../../constants/ROUTES'
 
 const SectionWorks = ({ lastItems, items }) => (

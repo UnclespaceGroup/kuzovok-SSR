@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import css from './SectionMainServiceCatalogDesktop.module.scss'
-import Layout from '../Layout/Layout'
+import css from './SectionMainServiceCatalogMobile.module.scss'
 import { Link } from 'react-router-dom'
+import LayoutMobile from '../../Layout/LayoutMobile'
+import SliderMobile from '../../Slider/mobile/SliderMobile'
+import { FaArrowAltCircleRight } from 'react-icons/fa'
+import BgImage from '../../BgImage/BgImage'
 
 const text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 // const items = [
@@ -38,34 +41,38 @@ const text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei
 //   }
 // ]
 
-const SectionMainServiceCatalogDesktop = ({ items = [] }) => {
-  const [ activeSlide, setActiveSlide ] = useState(0)
+const SectionMainServiceCatalogMobile = ({ items = [] }) => {
   return (
-    <div className={css.container} style={{ backgroundImage: `url(${items[activeSlide]?.img})` }}>
-      <Layout className={css.wrapper}>
+    <div className={css.container} >
+      <LayoutMobile className={css.wrapper}>
         <div className={css.content}>
           <div className={css.title} >Каталог наших услуг</div>
           <div className={css.text}>{text}</div>
         </div>
-        <div className={css.items}>
+        <SliderMobile className={css.slider} >
           {
             items.map((item, key) => (
-              <Link
-                to={item.to}
-                key={key}
-                onMouseEnter={() => setActiveSlide(key)}
-                className={css.item}
-              >{item.title}
-              </Link>
+              <div key={key} >
+                <BgImage img={item.img}>
+                  <div
+                    className={css.item}
+                  >
+                    <div>{item.title}</div>
+                    <Link to={item.to} className={css.link}>
+                      <FaArrowAltCircleRight size={'6.4rem'} />
+                    </Link>
+                  </div>
+                </BgImage>
+              </div>
             ))
           }
-        </div>
-      </Layout>
+        </SliderMobile>
+      </LayoutMobile>
     </div>
   )
 }
-SectionMainServiceCatalogDesktop.propTypes = {
+SectionMainServiceCatalogMobile.propTypes = {
   items: PropTypes.array
 }
 
-export default React.memo(SectionMainServiceCatalogDesktop)
+export default React.memo(SectionMainServiceCatalogMobile)

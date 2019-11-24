@@ -1,11 +1,11 @@
 import React from 'react'
-import SectionContacts from '../../components/SectionContacts/SectionContacts'
 import { MdAccessTime, MdLocationOn, MdPhone } from 'react-icons/md'
-import { MAIN_PHONE } from '../../constants/contacts'
+import { MAIN_PHONE } from '../../../constants/contacts'
+import SectionContactsMobile from '../../../components/SectionContacts/mobile/SectionContactsMobile'
 
-const ContainerContactsBlock = () => {
+const ContainerContactsBlockMobile = () => {
   return (
-    <SectionContacts
+    <SectionContactsMobile
       items={[
         {
           icon: <MdLocationOn size={'2rem'} />,
@@ -24,4 +24,4 @@ const ContainerContactsBlock = () => {
   )
 }
 
-export default React.memo(ContainerContactsBlock)
+export default React.memo(ContainerContactsBlockMobile)

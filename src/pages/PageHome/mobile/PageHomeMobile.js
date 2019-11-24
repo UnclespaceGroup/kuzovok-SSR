@@ -1,10 +1,10 @@
-// packages
 import React from 'react'
+import ContainerHomeMobile from '../../../containers/ContainerHome/mobile/ContainerHomeMobile'
 
 const PageHomeMobile = () => (
-  <div>
-    home
-  </div>
+  <>
+    <ContainerHomeMobile />
+  </>
 )
 
 export default React.memo(PageHomeMobile)

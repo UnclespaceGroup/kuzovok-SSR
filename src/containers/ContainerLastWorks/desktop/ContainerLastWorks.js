@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react'
-import SectionCardsRow from '../../components/SectionCardsRow/SectionCardsRow'
-import useLastWorks from './useLastWorks'
-import BgColor from '../../components/BgColor/BgColor'
-import Padding from '../../components/Padding/Padding'
+import SectionCardsRow from '../../../components/SectionCardsRow/desktop/SectionCardsRow'
+import useLastWorks from '../useLastWorks'
+import BgColor from '../../../components/BgColor/BgColor'
+import Padding from '../../../components/Padding/Padding'
 
 const ContainerLastWorks = () => {
   const [ items, setItems ] = useState([])

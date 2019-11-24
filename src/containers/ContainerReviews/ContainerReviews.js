@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ContainerLastWorks from '../ContainerLastWorks/ContainerLastWorks'
+import ContainerLastWorks from '../ContainerLastWorks/desktop/ContainerLastWorks'
 import IconCount from '../../components/IconCount/IconCount'
 import useReviews from './useReviews'
 import Banner from '../../components/Banner/Banner'

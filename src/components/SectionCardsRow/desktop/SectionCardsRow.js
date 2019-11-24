@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import css from './SectionCardsRow.module.scss'
-import Layout from '../Layout/Layout'
-import CardWorkItem from '../CardWorkItem/CardWorkItem'
-import Padding from '../Padding/Padding'
-import { PAGE_WORKS } from '../../constants/ROUTES'
-import SectionTitle from '../SectionTitle/SectionTitle'
+import Layout from '../../Layout/Layout'
+import CardWorkItem from '../../CardWorkItem/desktop/CardWorkItem'
+import Padding from '../../Padding/Padding'
+import { PAGE_WORKS } from '../../../constants/ROUTES'
+import SectionTitle from '../../SectionTitle/desktop/SectionTitle'
 
 const SectionCardsRow = ({ items, title, count, url = PAGE_WORKS }) => (
   <Layout className={css.container}>

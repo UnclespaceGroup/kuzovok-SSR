@@ -1,14 +1,14 @@
 import React from 'react'
 import css from './ContainerHome.module.scss'
-import ContainerBannerWithVideoDesktop from '../ContainerBannerWithVideo/ContainerBannerWithVideoDesktop'
-import Padding from '../../components/Padding/Padding'
+import ContainerBannerWithVideoDesktop from '../../ContainerBannerWithVideo/ContainerBannerWithVideoDesktop'
+import Padding from '../../../components/Padding/Padding'
 import SectionMainChooseAutoTypeDesktop
-  from '../../components/SectionMainChooseAutoType/SectionMainChooseAutoTypeDesktop'
+  from '../../../components/SectionMainChooseAutoType/desktop/SectionMainChooseAutoTypeDesktop'
 import SectionMainServiceCatalogDesktop
-  from '../../components/SectionMainServiceCatalog/SectionMainServiceCatalogDesktop'
-import ContainerLastWorks from '../ContainerLastWorks/ContainerLastWorks'
-import useHome from './useHome'
-import ContainerContactsBlock from '../ContainerContactsBlock/ContainerContactsBlock'
+  from '../../../components/SectionMainServiceCatalog/desktop/SectionMainServiceCatalogDesktop'
+import ContainerLastWorks from '../../ContainerLastWorks/desktop/ContainerLastWorks'
+import useHome from '../useHome'
+import ContainerContactsBlock from '../../ContainerContactsBlock/desktop/ContainerContactsBlock'
 
 const ContainerHome = () => {
   const { services, bigBlockServices } = useHome()

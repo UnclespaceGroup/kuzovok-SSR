@@ -7,8 +7,8 @@ import Layout from '../Layout/Layout'
 import Padding from '../Padding/Padding'
 import CardCatalogSizeble from '../CardCatalogSizeble/CardCatalogSizeble'
 import RowSizeble from '../RowSizeble/RowSizeble'
-import ContainerContactsBlock from '../../containers/ContainerContactsBlock/ContainerContactsBlock'
-import SectionTitle from '../SectionTitle/SectionTitle'
+import ContainerContactsBlock from '../../containers/ContainerContactsBlock/desktop/ContainerContactsBlock'
+import SectionTitle from '../SectionTitle/desktop/SectionTitle'
 
 const SectionServices = ({ mainCards, cards }) => (
   <div className={css.container}>

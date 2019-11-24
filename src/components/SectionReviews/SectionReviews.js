@@ -5,7 +5,7 @@ import List from '../List/List'
 // import SectionSimplePost from '../SectionSimplePost/SectionSimplePost'
 import Layout from '../Layout/Layout'
 import Padding from '../Padding/Padding'
-import SectionTitle from '../SectionTitle/SectionTitle'
+import SectionTitle from '../SectionTitle/desktop/SectionTitle'
 import SectionReviewCard from '../SectionReviewCard/SectionReviewCard'
 
 const SectionReviews = ({ items = [], title }) => (

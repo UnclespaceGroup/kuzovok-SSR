@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import Padding from '../../components/Padding/Padding'
-import SectionContacts from '../../components/SectionContacts/SectionContacts'
+import SectionContacts from '../../components/SectionContacts/desktop/SectionContacts'
 import { PAGE_WORKS } from '../../constants/ROUTES'
 import SectionTopBanner from '../../components/SectionTopBanner/SectionTopBanner'
 import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
@@ -12,7 +12,7 @@ import Layout from '../../components/Layout/Layout'
 import TextBlock from '../../components/TextBlock/TextBlock'
 import useWorkDetail from './useWorkDetail'
 import IconCount from '../../components/IconCount/IconCount'
-import ContainerLastWorks from '../ContainerLastWorks/ContainerLastWorks'
+import ContainerLastWorks from '../ContainerLastWorks/desktop/ContainerLastWorks'
 import SectionReviewCard from '../../components/SectionReviewCard/SectionReviewCard'
 
 const ContainerWorkDetail = ({ match }) => {

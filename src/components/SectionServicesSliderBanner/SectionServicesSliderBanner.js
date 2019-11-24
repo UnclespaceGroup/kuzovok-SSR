@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionServicesSliderBanner.module.scss'
-import Slider from '../Slider/Slider'
+import Slider from '../Slider/desktop/Slider'
 import BgImage from '../BgImage/BgImage'
 import Button from '../Button/Button'
 

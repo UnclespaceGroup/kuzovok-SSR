@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 import css from './CardWorkItem.module.scss'
 import { Link } from 'react-router-dom'
-import { getDate } from '../../utils/getNameByValue'
+import { getDate } from '../../../utils/getNameByValue'
 
 const CardWorkItem = ({ id, url = '/', img, title, annotation, className, subtitle = 'Ремонт', date }) => (
   <div className={cn(css.container, className)}>
