@@ -7,13 +7,13 @@ import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
 import PropTypes from 'prop-types'
-import SectionSimplePost from '../../components/SectionSimplePost/SectionSimplePost'
 import List from '../../components/List/List'
 import Layout from '../../components/Layout/Layout'
 import TextBlock from '../../components/TextBlock/TextBlock'
 import useWorkDetail from './useWorkDetail'
 import IconCount from '../../components/IconCount/IconCount'
 import ContainerLastWorks from '../ContainerLastWorks/ContainerLastWorks'
+import SectionReviewCard from '../../components/SectionReviewCard/SectionReviewCard'
 
 const ContainerWorkDetail = ({ match }) => {
   console.log(match)
@@ -48,7 +48,7 @@ const ContainerWorkDetail = ({ match }) => {
       <List
         items={items}
       >
-        <SectionSimplePost />
+        <SectionReviewCard />
       </List>
       <Padding value={80} />
       <ContainerLastWorks />

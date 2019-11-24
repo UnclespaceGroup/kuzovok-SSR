@@ -2,21 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionReviews.module.scss'
 import List from '../List/List'
-import SectionSimplePost from '../SectionSimplePost/SectionSimplePost'
+// import SectionSimplePost from '../SectionSimplePost/SectionSimplePost'
 import Layout from '../Layout/Layout'
 import Padding from '../Padding/Padding'
 import SectionTitle from '../SectionTitle/SectionTitle'
+import SectionReviewCard from '../SectionReviewCard/SectionReviewCard'
 
 const SectionReviews = ({ items = [], title }) => (
-  <Layout className={css.container}>
+  <div className={css.container}>
     <Padding value={60} />
-    <SectionTitle title={title} count={items.length} />
+    <Layout>
+      <SectionTitle title={title} count={items.length} />
+    </Layout>
     <List
       items={items}
     >
-      <SectionSimplePost withUrl />
+      <SectionReviewCard withUrl />
     </List>
-  </Layout>
+  </div>
 )
 SectionReviews.propTypes = {
   items: PropTypes.array,
