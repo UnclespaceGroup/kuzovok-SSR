@@ -5,7 +5,7 @@ import css from './SectionContacts.module.scss'
 import Layout from '../../Layout/Layout'
 import { MdMail } from 'react-icons/md'
 import { FaVk, FaInstagram } from 'react-icons/fa'
-import YandexMap from '../../YandexMap/YandexMap'
+import YandexMap from '../../YandexMap/desktop/YandexMap'
 
 const SectionContacts = ({ items }) => (
   <div className={css.container}>

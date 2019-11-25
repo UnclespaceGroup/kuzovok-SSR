@@ -10,9 +10,9 @@ import {
   PAGE_WORK_DETAIL,
   PAGE_WORKS
 } from '../constants/ROUTES'
+import PageAboutMobile from './PageAbout/mobile/PageAboutMobile'
 import PageReviewsMobile from './PageReviews/mobile/PageReviewsMobile'
 import PageServiceDetailMobile from './PageServiceDetail/mobile/PageServiceDetailMobile'
-import PageAboutDesktop from './PageAbout/desktop/PageAboutDesktop'
 import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
 import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
 import PageHomeMobile from './PageHome/mobile/PageHomeMobile'
@@ -44,7 +44,7 @@ const RoutesMobile = () => (
       exact
       path={PAGE_WORK_DETAIL + ':id'}
     />
-    <Route component={PageAboutDesktop} // О нас
+    <Route component={PageAboutMobile} // О нас
       path={PAGE_ABOUT}
     />
     <Route component={PagePaperDesktop} // Статьи

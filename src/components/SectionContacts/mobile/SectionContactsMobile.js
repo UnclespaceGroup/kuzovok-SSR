@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import css from './SectionContactsMobile.module.scss'
 import { MdMail } from 'react-icons/md'
 import { FaVk, FaInstagram } from 'react-icons/fa'
-import YandexMap from '../../YandexMap/YandexMap'
+import YandexMap from '../../YandexMap/desktop/YandexMap'
 import LayoutMobile from '../../Layout/LayoutMobile'
 
 const SectionContactsMobile = ({ items }) => (
