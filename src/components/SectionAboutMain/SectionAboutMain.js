@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import css from './SectionAboutMain.module.scss'
 import SectionTextWithImageBlack from '../SectionTextWithImageBlack/SectionTextWithImageBlack'
 import Layout from '../Layout/Layout'
-import Wysiwyg from '../Wysiwyg/Wysiwyg'
+import Wysiwyg from '../Wysiwyg/desktop/Wysiwyg'
 import Content from '../Content/Content'
 import Padding from '../Padding/Padding'
 

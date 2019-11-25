@@ -1,0 +1,74 @@
+.container {
+  margin: 2rem 0;
+  padding: 2rem 0 4rem;
+  border-bottom: solid 1px darkgray;
+}
+
+.dark {
+  background-color: #454545;
+  color: white!important;
+
+  .number {
+    color: white;
+
+    span {
+      color: #767676;
+    }
+  }
+}
+
+.white {
+  background-color: white;
+  color: black!important;
+
+  .number {
+    color: black;
+
+    span {
+      color: #767676;
+    }
+  }
+}
+
+.header {
+  margin-bottom: 3.2rem;
+}
+
+.aside {}
+
+.title {
+  font-weight: 400;
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+}
+
+.date {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.row {
+}
+
+.annotation {
+  font-size: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.text {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.number {
+  font-weight: 300;
+  font-size: 2rem;
+  color: #1C1C1C;
+  margin-bottom: 2rem;
+
+  span {
+    font-weight: 500;
+    font-size: 4rem;
+    color: rgba(45, 45, 45, 0.68);
+  }
+}

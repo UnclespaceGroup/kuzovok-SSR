@@ -1,0 +1,30 @@
+.container {
+  font-size: 1.8rem;
+
+  h2, h1, span, p {
+    background-color: inherit!important;
+    color: inherit!important;
+  }
+
+  h2 {
+    margin: 1rem 0 2rem;
+  }
+
+  li {
+    position: relative;
+    padding-left: 2rem;
+    margin: 1rem 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      display: inline-block;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      background-color: #c37306;
+    }
+  }
+}

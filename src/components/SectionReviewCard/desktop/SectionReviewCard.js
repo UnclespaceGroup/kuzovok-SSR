@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionReviewCard.module.scss'
 import cn from 'classnames'
-import SectionGalleryVertical from '../SectionGalleryVertical/SectionGalleryVertical'
+import SectionGalleryVertical from '../../SectionGalleryVertical/desktop/SectionGalleryVertical'
 import moment from 'moment'
-import Wysiwyg from '../Wysiwyg/Wysiwyg'
-import Layout from '../Layout/Layout'
+import Wysiwyg from '../../Wysiwyg/desktop/Wysiwyg'
+import Layout from '../../Layout/Layout'
 
 const SectionReviewCard = ({ title, text, galleryData, date, parentId, annotation, withUrl, number = 12, theme = 'white' }) => (
   <div className={cn(css.container, css[theme])}>

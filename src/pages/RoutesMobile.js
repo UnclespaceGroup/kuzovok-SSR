@@ -12,12 +12,12 @@ import {
 } from '../constants/ROUTES'
 import PageReviewsDesktop from './PageReviews/desktop/PageReviewsDesktop'
 import PageServiceDetailMobile from './PageServiceDetail/mobile/PageServiceDetailMobile'
-import PageWorkDetailDesktop from './PageWorkDetail/desktop/PageWorkDetailDesktop'
 import PageAboutDesktop from './PageAbout/desktop/PageAboutDesktop'
 import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
 import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
 import PageHomeMobile from './PageHome/mobile/PageHomeMobile'
 import PageServiceMobile from './PageService/mobile/PageServiceMobile'
+import PageWorkDetailMobile from './PageWorkDetail/mobile/PageWorkDetailMobile'
 import PageWorksMobile from './PageWorks/mobile/PageWorksMobile'
 
 const RoutesMobile = () => (
@@ -40,7 +40,7 @@ const RoutesMobile = () => (
     <Route component={PageWorksMobile} // Все работы
       path={PAGE_WORKS + ':slug'}
     />
-    <Route component={PageWorkDetailDesktop} // Деталка работы
+    <Route component={PageWorkDetailMobile} // Деталка работы
       exact
       path={PAGE_WORK_DETAIL + ':id'}
     />

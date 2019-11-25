@@ -1,5 +1,5 @@
 import React from 'react'
-import ContainerWorkDetail from '../../../containers/ContainerWorkDetail/ContainerWorkDetail'
+import ContainerWorkDetail from '../../../containers/ContainerWorkDetail/desktop/ContainerWorkDetail'
 
 const PageWorkDetailDesktop = () => (
   <>

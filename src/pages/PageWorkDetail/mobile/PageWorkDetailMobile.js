@@ -1,10 +1,10 @@
-// packages
 import React from 'react'
+import ContainerWorkDetailMobile from '../../../containers/ContainerWorkDetail/mobile/ContainerWorkDetailMobile'
 
 const PageWorkDetailMobile = () => (
-  <div>
-    home
-  </div>
+  <>
+    <ContainerWorkDetailMobile />
+  </>
 )
 
-export default React.memo(PageWorkDetailMobile)
+export default PageWorkDetailMobile

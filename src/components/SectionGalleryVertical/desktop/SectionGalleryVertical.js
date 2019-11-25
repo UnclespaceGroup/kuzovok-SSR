@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import css from './SectionGalleryVertical.module.scss'
 import _ from 'lodash'
 import cn from 'classnames'
-import Button from '../Button/Button'
+import Button from '../../Button/Button'
 import { MdFullscreen } from 'react-icons/md'
 
 const SectionGalleryVertical = ({ photos = [], className }) => {
