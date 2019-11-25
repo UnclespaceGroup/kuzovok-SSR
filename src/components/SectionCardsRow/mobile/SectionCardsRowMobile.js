@@ -15,7 +15,7 @@ const SectionCardsRowMobile = ({ items, title, inLine, url = PAGE_WORKS }) => (
       {
         _.map(items, (item, key) => (
           <div key={key} >
-            <CardWorkItemMobile className={css.col} {...item} url={url} />
+            <CardWorkItemMobile className={inLine ? css.col : css.item} {...item} url={url} />
           </div>
         ))
       }

@@ -1,5 +1,5 @@
 import React from 'react'
-import ContainerService from '../../../containers/ContainerServiceDetail/ContainerServiceDetail'
+import ContainerService from '../../../containers/ContainerServiceDetail/desktop/ContainerServiceDetail'
 
 const PageServiceDetailDesktop = () => (
   <>

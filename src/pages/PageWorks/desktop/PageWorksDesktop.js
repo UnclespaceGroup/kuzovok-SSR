@@ -1,5 +1,5 @@
 import React from 'react'
-import ContainerWorks from '../../../containers/ContainerWorks/ContainerWorks'
+import ContainerWorks from '../../../containers/ContainerWorks/desktop/ContainerWorks'
 
 const PageWorksDesktop = () => (
   <>

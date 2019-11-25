@@ -15,7 +15,9 @@ const SectionTopBannerMobile = ({ img, title, text, children, backLink, status, 
       <div className={css.content}>
         { backLink && <Link className={css.backLink} to={backLink}><MdArrowBack /></Link> }
         { tags && <TagsBlock tags={tags} />}
-        <h1 className={css.title}>{title}<span>{status}</span></h1>
+        <h1 className={css.title}>{title}
+          {status && <span>{status}</span>}
+        </h1>
         <div className={css.text}>{text}</div>
         {icons && <List items={icons}>
           <TextIcon />

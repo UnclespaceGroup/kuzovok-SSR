@@ -4,7 +4,7 @@ import ContainerLastWorks from '../ContainerLastWorks/desktop/ContainerLastWorks
 import IconCount from '../../components/IconCount/IconCount'
 import useReviews from './useReviews'
 import Banner from '../../components/Banner/desktop/Banner'
-import SectionTabs from '../../components/SectionTabs/SectionTabs'
+import SectionTabs from '../../components/SectionTabs/desktop/SectionTabs'
 import { Route, Switch, withRouter } from 'react-router'
 import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from '../../constants/ROUTES'
 import { compose } from 'redux'

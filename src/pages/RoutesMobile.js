@@ -10,16 +10,15 @@ import {
   PAGE_WORK_DETAIL,
   PAGE_WORKS
 } from '../constants/ROUTES'
-import PageServiceDetailDesktop from './PageServiceDetail/desktop/PageServiceDetailDesktop'
 import PageReviewsDesktop from './PageReviews/desktop/PageReviewsDesktop'
-import PageWorksDesktop from './PageWorks/desktop/PageWorksDesktop'
+import PageServiceDetailMobile from './PageServiceDetail/mobile/PageServiceDetailMobile'
 import PageWorkDetailDesktop from './PageWorkDetail/desktop/PageWorkDetailDesktop'
 import PageAboutDesktop from './PageAbout/desktop/PageAboutDesktop'
 import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
 import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
 import PageHomeMobile from './PageHome/mobile/PageHomeMobile'
 import PageServiceMobile from './PageService/mobile/PageServiceMobile'
-// import { Switch } from 'react-router-dom'
+import PageWorksMobile from './PageWorks/mobile/PageWorksMobile'
 
 const RoutesMobile = () => (
   <Switch>
@@ -31,14 +30,14 @@ const RoutesMobile = () => (
       exact
       path={PAGE_SERVICES}
     />
-    <Route component={PageServiceDetailDesktop} // Услуги - деталка
+    <Route component={PageServiceDetailMobile} // Услуги - деталка
       exact
       path={PAGE_SERVICES + ':id'}
     />
     <Route component={PageReviewsDesktop} // Текущие работы
       path={PAGE_REVIEWS}
     />
-    <Route component={PageWorksDesktop} // Все работы
+    <Route component={PageWorksMobile} // Все работы
       path={PAGE_WORKS + ':slug'}
     />
     <Route component={PageWorkDetailDesktop} // Деталка работы

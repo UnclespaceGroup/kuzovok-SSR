@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Banner from '../../components/Banner/desktop/Banner'
-import Padding from '../../components/Padding/Padding'
-import useWorks from './useWorks'
-import SectionTabs from '../../components/SectionTabs/SectionTabs'
+import Banner from '../../../components/Banner/desktop/Banner'
+import Padding from '../../../components/Padding/Padding'
+import useWorks from '../useWorks'
+import SectionTabs from '../../../components/SectionTabs/desktop/SectionTabs'
 import { withRouter } from 'react-router'
-import SectionWorks from '../../components/SectionWorks/SectionWorks'
+import SectionWorks from '../../../components/SectionWorks/desktop/SectionWorks'
 import { compose } from 'redux'
 
 const ContainerWorks = ({ match }) => {

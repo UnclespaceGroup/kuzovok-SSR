@@ -1,16 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import im1 from 'static/images/bba649u-960.jpg'
-import SectionTextWithImage from '../../components/SectionTextWithImage/SectionTextWithImage'
-import Padding from '../../components/Padding/Padding'
-import SectionTextWithImageBlack from '../../components/SectionTextWithImageBlack/SectionTextWithImageBlack'
-import SectionContacts from '../../components/SectionContacts/desktop/SectionContacts'
-import SectionTopBanner from '../../components/SectionTopBanner/desktop/SectionTopBanner'
-import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
-import useServiceDetail from './useServiceDetail'
+import SectionTextWithImage from '../../../components/SectionTextWithImage/desktop/SectionTextWithImage'
+import Padding from '../../../components/Padding/Padding'
+import SectionTextWithImageBlack from '../../../components/SectionTextWithImageBlack/SectionTextWithImageBlack'
+import SectionContacts from '../../../components/SectionContacts/desktop/SectionContacts'
+import SectionTopBanner from '../../../components/SectionTopBanner/desktop/SectionTopBanner'
+import useServiceDetail from '../useServiceDetail'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
-import { PAGE_SERVICES } from '../../constants/ROUTES'
+import { PAGE_SERVICES } from '../../../constants/ROUTES'
 
 const textBlock1 = {
   title: 'Интересный заголовок',
@@ -24,7 +23,6 @@ const ContainerServiceDetail = ({ match }) => {
   <>
     <SectionTopBanner
       backLink={PAGE_SERVICES}
-      sideBlock={<ControllerSideMenu />}
       {...bannerData} />
     <Padding value={64} />
     <SectionTextWithImage {...textBlock1} />

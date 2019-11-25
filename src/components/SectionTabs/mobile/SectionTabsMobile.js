@@ -1,16 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import css from './SectionTabs.module.scss'
+import css from './SectionTabsMobile.module.scss'
 import cn from 'classnames'
 import _ from 'lodash'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
 import { NavLink } from 'react-router-dom'
-import Layout from '../Layout/Layout'
 
-const SectionTabs = ({ items, pending }) => (
+const SectionTabsMobile = ({ items, pending }) => (
   <div className={cn(css.container, { [css.pending]: pending })}>
-    <Layout className={css.wrapper}>
+    <div className={css.wrapper}>
       {
         _.map(items, (item, key) => (
           <NavLink
@@ -25,10 +24,10 @@ const SectionTabs = ({ items, pending }) => (
           >{item.title}</NavLink>
         ))
       }
-    </Layout>
+    </div>
   </div>
 )
-SectionTabs.propTypes = {
+SectionTabsMobile.propTypes = {
   items: PropTypes.array,
   pending: PropTypes.bool
 }
@@ -36,4 +35,4 @@ SectionTabs.propTypes = {
 export default compose(
   withRouter,
   React.memo
-)(SectionTabs)
+)(SectionTabsMobile)

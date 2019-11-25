@@ -4,7 +4,7 @@ import Padding from '../../components/Padding/Padding'
 import Banner from '../../components/Banner/desktop/Banner'
 import useAboutMain from './useAboutMain'
 import SectionAboutMain from '../../components/SectionAboutMain/SectionAboutMain'
-import SectionTabs from '../../components/SectionTabs/SectionTabs'
+import SectionTabs from '../../components/SectionTabs/desktop/SectionTabs'
 import { Route, Switch } from 'react-router'
 import SectionAboutContacts from '../../components/SectionAboutContacts/SectionAboutContacts'
 import {

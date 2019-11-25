@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import LayoutMobile from '../../Layout/LayoutMobile'
 import css from './BannerMobile.module.scss'
 import BgImage from '../../BgImage/BgImage'
-import Layout from '../../Layout/Layout'
 
 const BannerMobile = ({ title, text, img }) => (
   <BgImage img={img}>
     <div className={css.container}>
-      <Layout>
+      <LayoutMobile>
         <h1 className={css.title}>{title}</h1>
         <div className={css.text}>{text}</div>
-      </Layout>
+      </LayoutMobile>
     </div>
   </BgImage>
 )

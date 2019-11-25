@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionAboutPhotos.module.scss'
-import SectionTextWithImage from '../SectionTextWithImage/SectionTextWithImage'
+import SectionTextWithImage from '../SectionTextWithImage/desktop/SectionTextWithImage'
 import SectionTextWithImageBlack from '../SectionTextWithImageBlack/SectionTextWithImageBlack'
 
 const SectionAboutPhotos = ({ block1, block2 }) => (

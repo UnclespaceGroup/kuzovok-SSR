@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionTextWithImage.module.scss'
-import Layout from '../Layout/Layout'
+import Layout from '../../Layout/Layout'
 
 const SectionTextWithImage = ({ title, text, img }) => (
   <div className={css.container}>

@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  background-color: #272727;
+  padding: 0 2rem;
+  overflow: auto;
+
+}
+
+.pending {
+  pointer-events: none;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.item {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 0 2rem;
+  color: white;
+  width: auto;
+
+  &__active {
+    background-color: #4d4d4d;
+  }
+}
