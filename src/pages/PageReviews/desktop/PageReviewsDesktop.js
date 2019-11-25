@@ -1,5 +1,5 @@
 import React from 'react'
-import ContainerReviews from '../../../containers/ContainerReviews/ContainerReviews'
+import ContainerReviews from '../../../containers/ContainerReviews/desktop/ContainerReviews'
 
 const PageReviewsDesktop = () => (
   <>

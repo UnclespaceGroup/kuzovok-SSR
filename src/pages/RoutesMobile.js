@@ -10,7 +10,7 @@ import {
   PAGE_WORK_DETAIL,
   PAGE_WORKS
 } from '../constants/ROUTES'
-import PageReviewsDesktop from './PageReviews/desktop/PageReviewsDesktop'
+import PageReviewsMobile from './PageReviews/mobile/PageReviewsMobile'
 import PageServiceDetailMobile from './PageServiceDetail/mobile/PageServiceDetailMobile'
 import PageAboutDesktop from './PageAbout/desktop/PageAboutDesktop'
 import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
@@ -34,7 +34,7 @@ const RoutesMobile = () => (
       exact
       path={PAGE_SERVICES + ':id'}
     />
-    <Route component={PageReviewsDesktop} // Текущие работы
+    <Route component={PageReviewsMobile} // Текущие работы
       path={PAGE_REVIEWS}
     />
     <Route component={PageWorksMobile} // Все работы
