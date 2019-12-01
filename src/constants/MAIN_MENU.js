@@ -1,8 +1,8 @@
 import {
   PAGE_ABOUT,
   PAGE_SERVICES,
-  PAGE_WORKS, PAGE_REVIEWS,
-  PAGE_PAPER
+  PAGE_WORKS,
+  PAGE_PAPER, PAGE_ABOUT_CONTACTS, PAGE_ABOUT_MAP, PAGE_ABOUT_VIDEO, PAGE_ABOUT_PHOTOS
 } from './ROUTES'
 
 export const items = [
@@ -36,21 +36,29 @@ export const items = [
   },
   {
     title: {
-      to: PAGE_WORKS,
+      to: PAGE_WORKS + 'last',
       text: 'Работы'
     },
     items: [
       {
         title: 'Посмотреть все работы',
-        to: PAGE_WORKS
+        to: PAGE_WORKS + 'all'
       },
       {
-        title: 'Сделано сегодня',
-        to: PAGE_REVIEWS
+        title: 'Сварочные работы',
+        to: PAGE_WORKS + 'svarochnye-raboty'
       },
       {
-        title: 'Архив работ',
-        to: PAGE_WORKS
+        title: 'Обработка порогов, анигравий',
+        to: PAGE_WORKS + 'obrabotka-porogov-i-dnisha'
+      },
+      {
+        title: 'Покраска авто',
+        to: PAGE_WORKS + 'pokraska'
+      },
+      {
+        title: 'Кузовной ремонт',
+        to: PAGE_WORKS + 'kuzovnoy-remont'
       }
     ]
   },
@@ -74,11 +82,19 @@ export const items = [
     items: [
       {
         title: 'Как добраться',
-        to: PAGE_ABOUT
+        to: PAGE_ABOUT_MAP
       },
       {
         title: 'Контактная информация',
-        to: PAGE_ABOUT
+        to: PAGE_ABOUT_CONTACTS
+      },
+      {
+        title: 'Видео',
+        to: PAGE_ABOUT_VIDEO
+      },
+      {
+        title: 'Фото станции',
+        to: PAGE_ABOUT_PHOTOS
       }
     ]
   }

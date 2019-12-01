@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  border-radius: 1.6rem;
 }
 
 .image {
@@ -45,4 +46,11 @@
   font-size: 1.6rem;
   font-weight: 300;
   text-align: center;
+}
+
+.icon {
+  position: absolute;
+  color: white;
+  bottom: 2.4rem;
+  left: 2.4rem;
 }

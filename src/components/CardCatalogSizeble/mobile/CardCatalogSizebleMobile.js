@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 import css from './CardCatalogSizebleMobile.module.scss'
 import { Link } from 'react-router-dom'
+import { FaArrowAltCircleRight } from 'react-icons/fa'
 
 const CardCatalogSizebleMobile = ({ img, banner, title, to, className, text }) => (
   <Link to={to} className={cn(css.container, className)} >
@@ -10,7 +11,7 @@ const CardCatalogSizebleMobile = ({ img, banner, title, to, className, text }) =
     <div className={css.wrapper} >
       <div style={{ backgroundImage: `url(${img})` }} className={css.img} />
       <div className={css.title}>{title}</div>
-      <div className={css.text}>{text}</div>
+      <FaArrowAltCircleRight className={css.icon} size={'4rem'} />
     </div>
   </Link>
 )

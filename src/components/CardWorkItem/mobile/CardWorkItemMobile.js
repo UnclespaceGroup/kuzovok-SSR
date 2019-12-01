@@ -13,8 +13,8 @@ const CardWorkItemMobile = ({ id, url = '/', img, title, className, subtitle = '
       <div className={css.title}>{title}</div>
     </div>
     <div className={css.footer}>
-      <div className={css.date}>{getDate(date)}</div>
       <Link className={css.link} to={url + id} >Подробнее</Link>
+      <div className={css.date}>{getDate(date)}</div>
     </div>
   </div>
 )

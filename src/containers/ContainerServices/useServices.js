@@ -10,7 +10,7 @@ const useServices = () => {
       ...item,
       to: PAGE_SERVICES + item.id
     })))
-    setCards(services.map(item => ({
+    setCards(services.map((item, key) => ({
       ...item,
       to: PAGE_SERVICES + item.id
     })))
