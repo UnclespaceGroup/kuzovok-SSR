@@ -3,45 +3,100 @@ export const mainServices = [
     id: 'pokraska-avto',
     banner: 'https://carpod.ru/sites/default/files/field/image/1/image_172.jpg',
     title: 'Покраска авто',
-    annotation: '',
+    annotation: 'Lorem ipsum dolor sit amet, consectetur adipiscing ',
     to: '',
     bannerData: {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut '
+      advantages: [
+        'Работы любой сложности',
+        'Гарантия - полтора года',
+        'И что то ещё'
+      ]
+    },
+    content: {
+      advantages: [
+        {
+          img: 'https://image.flaticon.com/icons/png/512/29/29495.png',
+          title: 'Покраска в специальной камере',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        },
+        {
+          img: 'https://image.flaticon.com/icons/png/512/29/29495.png',
+          title: 'Покраска в специальной камере',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        },
+        {
+          img: 'https://image.flaticon.com/icons/png/512/29/29495.png',
+          title: 'Покраска в специальной камере',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
+        }
+      ],
+      text: `
+        <h2>Важный заголовок</h2>
+        <img src="https://carpod.ru/sites/default/files/field/image/1/image_172.jpg" />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+        <br />
+        <h2>Важный заголовок</h2>
+        <img src="https://carpod.ru/sites/default/files/field/image/1/image_172.jpg" />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+        <table>
+        <tbody>
+        <tr>
+        <td>Значение</td>
+        <td>Что то такое</td>
+</tr>
+<tr>
+        <td>Значение</td>
+        <td>Что то такое</td>
+</tr>
+<tr>
+        <td>Значение</td>
+        <td>Что то такое</td>
+</tr>
+        </tbody>
+        </table>
+        <ul>
+        <li>jdscksdcsd sdjfncsdn s nkd</li>
+        <li>jdscksdcsd sdjfncsdn s nkd</li>
+        <li>jdscksdcsd sdjfncsdn s nkd</li>
+</ul>
+      `
     }
   },
   {
     id: 'kuzovnoi-remont',
     banner: 'http://ooobelcolor.by/upload/resize_cache/iblock/b7e/715_715_1/b7eaf4d0b811aead9c69a3625dc14fdb.jpg',
     title: 'Кузовной ремонт',
-    annotation: '',
+    annotation: 'Lorem ipsum dolor sit amet, consectetur adipiscing ',
     to: ''
   },
   {
     id: 'swarichnye-raboty',
     banner: 'http://autorem27.ru/images/svarochnye-raboty.jpg',
     title: 'Сварочные работы',
-    annotation: '',
+    annotation: 'Lorem ipsum dolor sit amet, consectetur adipiscing ',
     to: ''
   },
   {
     id: 'srochniy-remont',
     banner: 'https://avto-diagnostika24.ru/wp-content/uploads/2018/08/2-1.jpg',
     title: 'Срочный ремонт',
-    annotation: '',
+    annotation: 'Lorem ipsum dolor sit amet, consectetur adipiscing ',
     to: ''
   },
   {
     id: 'zapchasti',
     banner: 'http://volinauto.ru/wp-content/uploads/2014/01/235.jpg',
     title: 'Продажа кузовных деталей',
-    annotation: '',
+    annotation: 'Lorem ipsum dolor sit amet, consectetur adipiscing ',
     to: ''
   },
   {
     id: '5',
     banner: 'http://carsmotion.ru/wp-content/uploads/2016/07/antigraviy-v-ballonchikakh.jpg',
     title: 'Антигравий',
-    annotation: '',
+    annotation: 'Lorem ipsum dolor sit amet, consectetur adipiscing ',
     to: ''
   }
 ]

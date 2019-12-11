@@ -9,4 +9,8 @@
   &:first-child {
     padding-top: 0rem;
   }
+
+  &:last-child {
+    border: none;
+  }
 }

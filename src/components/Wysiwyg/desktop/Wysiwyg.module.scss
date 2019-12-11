@@ -1,13 +1,22 @@
 .container {
   font-size: 1.8rem;
+  font-weight: 300;
 
   h2, h1, span, p {
     background-color: inherit!important;
     color: inherit!important;
   }
 
+  p {
+    font-weight: 300;
+  }
+
   h2 {
     margin: 1rem 0 2rem;
+  }
+
+  ul {
+    margin: 4rem 0;
   }
 
   li {
@@ -25,6 +34,23 @@
       height: 0.8rem;
       border-radius: 50%;
       background-color: #c37306;
+    }
+  }
+
+  table {
+    border-spacing: 0;
+    width: 100%;
+    font-size: 1.6rem;
+  }
+
+  td {
+    padding: 1.5rem 0 0.5rem;
+    border-bottom: dotted 1px darkgrey;
+    &:first-child {
+      font-weight: 300;
+    }
+    &:last-child {
+      text-align: right;
     }
   }
 }

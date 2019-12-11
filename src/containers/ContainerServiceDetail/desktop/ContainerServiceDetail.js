@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import im1 from 'static/images/bba649u-960.jpg'
-import SectionTextWithImage from '../../../components/SectionTextWithImage/desktop/SectionTextWithImage'
+import SectionAboutVideo from '../../../components/SectionAboutVideo/desktop/SectionAboutVideo'
+import SectionServiceDetailDesktop from '../../../components/SectionServiceDetail/desktop/SectionServiceDetailDesktop'
 import Padding from '../../../components/Padding/Padding'
 import SectionTextWithImageBlack from '../../../components/SectionTextWithImageBlack/SectionTextWithImageBlack'
 import SectionContacts from '../../../components/SectionContacts/desktop/SectionContacts'
@@ -18,16 +19,20 @@ const textBlock1 = {
 }
 
 const ContainerServiceDetail = ({ match }) => {
-  const { bannerData } = useServiceDetail({ ...match })
+  const { bannerData, videos, content } = useServiceDetail({ ...match })
   return (
   <>
     <SectionTopBanner
       backLink={PAGE_SERVICES}
       {...bannerData} />
-    <Padding value={64} />
-    <SectionTextWithImage {...textBlock1} />
-    <Padding value={64} />
+    <Padding value={120} />
+    <SectionServiceDetailDesktop
+      {...content}
+    />
+    <Padding value={120} />
     <SectionTextWithImageBlack {...textBlock1} />
+    <Padding value={150} />
+    <SectionAboutVideo videos={videos} />
     <Padding value={150} />
     <SectionContacts />
     <Padding value={100} />

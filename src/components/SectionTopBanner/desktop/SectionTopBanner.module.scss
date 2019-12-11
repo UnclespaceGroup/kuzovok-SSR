@@ -3,11 +3,6 @@
   height: 100vh;
   display: flex;
   background-color: rgba(0,0,0,0.7);
-
-  li:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-
 }
 .wrapper {
   position: absolute;
@@ -80,7 +75,10 @@
   }
 }
 
-.children {
-
-
+.advantages {
+  li {
+    font-size: 2rem!important;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
 }

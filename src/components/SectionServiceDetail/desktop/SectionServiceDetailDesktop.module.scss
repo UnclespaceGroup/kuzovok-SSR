@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  width: 60%;
+  padding-right: 10rem;
+}
+
+.widget {
+  position: sticky;
+  top: 10rem;
+  width: 38rem;
+  height: 100%;
+}

@@ -24,16 +24,19 @@ const SectionGalleryVertical = ({ photos = [], className }) => {
 
   return (
     <div className={cn(css.container, className)}>
-      <div>
+      <div onClick={() => openLightbox(0)} className={cn(css.image, css.imageBig)} style={{ backgroundImage: `url(${photos[0]})` }} >
+        <div className={css.hoverBlock} ><MdFullscreen /></div>
+      </div>
+      <div className={css.row}>
         {
-          _.map(viewAll ? photos : photos.slice(0, 2), (item, key) => (
+          _.map(viewAll ? photos.slice(1) : photos.slice(1, 4), (item, key) => (
             <div key={key} onClick={() => openLightbox(key)} className={css.image} style={{ backgroundImage: `url(${item})` }} >
               <div className={css.hoverBlock} ><MdFullscreen /></div>
             </div>
           ))
         }
-        { (photos.length > 2) && <Button className={css.btn} onClick={() => setViewAll(!viewAll)}>{viewAll ? 'Скрыть' : `Показать ещё ${photos.length - 2} фото`}</Button>}
       </div>
+      { (photos.length > 5) && <Button className={css.btn} onClick={() => setViewAll(!viewAll)}>{viewAll ? 'Скрыть' : `Показать ещё ${photos.length - 2} фото`}</Button>}
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>

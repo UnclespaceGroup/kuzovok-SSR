@@ -1,14 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionServices.module.scss'
-import RowCards from '../../RowCards/desktop/RowCards'
-import CardCatalogImage from '../../CardCatalogImage/desktop/CardCatalogImage'
-import Layout from '../../Layout/Layout'
-import Padding from '../../Padding/Padding'
-import CardCatalogSizeble from '../../CardCatalogSizeble/desktop/CardCatalogSizeble'
-import RowSizeble from '../../RowSizeble/RowSizeble'
-import ContainerContactsBlock from '../../../containers/ContainerContactsBlock/desktop/ContainerContactsBlock'
-import SectionTitle from '../../SectionTitle/desktop/SectionTitle'
+import RowCards from 'components/RowCards/desktop/RowCards'
+import CardCatalogImage from 'components/CardCatalogImage/desktop/CardCatalogImage'
+import Layout from 'components/Layout/Layout'
+import Padding from 'components/Padding/Padding'
+import ContainerContactsBlock from 'containers/ContainerContactsBlock/desktop/ContainerContactsBlock'
+import SectionTitle from 'components/SectionTitle/desktop/SectionTitle'
 
 const SectionServices = ({ mainCards, cards }) => (
   <div className={css.container}>
@@ -23,9 +21,9 @@ const SectionServices = ({ mainCards, cards }) => (
       <Padding value={120} />
       <div className={css.cards} >
         <SectionTitle title={'Все услуги'} count={cards?.items?.length} />
-        <RowSizeble {...cards}>
-          <CardCatalogSizeble />
-        </RowSizeble>
+        <RowCards {...cards}>
+          <CardCatalogImage />
+        </RowCards>
       </div>
       <Padding value={120} />
     </Layout>

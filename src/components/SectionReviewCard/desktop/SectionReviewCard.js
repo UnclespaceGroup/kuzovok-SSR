@@ -10,12 +10,12 @@ import Layout from '../../Layout/Layout'
 const SectionReviewCard = ({ title, text, galleryData, date, parentId, annotation, withUrl, number = 12, theme = 'white' }) => (
   <div className={cn(css.container, css[theme])}>
     <Layout>
-      <div className={css.header}>
-        <div className={css.title}>{title}</div>
-        <div className={css.date}>{moment(date).format('LL')}</div>
-      </div>
       <div className={css.row}>
         <div className={css.content}>
+          <div className={css.header}>
+            <div className={css.title}>{title}</div>
+            <div className={css.date}>{moment(date).format('LL')}</div>
+          </div>
           <div>
             <div className={css.annotation}>{annotation}</div>
             <Wysiwyg>{text}</Wysiwyg>
