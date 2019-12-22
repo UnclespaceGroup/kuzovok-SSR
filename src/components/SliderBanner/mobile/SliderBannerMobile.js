@@ -1,18 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import css from './SectionServicesSliderBannerMobile.module.scss'
+import css from 'components/SliderBanner/mobile/SliderBannerMobile.module.scss'
 import Slider from '../../Slider/desktop/Slider'
 import BgImage from '../../BgImage/BgImage'
 import Button from '../../Button/Button'
 
-const SectionServicesSliderBannerMobile = ({ items }) => (
+const SliderBannerMobile = ({ items }) => (
   <div className={css.container}>
     <Slider items={items} loop autoplayDelay={10000}>
       <Slide />
     </Slider>
   </div>
 )
-SectionServicesSliderBannerMobile.propTypes = {
+SliderBannerMobile.propTypes = {
   items: PropTypes.array
 }
 
@@ -32,4 +32,4 @@ Slide.propTypes = {
   url: PropTypes.string
 }
 
-export default React.memo(SectionServicesSliderBannerMobile)
+export default React.memo(SliderBannerMobile)

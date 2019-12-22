@@ -1,7 +1,7 @@
 import React from 'react'
 import SectionServicesMobile from '../../../components/SectionServices/mobile/SectionServicesMobile'
 import SectionServicesSliderBannerMobile
-  from '../../../components/SectionServicesSliderBanner/mobile/SectionServicesSliderBannerMobile'
+  from 'components/SliderBanner/mobile/SliderBannerMobile'
 import useServices from '../useServices'
 import { PAGE_SERVICES } from '../../../constants/ROUTES'
 

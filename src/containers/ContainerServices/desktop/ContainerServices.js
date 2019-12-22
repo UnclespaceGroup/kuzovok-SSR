@@ -2,7 +2,7 @@ import React from 'react'
 import SectionService from '../../../components/SectionServices/desktop/SectionServices'
 import useServices from '../useServices'
 import { PAGE_SERVICES } from '../../../constants/ROUTES'
-import SectionServicesSliderBanner from '../../../components/SectionServicesSliderBanner/desktop/SectionServicesSliderBanner'
+import SectionServicesSliderBanner from 'components/SliderBanner/desktop/SliderBannerDesktop'
 import Padding from '../../../components/Padding/Padding'
 
 const ContainerServices = () => {

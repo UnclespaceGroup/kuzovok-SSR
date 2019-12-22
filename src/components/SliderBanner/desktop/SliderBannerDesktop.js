@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-expressions */
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
-import css from './SectionServicesSliderBanner.module.scss'
+import css from 'components/SliderBanner/desktop/SliderBannerDesktop.module.scss'
 import Slider from '../../Slider/desktop/Slider'
 import BgImage from '../../BgImage/BgImage'
 import Button from '../../Button/Button'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 import Layout from 'components/Layout/Layout'
 
-const SectionServicesSliderBanner = ({ items }) => {
+const SliderBannerDesktop = ({ items }) => {
   const swiperRef = useRef(null)
   return (
     <div className={css.container}>
@@ -33,7 +33,7 @@ const SectionServicesSliderBanner = ({ items }) => {
     </div>
   )
 }
-SectionServicesSliderBanner.propTypes = {
+SliderBannerDesktop.propTypes = {
   items: PropTypes.array
 }
 
@@ -57,4 +57,4 @@ Slide.propTypes = {
   url: PropTypes.string
 }
 
-export default React.memo(SectionServicesSliderBanner)
+export default React.memo(SliderBannerDesktop)
