@@ -1,10 +1,9 @@
 import React, { useMemo, useState } from 'react'
 import { fetchDataListParams } from '../../axios/fetchData'
 import im1 from '../../static/images/lada-vaz-lada-vaz-mashina-avto-2103.jpg'
-import ControllerSideMenu from '../ControllerSideMenu/ControllerSideMenu'
 import moment from 'moment'
-import { MdDateRange } from 'react-icons/md'
 import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from '../../constants/ROUTES'
+import instrIcon from 'static/images/instr-icon.png'
 
 const useReviews = ({ location }) => {
   const [ items, setItems ] = useState([])
@@ -19,14 +18,12 @@ const useReviews = ({ location }) => {
         }
       })
       .then(data => {
-        console.log(data)
         const _items = data
           .map(item => ({
             ...item,
             galleryData: { photos: item.images && JSON.parse(item.images) }
           }))
           .sort((before, current) => moment(before.date).isAfter(current.date) ? -1 : 1)
-        console.log(_items)
         setItems(_items)
         setPending(false)
       }).catch(e => {
@@ -35,18 +32,12 @@ const useReviews = ({ location }) => {
   }, [location])
 
   const headerData = {
-    title: 'Работа автостанции',
+    title: 'Работы автостанции',
     text: <div>
-      <p>Здесь вы можете просмотреть текущие работы</p>
+      <p>Здесь вы можете просмотреть отчеты по последним работам станции</p>
     </div>,
     img: im1,
-    sideBlock: <ControllerSideMenu />,
-    icons: [
-      {
-        icon: <MdDateRange />,
-        children: moment().format('LL')
-      }
-    ]
+    icon: instrIcon
   }
 
   const tabs = [
@@ -61,10 +52,6 @@ const useReviews = ({ location }) => {
     {
       title: 'За месяц',
       to: PAGE_REVIEWS_MOUTH
-    },
-    {
-      title: 'Все работы',
-      to: PAGE_REVIEWS
     }
   ]
 

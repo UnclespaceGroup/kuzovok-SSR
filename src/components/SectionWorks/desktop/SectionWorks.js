@@ -6,7 +6,7 @@ import { PAGE_WORK_DETAIL } from '../../../constants/ROUTES'
 
 const SectionWorks = ({ lastItems, items }) => (
   <div className={css.container}>
-    { lastItems.length > 0 && <SectionCardsRow title={'Последние'} items={lastItems} url={PAGE_WORK_DETAIL} />}
+    { lastItems?.length > 0 && <SectionCardsRow title={'Последние'} items={lastItems} url={PAGE_WORK_DETAIL} />}
     <SectionCardsRow count items={items} title={'Работы'} url={PAGE_WORK_DETAIL} />
   </div>
 )

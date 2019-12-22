@@ -2,11 +2,11 @@ import React, { useState, useEffect, useMemo } from 'react'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
 import css from './ContainerMainMenuMobile.module.scss'
-import SectionHeaderMobile from '../../../components/SectionHeader/mobile/SectionHeaderMobile'
+import SectionHeaderMobile from 'components/SectionHeader/mobile/SectionHeaderMobile'
 import Collapse from 'react-collapse'
 import { withRouter } from 'react-router'
-import { menuItems } from '../data'
-import SectionOpenMainMenuMobile from '../../../components/SectionOpenMainMenu/mobile/SectionOpenMainMenuMobile'
+import { menuItems } from 'constants/MAIN_MENU'
+import SectionOpenMainMenuMobile from 'components/SectionOpenMainMenu/mobile/SectionOpenMainMenuMobile'
 
 const ContainerMainMenuMobile = ({ location }) => {
   const [ open, setOpen ] = useState(false)

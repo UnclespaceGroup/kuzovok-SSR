@@ -22,10 +22,10 @@ const SliderBannerDesktop = ({ items }) => {
       </Slider>
       <div className={css.btns}>
         <Layout className={css.wrapper}>
-          <div className={css.prev}><MdKeyboardArrowLeft size={'2rem'}
+          <div className={css.prev}><MdKeyboardArrowLeft size={'4rem'}
             onClick={() => swiperRef.current?.slidePrev()}
           /></div>
-          <div className={css.next}><MdKeyboardArrowRight size={'2rem'}
+          <div className={css.next}><MdKeyboardArrowRight size={'4rem'}
             onClick={() => swiperRef.current?.slideNext()}
           /></div>
         </Layout>

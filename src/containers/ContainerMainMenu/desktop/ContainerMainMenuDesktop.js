@@ -6,7 +6,7 @@ import SectionHeaderDesktop from 'components/SectionHeader/desktop/SectionHeader
 import SectionOpenMainMenuDesktop from 'components/SectionOpenMainMenu/desktop/SectionOpenMainMenuDesktop'
 import Collapse from 'react-collapse'
 import { withRouter } from 'react-router'
-import { menuItems } from '../data'
+import { menuItems } from 'constants/MAIN_MENU'
 
 const ContainerMainMenuDesktop = ({ location }) => {
   const [ open, setOpen ] = useState(false)

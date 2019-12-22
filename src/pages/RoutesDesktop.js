@@ -18,6 +18,7 @@ import PageServiceDetailDesktop from './PageServiceDetail/desktop/PageServiceDet
 import PageReviewsDesktop from './PageReviews/desktop/PageReviewsDesktop'
 import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
 import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
+import PageWorksSpecificDesktop from 'pages/PageWorksSpecific/desktop/PageWorksSpecificDesktop'
 
 const RoutesDesktop = () => (
   <Switch>
@@ -37,9 +38,11 @@ const RoutesDesktop = () => (
       path={PAGE_REVIEWS}
     />
     <Route component={PageWorksDesktop} // Все работы
+      exact
       path={PAGE_WORKS}
     />
-    <Route component={PageWorksDesktop} // Все работы
+    <Route component={PageWorksSpecificDesktop} // Все работы
+      exact
       path={PAGE_WORKS + ':slug'}
     />
     <Route component={PageWorkDetailDesktop} // Деталка работы

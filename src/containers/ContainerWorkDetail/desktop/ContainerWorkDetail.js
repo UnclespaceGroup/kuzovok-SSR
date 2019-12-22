@@ -44,11 +44,15 @@ const ContainerWorkDetail = ({ match }) => {
       <Layout>
         <Wysiwyg width={'70%'} >{data?.text}</Wysiwyg>
       </Layout>
-      <List
-        items={items}
-      >
-        <SectionReviewCard />
-      </List>
+      <Layout withAside>
+        <div>
+          <List
+            items={items}
+          >
+            <SectionReviewCard />
+          </List>
+        </div>
+      </Layout>
       <Padding value={80} />
       <ContainerLastWorks />
       <Padding value={80} />

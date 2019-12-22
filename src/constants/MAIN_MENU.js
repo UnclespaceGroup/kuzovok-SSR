@@ -2,8 +2,26 @@ import {
   PAGE_ABOUT,
   PAGE_SERVICES,
   PAGE_WORKS,
-  PAGE_PAPER, PAGE_ABOUT_CONTACTS, PAGE_ABOUT_MAP, PAGE_ABOUT_VIDEO, PAGE_ABOUT_PHOTOS
+  PAGE_PAPER, PAGE_ABOUT_CONTACTS, PAGE_ABOUT_MAP, PAGE_ABOUT_VIDEO, PAGE_ABOUT_PHOTOS, PAGE_REVIEWS
 } from './ROUTES'
+
+export const menuItems = [
+  {
+    title: 'Услуги', href: PAGE_SERVICES
+  },
+  {
+    title: 'Сделано сегодня', href: PAGE_REVIEWS + 'today'
+  },
+  {
+    title: 'Машины в ремонте', href: PAGE_WORKS + 'last'
+  },
+  {
+    title: 'Все работы', href: PAGE_WORKS
+  },
+  {
+    title: 'О нас', href: PAGE_ABOUT
+  }
+]
 
 export const items = [
   {
