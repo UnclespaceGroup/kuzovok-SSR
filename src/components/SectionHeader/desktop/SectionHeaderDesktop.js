@@ -4,10 +4,10 @@ import cn from 'classnames'
 import css from './SectionHeaderDesktop.module.scss'
 import { Link } from 'react-router-dom'
 import { MdSearch, MdMenu, MdClose } from 'react-icons/md'
-import { MAIN_PHONE } from '../../../constants/contacts'
+import { MAIN_PHONE } from 'constants/contacts'
 
-const SectionHeaderDesktop = ({ setOpen, open, menuItems = [] }) => (
-  <div className={css.wrapper}>
+const SectionHeaderDesktop = ({ setOpen, open, menuItems = [], black }) => (
+  <div className={cn(css.wrapper, { [css.black]: black })}>
     <div className={css.container}>
       <div className={css.block}>
         {
@@ -32,7 +32,8 @@ const SectionHeaderDesktop = ({ setOpen, open, menuItems = [] }) => (
 SectionHeaderDesktop.propTypes = {
   setOpen: PropTypes.func,
   open: PropTypes.bool,
-  menuItems: PropTypes.array
+  menuItems: PropTypes.array,
+  black: PropTypes.bool
 }
 
 export default React.memo(SectionHeaderDesktop)

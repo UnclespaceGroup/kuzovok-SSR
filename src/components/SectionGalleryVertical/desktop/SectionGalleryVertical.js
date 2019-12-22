@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import css from './SectionGalleryVertical.module.scss'
 import _ from 'lodash'
 import cn from 'classnames'
-import Button from '../../Button/Button'
+import Button from 'components/Button/Button'
 import { MdFullscreen } from 'react-icons/md'
 
 const SectionGalleryVertical = ({ photos = [], className }) => {
@@ -30,7 +30,7 @@ const SectionGalleryVertical = ({ photos = [], className }) => {
       <div className={css.row}>
         {
           _.map(viewAll ? photos.slice(1) : photos.slice(1, 4), (item, key) => (
-            <div key={key} onClick={() => openLightbox(key)} className={css.image} style={{ backgroundImage: `url(${item})` }} >
+            <div key={key} onClick={() => openLightbox(key + 1)} className={css.image} style={{ backgroundImage: `url(${item})` }} >
               <div className={css.hoverBlock} ><MdFullscreen /></div>
             </div>
           ))

@@ -9,7 +9,7 @@ const ContainerServices = () => {
   const { mainCards = [], cards = [], bannerItems } = useServices()
   return (
     <>
-      <Padding value={80} />
+      <Padding value={0} />
       <SectionServicesSliderBanner
         items={bannerItems}
       />

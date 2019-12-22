@@ -1,0 +1,40 @@
+.container {
+
+}
+
+.block {
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: solid 1px darkgrey;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.title {
+  position: relative;
+  padding-left: 5rem;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  color: #000000;
+  margin-bottom: 1.6rem;
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  background: no-repeat center left;
+  background-size: contain;
+  display: inline-block;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: #000000;
+}

@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgba(0,0,0,0.7);
 
   li:not(:last-child) {
@@ -17,7 +17,7 @@
 }
 
 .content {
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -58,7 +58,7 @@
 .backLink {
   display: block;
   position: absolute;
-  top: 10vh;
+  top: 10rem;
   color: white;
 
   svg {
@@ -71,7 +71,16 @@
   }
 }
 
-.children {
+.advantages {
+  li {
+    font-size: 2rem!important;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+}
 
-
+.btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 1.6rem;
 }

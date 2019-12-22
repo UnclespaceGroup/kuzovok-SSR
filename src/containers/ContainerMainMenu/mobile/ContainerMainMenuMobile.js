@@ -10,7 +10,7 @@ import SectionOpenMainMenuMobile from '../../../components/SectionOpenMainMenu/m
 
 const ContainerMainMenuMobile = ({ location }) => {
   const [ open, setOpen ] = useState(false)
-  const [ visibleHeader, setVisibleHeader ] = useState(true)
+  const [ blackHeader, setBlackHeader ] = useState()
   // Подписываемся на скрол
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -35,17 +35,15 @@ const ContainerMainMenuMobile = ({ location }) => {
     setOpen(_open)
   }
 
-  // Предыдущая позиция скрола
-  // let prevPosition = 0
-  // Если крутили вверх, то показываем хедер
   const handleScroll = () => {
     const OFFSET = 100
     if (!window) return
     if (window.pageYOffset > OFFSET) {
-      visibleHeader && setVisibleHeader(false)
-    }
-    if (window.pageYOffset < OFFSET) {
-      !visibleHeader && setVisibleHeader(true)
+      // Сделать черным
+      setBlackHeader(true)
+    } else if (window.pageYOffset < OFFSET) {
+      // сделать белым
+      setBlackHeader(false)
     }
   }
 
@@ -58,8 +56,8 @@ const ContainerMainMenuMobile = ({ location }) => {
       {/* <div className={css.menu__absolute}> */}
       {/*  <SectionHeaderDesktop {...{ setOpen: openMenu, open }} /> */}
       {/* </div> */}
-      <div className={cn(css.menu, { [css.visible]: !visibleHeader })}>
-        <SectionHeaderMobile {...{ setOpen: openMenu, open, menuItems }} />
+      <div className={cn(css.menu)}>
+        <SectionHeaderMobile {...{ setOpen: openMenu, open, menuItems, black: blackHeader }} />
       </div>
       <div className={css.container}>
         <Collapse isOpened={open} >

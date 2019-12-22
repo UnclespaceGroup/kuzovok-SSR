@@ -16,7 +16,6 @@ import ContainerLastWorks from '../../ContainerLastWorks/desktop/ContainerLastWo
 import SectionReviewCard from '../../../components/SectionReviewCard/desktop/SectionReviewCard'
 
 const ContainerWorkDetail = ({ match }) => {
-  console.log(match)
   const [ pageData, setPageData ] = useState({})
   const id = match?.params?.id
   useMemo(() => {

@@ -37,6 +37,9 @@ const RoutesDesktop = () => (
       path={PAGE_REVIEWS}
     />
     <Route component={PageWorksDesktop} // Все работы
+      path={PAGE_WORKS}
+    />
+    <Route component={PageWorksDesktop} // Все работы
       path={PAGE_WORKS + ':slug'}
     />
     <Route component={PageWorkDetailDesktop} // Деталка работы

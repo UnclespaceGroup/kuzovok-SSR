@@ -7,8 +7,17 @@
   height: inherit;
 
   :global {
+    .swiper-pagination {
+      margin-bottom: 2rem;
+    }
+
     .swiper-pagination-bullet-active {
-      background: #c37306;
+      background: #c37306!important;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: darkgrey;
+      opacity: 1;
     }
   }
 }

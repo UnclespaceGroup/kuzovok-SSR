@@ -5,13 +5,13 @@ export const menuItems = [
     title: 'Услуги', href: PAGE_SERVICES
   },
   {
-    title: 'Работы за сегодня', href: PAGE_REVIEWS + 'today'
+    title: 'Сделано сегодня', href: PAGE_REVIEWS + 'today'
   },
   {
     title: 'Машины в ремонте', href: PAGE_WORKS + 'last'
   },
   {
-    title: 'Контакты', href: PAGE_ABOUT
+    title: 'Работы сервиса', href: PAGE_WORKS + 'last'
   },
   {
     title: 'О нас', href: PAGE_ABOUT

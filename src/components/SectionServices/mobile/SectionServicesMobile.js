@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import ContainerContactsBlockMobile
   from '../../../containers/ContainerContactsBlock/mobile/ContainerContactsBlockMobile'
 import CardCatalogImageMobile from '../../CardCatalogImage/mobile/CardCatalogImageMobile'
-import CardCatalogSizebleMobile from '../../CardCatalogSizeble/mobile/CardCatalogSizebleMobile'
 import LayoutMobile from '../../Layout/LayoutMobile'
 import RowCardsMobile from '../../RowCards/mobile/RowCardsMobile'
 import SectionTitleMobile from '../../SectionTitle/mobile/SectionTitleMobile'
@@ -24,7 +23,7 @@ const SectionServicesMobile = ({ mainCards, cards }) => (
       <div className={css.cards} >
         <SectionTitleMobile title={'Все услуги'} count={cards?.items?.length} />
         <RowCardsMobile {...cards}>
-          <CardCatalogSizebleMobile />
+          <CardCatalogImageMobile />
         </RowCardsMobile>
       </div>
       <Padding value={48} />

@@ -1,4 +1,5 @@
 import React from 'react'
+import AdvantagesRowDesktop from '../../../components/AdvantagesRow/desktop/AdvantagesRowDesktop'
 import css from './ContainerHome.module.scss'
 import ContainerBannerWithVideoDesktop from '../../ContainerBannerWithVideo/ContainerBannerWithVideoDesktop'
 import Padding from '../../../components/Padding/Padding'
@@ -11,10 +12,12 @@ import useHome from '../useHome'
 import ContainerContactsBlock from '../../ContainerContactsBlock/desktop/ContainerContactsBlock'
 
 const ContainerHome = () => {
-  const { services, bigBlockServices } = useHome()
+  const { services, bigBlockServices, advantages } = useHome()
   return (
     <div className={css.container}>
       <ContainerBannerWithVideoDesktop />
+      <Padding value={80} />
+      <AdvantagesRowDesktop items={advantages} />
       <Padding value={80} />
       <SectionMainChooseAutoTypeDesktop {...bigBlockServices} />
       <Padding value={80} />

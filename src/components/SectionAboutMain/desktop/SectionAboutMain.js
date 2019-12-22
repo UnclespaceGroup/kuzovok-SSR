@@ -1,13 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import css from './SectionAboutMain.module.scss'
-import SectionTextWithImageBlack from '../../SectionTextWithImageBlack/SectionTextWithImageBlack'
 import Layout from '../../Layout/Layout'
 import Wysiwyg from '../../Wysiwyg/desktop/Wysiwyg'
 import Content from '../../Content/Content'
-import Padding from '../../Padding/Padding'
 
-const SectionAboutMain = ({ block2 }) => (
+const SectionAboutMain = () => (
   <div className={css.container}>
     <Layout >
       <Content width={'60%'}>
@@ -16,17 +14,24 @@ const SectionAboutMain = ({ block2 }) => (
           <p>Предлагаем все виды кузовных и покрасочных работ в городе Сыктывкар</p>
           <ul>
             <li>Покарска автомобиля</li>
-          </ul>`}
+            <li>Кузовные работы</li>
+            <li>Покрытие антигравием</li>
+          </ul>
+          <p>
+          dsfms'ldmckmsd'kcmsdmcksdmkcmd mdskm ksdk mkds;c msd;mksdk mkdskcsdmcsdk;m
+          dsfms'ldmckmsd'kcmsdmcksdmkcmd mdskm ksdk mkds;c msd;mksdk mkdskcsdmcsdk;m
+          dsfms'ldmckmsd'kcmsdmcksdmkcmd mdskm ksdk mkds;c msd;mksdk mkdskcsdmcsdk;m
+          dsfms'ldmckmsd'kcmsdmcksdmkcmd mdskm ksdk mkds;c msd;mksdk mkdskcsdmcsdk;m
+          dsfms'ldmckmsd'kcmsdmcksdmkcmd mdskm ksdk mkds;c msd;mksdk mkdskcsdmcsdk;m
+          dsfms'ldmckmsd'kcmsdmcksdmkcmd mdskm ksdk mkds;c msd;mksdk mkdskcsdmcsdk;m
+</p>
+
+`}
         </Wysiwyg>
       </Content>
     </Layout>
-    <Padding value={40} />
-    <SectionTextWithImageBlack {...block2} />
   </div>
 )
-SectionAboutMain.propTypes = {
-  block1: PropTypes.object,
-  block2: PropTypes.object
-}
+SectionAboutMain.propTypes = {}
 
 export default React.memo(SectionAboutMain)

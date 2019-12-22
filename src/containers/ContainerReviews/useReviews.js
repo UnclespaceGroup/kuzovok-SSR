@@ -19,10 +19,15 @@ const useReviews = ({ location }) => {
         }
       })
       .then(data => {
-        setItems(data.map(item => ({
-          ...item,
-          galleryData: { photos: item.images && JSON.parse(item.images) }
-        })))
+        console.log(data)
+        const _items = data
+          .map(item => ({
+            ...item,
+            galleryData: { photos: item.images && JSON.parse(item.images) }
+          }))
+          .sort((before, current) => moment(before.date).isAfter(current.date) ? -1 : 1)
+        console.log(_items)
+        setItems(_items)
         setPending(false)
       }).catch(e => {
         setPending(false)

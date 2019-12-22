@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { scrollWindowTo } from '../../../utils/scrollWindowTo'
+import Button from '../../Button/Button'
 import css from './SectionTopBanner.module.scss'
 import BgImage from '../../BgImage/BgImage'
 import _ from 'lodash'
 import { Link } from 'react-router-dom'
 import { MdArrowBack } from 'react-icons/md'
-import TagsBlock from '../../TagsBlock/TagsBlock'
+// import TagsBlock from '../../TagsBlock/desktop/TagsBlock'
 import List from '../../List/List'
 import TextIcon from '../../TextIcon/TextIcon'
 import ControllerSideMenu from '../../../containers/ControllerSideMenu/ControllerSideMenu'
@@ -16,7 +18,7 @@ const SectionTopBanner = ({ img, title, text, children, sideBlock, backLink, sta
       <div className={css.side}>{sideBlock}</div>
       <div className={css.content}>
         { backLink && <Link className={css.backLink} to={backLink}><MdArrowBack /></Link> }
-        { tags && <TagsBlock tags={tags} />}
+        {/* { tags && <TagsBlock tags={tags} />} */}
         <h1 className={css.title}>{title}<span>{status}</span></h1>
         <div className={css.text}>{text}</div>
         <ul className={css.advantages}>
@@ -26,9 +28,11 @@ const SectionTopBanner = ({ img, title, text, children, sideBlock, backLink, sta
           <TextIcon />
         </List>}
         {addIcon && addIcon}
-        <div className={css.children}>{children}</div>
+        <div>{children}</div>
+        <Button className={css.btn} onClick={() => scrollWindowTo('toThis')}>Подробнее</Button>
       </div>
     </div>
+    <div id={'toThis'} />
   </BgImage>
 )
 SectionTopBanner.propTypes = {

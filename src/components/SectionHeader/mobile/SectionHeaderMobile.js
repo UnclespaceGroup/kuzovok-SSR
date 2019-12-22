@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 import { MdSearch, MdMenu, MdClose } from 'react-icons/md'
 import { MAIN_PHONE } from '../../../constants/contacts'
 
-const SectionHeaderMobile = ({ setOpen, open, menuItems = [] }) => (
-  <div className={css.wrapper}>
+const SectionHeaderMobile = ({ setOpen, open, menuItems = [], black }) => (
+  <div className={cn(css.wrapper, { [css.black]: black })}>
     <div className={css.container}>
       {
         open
@@ -23,7 +23,8 @@ const SectionHeaderMobile = ({ setOpen, open, menuItems = [] }) => (
 SectionHeaderMobile.propTypes = {
   setOpen: PropTypes.func,
   open: PropTypes.bool,
-  menuItems: PropTypes.array
+  menuItems: PropTypes.array,
+  black: PropTypes.bool
 }
 
 export default React.memo(SectionHeaderMobile)

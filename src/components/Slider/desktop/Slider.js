@@ -5,18 +5,22 @@ import css from './Slider.module.scss'
 import Swiper from 'react-id-swiper'
 import 'react-id-swiper/lib/styles/css/swiper.css'
 
-const Slider = ({ items, children, loop, autoplayDelay }) => (
+const Slider = ({ items, children, loop, autoplayDelay, getSwiper, ...params }) => (
   <div>
     <Swiper
+      getSwiper={ref => getSwiper(ref)}
+      observer
       pagination={{
         el: '.swiper-pagination',
-        clickable: true
+        clickable: true,
+        dynamicBullets: true
       }}
       loop={loop}
       autoplay={{
         delay: autoplayDelay
       }}
       containerClass={`${css.container}`}
+      {...params}
     >
       {
         _.map(items, (item, key) => (
@@ -31,10 +35,14 @@ const Slider = ({ items, children, loop, autoplayDelay }) => (
   </div>
 )
 Slider.propTypes = {
+  getSwiper: PropTypes.func,
   items: PropTypes.array,
   children: PropTypes.node,
   loop: PropTypes.bool,
   autoplayDelay: PropTypes.number
+}
+Slider.defaultProps = {
+  getSwiper: () => {}
 }
 
 export default React.memo(Slider)

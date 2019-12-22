@@ -6,6 +6,10 @@
   padding: 4.8rem 0;
   border-bottom: solid 1px darkgray;
 
+  &:last-child {
+    border-bottom: none;
+  }
+
   &:first-child {
     padding-top: 0rem;
   }

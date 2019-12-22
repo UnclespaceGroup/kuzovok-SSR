@@ -1,9 +1,9 @@
 import React from 'react'
-import ContainerService from '../../../containers/ContainerServiceDetail/desktop/ContainerServiceDetail'
+import ContainerServiceDetailMobile from 'containers/ContainerServiceDetail/mobile/ContainerServiceDetailMobile'
 
 const PageServiceDetailMobile = () => (
   <>
-    <ContainerService />
+    <ContainerServiceDetailMobile />
   </>
 )
 

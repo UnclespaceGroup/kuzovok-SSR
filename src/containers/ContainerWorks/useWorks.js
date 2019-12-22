@@ -4,13 +4,14 @@ import { getStatusByCode } from 'utils/getNameByValue'
 import photo from 'static/images/Pokraska-3.jpg'
 import { PAGE_WORKS } from 'constants/ROUTES'
 import { fetchDataListParams } from '../../axios/fetchData'
+import carIcon from 'static/images/car-icon.png'
 
 const slugs = [
   {
     id: 0,
     slug: 'last',
     title: 'Последние',
-    params: { limit: 5 }
+    params: { limit: 6 }
   },
   {
     id: 1,
@@ -45,7 +46,8 @@ const useWorks = ({ params = {} }) => {
   const [ pending, setPending ] = useState(false)
 
   const header = {
-    title: 'Все работы',
+    icon: carIcon,
+    title: 'Машины в ремонте',
     text: 'Здесь вы можете ознакомиться с нашими работами',
     img: photo
   }

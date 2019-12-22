@@ -40,6 +40,9 @@ const RoutesMobile = () => (
     <Route component={PageWorksMobile} // Все работы
       path={PAGE_WORKS + ':slug'}
     />
+    <Route component={PageWorksMobile} // Все работы
+      path={PAGE_WORKS}
+    />
     <Route component={PageWorkDetailMobile} // Деталка работы
       exact
       path={PAGE_WORK_DETAIL + ':id'}

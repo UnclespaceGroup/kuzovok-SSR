@@ -14,11 +14,15 @@ const SectionReviews = ({ items = [], title }) => (
     <Layout>
       <SectionTitle title={title} count={items.length} />
     </Layout>
-    <List
-      items={items}
-    >
-      <SectionReviewCard withUrl />
-    </List>
+    <Layout withAside>
+      <div>
+        <List
+          items={items}
+        >
+          <SectionReviewCard withUrl />
+        </List>
+      </div>
+    </Layout>
   </div>
 )
 SectionReviews.propTypes = {

@@ -4,12 +4,17 @@ import css from './Banner.module.scss'
 import BgImage from '../../BgImage/BgImage'
 import Layout from '../../Layout/Layout'
 
-const Banner = ({ title, text, img }) => (
+const Banner = ({ title, text, img, icon }) => (
   <BgImage img={img}>
     <div className={css.container}>
       <Layout>
-        <h1 className={css.title}>{title}</h1>
-        <div className={css.text}>{text}</div>
+        <div className={css.row}>
+          {icon && <div className={css.icon} style={{ backgroundImage: `url(${icon})` }} />}
+          <div>
+            <h1 className={css.title}>{title}</h1>
+            <div className={css.text}>{text}</div>
+          </div>
+        </div>
       </Layout>
     </div>
   </BgImage>
@@ -17,7 +22,8 @@ const Banner = ({ title, text, img }) => (
 Banner.propTypes = {
   title: PropTypes.node,
   text: PropTypes.node,
-  img: PropTypes.string
+  img: PropTypes.string,
+  icon: PropTypes.string
 }
 
 export default React.memo(Banner)

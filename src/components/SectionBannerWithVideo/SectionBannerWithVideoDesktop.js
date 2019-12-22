@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { scrollWindowTo } from '../../utils/scrollWindowTo'
+import Button from '../Button/Button'
 import css from './SectionBannerWithVideo.module.scss'
 import Layout from '../Layout/Layout'
 import YouTube from 'react-youtube'
@@ -35,19 +37,16 @@ const SectionBannerWithVideoDesktop = ({ url, title, text, button }) => (
       <div className={css.wrapper}>
         <div className={css.title}>{title}</div>
         <div className={css.text}>
-          <ul>
-            <li>Наблюдайте за ходом ремонта вашего автомобиля на нашем сайте.</li>
-            <li>Гарантия на выполненные работы 1.5 года.</li>
-            <li>Оптимальное отношение цена - качество.</li>
-          </ul>
+          {text}
         </div>
-        <div className={css.button}>{button}</div>
+        <Button className={css.btn} onClick={() => scrollWindowTo('toThis')}>Подробнее</Button>
       </div>
       <div className={css.buttons}>
         <div className={css.prev} ><MdKeyboardArrowLeft size={'2rem'} /></div>
         <div className={css.next} >Следующее видео<MdKeyboardArrowRight size={'2rem'} /></div>
       </div>
     </Layout>
+    <div id={'toThis'} />
   </div>
 )
 SectionBannerWithVideoDesktop.propTypes = {

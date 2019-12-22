@@ -4,13 +4,11 @@ import SectionServicesSliderBannerMobile
   from '../../../components/SectionServicesSliderBanner/mobile/SectionServicesSliderBannerMobile'
 import useServices from '../useServices'
 import { PAGE_SERVICES } from '../../../constants/ROUTES'
-import Padding from '../../../components/Padding/Padding'
 
 const ContainerServicesMobile = () => {
   const { mainCards = [], cards = [], bannerItems } = useServices()
   return (
     <>
-      <Padding value={80} />
       <SectionServicesSliderBannerMobile
         items={bannerItems}
       />
