@@ -11,7 +11,7 @@ import Button from 'components/Button/Button'
 
 const SectionCardsRowMobile = ({ items, title, inLine, url = PAGE_WORK_DETAIL, moreButtonUrl }) => (
   <LayoutMobile className={css.container}>
-    <SectionTitleMobile title={title} count={items?.length} />
+    {title && <SectionTitleMobile title={title} count={items?.length} />}
     <div className={inLine ? css.row : css.column} >
       {
         _.map(items, (item, key) => (

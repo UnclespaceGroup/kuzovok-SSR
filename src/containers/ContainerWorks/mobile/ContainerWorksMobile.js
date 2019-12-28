@@ -6,19 +6,25 @@ import useWorks from '../useWorks'
 import { withRouter } from 'react-router'
 import { compose } from 'redux'
 import SectionCardsRowMobile from 'components/SectionCardsRow/mobile/SectionCardsRowMobile'
+import SectionTitleMobile from 'components/SectionTitle/mobile/SectionTitleMobile'
+import CheckTabsDesktop from 'components/CheckTabs/desktop/CheckTabsDesktop'
+import LayoutMobile from 'components/Layout/LayoutMobile'
 
 const ContainerWorksMobile = ({ match }) => {
-  const { header, items } = useWorks({ ...match })
+  const { header, items, tabs, activeTab } = useWorks({ ...match })
   return (
-  <>
-    <BannerMobile withoutTabs {...header} />
-    <Padding value={24} />
-          <SectionCardsRowMobile
-            items={items}
-            title={'Работы станции'}
-          />
-    <Padding value={40} />
-  </>
+    <>
+      <BannerMobile withoutTabs {...header} />
+      <Padding value={24} />
+      <LayoutMobile>
+        <SectionTitleMobile title={'Работы станции'} count={items?.length} />
+        <CheckTabsDesktop items={tabs} activeTabIndex={activeTab} />
+      </LayoutMobile>
+      <SectionCardsRowMobile
+        items={items}
+      />
+      <Padding value={40} />
+    </>
   )
 }
 ContainerWorksMobile.propTypes = {

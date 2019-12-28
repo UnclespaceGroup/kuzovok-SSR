@@ -51,31 +51,9 @@ export const items = [
   },
   {
     title: {
-      to: PAGE_WORKS + 'last',
+      to: PAGE_WORKS,
       text: 'Работы'
-    },
-    items: [
-      {
-        title: 'Посмотреть все работы',
-        to: PAGE_WORKS + 'all'
-      },
-      {
-        title: 'Сварочные работы',
-        to: PAGE_WORKS + 'svarochnye-raboty'
-      },
-      {
-        title: 'Обработка порогов, анигравий',
-        to: PAGE_WORKS + 'obrabotka-porogov-i-dnisha'
-      },
-      {
-        title: 'Покраска авто',
-        to: PAGE_WORKS + 'pokraska'
-      },
-      {
-        title: 'Кузовной ремонт',
-        to: PAGE_WORKS + 'kuzovnoy-remont'
-      }
-    ]
+    }
   },
   {
     title: {
