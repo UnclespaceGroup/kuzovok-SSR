@@ -19,7 +19,6 @@ import PageHomeMobile from './PageHome/mobile/PageHomeMobile'
 import PageServiceMobile from './PageService/mobile/PageServiceMobile'
 import PageWorkDetailMobile from './PageWorkDetail/mobile/PageWorkDetailMobile'
 import PageWorksMobile from './PageWorks/mobile/PageWorksMobile'
-import PageWorksSpecificMobile from 'pages/PageWorksSpecific/mobile/PageWorksSpecificMobile'
 
 const RoutesMobile = () => (
   <Switch>
@@ -37,10 +36,6 @@ const RoutesMobile = () => (
     />
     <Route component={PageReviewsMobile} // Текущие работы
       path={PAGE_REVIEWS}
-    />
-    <Route component={PageWorksSpecificMobile} // Все работы
-      exact
-      path={PAGE_WORKS + ':slug'}
     />
     <Route component={PageWorksMobile} // Все работы
       exact

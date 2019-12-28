@@ -2,16 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import css from './SectionCardsRow.module.scss'
-import Layout from '../../Layout/Layout'
-import CardWorkItem from '../../CardWorkItem/desktop/CardWorkItem'
-import Padding from '../../Padding/Padding'
-import { PAGE_WORKS } from '../../../constants/ROUTES'
-import SectionTitle from '../../SectionTitle/desktop/SectionTitle'
+import Layout from 'components/Layout/Layout'
+import CardWorkItem from 'components/CardWorkItem/desktop/CardWorkItem'
+import Padding from 'components/Padding/Padding'
+import { PAGE_WORK_DETAIL } from 'constants/ROUTES'
+import SectionTitle from 'components/SectionTitle/desktop/SectionTitle'
 import Button from 'components/Button/Button'
 
-const SectionCardsRow = ({ items, title, url = PAGE_WORKS, moreButtonUrl }) => (
+const SectionCardsRow = ({ items, title, url = PAGE_WORK_DETAIL, moreButtonUrl }) => (
   <Layout className={css.container}>
-    <SectionTitle title={title} count={items?.length} />
+    { title && <SectionTitle title={title} count={items?.length} />}
     <div className={css.row}>
       {
         _.map(items, (item, key) => (

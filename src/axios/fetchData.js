@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-// const localApi = 'http://localhost:3002'
+const localApi = 'http://localhost:3002'
 const productionApi = 'http://server.mdf-center.ru'
 
-axios.defaults.baseURL = productionApi
+axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? productionApi : localApi
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
 
@@ -31,9 +31,9 @@ export const fetchDataList = async (url) => {
   return data
 }
 
-export const fetchDataListParams = async (url, params = { params: {} }) => {
+export const fetchDataListParams = async (url, axiosParams = { params: {} }) => {
   let data = []
-  await axios.post(url, params)
+  await axios.post(url, axiosParams)
     .then(res => {
       data = res.data
     })

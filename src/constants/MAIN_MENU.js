@@ -7,16 +7,13 @@ import {
 
 export const menuItems = [
   {
-    title: 'Услуги', href: PAGE_SERVICES
+    title: 'Услуги станции', href: PAGE_SERVICES
   },
   {
-    title: 'Сделано сегодня', href: PAGE_REVIEWS + 'today'
+    title: 'Последние работы', href: PAGE_REVIEWS + 'week'
   },
   {
-    title: 'Машины в ремонте', href: PAGE_WORKS + 'last'
-  },
-  {
-    title: 'Все работы', href: PAGE_WORKS
+    title: 'Автомобили в ремонте', href: PAGE_WORKS
   },
   {
     title: 'О нас', href: PAGE_ABOUT
