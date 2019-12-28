@@ -19,17 +19,17 @@
 .content {
   margin-left: 15rem;
   margin-top: 50vh;
+  padding-bottom: 2rem;
   width: 70vw;
-
   color: white;
   font-weight: 300;
   font-size: 1.8rem;
   line-height: 3.2rem;
-
 }
 
 .title {
   color: white;
+  font-size: 4.8rem;
   font-weight: normal;
   margin-bottom: 2.4rem;
 
@@ -43,8 +43,8 @@
 .text {
   color: white;
   font-weight: 300;
-  font-size: 1.8rem;
-  line-height: 3.2rem;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
   width: 60%;
   margin-bottom: 3.8rem;
 
@@ -62,7 +62,7 @@
 .backLink {
   display: block;
   position: absolute;
-  top: 10vh;
+  top: 10rem;
   color: white;
 
   svg {

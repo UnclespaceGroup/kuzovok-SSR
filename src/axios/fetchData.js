@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const localApi = 'http://localhost:3002'
+// const localApi = 'http://localhost:3002'
 const productionApi = 'http://server.mdf-center.ru'
 
-axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? productionApi : localApi
+axios.defaults.baseURL = productionApi
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
 

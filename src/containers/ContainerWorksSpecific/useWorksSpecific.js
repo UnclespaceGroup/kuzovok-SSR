@@ -48,7 +48,7 @@ const useWorksSpecific = ({ params = {} }) => {
   const header = {
     icon: carIcon,
     title: 'Машины в ремонте',
-    text: 'Здесь вы можете ознакомиться с нашими работами',
+    text: '',
     img: photo
   }
 

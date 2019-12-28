@@ -7,11 +7,11 @@ import FooterDesktop from '../components/Footer/desktop/FooterDesktop'
 import ContainerMainMenuDesktop from '../containers/ContainerMainMenu/desktop/ContainerMainMenuDesktop'
 
 const AppDesktop = () => (
-  <>
+  <div>
     <ContainerMainMenuDesktop />
     <RoutesDesktop />
     <FooterDesktop />
-  </>
+  </div>
 )
 
 export default compose(

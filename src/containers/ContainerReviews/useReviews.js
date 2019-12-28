@@ -32,7 +32,7 @@ const useReviews = ({ location }) => {
   }, [location])
 
   const headerData = {
-    title: 'Работы автостанции',
+    title: 'Последние работы',
     text: <div>
       <p>Здесь вы можете просмотреть отчеты по последним работам станции</p>
     </div>,

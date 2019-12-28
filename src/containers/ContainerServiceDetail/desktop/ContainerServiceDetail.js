@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SectionAboutVideo from '../../../components/SectionAboutVideo/desktop/SectionAboutVideo'
-import SectionServiceDetailDesktop from '../../../components/SectionServiceDetail/desktop/SectionServiceDetailDesktop'
-import Padding from '../../../components/Padding/Padding'
-import SectionTextWithImageBlack from '../../../components/SectionTextWithImageBlack/desktop/SectionTextWithImageBlack'
-import SectionContacts from '../../../components/SectionContacts/desktop/SectionContacts'
-import SectionTopBanner from '../../../components/SectionTopBanner/desktop/SectionTopBanner'
+import SectionAboutVideo from 'components/SectionAboutVideo/desktop/SectionAboutVideo'
+import SectionServiceDetailDesktop from 'components/SectionServiceDetail/desktop/SectionServiceDetailDesktop'
+import Padding from 'components/Padding/Padding'
+import SectionTextWithImageBlack from 'components/SectionTextWithImageBlack/desktop/SectionTextWithImageBlack'
+import SectionContacts from 'components/SectionContacts/desktop/SectionContacts'
+import SectionTopBanner from 'components/SectionTopBanner/desktop/SectionTopBanner'
 import useServiceDetail from '../useServiceDetail'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
-import { PAGE_SERVICES } from '../../../constants/ROUTES'
+import { PAGE_SERVICES } from 'constants/ROUTES'
 
 const ContainerServiceDetail = ({ match }) => {
   const { bannerData, videos, content, textBlock1 } = useServiceDetail({ ...match })

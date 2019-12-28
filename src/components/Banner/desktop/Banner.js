@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './Banner.module.scss'
-import BgImage from '../../BgImage/BgImage'
-import Layout from '../../Layout/Layout'
+import BgImage from 'components/BgImage/BgImage'
+import Layout from 'components/Layout/Layout'
 import cn from 'classnames'
 
 const Banner = ({ title, text, img, icon, withoutTabs }) => (

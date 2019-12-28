@@ -1,21 +1,19 @@
 import React from 'react'
-import AdvantagesRowDesktop from '../../../components/AdvantagesRow/desktop/AdvantagesRowDesktop'
+import AdvantagesRowDesktop from 'components/AdvantagesRow/desktop/AdvantagesRowDesktop'
 import css from './ContainerHome.module.scss'
-import ContainerBannerWithVideoDesktop from '../../ContainerBannerWithVideo/ContainerBannerWithVideoDesktop'
-import Padding from '../../../components/Padding/Padding'
-import SectionMainChooseAutoTypeDesktop
-  from '../../../components/SectionMainChooseAutoType/desktop/SectionMainChooseAutoTypeDesktop'
-import SectionMainServiceCatalogDesktop
-  from '../../../components/SectionMainServiceCatalog/desktop/SectionMainServiceCatalogDesktop'
-import ContainerLastWorks from '../../ContainerLastWorks/desktop/ContainerLastWorks'
+import Padding from 'components/Padding/Padding'
+import SectionMainChooseAutoTypeDesktop from 'components/SectionMainChooseAutoType/desktop/SectionMainChooseAutoTypeDesktop'
+import SectionMainServiceCatalogDesktop from 'components/SectionMainServiceCatalog/desktop/SectionMainServiceCatalogDesktop'
+import ContainerLastWorks from 'containers/ContainerLastWorks/desktop/ContainerLastWorks'
 import useHome from '../useHome'
-import ContainerContactsBlock from '../../ContainerContactsBlock/desktop/ContainerContactsBlock'
+import ContainerContactsBlock from 'containers/ContainerContactsBlock/desktop/ContainerContactsBlock'
+import SliderBannerDesktop from 'components/SliderBanner/desktop/SliderBannerDesktop'
 
 const ContainerHome = () => {
-  const { services, bigBlockServices, advantages } = useHome()
+  const { services, bigBlockServices, advantages, mainSlider } = useHome()
   return (
     <div className={css.container}>
-      <ContainerBannerWithVideoDesktop />
+      <SliderBannerDesktop items={mainSlider} />
       <Padding value={80} />
       <AdvantagesRowDesktop items={advantages} />
       <Padding value={80} />
