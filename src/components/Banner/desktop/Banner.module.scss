@@ -39,3 +39,19 @@
   background-size: contain;
   margin-right: 6.4rem;
 }
+
+.back {
+  display: block;
+  position: absolute;
+  top: 10rem;
+  color: white;
+
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  &:hover {
+    color: #c37306;
+  }
+}

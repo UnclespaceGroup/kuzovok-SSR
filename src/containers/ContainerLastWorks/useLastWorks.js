@@ -1,4 +1,4 @@
-import { fetchDataListParams } from '../../axios/fetchData'
+import { fetchDataListParams } from 'axios/fetchData'
 import _ from 'lodash'
 
 const useLastWorks = async () => {

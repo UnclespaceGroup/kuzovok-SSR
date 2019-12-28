@@ -6,6 +6,10 @@
   padding: 15rem 0 6rem;
   color: white;
   background-color: rgba(0,0,0,0.8);
+
+  li {
+    margin-bottom: 1rem;
+  }
 }
 
 .withoutTabs {
@@ -14,12 +18,23 @@
 
 .title {
   font-weight: 400;
-  font-size: 4.2rem;
+  font-size: 3.2rem;
   margin-bottom: 2.4rem;
 }
 
 .text {
   font-size: 1.6rem;
-  line-height: 3.6rem;
   font-weight: 300;
+}
+
+.back {
+  display: block;
+  position: absolute;
+  top: 10rem;
+  color: white;
+
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
 }

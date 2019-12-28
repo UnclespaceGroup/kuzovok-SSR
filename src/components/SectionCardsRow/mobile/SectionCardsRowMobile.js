@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 import css from './SectionCardsRowMobile.module.scss'
 import Padding from '../../Padding/Padding'
-import { PAGE_WORKS } from '../../../constants/ROUTES'
-import SectionTitleMobile from '../../SectionTitle/mobile/SectionTitleMobile'
-import LayoutMobile from '../../Layout/LayoutMobile'
-import CardWorkItemMobile from '../../CardWorkItem/mobile/CardWorkItemMobile'
+import { PAGE_WORK_DETAIL } from 'constants/ROUTES'
+import SectionTitleMobile from 'components/SectionTitle/mobile/SectionTitleMobile'
+import LayoutMobile from 'components/Layout/LayoutMobile'
+import CardWorkItemMobile from 'components/CardWorkItem/mobile/CardWorkItemMobile'
 import Button from 'components/Button/Button'
 
-const SectionCardsRowMobile = ({ items, title, inLine, url = PAGE_WORKS, moreButtonUrl }) => (
+const SectionCardsRowMobile = ({ items, title, inLine, url = PAGE_WORK_DETAIL, moreButtonUrl }) => (
   <LayoutMobile className={css.container}>
     <SectionTitleMobile title={title} count={items?.length} />
     <div className={inLine ? css.row : css.column} >

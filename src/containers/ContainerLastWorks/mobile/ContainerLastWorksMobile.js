@@ -1,12 +1,12 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import useLastWorks from '../useLastWorks'
-import BgColor from '../../../components/BgColor/BgColor'
-import Padding from '../../../components/Padding/Padding'
-import SectionCardsRowMobile from '../../../components/SectionCardsRow/mobile/SectionCardsRowMobile'
+import BgColor from 'components/BgColor/BgColor'
+import Padding from 'components/Padding/Padding'
+import SectionCardsRowMobile from 'components/SectionCardsRow/mobile/SectionCardsRowMobile'
 
 const ContainerLastWorksMobile = () => {
   const [ items, setItems ] = useState([])
-  useMemo(() => {
+  useEffect(() => {
     useLastWorks()
       .then(data => {
         setItems(data?.items)

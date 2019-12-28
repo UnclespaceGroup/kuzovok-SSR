@@ -6,7 +6,7 @@ export const mainServices = [
     annotation: 'Lorem ipsum dolor sit amet, consectetur adipiscing ',
     to: '',
     bannerData: {
-      advantages: [
+      text: [
         'Работы любой сложности',
         'Гарантия - полтора года',
         'И что то ещё'

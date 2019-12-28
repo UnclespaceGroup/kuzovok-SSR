@@ -1,19 +1,17 @@
 import React, { useState, useMemo } from 'react'
-import Padding from '../../../components/Padding/Padding'
-import SectionContacts from '../../../components/SectionContacts/desktop/SectionContacts'
-import Wysiwyg from '../../../components/Wysiwyg/desktop/Wysiwyg'
-import { PAGE_WORKS } from '../../../constants/ROUTES'
-import SectionTopBanner from '../../../components/SectionTopBanner/desktop/SectionTopBanner'
-import ControllerSideMenu from '../../ControllerSideMenu/ControllerSideMenu'
+import Padding from 'components/Padding/Padding'
+import SectionContacts from 'components/SectionContacts/desktop/SectionContacts'
+import Wysiwyg from 'components/Wysiwyg/desktop/Wysiwyg'
+import { PAGE_WORKS } from 'constants/ROUTES'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
 import PropTypes from 'prop-types'
-import List from '../../../components/List/List'
-import Layout from '../../../components/Layout/Layout'
+import List from 'components/List/List'
+import Layout from 'components/Layout/Layout'
 import useWorkDetail from '../useWorkDetail'
-import IconCount from '../../../components/IconCount/IconCount'
-import ContainerLastWorks from '../../ContainerLastWorks/desktop/ContainerLastWorks'
-import SectionReviewCard from '../../../components/SectionReviewCard/desktop/SectionReviewCard'
+import ContainerLastWorks from 'containers/ContainerLastWorks/desktop/ContainerLastWorks'
+import SectionReviewCard from 'components/SectionReviewCard/desktop/SectionReviewCard'
+import Banner from 'components/Banner/desktop/Banner'
 
 const ContainerWorkDetail = ({ match }) => {
   const [ pageData, setPageData ] = useState({})
@@ -32,14 +30,8 @@ const ContainerWorkDetail = ({ match }) => {
   } = pageData
   return (
     <>
-      <SectionTopBanner
-        addIcon={
-          <IconCount
-            count={items.length}
-            texts={['запись', 'записи', 'записей']}
-          />
-        }
-        backLink={PAGE_WORKS} {...header} sideBlock={<ControllerSideMenu />} />
+      <Banner
+        backLink={PAGE_WORKS} {...header} />
       <Padding value={40} />
       <Layout>
         <Wysiwyg width={'70%'} >{data?.text}</Wysiwyg>

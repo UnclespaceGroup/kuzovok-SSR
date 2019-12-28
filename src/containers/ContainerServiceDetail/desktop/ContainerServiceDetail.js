@@ -5,17 +5,17 @@ import SectionServiceDetailDesktop from 'components/SectionServiceDetail/desktop
 import Padding from 'components/Padding/Padding'
 import SectionTextWithImageBlack from 'components/SectionTextWithImageBlack/desktop/SectionTextWithImageBlack'
 import SectionContacts from 'components/SectionContacts/desktop/SectionContacts'
-import SectionTopBanner from 'components/SectionTopBanner/desktop/SectionTopBanner'
 import useServiceDetail from '../useServiceDetail'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
 import { PAGE_SERVICES } from 'constants/ROUTES'
+import Banner from 'components/Banner/desktop/Banner'
 
 const ContainerServiceDetail = ({ match }) => {
   const { bannerData, videos, content, textBlock1 } = useServiceDetail({ ...match })
   return (
   <>
-    <SectionTopBanner
+    <Banner
       backLink={PAGE_SERVICES}
       {...bannerData} />
     <Padding value={120} />

@@ -1,25 +1,26 @@
 import React from 'react'
 import css from './ContainerHomeMobile.module.scss'
-import Padding from '../../../components/Padding/Padding'
+import Padding from 'components/Padding/Padding'
 import useHome from '../useHome'
 import SectionMainChooseAutoTypeMobile from 'components/SectionMainChooseAutoType/mobile/SectionMainChooseAutoTypeMobile'
 import SectionMainServiceCatalogMobile from 'components/SectionMainServiceCatalog/mobile/SectionMainServiceCatalogMobile'
-import ContainerLastWorksMobile from '../../ContainerLastWorks/mobile/ContainerLastWorksMobile'
-import ContainerContactsBlockMobile from '../../ContainerContactsBlock/mobile/ContainerContactsBlockMobile'
-import SectionTopBannerMobile from '../../../components/SectionTopBanner/mobile/SectionTopBannerMobile'
+import ContainerLastWorksMobile from 'containers/ContainerLastWorks/mobile/ContainerLastWorksMobile'
+import ContainerContactsBlockMobile from 'containers/ContainerContactsBlock/mobile/ContainerContactsBlockMobile'
+import SliderBannerMobile from 'components/SliderBanner/mobile/SliderBannerMobile'
+import AdvantagesRowMobile from 'components/AdvantagesRow/mobile/AdvantagesRowMobile'
 
 const ContainerHomeMobile = () => {
-  const { services, bigBlockServices, mainBanner } = useHome()
+  const { services, bigBlockServices, mainSlider, advantages } = useHome()
   return (
     <div className={css.container}>
-      <SectionTopBannerMobile {...mainBanner} />
-      <Padding value={80} />
+      <SliderBannerMobile items={mainSlider} />
+      <Padding value={60} />
+      <AdvantagesRowMobile items={advantages} />
       <SectionMainChooseAutoTypeMobile {...bigBlockServices} />
-      <Padding value={80} />
+      <Padding value={60} />
       <SectionMainServiceCatalogMobile items={services} />
-      <Padding value={80} />
+      <Padding value={60} />
       <ContainerLastWorksMobile />
-      <Padding value={80} />
       <ContainerContactsBlockMobile />
       <Padding value={120} />
     </div>

@@ -1,22 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Padding from '../../../components/Padding/Padding'
-import SectionAboutVideoMobile from '../../../components/SectionAboutVideo/mobile/SectionAboutVideoMobile'
-import SectionContactsMobile from '../../../components/SectionContacts/mobile/SectionContactsMobile'
-import SectionServiceDetailMobile from '../../../components/SectionServiceDetail/mobile/SectionServiceDetailMobile'
+import Padding from 'components/Padding/Padding'
+import SectionAboutVideoMobile from 'components/SectionAboutVideo/mobile/SectionAboutVideoMobile'
+import SectionContactsMobile from 'components/SectionContacts/mobile/SectionContactsMobile'
+import SectionServiceDetailMobile from 'components/SectionServiceDetail/mobile/SectionServiceDetailMobile'
 import SectionTextWithImageBlackMobile
-  from '../../../components/SectionTextWithImageBlack/mobile/SectionTextWithImageBlackMobile'
-import SectionTopBannerMobile from '../../../components/SectionTopBanner/mobile/SectionTopBannerMobile'
+  from 'components/SectionTextWithImageBlack/mobile/SectionTextWithImageBlackMobile'
 import useServiceDetail from '../useServiceDetail'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
-import { PAGE_SERVICES } from '../../../constants/ROUTES'
+import { PAGE_SERVICES } from 'constants/ROUTES'
+import BannerMobile from 'components/Banner/mobile/BannerMobile'
 
 const ContainerServiceDetailMobile = ({ match }) => {
   const { bannerData, videos, content, textBlock1 } = useServiceDetail({ ...match })
   return (
   <>
-    <SectionTopBannerMobile
+    <BannerMobile
       backLink={PAGE_SERVICES}
       {...bannerData} />
     <Padding value={60} />

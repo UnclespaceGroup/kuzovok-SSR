@@ -20,7 +20,7 @@ const SectionCardsRow = ({ items, title, url = PAGE_WORK_DETAIL, moreButtonUrl }
       }
     </div>
     <div>
-      {moreButtonUrl && (items?.length > 1) && <Button className={css.more} to={moreButtonUrl}>Показать все</Button>}
+      {moreButtonUrl && (items?.length > 3) && <Button className={css.more} to={moreButtonUrl}>Показать все</Button>}
     </div>
     <Padding value={120} />
   </Layout>
