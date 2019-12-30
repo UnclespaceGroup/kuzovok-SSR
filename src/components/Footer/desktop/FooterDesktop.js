@@ -1,36 +1,51 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import css from './FooterDesktop.module.scss'
-import im from 'static/images/1517716721790_big_vlru.jpg'
 import Layout from '../../Layout/Layout'
-import { Link } from 'react-router-dom'
-import { items } from 'constants/MAIN_MENU'
+import logo from 'static/logo/colored-logo-inverse-resized.png'
 import _ from 'lodash'
+import { menu } from 'constants/MAIN_MENU'
+import { Link } from 'react-router-dom'
+import Padding from 'components/Padding/Padding'
+import { MAIN_PHONE, ADDRESS } from 'constants/contacts'
+import { MdLocationOn } from 'react-icons/md'
 
 const FooterDesktop = () => (
-  <div className={css.container} style={{ backgroundImage: `url(${im})` }}>
+  <>
+  <div className={css.container} >
     <Layout className={css.wrapper}>
+      <div className={css.logo} style={{ backgroundImage: `url(${logo})` }} />
+      <Padding value={40} />
       <div className={css.row}>
-        {
-          items.map((item, key) => (
-            <div className={css.column} key={key}>
-              <Link className={css.title} to={item.title.to}>{item.title.text}</Link>
-              <ul>
-                {
-                  _.map(item?.items, (it, k) => <li key={k}><Link to={it.to} className={css.item}>{it.title}</Link>
-                  </li>)
-                }
-              </ul>
-            </div>
-          )
-          )
-        }
+        <div className={css.column}>
+          {
+            _.map(menu.mainItems, (item, key) => (
+              <Link to={item.to} className={css.mainLink} key={key}>{item.title}</Link>
+            ))
+          }
+        </div>
+        <div className={css.column}>
+          {
+            _.map(menu.items, (item, key) => (
+              <Link to={item.to} className={css.link} key={key}>{item.title}</Link>
+            ))
+          }
+        </div>
       </div>
-      <div className={css.row}>
-        Контактный блок
+      <hr />
+      <Padding value={40} />
+      <div className={css.contacts}>
+        <div className={css.phone}>{MAIN_PHONE}</div>
+        <div className={css.addr} ><MdLocationOn size={'2rem'} />{ADDRESS}</div>
       </div>
     </Layout>
   </div>
+    <div className={css.unclespace}>
+      <Layout>
+        <div>Разработано Unclespace group</div>
+      </Layout>
+    </div>
+    </>
 )
 FooterDesktop.propTypes = {
   // children: PropTypes.node

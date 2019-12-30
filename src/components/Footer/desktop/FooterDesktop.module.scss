@@ -1,17 +1,12 @@
 .container {
   position: relative;
-  padding: 10rem 0;
-  background: no-repeat center;
+  padding: 10rem 0 5rem;
   background-size: cover;
+  background-color: #282828;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+  hr {
+    border-top: none;
+    border-color: #767676;
   }
 }
 
@@ -26,33 +21,68 @@
 
 .row {
   display: flex;
-  padding-bottom: 10rem;
-
-  &:not(:last-child) {
-    border-bottom: solid 1px #E5E5E5;
-  }
+  justify-content: space-between;
 }
 
 .column {
-  width: 33%;
+  width: 50%;
 }
 
-.title {
+.mainLink {
   display: block;
-  padding: 2rem 0;
   color: white;
-  font-size: 2.4rem;
-  line-height: 2.8rem;
-  border-bottom: solid 1px #E5E5E5;
-}
-
-.item {
-  color: white;
-  font-size: 1.8rem;
-  line-height: 2.1rem;
+  font-size: 2rem;
   transition: all 200ms ease-in;
+  margin-bottom: 2rem;
+  text-align: right;
+  padding-right: 4rem;
 
   &:hover {
     color: #c37306;
   }
+}
+
+.link {
+  composes: mainLink;
+  text-align: left;
+  font-weight: 300;
+  padding-right: 0;
+  padding-left: 4rem;
+}
+
+.logo {
+  height: 20rem;
+  background: no-repeat center;
+  background-size: contain;
+}
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone {
+  margin-top: 1rem;
+  font-size: 2.8rem;
+  line-height: 4.2rem;
+  color: #E5E5E5;
+}
+
+.addr {
+  font-size: 2rem;
+  color: white;
+  font-weight: 300;
+
+  svg {
+    margin-right: 1rem;
+  }
+}
+
+.unclespace {
+  padding: 2rem 0;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: white;
+  background-color: #303030;
 }
