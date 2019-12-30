@@ -49,20 +49,6 @@
   }
 }
 
-.burger {
-  cursor: pointer;
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url("../../../static/icons/menu.svg") no-repeat center;
-  background-size: contain;
-  transition: all 200ms ease-in;
-
-  &__open {
-    composes: burger;
-    background-image: url("../../../static/icons/close.svg");
-  }
-}
-
 .search {
   cursor: pointer;
   transition: all 200ms ease-in;

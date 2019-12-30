@@ -92,3 +92,46 @@ export const items = [
     ]
   }
 ]
+
+export const menu = {
+  mainItems: [
+    {
+      to: PAGE_SERVICES,
+      title: 'Услуги'
+    },
+    {
+      to: PAGE_WORKS,
+      title: 'Работы'
+    },
+    {
+      to: PAGE_ABOUT,
+      title: 'О нас'
+    },
+    {
+      to: PAGE_PAPER,
+      title: 'Интересные статьи'
+    }
+  ],
+  items: [
+    {
+      title: 'Покраска авто',
+      to: PAGE_SERVICES + 'pokraska-avto'
+    },
+    {
+      title: 'Ремонт кузовов',
+      to: PAGE_SERVICES + 'kuzovnoi-remont'
+    },
+    {
+      title: 'Антигравий',
+      to: PAGE_SERVICES + 'antigraviy'
+    },
+    {
+      title: 'Антикоррозийные обработки',
+      to: PAGE_SERVICES + 4
+    },
+    {
+      title: 'Ремонт бамперов',
+      to: PAGE_SERVICES + 5
+    }
+  ]
+}

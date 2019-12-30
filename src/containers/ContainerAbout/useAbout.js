@@ -1,10 +1,10 @@
-import im1 from 'static/images/lada-vaz-lada-vaz-mashina-avto-2103.jpg'
 import {
   PAGE_ABOUT_MAP,
   PAGE_ABOUT_PHOTOS,
   PAGE_ABOUT_VIDEO,
   PAGE_ABOUT
 } from 'constants/ROUTES'
+import banner1 from 'static/processed-images/kusovok-customer-banner-1.jpg'
 
 const useAbout = () => {
   const items = [
@@ -30,7 +30,7 @@ const useAbout = () => {
     items,
     bannerData: {
       title: 'Станция Кузовок',
-      img: im1
+      img: banner1
     }
   }
 }

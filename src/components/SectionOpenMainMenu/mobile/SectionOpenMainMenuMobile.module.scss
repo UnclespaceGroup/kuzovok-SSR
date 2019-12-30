@@ -4,27 +4,27 @@
   width: 100%;
   height: 100vh;
   overflow: auto;
-  padding: 5rem 0;
+  padding: 10rem 0 5rem;
   background-color: #272727;
-
-  li {
-    margin-top: 2rem;
-  }
 }
 
+.block {
+  border-bottom: solid 1px darkgrey;
+  margin-bottom: 4rem;
+}
 
-.title {
+.mainLink {
   display: block;
-  padding: 4rem 0 0;
-  color: #bebebe;
+  color: white;
   font-size: 2rem;
-  line-height: 2.8rem;
+  transition: all 200ms ease-in;
+  margin-bottom: 2rem;
 }
 
-.item {
-  color: white;
-  font-size: 1.6rem;
-  line-height: 2.1rem;
+.link {
+  composes: mainLink;
+  color: #d3d3d3;
+  font-weight: 300;
 }
 
 .back {
@@ -43,3 +43,18 @@
     opacity: 1;
   }
 }
+
+.phoneBlock {
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  color: #E5E5E5;
+}
+
+.phone {
+  font-weight: bold;
+  font-size: 2.8rem;
+  line-height: 4.2rem;
+  color: #E5E5E5;
+}
+
