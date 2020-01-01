@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 import css from './SectionHeaderMobile.module.scss'
 import { Link } from 'react-router-dom'
-import { MdSearch, MdMenu, MdClose } from 'react-icons/md'
+import { MdMenu, MdClose } from 'react-icons/md'
 import { MAIN_PHONE } from 'constants/contacts'
 import logo from 'static/logo/colored-logo-text.png'
 
@@ -19,7 +19,7 @@ const SectionHeaderMobile = ({ setOpen, open, black }) => (
         <img className={css.logoImg} src={logo} />
       </Link>
       <div className={cn(css.phone)}>{MAIN_PHONE}</div>
-      <MdSearch className={css.search} color={'white'} size={'2.4rem'} />
+      {/* <MdSearch className={css.search} color={'white'} size={'2.4rem'} /> */}
     </div>
   </div>
 )
