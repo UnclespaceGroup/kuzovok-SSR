@@ -13,12 +13,12 @@ import {
 import PageAboutMobile from './PageAbout/mobile/PageAboutMobile'
 import PageReviewsMobile from './PageReviews/mobile/PageReviewsMobile'
 import PageServiceDetailMobile from './PageServiceDetail/mobile/PageServiceDetailMobile'
-import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
 import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
 import PageHomeMobile from './PageHome/mobile/PageHomeMobile'
 import PageServiceMobile from './PageService/mobile/PageServiceMobile'
 import PageWorkDetailMobile from './PageWorkDetail/mobile/PageWorkDetailMobile'
 import PageWorksMobile from './PageWorks/mobile/PageWorksMobile'
+import PagePaperMobile from 'pages/PagePaper/mobile/PagePaperMobile'
 
 const RoutesMobile = () => (
   <Switch>
@@ -48,7 +48,7 @@ const RoutesMobile = () => (
     <Route component={PageAboutMobile} // О нас
       path={PAGE_ABOUT}
     />
-    <Route component={PagePaperDesktop} // Статьи
+    <Route component={PagePaperMobile} // Статьи
       exact
       path={PAGE_PAPER}
     />

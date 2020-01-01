@@ -1,10 +1,9 @@
 // packages
 import React from 'react'
+import ContainerPaperMobile from 'containers/ContainerPaper/mobile/ContainerPaperMobile'
 
 const PagePaperMobile = () => (
-  <div>
-    home
-  </div>
+  <ContainerPaperMobile />
 )
 
 export default React.memo(PagePaperMobile)

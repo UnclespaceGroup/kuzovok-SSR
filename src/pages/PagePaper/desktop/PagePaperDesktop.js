@@ -1,5 +1,5 @@
 import React from 'react'
-import ContainerPaper from '../../../containers/ContainerPaper/ContainerPaper'
+import ContainerPaper from 'containers/ContainerPaper/desktop/ContainerPaper'
 
 const PagePaperDesktop = () => (
   <>

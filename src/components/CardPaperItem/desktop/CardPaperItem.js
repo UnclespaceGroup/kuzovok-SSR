@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import css from './CardPaperItem.module.scss'
-import BgImage from '../BgImage/BgImage'
-import Button from '../Button/Button'
+import css from 'components/CardPaperItem/desktop/CardPaperItem.module.scss'
+import BgImage from 'components/BgImage/BgImage'
+import Button from 'components/Button/Button'
 
 const CardPaperItem = ({ title, text, actor, date, img, style, to }) => (
   <div className={css.container} style={style}>
