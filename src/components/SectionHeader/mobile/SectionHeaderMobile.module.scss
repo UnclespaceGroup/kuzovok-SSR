@@ -28,36 +28,14 @@
   white-space: nowrap;
 }
 
-.logo {
-  font-weight: 400;
-  font-size: 2rem;
-  color: #E5E5E5;
-
-  span {
-    color: #767676;
-    font-size: 1.6rem;
-    font-weight: 300;
-  }
-}
-
-.burger {
-  cursor: pointer;
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url("../../../static/icons/menu.svg") no-repeat center;
-  background-size: contain;
-  transition: all 200ms ease-in;
-
-  &__open {
-    composes: burger;
-    background-image: url("../../../static/icons/close.svg");
-  }
-}
-
 .search {
   cursor: pointer;
   transition: all 200ms ease-in;
   &:hover {
     color: #E88D06!important;
   }
+}
+
+.logoImg {
+  height: 1.6rem;
 }

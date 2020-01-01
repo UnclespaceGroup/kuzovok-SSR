@@ -5,7 +5,7 @@ import css from 'components/SliderBanner/desktop/SliderBannerDesktop.module.scss
 import Slider from '../../Slider/desktop/Slider'
 import BgImage from '../../BgImage/BgImage'
 import Button from '../../Button/Button'
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 import Layout from 'components/Layout/Layout'
 
 const SliderBannerDesktop = ({ items }) => {
@@ -22,10 +22,10 @@ const SliderBannerDesktop = ({ items }) => {
       </Slider>
       <div className={css.btns}>
         <Layout className={css.wrapper}>
-          <div className={css.prev}><MdKeyboardArrowLeft size={'4rem'}
+          <div className={css.prev}><FaArrowLeft size={'3rem'}
             onClick={() => swiperRef.current?.slidePrev()}
           /></div>
-          <div className={css.next}><MdKeyboardArrowRight size={'4rem'}
+          <div className={css.next}><FaArrowRight size={'3rem'}
             onClick={() => swiperRef.current?.slideNext()}
           /></div>
         </Layout>

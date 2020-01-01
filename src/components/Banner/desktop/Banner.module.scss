@@ -2,14 +2,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 50rem;
+  height: 55rem;
   padding: 6rem 0;
   color: white;
   background-color: rgba(0,0,0,0.8);
-}
-
-.withoutTabs {
-  height: 55rem;
 }
 
 
@@ -26,15 +22,20 @@
   font-weight: 300;
 }
 
+.layout {
+  position: relative;
+}
+
 .row {
+  position: relative;
   width: 100%;
   display: flex;
 }
 
 .icon {
   flex-grow: 0;
-  width: 6.4rem;
-  height: 6.4rem;
+  width: 10rem;
+  height: 10rem;
   background: no-repeat center;
   background-size: contain;
   margin-right: 6.4rem;
@@ -54,4 +55,14 @@
   &:hover {
     color: #c37306;
   }
+}
+
+.popap {
+  position: absolute;
+  bottom: -10rem;
+  right: 0;
+}
+
+.btn {
+  margin-top: 2.4rem;
 }

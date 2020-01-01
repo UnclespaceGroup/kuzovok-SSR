@@ -17,21 +17,13 @@ const FooterDesktop = () => (
       <div className={css.logo} style={{ backgroundImage: `url(${logo})` }} />
       <Padding value={40} />
       <div className={css.row}>
-        <div className={css.column}>
-          {
-            _.map(menu.mainItems, (item, key) => (
-              <Link to={item.to} className={css.mainLink} key={key}>{item.title}</Link>
-            ))
-          }
-        </div>
-        <div className={css.column}>
-          {
-            _.map(menu.items, (item, key) => (
-              <Link to={item.to} className={css.link} key={key}>{item.title}</Link>
-            ))
-          }
-        </div>
+        {
+          _.map(menu.mainItems, (item, key) => (
+            <Link to={item.to} className={css.mainLink} key={key}>{item.title}</Link>
+          ))
+        }
       </div>
+      <Padding value={40} />
       <hr />
       <Padding value={40} />
       <div className={css.contacts}>

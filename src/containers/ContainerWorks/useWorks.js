@@ -1,5 +1,5 @@
 import photo from 'static/images/Pokraska-3.jpg'
-import carIcon from 'static/images/car-icon.png'
+import carIcon from 'static/icons/kuz-car.svg'
 import { useMemo, useState } from 'react'
 import { fetchDataListParams } from 'axios/fetchData'
 import _ from 'lodash'

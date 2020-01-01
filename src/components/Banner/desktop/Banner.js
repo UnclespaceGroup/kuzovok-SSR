@@ -7,11 +7,14 @@ import cn from 'classnames'
 import _ from 'lodash'
 import { MdArrowBack } from 'react-icons/md'
 import { Link } from 'react-router-dom'
+import IconPopapDesktop from 'components/IconPopap/desktop/IconPopapDesktop'
+import Button from 'components/Button/Button'
+import { scrollWindowTo } from 'utils/scrollWindowTo'
 
-const Banner = ({ title, text, img, icon, withoutTabs, backLink }) => (
+const Banner = ({ title, text, img, icon, backLink }) => (
   <BgImage img={img}>
-    <div className={cn(css.container, { [css.withoutTabs]: withoutTabs })}>
-      <Layout>
+    <div className={cn(css.container)}>
+      <Layout className={css.layout}>
         { backLink && <Link className={css.back} to={backLink}><MdArrowBack /></Link>}
         <div className={css.row}>
           {icon && <div className={css.icon} style={{ backgroundImage: `url(${icon})` }} />}
@@ -24,10 +27,13 @@ const Banner = ({ title, text, img, icon, withoutTabs, backLink }) => (
                 </ul>
                 : text
             }</div>
+            <Button className={css.btn} onClick={() => scrollWindowTo('toThis')}>Подробнее</Button>
           </div>
         </div>
+        <IconPopapDesktop className={css.popap} />
       </Layout>
     </div>
+    <div id={'toThis'} />
   </BgImage>
 )
 Banner.propTypes = {
@@ -35,8 +41,7 @@ Banner.propTypes = {
   backLink: PropTypes.string,
   text: PropTypes.node,
   img: PropTypes.string,
-  icon: PropTypes.string,
-  withoutTabs: PropTypes.bool
+  icon: PropTypes.string
 }
 
 export default React.memo(Banner)

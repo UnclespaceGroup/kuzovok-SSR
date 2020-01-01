@@ -1,16 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { scrollWindowTo } from '../../../utils/scrollWindowTo'
-import Button from '../../Button/Button'
+import { scrollWindowTo } from 'utils/scrollWindowTo'
+import Button from 'components/Button/Button'
 import css from './SectionTopBanner.module.scss'
-import BgImage from '../../BgImage/BgImage'
+import BgImage from 'components/BgImage/BgImage'
 import _ from 'lodash'
 import { Link } from 'react-router-dom'
 import { MdArrowBack } from 'react-icons/md'
-// import TagsBlock from '../../TagsBlock/desktop/TagsBlock'
-import List from '../../List/List'
-import TextIcon from '../../TextIcon/TextIcon'
-import ControllerSideMenu from '../../../containers/ControllerSideMenu/ControllerSideMenu'
+import List from 'components/List/List'
+import TextIcon from 'components/TextIcon/TextIcon'
+import ControllerSideMenu from 'containers/ControllerSideMenu/ControllerSideMenu'
 
 const SectionTopBanner = ({ img, title, text, children, sideBlock, backLink, status, tags, icons, addIcon, advantages }) => (
   <BgImage img={img}>

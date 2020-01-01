@@ -24,13 +24,6 @@ const FooterMobile = () => (
               ))
             }
           </div>
-          <div className={css.column}>
-            {
-              _.map(menu.items, (item, key) => (
-                <Link to={item.to} className={css.link} key={key}>{item.title}</Link>
-              ))
-            }
-          </div>
         </div>
         <Padding value={20} />
         <hr />
