@@ -16,6 +16,7 @@
 .mainLink {
   display: block;
   color: white;
+  text-align: center;
   font-size: 2rem;
   transition: all 200ms ease-in;
   margin-bottom: 2rem;
@@ -49,6 +50,7 @@
   font-size: 1.4rem;
   line-height: 2.1rem;
   color: #E5E5E5;
+  text-align: center;
 }
 
 .phone {
@@ -58,3 +60,9 @@
   color: #E5E5E5;
 }
 
+.logoIcon {
+  height: 10rem;
+  background: no-repeat center;
+  background-size: contain;
+  margin-bottom: 5rem;
+}

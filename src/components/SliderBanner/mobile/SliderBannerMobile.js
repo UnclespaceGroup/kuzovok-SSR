@@ -31,7 +31,7 @@ Slide.propTypes = {
   title: PropTypes.node,
   text: PropTypes.node,
   url: PropTypes.string,
-  onClick: PropTypes.node
+  onClick: PropTypes.func
 }
 
 export default React.memo(SliderBannerMobile)

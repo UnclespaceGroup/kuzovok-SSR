@@ -7,6 +7,8 @@ import BgImage from 'components/BgImage/BgImage'
 import { Link } from 'react-router-dom'
 import { MdArrowBack } from 'react-icons/md'
 import _ from 'lodash'
+import { scrollWindowTo } from 'utils/scrollWindowTo'
+import Button from 'components/Button/Button'
 
 const BannerMobile = ({ title, text, img, withoutTabs, backLink }) => (
   <BgImage img={img}>
@@ -22,9 +24,11 @@ const BannerMobile = ({ title, text, img, withoutTabs, backLink }) => (
               </ul>
               : text
           }
+          <Button className={css.btn} onClick={() => scrollWindowTo('toThis')}>Подробнее</Button>
         </div>
       </LayoutMobile>
     </div>
+    <div id={'toThis'} />
   </BgImage>
 )
 BannerMobile.propTypes = {

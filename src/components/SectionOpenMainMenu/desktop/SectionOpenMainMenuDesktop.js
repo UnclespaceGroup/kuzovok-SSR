@@ -21,6 +21,7 @@ const SectionOpenMainMenuDesktop = ({ openMenu }) => {
             <div className={css.logoIcon} style={{ backgroundImage: `url(${logo})` }} />
           </div>
           <div className={css.column}>
+            <Link to={'/'} className={css.mainLink} >Главная</Link>
             {
               _.map(menu.mainItems, (item, key) => (
                 <Link to={item.to} className={css.mainLink} key={key}>{item.title}</Link>

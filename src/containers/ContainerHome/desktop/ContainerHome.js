@@ -14,9 +14,9 @@ const ContainerHome = () => {
   return (
     <div className={css.container}>
       <SliderBannerDesktop items={mainSlider} />
-      <Padding value={80} />
+      <Padding value={120} />
       <AdvantagesRowDesktop items={advantages} />
-      <Padding value={80} />
+      <Padding value={160} />
       <SectionMainChooseAutoTypeDesktop {...bigBlockServices} />
       <Padding value={80} />
       <SectionMainServiceCatalogDesktop items={services} />

@@ -7,6 +7,7 @@ import { menu } from 'constants/MAIN_MENU'
 import LayoutMobile from '../../Layout/LayoutMobile'
 import Padding from 'components/Padding/Padding'
 import { MAIN_PHONE } from 'constants/contacts'
+import logo from 'static/logo/colored-logo-inverse-resized.png'
 
 const SectionOpenMainMenuMobile = ({ openMenu }) => {
   return (
@@ -14,18 +15,15 @@ const SectionOpenMainMenuMobile = ({ openMenu }) => {
     <div className={css.back} onClick={() => { openMenu(false) }} />
     <div className={css.container}>
       <LayoutMobile >
+        <div className={css.logoIcon} style={{ backgroundImage: `url(${logo})` }} />
         <div className={css.block}>
+          <Link to={'/'} className={css.mainLink} >Главная</Link>
           {
             _.map(menu.mainItems, (item, key) => (
               <Link to={item.to} className={css.mainLink} key={key}>{item.title}</Link>
             ))
           }
         </div>
-        {/* { */}
-        {/*  _.map(menu.items, (item, key) => ( */}
-        {/*    <Link to={item.to} className={css.link} key={key}>{item.title}</Link> */}
-        {/*  )) */}
-        {/* } */}
         <Padding value={40} />
         <div className={css.phoneBlock}>
           <div>Свяжитесь с нами по номеру</div>
