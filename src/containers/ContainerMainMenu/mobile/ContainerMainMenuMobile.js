@@ -53,9 +53,6 @@ const ContainerMainMenuMobile = ({ location }) => {
 
   return (
     <div className={css.wrapper}>
-      {/* <div className={css.menu__absolute}> */}
-      {/*  <SectionHeaderDesktop {...{ setOpen: openMenu, open }} /> */}
-      {/* </div> */}
       <div className={cn(css.menu)}>
         <SectionHeaderMobile {...{ setOpen: openMenu, open, menuItems, black: blackHeader }} />
       </div>

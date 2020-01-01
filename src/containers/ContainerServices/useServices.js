@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import { mainServices, services } from '../../constants/servicesData'
-import { PAGE_SERVICES } from '../../constants/ROUTES'
+import { mainServices, services } from 'constants/servicesData'
+import { PAGE_SERVICES } from 'constants/ROUTES'
 
 const useServices = () => {
   const [ mainCards, setMainCards ] = useState({})

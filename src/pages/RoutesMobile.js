@@ -9,7 +9,7 @@ import {
   PAGE_SERVICES,
   PAGE_WORK_DETAIL,
   PAGE_WORKS
-} from '../constants/ROUTES'
+} from 'constants/ROUTES'
 import PageAboutMobile from 'pages/PageAbout/mobile/PageAboutMobile'
 import PageReviewsMobile from 'pages/PageReviews/mobile/PageReviewsMobile'
 import PageServiceDetailMobile from 'pages/PageServiceDetail/mobile/PageServiceDetailMobile'

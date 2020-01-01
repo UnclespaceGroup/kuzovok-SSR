@@ -1,6 +1,6 @@
-import { fetchDataList, fetchDataSingle } from '../../axios/fetchData'
+import { fetchDataList, fetchDataSingle } from 'axiosFetch/fetchData'
 import _ from 'lodash'
-import { safelyParsing } from '../../utils/Json'
+import { safelyParsing } from 'utils/Json'
 
 const useWorkDetail = async ({ id }) => {
   const pageData = {}

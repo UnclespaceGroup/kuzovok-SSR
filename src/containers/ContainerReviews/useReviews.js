@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { fetchDataListParams } from '../../axios/fetchData'
+import { fetchDataListParams } from 'axiosFetch/fetchData'
 import im1 from 'static/images/lada-vaz-lada-vaz-mashina-avto-2103.jpg'
 import moment from 'moment'
 import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from '../../constants/ROUTES'

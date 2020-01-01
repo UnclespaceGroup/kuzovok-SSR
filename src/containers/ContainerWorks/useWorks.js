@@ -1,7 +1,7 @@
 import photo from 'static/images/Pokraska-3.jpg'
 import carIcon from 'static/icons/kuz-car.svg'
 import { useMemo, useState } from 'react'
-import { fetchDataListParams } from 'axios/fetchData'
+import { fetchDataListParams } from 'axiosFetch/fetchData'
 import _ from 'lodash'
 import { getStatusByCode } from 'utils/getNameByValue'
 import { slugs } from 'constants/workSlugs'
