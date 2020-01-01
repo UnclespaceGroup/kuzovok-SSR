@@ -10,15 +10,15 @@ import {
   PAGE_WORK_DETAIL,
   PAGE_WORKS
 } from '../constants/ROUTES'
-import PageAboutMobile from './PageAbout/mobile/PageAboutMobile'
-import PageReviewsMobile from './PageReviews/mobile/PageReviewsMobile'
-import PageServiceDetailMobile from './PageServiceDetail/mobile/PageServiceDetailMobile'
-import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
-import PageHomeMobile from './PageHome/mobile/PageHomeMobile'
-import PageServiceMobile from './PageService/mobile/PageServiceMobile'
-import PageWorkDetailMobile from './PageWorkDetail/mobile/PageWorkDetailMobile'
-import PageWorksMobile from './PageWorks/mobile/PageWorksMobile'
+import PageAboutMobile from 'pages/PageAbout/mobile/PageAboutMobile'
+import PageReviewsMobile from 'pages/PageReviews/mobile/PageReviewsMobile'
+import PageServiceDetailMobile from 'pages/PageServiceDetail/mobile/PageServiceDetailMobile'
+import PageHomeMobile from 'pages/PageHome/mobile/PageHomeMobile'
+import PageServiceMobile from 'pages/PageService/mobile/PageServiceMobile'
+import PageWorkDetailMobile from 'pages/PageWorkDetail/mobile/PageWorkDetailMobile'
+import PageWorksMobile from 'pages/PageWorks/mobile/PageWorksMobile'
 import PagePaperMobile from 'pages/PagePaper/mobile/PagePaperMobile'
+import PagePaperDetailMobile from 'pages/PagePaperDetail/mobile/PagePaperDetailMobile'
 
 const RoutesMobile = () => (
   <Switch>
@@ -52,7 +52,7 @@ const RoutesMobile = () => (
       exact
       path={PAGE_PAPER}
     />
-    <Route component={PagePaperDetailDesktop} // Статьи - деталка
+    <Route component={PagePaperDetailMobile} // Статьи - деталка
       exact
       path={PAGE_PAPER_DETAIL}
     />

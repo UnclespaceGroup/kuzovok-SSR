@@ -1,9 +1,8 @@
 import React from 'react'
-import SectionServicesMobile from '../../../components/SectionServices/mobile/SectionServicesMobile'
-import SectionServicesSliderBannerMobile
-  from 'components/SliderBanner/mobile/SliderBannerMobile'
+import SectionServicesMobile from 'components/SectionServices/mobile/SectionServicesMobile'
+import SectionServicesSliderBannerMobile from 'components/SliderBanner/mobile/SliderBannerMobile'
 import useServices from '../useServices'
-import { PAGE_SERVICES } from '../../../constants/ROUTES'
+import { PAGE_SERVICES } from 'constants/ROUTES'
 
 const ContainerServicesMobile = () => {
   const { mainCards = [], cards = [], bannerItems } = useServices()

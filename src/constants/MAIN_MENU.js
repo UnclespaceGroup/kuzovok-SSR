@@ -58,7 +58,7 @@ export const items = [
   {
     title: {
       to: PAGE_PAPER,
-      text: 'Интересные статьи'
+      text: 'Полезные статьи'
     },
     items: [
       {
@@ -109,7 +109,7 @@ export const menu = {
     },
     {
       to: PAGE_PAPER,
-      title: 'Интересные статьи'
+      title: 'Полезные статьи'
     }
   ],
   items: [
