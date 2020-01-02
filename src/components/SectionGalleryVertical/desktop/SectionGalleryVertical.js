@@ -22,6 +22,8 @@ const SectionGalleryVertical = ({ photos = [], className }) => {
     setViewerIsOpen(false)
   }
 
+  if (!photos) return <div />
+
   return (
     <div className={cn(css.container, className)}>
       <div onClick={() => openLightbox(0)} className={cn(css.image, css.imageBig)} style={{ backgroundImage: `url(${photos[0]})` }} >

@@ -16,18 +16,20 @@ const Banner = ({ title, text, img, icon, backLink }) => (
     <div className={cn(css.container)}>
       <Layout className={css.layout}>
         { backLink && <Link className={css.back} to={backLink}><MdArrowBack /></Link>}
-        <div className={css.row}>
-          {icon && <div className={css.icon} style={{ backgroundImage: `url(${icon})` }} />}
-          <div>
-            <h1 className={css.title}>{title}</h1>
-            <div className={css.text}>{
-              Array.isArray(text)
-                ? <ul>
-                  { _.map(text, (item, key) => <li key={key}>{item}</li>) }
-                </ul>
-                : text
-            }</div>
-            <Button className={css.btn} onClick={() => scrollWindowTo('toThis')}>Подробнее</Button>
+        <div>
+          <div className={css.row}>
+            {icon && <div className={css.icon} style={{ backgroundImage: `url(${icon})` }} />}
+            <div>
+              <h1 className={css.title}>{title}</h1>
+              <div className={css.text}>{
+                Array.isArray(text)
+                  ? <ul>
+                    { _.map(text, (item, key) => <li key={key}>{item}</li>) }
+                  </ul>
+                  : text
+              }</div>
+              <Button className={css.btn} onClick={() => scrollWindowTo('toThis')}>Подробнее</Button>
+            </div>
           </div>
         </div>
         <IconPopapDesktop className={css.popap} />

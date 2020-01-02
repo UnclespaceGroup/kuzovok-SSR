@@ -5,12 +5,13 @@ import SectionContacts from 'components/SectionContacts/desktop/SectionContacts'
 import Banner from 'components/Banner/desktop/Banner'
 import Wysiwyg from 'components/Wysiwyg/desktop/Wysiwyg'
 import usePaperDetail from 'containers/ContainerPaperDetail/usePaperDetail'
+import { PAGE_PAPER } from 'constants/ROUTES'
 
 const ContainerPaperDetail = () => {
   const { bannerData, content } = usePaperDetail()
   return (
   <>
-    <Banner {...bannerData} />
+    <Banner backLink={PAGE_PAPER} {...bannerData} />
     <Padding value={60} />
     <Layout withAside>
       <Wysiwyg>

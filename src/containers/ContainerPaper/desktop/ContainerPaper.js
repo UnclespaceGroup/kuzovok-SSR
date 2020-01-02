@@ -11,7 +11,7 @@ const ContainerPaper = () => {
   return (
   <>
     <Banner {...bannerData} />
-    <Layout>
+    <Layout >
       <Padding value={120} />
       <List
         marginBetween={80}
