@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   background-color: white;
   height: 48rem;
   display: flex;
@@ -56,10 +57,16 @@
 }
 
 .subtitle {
-  font-weight: 300;
+  position: absolute;
+  top: 2.4rem;
+  left: 2.4rem;
+  display: inline-block;
   font-size: 1.4rem;
+  font-weight: 500;
+  padding: .5rem 1rem;
+  border-radius: .4rem;
   line-height: 1.6rem;
-  color: #E88D06;
+  color: white;
   margin-bottom: 1.6rem;
 }
 
@@ -87,4 +94,16 @@
   &:hover {
     background-color: #e7e7f8;
   }
+}
+
+.status-0 {
+  background-color: #E88D06;
+}
+
+.status-1 {
+  background-color: #01c322;
+}
+
+.status-2 {
+  background-color: #0088d5;
 }

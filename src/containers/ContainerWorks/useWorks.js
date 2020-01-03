@@ -44,6 +44,7 @@ const useWorks = () => {
       .then(data => {
         const items = _.map(data, item => ({
           ...item,
+          status: item.status || 0,
           text: item.annotation,
           img: item.banner,
           subtitle: getStatusByCode(item.status),

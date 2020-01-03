@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import css from 'components/CheckTabs/desktop/CheckTabsDesktop.module.scss'
 import _ from 'lodash'
 
-const CheckTabsDesktop = ({ items, activeTabIndex }) => (
-  <div>
+const CheckTabsDesktop = ({ items, activeTabIndex, className }) => (
+  <div className={cn(css.wrapper, className)}>
     {
       _.map(items, ({ title, onClick, active }, key) => (
         <div
@@ -20,6 +21,7 @@ const CheckTabsDesktop = ({ items, activeTabIndex }) => (
 )
 CheckTabsDesktop.propTypes = {
   items: PropTypes.array,
-  activeTabIndex: PropTypes.number
+  activeTabIndex: PropTypes.number,
+  className: PropTypes.string
 }
 export default React.memo(CheckTabsDesktop)

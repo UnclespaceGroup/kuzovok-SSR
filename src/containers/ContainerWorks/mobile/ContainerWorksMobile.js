@@ -9,6 +9,7 @@ import SectionCardsRowMobile from 'components/SectionCardsRow/mobile/SectionCard
 import SectionTitleMobile from 'components/SectionTitle/mobile/SectionTitleMobile'
 import CheckTabsDesktop from 'components/CheckTabs/desktop/CheckTabsDesktop'
 import LayoutMobile from 'components/Layout/LayoutMobile'
+import css from './ContainerWorksMobile.module.scss'
 
 const ContainerWorksMobile = ({ match }) => {
   const { header, items, tabs, activeTab } = useWorks({ ...match })
@@ -18,7 +19,7 @@ const ContainerWorksMobile = ({ match }) => {
       <Padding value={24} />
       <LayoutMobile>
         <SectionTitleMobile title={'Работы станции'} count={items?.length} />
-        <CheckTabsDesktop items={tabs} activeTabIndex={activeTab} />
+        <CheckTabsDesktop className={css.tabs} items={tabs} activeTabIndex={activeTab} />
       </LayoutMobile>
       <SectionCardsRowMobile
         items={items}

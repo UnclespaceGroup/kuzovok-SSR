@@ -11,7 +11,7 @@ import IconPopapDesktop from 'components/IconPopap/desktop/IconPopapDesktop'
 import Button from 'components/Button/Button'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
 
-const Banner = ({ title, text, img, icon, backLink }) => (
+const Banner = ({ title, text, img, icon, backLink, beforeTitleBlock }) => (
   <BgImage img={img}>
     <div className={cn(css.container)}>
       <Layout className={css.layout}>
@@ -28,6 +28,9 @@ const Banner = ({ title, text, img, icon, backLink }) => (
                   </ul>
                   : text
               }</div>
+              {
+                beforeTitleBlock
+              }
               <Button className={css.btn} onClick={() => scrollWindowTo('toThis')}>Подробнее</Button>
             </div>
           </div>
@@ -43,7 +46,8 @@ Banner.propTypes = {
   backLink: PropTypes.string,
   text: PropTypes.node,
   img: PropTypes.string,
-  icon: PropTypes.string
+  icon: PropTypes.string,
+  beforeTitleBlock: PropTypes.node
 }
 
 export default React.memo(Banner)

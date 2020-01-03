@@ -21,6 +21,8 @@ const SectionGalleryVerticalMobile = ({ photos = [], className }) => {
     setViewerIsOpen(false)
   }
 
+  if (!Array.isArray(photos)) return <div />
+
   return (
     <div className={cn(css.container, className)}>
       <div >

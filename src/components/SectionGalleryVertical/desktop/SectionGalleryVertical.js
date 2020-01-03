@@ -26,12 +26,9 @@ const SectionGalleryVertical = ({ photos = [], className }) => {
 
   return (
     <div className={cn(css.container, className)}>
-      <div onClick={() => openLightbox(0)} className={cn(css.image, css.imageBig)} style={{ backgroundImage: `url(${photos[0]})` }} >
-        <div className={css.hoverBlock} ><MdFullscreen /></div>
-      </div>
       <div className={css.row}>
         {
-          _.map(viewAll ? photos.slice(1) : photos.slice(1, 4), (item, key) => (
+          _.map(viewAll ? photos : photos.slice(0, 4), (item, key) => (
             <div key={key} onClick={() => openLightbox(key + 1)} className={css.image} style={{ backgroundImage: `url(${item})` }} >
               <div className={css.hoverBlock} ><MdFullscreen /></div>
             </div>
