@@ -10,16 +10,23 @@ import SectionTitleMobile from 'components/SectionTitle/mobile/SectionTitleMobil
 import CheckTabsDesktop from 'components/CheckTabs/desktop/CheckTabsDesktop'
 import LayoutMobile from 'components/Layout/LayoutMobile'
 import css from './ContainerWorksMobile.module.scss'
+import FieldSelectMobile from 'components/FieldSelect/mobile/FieldSelectMobile'
 
 const ContainerWorksMobile = ({ match }) => {
-  const { header, items, tabs, activeTab } = useWorks({ ...match })
+  const { header, items, tabs, activeTab, select } = useWorks({ ...match })
   return (
     <>
       <BannerMobile withoutTabs {...header} />
       <Padding value={24} />
       <LayoutMobile>
-        <SectionTitleMobile title={'Работы станции'} count={items?.length} />
-        <CheckTabsDesktop className={css.tabs} items={tabs} activeTabIndex={activeTab} />
+        <SectionTitleMobile
+          beforeTitleBlock={
+            <div>
+              <FieldSelectMobile {...select} />
+              <Padding value={20} />
+              <CheckTabsDesktop className={css.tabs} items={tabs} activeTabIndex={activeTab} />
+            </div>}
+          title={'Работы станции'} count={items?.length} />
       </LayoutMobile>
       <SectionCardsRowMobile
         items={items}
