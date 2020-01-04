@@ -1,4 +1,8 @@
 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   h2 {
     font-size: 3.6rem;
     line-height: 4.2rem;
@@ -13,4 +17,9 @@
     line-height: 5.6rem;
     color: rgba(0, 0, 0, 0.2);
   }
+}
+
+.beforeTitleBlock {
+  display: inline-block;
+  margin-left: auto;
 }

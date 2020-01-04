@@ -1,0 +1,22 @@
+.select {
+  width: 20rem;
+  font-size: 1.6rem!important;
+
+  :global {
+    .select__control:hover {
+      border-color: #c37306;
+    }
+
+    .select__control--is-focused {
+      border-color: #c37306;
+      box-shadow: 0 0 .4rem #c37306;
+    }
+    .select__option--is-focused {
+      background-color: rgba(193, 115, 6, 0.49);
+    }
+
+    .select__option--is-selected {
+      background-color: #c37306;
+    }
+  }
+}

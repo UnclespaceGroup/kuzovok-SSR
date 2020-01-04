@@ -2,7 +2,7 @@ import moment from 'moment'
 import 'moment/locale/ru'
 moment.locale('ru')
 
-const STATUSES = ['В работе', 'Выполнено', 'Архив']
+export const STATUSES = ['В работе', 'Выполнено', 'Архив']
 
 export const getStatusByCode = (code = 0) => {
   return STATUSES[code]

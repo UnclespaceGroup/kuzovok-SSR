@@ -10,7 +10,7 @@ import { compose } from 'redux'
 import SectionReviews from 'components/SectionReviews/desktop/SectionReviews'
 
 const ContainerReviews = ({ location }) => {
-  const { items = [], headerData, tabs, pending } = useReviews({ location })
+  const { items = [], headerData, tabs, pending, sideMenuItems } = useReviews({ location })
 
   return (
   <>
@@ -21,19 +21,19 @@ const ContainerReviews = ({ location }) => {
     <Switch>
       <Route
         path={PAGE_REVIEWS_TODAY}
-        render={() => <SectionReviews title={'Работы за сегодня'} items={items} />}
+        render={() => <SectionReviews title={'Работы за сегодня'} items={items} sideMenuItems={sideMenuItems} />}
       />
       <Route
         path={PAGE_REVIEWS_WEEK}
-        render={() => <SectionReviews title={'Работы за неделю'} items={items} />}
+        render={() => <SectionReviews title={'Работы за неделю'} items={items} sideMenuItems={sideMenuItems} />}
       />
       <Route
         path={PAGE_REVIEWS_MOUTH}
-        render={() => <SectionReviews title={'Работы за месяц'} items={items} />}
+        render={() => <SectionReviews title={'Работы за месяц'} items={items} sideMenuItems={sideMenuItems} />}
       />
       <Route
         path={PAGE_REVIEWS}
-        render={() => <SectionReviews title={'Все работы'} items={items} />}
+        render={() => <SectionReviews title={'Все работы'} items={items} sideMenuItems={sideMenuItems} />}
       />
     </Switch>
     <ContainerLastWorks />

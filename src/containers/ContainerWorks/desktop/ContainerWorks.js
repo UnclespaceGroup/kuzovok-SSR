@@ -9,15 +9,20 @@ import SectionCardsRow from 'components/SectionCardsRow/desktop/SectionCardsRow'
 import SectionTitle from 'components/SectionTitle/desktop/SectionTitle'
 import CheckTabsDesktop from 'components/CheckTabs/desktop/CheckTabsDesktop'
 import Layout from 'components/Layout/Layout'
+import FieldSelectDesktop from 'components/FieldSelect/desktop/FieldSelectDesktop'
 
 const ContainerWorks = () => {
-  const { header, items, tabs, activeTab } = useWorks()
+  const { header, items, tabs, activeTab, select } = useWorks()
   return (
     <>
       <Banner withoutTabs {...header} />
       <Padding value={80} />
       <Layout>
-        <SectionTitle title={'Работы станции'} count={items?.length} />
+        <SectionTitle title={'Работы станции'} count={items?.length}
+          beforeTitleBlock={
+            <FieldSelectDesktop {...select} />
+          }
+        />
         <CheckTabsDesktop items={tabs} activeTabIndex={activeTab} />
       </Layout>
       <SectionCardsRow

@@ -7,27 +7,31 @@ import Layout from '../../Layout/Layout'
 import Padding from '../../Padding/Padding'
 import SectionTitle from '../../SectionTitle/desktop/SectionTitle'
 import SectionReviewCard from '../../SectionReviewCard/desktop/SectionReviewCard'
+import SectionAsideWorksDesktop from 'components/SectionAsideWorks/desktop/SectionAsideWorksDesktop'
 
-const SectionReviews = ({ items = [], title }) => (
+const SectionReviews = ({ items = [], title, sideMenuItems }) => (
   <div className={css.container}>
     <Padding value={60} />
-    <Layout>
-      <SectionTitle title={title} count={items.length} />
-    </Layout>
     <Layout withAside>
       <div>
+        <SectionTitle title={title} count={items.length} />
         <List
           items={items}
         >
           <SectionReviewCard withUrl />
         </List>
       </div>
+      <div>
+        <Padding value={24} />
+        <SectionAsideWorksDesktop list={sideMenuItems} />
+      </div>
     </Layout>
   </div>
 )
 SectionReviews.propTypes = {
   items: PropTypes.array,
-  title: PropTypes.node
+  title: PropTypes.node,
+  sideMenuItems: PropTypes.array
 }
 
 export default React.memo(SectionReviews)

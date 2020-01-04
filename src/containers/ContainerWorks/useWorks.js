@@ -3,13 +3,14 @@ import carIcon from 'static/icons/kuz-car.svg'
 import { useMemo, useState } from 'react'
 import { fetchDataListParams } from 'axiosFetch/fetchData'
 import _ from 'lodash'
-import { getStatusByCode } from 'utils/getNameByValue'
+import { getStatusByCode, STATUSES } from 'utils/getNameByValue'
 import { slugs } from 'constants/workSlugs'
 
 const useWorks = () => {
   const [pending, setPending] = useState(false)
   const [items, setItems] = useState([])
   const [activeTab, setActiveTab] = useState(0)
+  const [activeSelectStatus, setActiveSelectStatus] = useState(-1)
 
   const header = {
     icon: carIcon,
@@ -58,12 +59,29 @@ const useWorks = () => {
       })
   }, [activeTab])
 
+  const select = {
+    placeholder: 'Все работы',
+    options: [{
+      label: 'Все работы',
+      value: -1
+    }].concat(STATUSES.map((item, key) => ({
+      label: item,
+      value: key
+    }))),
+    onChange: ({ value }) => {
+      setActiveSelectStatus(value)
+    }
+  }
+
+  const filteredItems = activeSelectStatus === -1 ? items : _.filter(items, item => +item.status === activeSelectStatus)
+
   return {
     header,
-    items,
+    items: filteredItems,
     pending,
     tabs,
-    activeTab
+    activeTab,
+    select
   }
 }
 

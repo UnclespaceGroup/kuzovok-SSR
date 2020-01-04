@@ -7,6 +7,7 @@ import { useState, useMemo } from 'react'
 const useWorkDetail = () => {
   const [pageData, setPageData] = useState({})
   const [pageItems, setPageItems] = useState([])
+  const [ sideMenuItems, setSideMenuItems ] = useState([])
   const { id } = useParams()
 
   useMemo(() => {
@@ -29,6 +30,12 @@ const useWorkDetail = () => {
           }))
           )
         })
+      fetchDataList('/getWorksList?limit=10')
+        .then(data => {
+          console.log(data)
+          setSideMenuItems(data)
+        })
+        .catch(e => console.log(e))
     }
   }, [id])
 
@@ -36,7 +43,8 @@ const useWorkDetail = () => {
     ...pageData,
     header: { ...pageData, text: '' },
     text: pageData.text,
-    items: pageItems
+    items: pageItems,
+    sideMenuItems
   }
 }
 export default useWorkDetail
