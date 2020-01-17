@@ -10,7 +10,7 @@ const useAxiosData = ({
   url,
   where,
   single
-}) => {
+}, deps) => {
   const [ status, setStatus ] = useState()
   const [ data, setData ] = useState()
   const location = useLocation()
@@ -26,11 +26,14 @@ const useAxiosData = ({
         console.log(`error in ${url} response`, err)
         setStatus(STATUS_ERROR)
       })
-  }, [location])
+  }, [location].concat(deps))
 
   return {
     data,
-    status
+    status,
+    isPending: status === STATUS_PENDING,
+    isError: status === STATUS_ERROR,
+    isSuccess: status === STATUS_SUCCESS
   }
 }
 export default useAxiosData

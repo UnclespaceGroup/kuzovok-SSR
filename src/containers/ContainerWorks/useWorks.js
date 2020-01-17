@@ -1,14 +1,13 @@
 import photo from 'static/images/Pokraska-3.jpg'
 import carIcon from 'static/icons/kuz-car.svg'
-import { useMemo, useState } from 'react'
-import { fetchDataListParams } from 'axiosFetch/fetchData'
+import { useState } from 'react'
 import _ from 'lodash'
 import { getStatusByCode, STATUSES } from 'utils/getNameByValue'
 import { slugs } from 'constants/workSlugs'
+import useAxiosData from 'hooks/useAxiosData'
+import { URL_WORK, SERVER_URL } from 'constants/serverURLs'
 
 const useWorks = () => {
-  const [pending, setPending] = useState(false)
-  const [items, setItems] = useState([])
   const [activeTab, setActiveTab] = useState(0)
   const [activeSelectStatus, setActiveSelectStatus] = useState(-1)
 
@@ -33,31 +32,23 @@ const useWorks = () => {
     }))
   )
 
-  const getParamsByActiveTab = number => {
-    const activeTab = slugs.find(item => item.id === number)
-    return activeTab ? activeTab.params : {}
+  const getParamsByActiveTab = () => {
+    const _activeTab = slugs.find(item => item.id === activeTab)
+    return _activeTab ? _activeTab.where : {}
   }
 
-  useMemo(() => {
-    fetchDataListParams(`/work/`, {
-      params: { ...getParamsByActiveTab(activeTab) }
-    })
-      .then(data => {
-        const items = _.map(data, item => ({
-          ...item,
-          status: item.status || 0,
-          text: item.annotation,
-          img: item.banner,
-          subtitle: getStatusByCode(item.status),
-          date: item.createdAt
-        }))
-        setPending(false)
-        setItems(items)
-      })
-      .catch(e => {
-        setPending(false)
-      })
+  const { data: list, isPending } = useAxiosData({
+    url: URL_WORK,
+    where: getParamsByActiveTab()
   }, [activeTab])
+
+  const items = _.map(list, item => ({
+    status: item.status || 0,
+    text: item.annotation,
+    img: SERVER_URL + item.banner,
+    subtitle: getStatusByCode(item.status),
+    date: item.createdAt
+  }))
 
   const select = {
     placeholder: 'Все работы',
@@ -78,8 +69,8 @@ const useWorks = () => {
   return {
     header,
     items: filteredItems,
-    pending,
     tabs,
+    pending: isPending,
     activeTab,
     select
   }
