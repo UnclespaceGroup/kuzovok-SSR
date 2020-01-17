@@ -32,7 +32,7 @@ const RoutesMobile = () => (
     />
     <Route component={PageServiceDetailMobile} // Услуги - деталка
       exact
-      path={PAGE_SERVICES + ':id'}
+      path={PAGE_SERVICES + ':slug'}
     />
     <Route component={PageReviewsMobile} // Текущие работы
       path={PAGE_REVIEWS}

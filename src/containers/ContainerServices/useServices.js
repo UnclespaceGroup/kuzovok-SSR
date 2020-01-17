@@ -1,41 +1,27 @@
-import { useMemo, useState } from 'react'
-import { mainServices, services } from 'constants/servicesData'
-import { PAGE_SERVICES } from 'constants/ROUTES'
+import useAxiosData from 'hooks/useAxiosData'
+import { URL_SERVICE, SERVER_URL } from 'constants/serverURLs'
+import _ from 'lodash'
 
 const useServices = () => {
-  const [ mainCards, setMainCards ] = useState({})
-  const [ cards, setCards ] = useState({})
-  useMemo(() => {
-    setMainCards(mainServices.map(item => ({
-      ...item,
-      to: PAGE_SERVICES + item.id
-    })))
-    setCards(services.map((item, key) => ({
-      ...item,
-      to: PAGE_SERVICES + item.id
-    })))
-  }, [])
+  const { data: list } = useAxiosData({ url: URL_SERVICE })
 
-  const bannerItems = [
-    {
-      title: 'Кузовной ремонт без покраски',
-      text: '',
-      img: 'https://www.bmw-borishof.ru/upload/iblock/c39/c39af7edb07d59c97bba191edccb0d1d.jpg'
-    },
-    {
-      title: 'Обработка кузова Раптором',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eum ex excepturi illum laboriosam, ',
-      img: 'https://a.d-cd.net/e95a38as-960.jpg'
-    },
-    {
-      title: 'Диагностика днища автомобиля',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eum ex excepturi illum laboriosam, ',
-      img: 'https://marafet.pro/images/antikor-avto2.jpg'
-    }
-  ]
+  const formatCards = _.map(list, item => ({
+    ...item,
+    banner: SERVER_URL + item.banner,
+    to: item.slug || '/'
+  }))
+
+  const mainCards = formatCards.filter(item => item.isMain)
+  const cards = formatCards.filter(item => !item.isMain)
+
+  const bannerItems = formatCards.filter(item => item.isBanner).map(item => ({
+    title: item.title,
+    img: item.banner,
+    text: item.annotation
+  }))
 
   return {
-    mainCards, cards, bannerItems
+    mainCards, bannerItems, cards
   }
 }
 export default useServices

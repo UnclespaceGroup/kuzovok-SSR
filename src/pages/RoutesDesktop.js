@@ -31,7 +31,7 @@ const RoutesDesktop = () => (
     />
     <Route component={PageServiceDetailDesktop} // Услуги - деталка
       exact
-      path={PAGE_SERVICES + ':id'}
+      path={PAGE_SERVICES + ':slug'}
     />
     <Route component={PageReviewsDesktop} // Текущие работы
       path={PAGE_REVIEWS}
