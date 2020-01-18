@@ -29,7 +29,14 @@ const YandexMap = ({ children }) => (
         <Placemark
           geometry={MAP_COORD}
           options={{
-            preset: 'islands#blueHomeCircleIcon'
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: '/icons/Location.svg',
+            // Размеры метки.
+            iconImageSize: [120, 120],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-60, -80]
           }}
         />
         <GeolocationControl options={{ float: 'left' }} />
