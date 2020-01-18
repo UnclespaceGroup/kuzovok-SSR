@@ -1,49 +1,25 @@
-import React, { useMemo, useState } from 'react'
-import { fetchDataListParams, fetchDataList } from 'axiosFetch/fetchData'
-import im1 from 'static/images/lada-vaz-lada-vaz-mashina-avto-2103.jpg'
-import moment from 'moment'
-import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from '../../constants/ROUTES'
+import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from 'constants/ROUTES'
 import instrIcon from 'static/icons/kus-build.svg'
+import useAxiosData from 'hooks/useAxiosData'
+import { URL_REPORT, URL_PAGE } from 'constants/serverURLs'
+import { getImagePath } from 'utils/getImagePath'
+import { useLocation } from 'react-router'
 
-const useReviews = ({ location }) => {
-  const [ items, setItems ] = useState([])
-  const [ sideMenuItems, setSideMenuItems ] = useState([])
-  const [ pending, setPending ] = useState(false)
-  useMemo(() => {
-    const reportsParams = getPerionParams(location)
-    setPending(true)
-    fetchDataListParams('/report',
-      {
-        params: {
-          rangeDate: reportsParams
-        }
-      })
-      .then(data => {
-        const _items = data
-          .map(item => ({
-            ...item,
-            galleryData: { photos: item.images && JSON.parse(item.images) }
-          }))
-          .sort((before, current) => moment(before.date).isAfter(current.date) ? -1 : 1)
-        setItems(_items)
-        setPending(false)
-      }).catch(e => {
-        setPending(false)
-      })
-    fetchDataList('/getWorksList?limit=10')
-      .then(data => {
-        console.log(data)
-        setSideMenuItems(data)
-      })
-      .catch(e => console.log(e))
-  }, [location])
+const pageId = 'reports'
 
+const useReviews = () => {
+  const location = useLocation()
+  const rangeData = getPerionParams(location)
+
+  const { data: pageData = {} } = useAxiosData({ url: URL_PAGE, where: { id: pageId }, single: true })
+  const { data: items = [], isPending } = useAxiosData({ url: URL_REPORT, rangeData }, [location])
+  const { data: sideMenuItems } = useAxiosData({ url: URL_REPORT + 'list', limit: 12 }, [location])
+
+  console.log(pageData.banner)
   const headerData = {
-    title: 'Последние работы',
-    text: <div>
-      <p>Здесь вы можете просмотреть отчеты по последним работам станции</p>
-    </div>,
-    img: im1,
+    title: pageData.title,
+    text: pageData.text,
+    img: getImagePath(pageData.banner),
     icon: instrIcon
   }
 
@@ -66,7 +42,7 @@ const useReviews = ({ location }) => {
     items,
     headerData,
     tabs,
-    pending,
+    pending: isPending,
     sideMenuItems
   }
 }

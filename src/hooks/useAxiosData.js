@@ -9,7 +9,9 @@ const STATUS_PENDING = 'STATUS_PENDING'
 const useAxiosData = ({
   url,
   where,
-  single
+  single,
+  limit,
+  rangeData
 }, deps) => {
   const [ status, setStatus ] = useState()
   const [ data, setData ] = useState()
@@ -17,7 +19,7 @@ const useAxiosData = ({
 
   useEffect(() => {
     setStatus(STATUS_PENDING)
-    axiosInstanse.post(url, { where, single })
+    axiosInstanse.post(url, { where, single, limit, rangeData })
       .then(res => {
         setData(res?.data)
         setStatus(STATUS_SUCCESS)

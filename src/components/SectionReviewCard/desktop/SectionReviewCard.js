@@ -26,7 +26,6 @@ SectionReviewCard.propTypes = {
   title: PropTypes.node,
   text: PropTypes.node,
   date: PropTypes.any,
-  parentId: PropTypes.number,
   withUrl: PropTypes.bool,
   annotation: PropTypes.node,
   number: PropTypes.node,

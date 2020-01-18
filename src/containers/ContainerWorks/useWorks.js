@@ -1,21 +1,26 @@
-import photo from 'static/images/Pokraska-3.jpg'
 import carIcon from 'static/icons/kuz-car.svg'
 import { useState } from 'react'
 import _ from 'lodash'
 import { getStatusByCode, STATUSES } from 'utils/getNameByValue'
 import { slugs } from 'constants/workSlugs'
 import useAxiosData from 'hooks/useAxiosData'
-import { URL_WORK, SERVER_URL } from 'constants/serverURLs'
+import { URL_WORK, URL_PAGE } from 'constants/serverURLs'
+import { PAGE_WORK_DETAIL } from 'constants/ROUTES'
+import { getImagePath } from 'utils/getImagePath'
+
+const pageId = 'works'
 
 const useWorks = () => {
   const [activeTab, setActiveTab] = useState(0)
   const [activeSelectStatus, setActiveSelectStatus] = useState(-1)
 
+  const { data: pageData = {} } = useAxiosData({ url: URL_PAGE, where: { id: pageId }, single: true })
+
   const header = {
     icon: carIcon,
-    title: 'Все работы станции',
-    text: '',
-    img: photo
+    title: pageData.title,
+    text: pageData.text,
+    img: getImagePath(pageData.banner)
   }
 
   const tabs = [{
@@ -44,10 +49,12 @@ const useWorks = () => {
 
   const items = _.map(list, item => ({
     status: item.status || 0,
-    text: item.annotation,
-    img: SERVER_URL + item.banner,
+    annotation: item.annotation,
+    to: PAGE_WORK_DETAIL + item.id,
+    img: getImagePath(item.banner),
     subtitle: getStatusByCode(item.status),
-    date: item.createdAt
+    date: item.createdAt,
+    title: item.title
   }))
 
   const select = {

@@ -4,9 +4,15 @@ import {
   PAGE_ABOUT_VIDEO,
   PAGE_ABOUT
 } from 'constants/ROUTES'
-import banner1 from 'static/processed-images/kusovok-customer-banner-1.jpg'
+import useAxiosData from 'hooks/useAxiosData'
+import { URL_PAGE } from 'constants/serverURLs'
+import { getImagePath } from 'utils/getImagePath'
+
+const pageId = 'about'
 
 const useAbout = () => {
+  const { data = {} } = useAxiosData({ url: URL_PAGE, where: { id: pageId }, single: true })
+
   const items = [
     {
       to: PAGE_ABOUT,
@@ -29,8 +35,8 @@ const useAbout = () => {
   return {
     items,
     bannerData: {
-      title: 'Станция Кузовок',
-      img: banner1
+      title: data.title,
+      img: getImagePath(data.banner)
     }
   }
 }

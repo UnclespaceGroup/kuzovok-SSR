@@ -4,7 +4,7 @@ import cn from 'classnames'
 import css from './BgImage.module.scss'
 
 const BgImage = ({ img, children, className }) => (
-  <div className={cn(css.container, className)} style={{ backgroundImage: `url(${img})` }}>
+  <div className={cn(css.container, className)} style={{ backgroundImage: `url("${img}")` }}>
     {children}
   </div>
 )

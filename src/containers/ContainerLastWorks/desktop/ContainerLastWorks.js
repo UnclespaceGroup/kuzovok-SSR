@@ -1,17 +1,11 @@
-import React, { useState, useMemo } from 'react'
+import React from 'react'
 import SectionCardsRow from '../../../components/SectionCardsRow/desktop/SectionCardsRow'
 import useLastWorks from '../useLastWorks'
 import BgColor from '../../../components/BgColor/BgColor'
 import Padding from '../../../components/Padding/Padding'
 
 const ContainerLastWorks = () => {
-  const [ items, setItems ] = useState([])
-  useMemo(() => {
-    useLastWorks()
-      .then(data => {
-        setItems(data?.items)
-      })
-  }, [])
+  const { items } = useLastWorks()
   return (
     <BgColor color={'grey'}>
       <Padding value={60} />

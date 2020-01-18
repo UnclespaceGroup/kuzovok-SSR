@@ -5,7 +5,7 @@ import css from './CardWorkItem.module.scss'
 import { Link } from 'react-router-dom'
 import { getDate, getStatusByCode } from 'utils/getNameByValue'
 
-const CardWorkItem = ({ id, url = '/', img, title, annotation, className, status = 0, date }) => {
+const CardWorkItem = ({ to = '/', img, title, annotation, className, status = 0, date }) => {
   return (
     <div className={cn(css.container, className)}>
       <div>
@@ -17,7 +17,7 @@ const CardWorkItem = ({ id, url = '/', img, title, annotation, className, status
       </div>
       <div className={css.footer}>
         <div className={css.date}>{getDate(date)}</div>
-        <Link className={css.link} to={url + id} >Подробнее</Link>
+        <Link className={css.link} to={to} >Подробнее</Link>
       </div>
     </div>
   )
@@ -28,8 +28,7 @@ CardWorkItem.propTypes = {
   annotation: PropTypes.node,
   className: PropTypes.string,
   date: PropTypes.node,
-  url: PropTypes.string,
-  id: PropTypes.any,
+  to: PropTypes.string,
   status: PropTypes.any
 }
 

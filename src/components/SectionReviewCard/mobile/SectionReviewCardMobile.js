@@ -7,7 +7,7 @@ import cn from 'classnames'
 import moment from 'moment'
 import Wysiwyg from '../../Wysiwyg/desktop/Wysiwyg'
 
-const SectionReviewCardMobile = ({ title, text, galleryData, date, parentId, annotation, withUrl, number = 12, theme = 'white' }) => (
+const SectionReviewCardMobile = ({ title, text, galleryData, date, annotation, withUrl, number = 12, theme = 'white' }) => (
   <div className={cn(css.container, css[theme])}>
     <LayoutMobile>
       <div className={css.header}>
@@ -34,7 +34,6 @@ SectionReviewCardMobile.propTypes = {
   title: PropTypes.node,
   text: PropTypes.node,
   date: PropTypes.any,
-  parentId: PropTypes.number,
   withUrl: PropTypes.bool,
   annotation: PropTypes.node,
   number: PropTypes.node,

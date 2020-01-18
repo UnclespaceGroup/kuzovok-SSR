@@ -1,16 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import ContainerLastWorks from 'containers/ContainerLastWorks/desktop/ContainerLastWorks'
 import useReviews from '../useReviews'
 import Banner from 'components/Banner/desktop/Banner'
 import SectionTabs from 'components/SectionTabs/desktop/SectionTabs'
-import { Route, Switch, withRouter } from 'react-router'
+import { Route, Switch } from 'react-router'
 import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from 'constants/ROUTES'
-import { compose } from 'redux'
 import SectionReviews from 'components/SectionReviews/desktop/SectionReviews'
 
-const ContainerReviews = ({ location }) => {
-  const { items = [], headerData, tabs, pending, sideMenuItems } = useReviews({ location })
+const ContainerReviews = () => {
+  const { items = [], headerData, tabs, pending, sideMenuItems } = useReviews()
 
   return (
   <>
@@ -40,11 +38,5 @@ const ContainerReviews = ({ location }) => {
   </>
   )
 }
-ContainerReviews.propTypes = {
-  location: PropTypes.object
-}
 
-export default compose(
-  React.memo,
-  withRouter
-)(ContainerReviews)
+export default React.memo(ContainerReviews)

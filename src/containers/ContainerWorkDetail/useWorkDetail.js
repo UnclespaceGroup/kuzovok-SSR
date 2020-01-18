@@ -1,48 +1,28 @@
-import { fetchDataList, fetchDataSingle } from 'axiosFetch/fetchData'
 import _ from 'lodash'
-import { safelyParsing } from 'utils/Json'
 import { useParams } from 'react-router'
-import { useState, useMemo } from 'react'
+import useAxiosData from 'hooks/useAxiosData'
+import { URL_WORK, SERVER_URL, URL_REPORT } from 'constants/serverURLs'
 
 const useWorkDetail = () => {
-  const [pageData, setPageData] = useState({})
-  const [pageItems, setPageItems] = useState([])
-  const [ sideMenuItems, setSideMenuItems ] = useState([])
   const { id } = useParams()
 
-  useMemo(() => {
-    if (id) {
-      fetchDataSingle(`/work/${id}`)
-        .then(data => {
-          if (!data) return
-          setPageData({
-            title: data.title,
-            img: data.banner,
-            tags: (data.tags && data?.tags.indexOf('#') !== -1 && data.tags.slice(1).split('#')) || null,
-            text: data.text
-          })
-        })
-      fetchDataList(`/report?parentId=${id}`)
-        .then(data => {
-          setPageItems(_.map(data, item => ({
-            ...item,
-            galleryData: { photos: safelyParsing(item.images) }
-          }))
-          )
-        })
-      fetchDataList('/getWorksList?limit=10')
-        .then(data => {
-          console.log(data)
-          setSideMenuItems(data)
-        })
-        .catch(e => console.log(e))
-    }
-  }, [id])
+  const { data } = useAxiosData({ url: URL_WORK, where: { id }, single: true }, [id])
+  const { data: items } = useAxiosData({ url: URL_REPORT, where: { parentId: id } }, [id])
+  const { data: sideMenuItems } = useAxiosData({ url: URL_REPORT + 'list', limit: 12 })
+
+  const header = data && {
+    title: data.title,
+    img: SERVER_URL + data.banner,
+    annotation: data.annotation
+  }
+
+  const pageItems = _.map(items, item => ({
+    ...item
+  }))
 
   return {
-    ...pageData,
-    header: { ...pageData, text: '' },
-    text: pageData.text,
+    header,
+    text: data?.text,
     items: pageItems,
     sideMenuItems
   }
