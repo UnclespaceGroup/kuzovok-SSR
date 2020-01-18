@@ -23,7 +23,7 @@ const Slider = ({ items, children, loop, autoplayDelay, getSwiper, ...params }) 
       {...params}
     >
       {
-        _.map(items, (item, key) => (
+        !_.size(items) ? React.cloneElement(children) : _.map(items, (item, key) => (
           <div key={key} className={css.slide}>
             {
               React.cloneElement(children, { ...item })

@@ -4,8 +4,9 @@ import css from './SectionReviewCard.module.scss'
 import cn from 'classnames'
 import SectionGalleryVertical from 'components/SectionGalleryVertical/desktop/SectionGalleryVertical'
 import moment from 'moment'
+import Wysiwyg from 'components/Wysiwyg/desktop/Wysiwyg'
 
-const SectionReviewCard = ({ title, galleryData, date, annotation, theme = 'white' }) => (
+const SectionReviewCard = ({ title, galleryData, date, annotation, text, theme = 'white' }) => (
   <div className={cn(css.container, css[theme])}>
     <div className={css.row}>
       <div className={css.content}>
@@ -14,6 +15,7 @@ const SectionReviewCard = ({ title, galleryData, date, annotation, theme = 'whit
           <div className={css.date}>{moment(date).format('LL')}</div>
         </div>
         <div className={css.annotation}>{annotation}</div>
+        <Wysiwyg>{text}</Wysiwyg>
       </div>
       <div className={css.aside}>
         <SectionGalleryVertical {...galleryData} />

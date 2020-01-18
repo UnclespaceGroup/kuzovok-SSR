@@ -37,18 +37,18 @@ SliderBannerDesktop.propTypes = {
   items: PropTypes.array
 }
 
-const Slide = ({ img, title, text, url, onClick }) => (
-  <BgImage img={img}>
+const Slide = ({ img = '', title, text, url, onClick }) => (
+  <BgImage img={img} className={css.back}>
     <div className={css.slide}>
       <Layout className={css.slideWrapper}>
         <div className={css.title}>{title}</div>
         <div className={css.text}>{text}</div>
-        <div>
+        {(url || onClick) && <div>
           <Button
             to={url}
             onClick={onClick}
           >Перейти</Button>
-        </div>
+        </div>}
       </Layout>
     </div>
     <div id={'toThis'} />

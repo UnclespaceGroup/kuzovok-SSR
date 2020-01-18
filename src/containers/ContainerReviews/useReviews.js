@@ -15,7 +15,6 @@ const useReviews = () => {
   const { data: items = [], isPending } = useAxiosData({ url: URL_REPORT, rangeData }, [location])
   const { data: sideMenuItems } = useAxiosData({ url: URL_REPORT + 'list', limit: 12 }, [location])
 
-  console.log(pageData.banner)
   const headerData = {
     title: pageData.title,
     text: pageData.text,
