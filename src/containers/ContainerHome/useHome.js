@@ -1,9 +1,14 @@
 import { PAGE_SERVICES } from 'constants/ROUTES'
-import React from 'react'
 import _ from 'lodash'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
 import useAxiosData from 'hooks/useAxiosData'
-import { URL_MAIN_PAGE_ADVANTAGES, SERVER_URL, URL_MAIN_PAGE_CARDS, URL_SERVICE } from 'constants/serverURLs'
+import {
+  URL_MAIN_PAGE_ADVANTAGES,
+  SERVER_URL,
+  URL_MAIN_PAGE_CARDS,
+  URL_SERVICE,
+  URL_SLIDES
+} from 'constants/serverURLs'
 import { getImagePath } from 'utils/getImagePath'
 
 const useHome = () => {
@@ -27,41 +32,16 @@ const useHome = () => {
     img: SERVER_URL + item.banner
   }))
 
-  const sliderText = <div>
-  </div>
-
-  const mainSlider = [
-    {
-      img: 'http://car-pr.com/upload/resize_cache/iblock/b1d/620_410_2/b1db875296578f55db900dd213cb9d4d.jpg',
-      title: 'Сервисный центр Кузовок',
-      text: sliderText,
-      onClick: () => scrollWindowTo('toThis')
-    },
-    {
-      img: 'https://avatars.mds.yandex.net/get-altay/224414/2a0000015f65f3492856faf2296ca18a9a0e/XXL',
-      title: 'Сервисный центр Кузовок',
-      text: sliderText,
-      onClick: () => scrollWindowTo('toThis')
-    },
-    {
-      img: 'https://www.porsche-voronezh.ru/files/9457/1_%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81.jpg',
-      title: 'Сервисный центр Кузовок',
-      text: sliderText,
-      onClick: () => scrollWindowTo('toThis')
-    }
-  ]
-
-  const mainBanner = {
-    title: 'Кузовок',
-    img: 'https://avatars.mds.yandex.net/get-altay/239474/2a0000015debac50310cc28649dbbbd50215/XXL',
-    text: <p>
-      Сревистный центр
-    </p>
-  }
+  const { data: mainSliderList = [] } = useAxiosData({ url: URL_SLIDES, where: { type: 'mainPage' } })
+  const mainSlider = mainSliderList.map(item => ({
+    title: item.title,
+    text: item.text,
+    onClick: () => scrollWindowTo('toThis'),
+    img: getImagePath(item.banner)
+  }))
 
   return {
     services,
-    mainBanner,
     advantages,
     mainSlider,
     mainCards
