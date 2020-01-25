@@ -1,53 +1,31 @@
-import { mainServices } from 'constants/servicesData'
 import { PAGE_SERVICES } from 'constants/ROUTES'
 import React from 'react'
+import _ from 'lodash'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
-import icon1 from 'static/icons/kus-homework.svg'
-import icon2 from 'static/icons/kus-check.svg'
-import icon3 from 'static/icons/kus-hand.svg'
+import useAxiosData from 'hooks/useAxiosData'
+import { URL_MAIN_PAGE_ADVANTAGES, SERVER_URL, URL_MAIN_PAGE_CARDS, URL_SERVICE } from 'constants/serverURLs'
+import { getImagePath } from 'utils/getImagePath'
 
 const useHome = () => {
-  const services = mainServices.map(item => ({
-    ...item,
-    img: item.banner,
-    to: PAGE_SERVICES + item.id
+  const { data: servicesList = [] } = useAxiosData({ url: URL_SERVICE })
+  const services = servicesList.map(item => ({
+    img: getImagePath(item.banner),
+    title: item.title
+  })).concat({ title: 'Другие', to: PAGE_SERVICES, img: getImagePath(servicesList[0]?.banner) })
+
+  const { data: mainCardList } = useAxiosData({ url: URL_MAIN_PAGE_CARDS })
+  const mainCards = _.map(mainCardList, item => ({
+    img: getImagePath(item.banner),
+    title: item.title,
+    text: item.text
   }))
-    .slice(0, 5)
-    .concat([{
-      title: 'Другие',
-      to: PAGE_SERVICES
-    }])
 
-  const bigBlockServices = {
-    truckItems: mainServices.slice(0, 4).map(item => ({
-      title: item.title,
-      to: PAGE_SERVICES + item.id
-    })
-    ),
-    passengerCarItems: mainServices.slice(0, 5).map(item => ({
-      title: item.title,
-      to: PAGE_SERVICES + item.id
-    })
-    )
-  }
-
-  const advantages = [
-    {
-      img: icon1,
-      title: 'Будьте всегда в курсе',
-      text: 'Наблюдайте за ходом ремонта вашего автомобиля на нашем сайте'
-    },
-    {
-      img: icon2,
-      title: 'Предоставляем гарантию',
-      text: 'Гарантия на выполненные работы 1.5 года'
-    },
-    {
-      img: icon3,
-      title: 'Профессиональная работа',
-      text: 'Оптимальное отношение цена - качество'
-    }
-  ]
+  const { data: advantagesList } = useAxiosData({ url: URL_MAIN_PAGE_ADVANTAGES })
+  const advantages = _.map(advantagesList, item => ({
+    title: item.title,
+    text: item.text,
+    img: SERVER_URL + item.banner
+  }))
 
   const sliderText = <div>
   </div>
@@ -83,10 +61,10 @@ const useHome = () => {
 
   return {
     services,
-    bigBlockServices,
     mainBanner,
     advantages,
-    mainSlider
+    mainSlider,
+    mainCards
   }
 }
 export default useHome
