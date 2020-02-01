@@ -1,10 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './WysiwygMobile.module.scss'
+import useWysiwyg from 'components/Wysiwyg/useWysiwyg'
 
-const WysiwygMobile = ({ children, width }) => (
-  <div className={css.container} style={{ width }} dangerouslySetInnerHTML={{ __html: children }} />
-)
+const WysiwygMobile = ({ children, width }) => {
+  const { text } = useWysiwyg({ children })
+  return (
+    <div className={css.container} style={{ width }} dangerouslySetInnerHTML={{ __html: text }} />
+  )
+}
 WysiwygMobile.propTypes = {
   children: PropTypes.node,
   width: PropTypes.string
