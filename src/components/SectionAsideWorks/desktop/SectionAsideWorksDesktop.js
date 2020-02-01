@@ -16,7 +16,7 @@ const SectionAsideWorksDesktop = ({ list }) => (
           <div className={css.title}>{item.title}
             { (item.status === '1') && <TagStatus className={css.type} status={item.status} />}
           </div>
-          <div className={css.text}>{item.annotation}</div>
+          <div className={css.text}>{item.text}</div>
         </Link>
       ))
     }

@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../../Layout/Layout'
 import SectionAdvantagesColumnDesktop from 'components/SectionAdvantagesColumn/desktop/SectionAdvantagesColumnDesktop'
-import WidgetServiceDetailDesktop from 'components/WidgetServiceDetail/desktop/WidgetServiceDetailDesktop'
 import Wysiwyg from '../../Wysiwyg/desktop/Wysiwyg'
 import css from './SectionServiceDetailDesktop.module.scss'
 
@@ -13,7 +12,7 @@ const SectionServiceDetailDesktop = ({ advantages, text }) => (
       <Wysiwyg >{text}</Wysiwyg>
     </div>
     <div className={css.widget}>
-      <WidgetServiceDetailDesktop />
+      {/* <WidgetServiceDetailDesktop /> */}
     </div>
   </Layout>
 )

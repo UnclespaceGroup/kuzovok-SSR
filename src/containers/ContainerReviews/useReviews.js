@@ -4,6 +4,7 @@ import useAxiosData from 'hooks/useAxiosData'
 import { URL_REPORT, URL_PAGE } from 'constants/serverURLs'
 import { getImagePath } from 'utils/getImagePath'
 import { useLocation } from 'react-router'
+import _ from 'lodash'
 
 const pageId = 'reports'
 
@@ -13,7 +14,13 @@ const useReviews = () => {
 
   const { data: pageData = {} } = useAxiosData({ url: URL_PAGE, where: { id: pageId }, single: true })
   const { data: items = [], isPending } = useAxiosData({ url: URL_REPORT, rangeData }, [location])
-  const { data: sideMenuItems } = useAxiosData({ url: URL_REPORT + 'list', limit: 12 }, [location])
+  const { data: sideMenuList } = useAxiosData({ url: URL_REPORT + 'list', limit: 12 }, [location])
+
+  const sideMenuItems = _.map(sideMenuList, item => ({
+    title: item.parentTitle,
+    text: item.title,
+    id: item.parentId
+  }))
 
   const headerData = {
     title: pageData.title,

@@ -7,10 +7,13 @@ import SectionOpenMainMenuDesktop from 'components/SectionOpenMainMenu/desktop/S
 import Collapse from 'react-collapse'
 import { withRouter } from 'react-router'
 import { menuItems } from 'constants/MAIN_MENU'
+import { useSelector } from 'react-redux'
 
 const ContainerMainMenuDesktop = ({ location }) => {
   const [ open, setOpen ] = useState(false)
   const [ blackHeader, setBlackHeader ] = useState()
+
+  const { phone } = useSelector(state => state.contacts)
 
   // Подписываемся на скрол
   useLayoutEffect(() => {
@@ -57,12 +60,13 @@ const ContainerMainMenuDesktop = ({ location }) => {
       <div className={cn(css.menu)}>
         <SectionHeaderDesktop
           setOpen={openMenu}
+          phone={phone}
           black={blackHeader}
           {...{ open, menuItems }} />
       </div>
       <div className={css.container}>
         <Collapse isOpened={open} >
-          <SectionOpenMainMenuDesktop openMenu={openMenu} />
+          <SectionOpenMainMenuDesktop phone={phone} openMenu={openMenu} />
         </Collapse>
       </div>
     </div>

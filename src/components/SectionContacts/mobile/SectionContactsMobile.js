@@ -7,7 +7,7 @@ import { FaVk, FaInstagram } from 'react-icons/fa'
 import YandexMap from '../../YandexMap/desktop/YandexMap'
 import LayoutMobile from '../../Layout/LayoutMobile'
 
-const SectionContactsMobile = ({ items }) => (
+const SectionContactsMobile = ({ items, vk, mail }) => (
   <div className={css.container}>
     <LayoutMobile >
       <div className={css.map} >
@@ -26,8 +26,8 @@ const SectionContactsMobile = ({ items }) => (
             )
           }
           <li className={css.social}>
-            <a><FaVk size={'3rem'} /></a>
-            <a><MdMail size={'3rem'} /></a>
+            <a href={vk}><FaVk size={'3rem'} /></a>
+            <a href={`mailto:${mail}`}><MdMail size={'3rem'} /></a>
             <a><FaInstagram size={'3rem'} /></a>
           </li>
         </ul>
@@ -36,7 +36,9 @@ const SectionContactsMobile = ({ items }) => (
   </div>
 )
 SectionContactsMobile.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.array,
+  vk: PropTypes.string,
+  mail: PropTypes.string
 }
 
 export default React.memo(SectionContactsMobile)

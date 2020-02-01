@@ -1,11 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Padding from 'components/Padding/Padding'
-import SectionAboutVideoMobile from 'components/SectionAboutVideo/mobile/SectionAboutVideoMobile'
 import SectionContactsMobile from 'components/SectionContacts/mobile/SectionContactsMobile'
 import SectionServiceDetailMobile from 'components/SectionServiceDetail/mobile/SectionServiceDetailMobile'
-import SectionTextWithImageBlackMobile
-  from 'components/SectionTextWithImageBlack/mobile/SectionTextWithImageBlackMobile'
 import useServiceDetail from '../useServiceDetail'
 import { compose } from 'redux'
 import { withRouter } from 'react-router'
@@ -13,7 +10,7 @@ import { PAGE_SERVICES } from 'constants/ROUTES'
 import BannerMobile from 'components/Banner/mobile/BannerMobile'
 
 const ContainerServiceDetailMobile = ({ match }) => {
-  const { bannerData, videos, content, textBlock1 } = useServiceDetail({ ...match })
+  const { bannerData, content } = useServiceDetail({ ...match })
   return (
   <>
     <BannerMobile
@@ -24,9 +21,6 @@ const ContainerServiceDetailMobile = ({ match }) => {
       {...content}
     />
     <Padding value={60} />
-    <SectionTextWithImageBlackMobile {...textBlock1} />
-    <Padding value={60} />
-    <SectionAboutVideoMobile videos={videos} />
     <SectionContactsMobile />
     <Padding value={60} />
   </>

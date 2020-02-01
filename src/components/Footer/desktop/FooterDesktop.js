@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import css from './FooterDesktop.module.scss'
 import Layout from '../../Layout/Layout'
 import logo from 'static/logo/colored-logo-inverse-resized.png'
@@ -7,10 +7,9 @@ import _ from 'lodash'
 import { menu } from 'constants/MAIN_MENU'
 import { Link } from 'react-router-dom'
 import Padding from 'components/Padding/Padding'
-import { MAIN_PHONE, ADDRESS } from 'constants/contacts'
 import { MdLocationOn } from 'react-icons/md'
 
-const FooterDesktop = () => (
+const FooterDesktop = ({ phone, address }) => (
   <>
   <div className={css.container} >
     <Layout className={css.wrapper}>
@@ -27,8 +26,8 @@ const FooterDesktop = () => (
       <hr />
       <Padding value={40} />
       <div className={css.contacts}>
-        <div className={css.phone}>{MAIN_PHONE}</div>
-        <div className={css.addr} ><MdLocationOn size={'2rem'} />{ADDRESS}</div>
+        <div className={css.phone}><a href={`tel:${phone}`}>{phone}</a></div>
+        <div className={css.addr} ><MdLocationOn size={'2rem'} />{address}</div>
       </div>
     </Layout>
   </div>
@@ -40,7 +39,8 @@ const FooterDesktop = () => (
     </>
 )
 FooterDesktop.propTypes = {
-  // children: PropTypes.node
+  phone: PropTypes.node,
+  address: PropTypes.node
 }
 
 export default React.memo(FooterDesktop)

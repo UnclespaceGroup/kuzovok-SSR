@@ -8,21 +8,17 @@ import SectionAboutContacts from 'components/SectionAboutContacts/desktop/Sectio
 import {
   PAGE_ABOUT,
   PAGE_ABOUT_MAP,
-  PAGE_ABOUT_PHOTOS,
-  PAGE_ABOUT_VIDEO
+  PAGE_ABOUT_PHOTOS
 } from 'constants/ROUTES'
 import useAboutContacts from '../useAboutContacts'
-import SectionAboutPhotos from 'components/SectionAboutPhotos/SectionAboutPhotos'
+import SectionAboutPhotos from 'components/SectionAboutPhotos/desktop/SectionAboutPhotos'
 import useAboutPhotos from '../useAboutPhotos'
 import SectionHowFind from 'components/SectionHowFind/desktop/SectionHowFind'
-import SectionAboutVideo from 'components/SectionAboutVideo/desktop/SectionAboutVideo'
-import useAboutVideos from '../useAboutVideos'
 
 const ContainerAbout = () => {
   const { bannerData, items: itemsTabs } = useAbout()
-  const { data: dataContacts } = useAboutContacts()
+  const dataContacts = useAboutContacts()
   const { data: dataPhotos } = useAboutPhotos()
-  const { data: dataVideos } = useAboutVideos()
   return (
   <>
     <Banner {...bannerData} />
@@ -38,11 +34,6 @@ const ContainerAbout = () => {
         exact
         path={PAGE_ABOUT_PHOTOS}
         render={() => <SectionAboutPhotos {...dataPhotos} />}
-      />
-      <Route
-        exact
-        path={PAGE_ABOUT_VIDEO}
-        render={() => <SectionAboutVideo {...dataVideos} />}
       />
       <Route
         exact

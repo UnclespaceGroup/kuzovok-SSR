@@ -6,10 +6,9 @@ import { Link } from 'react-router-dom'
 import { menu } from 'constants/MAIN_MENU'
 import LayoutMobile from '../../Layout/LayoutMobile'
 import Padding from 'components/Padding/Padding'
-import { MAIN_PHONE } from 'constants/contacts'
 import logo from 'static/logo/colored-logo-inverse-resized.png'
 
-const SectionOpenMainMenuMobile = ({ openMenu }) => {
+const SectionOpenMainMenuMobile = ({ openMenu, phone }) => {
   return (
   <>
     <div className={css.back} onClick={() => { openMenu(false) }} />
@@ -27,7 +26,7 @@ const SectionOpenMainMenuMobile = ({ openMenu }) => {
         <Padding value={40} />
         <div className={css.phoneBlock}>
           <div>Свяжитесь с нами по номеру</div>
-          <div className={css.phone}>{MAIN_PHONE}</div>
+          <div className={css.phone}><a href={`tel:${phone}`}>{phone}</a></div>
         </div>
       </LayoutMobile>
     </div>
@@ -35,7 +34,8 @@ const SectionOpenMainMenuMobile = ({ openMenu }) => {
   )
 }
 SectionOpenMainMenuMobile.propTypes = {
-  openMenu: PropTypes.func
+  openMenu: PropTypes.func,
+  phone: PropTypes.string
 }
 
 export default React.memo(SectionOpenMainMenuMobile)

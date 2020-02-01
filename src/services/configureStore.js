@@ -1,24 +1,17 @@
 // packages
 import { applyMiddleware, compose, createStore } from 'redux'
-import { Iterable, fromJS } from 'immutable'
 import { rootReducer } from 'reducers/_index'
-// import thunkMiddleware from 'redux-thunk'
 
 const createLogger =
   process.env.NODE_ENV === 'development'
     ? require('redux-logger').createLogger
     : null
 
-const stateTransformer = state => {
-  if (Iterable.isIterable(state)) return state.toJS()
-  return state
-}
-
 export default function configureStore () {
   let store
   let initialState
   if (typeof window !== 'undefined' && window.__INITIAL_STATE__) {
-    initialState = fromJS(window.__INITIAL_STATE__)
+    initialState = window.__INITIAL_STATE__
   }
   if (process.env.NODE_ENV === 'development') {
     console.log('ENV', process.env.NODE_ENV, process.env.NODE_ENV === 'development')
@@ -29,8 +22,7 @@ export default function configureStore () {
           collapsed: (getState, action, logEntry) =>
             !logEntry.error && !action.debug,
           diff: true,
-          predicate: (getState, action) => reduxDebug || action.debug,
-          stateTransformer
+          predicate: (getState, action) => reduxDebug || action.debug
         })
       )
     )(createStore)(rootReducer, initialState)

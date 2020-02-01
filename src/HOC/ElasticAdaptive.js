@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { compose } from 'redux'
-import { connect } from 'react-redux'
 import withSizes from 'react-sizes'
 import stringToNumber from 'utils/stringToNumber'
 import { isServer } from 'utils/index'
@@ -46,14 +45,7 @@ ElasticAdaptive.propTypes = {
   elasticConfig: PropTypes.object
 }
 
-function mapStateToProps (state) {
-  return {
-    elasticConfig: state.getIn(['elasticAdaptive', 'config'])
-  }
-}
-
 export default compose(
-  connect(mapStateToProps),
   toJS,
   withSizes(({ width: currentWindowWidth }) => {
     const isMobile = currentWindowWidth < stringToNumber('768px')

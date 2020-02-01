@@ -1,26 +1,34 @@
 // packages
-import React from 'react'
+import React, { useMemo } from 'react'
 import { compose } from 'redux'
 import { hot } from 'react-hot-loader'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet/lib/Helmet'
 import MobileView from './LoadableMobileView'
 import DesktopView from './LoadableDesktopView'
 import { withViewContext } from 'HOC/ViewContext'
 import ScrollToTop from '../HOC/ScrollToTop'
+import useAxiosData from 'hooks/useAxiosData'
+import { URL_CONTACTS } from 'constants/serverURLs'
+import { useDispatch } from 'react-redux'
 
-const ViewSwitcher = ({ sizes: { isDesktop, isMobile } }) => (
-  <ScrollToTop>
-    <Helmet>
-      <html
-        className={`elastic-${
-          isMobile ? 'mobile' : isDesktop ? 'desktop' : 'tablet'
-        }`}
-      />
-    </Helmet>
-    {isMobile ? <MobileView /> : <DesktopView />}
-  </ScrollToTop>
-)
+const ViewSwitcher = ({ sizes: { isDesktop, isMobile } }) => {
+  const dispatch = useDispatch()
+  const { data } = useAxiosData({ url: URL_CONTACTS, single: true })
+  useMemo(() => {
+    dispatch({
+      type: 'addContacts',
+      payload: {
+        ...data,
+        phone: data?.mainPhone
+      }
+    })
+  }, [data])
+  return (
+    <ScrollToTop>
+      {isMobile ? <MobileView /> : <DesktopView />}
+    </ScrollToTop>
+  )
+}
 
 ViewSwitcher.propTypes = {
   sizes: PropTypes.object

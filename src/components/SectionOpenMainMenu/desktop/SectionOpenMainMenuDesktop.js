@@ -7,10 +7,9 @@ import Layout from '../../Layout/Layout'
 import { Link } from 'react-router-dom'
 import { menu } from 'constants/MAIN_MENU'
 import logo from 'static/logo/colored-logo-inverse-resized.png'
-import { MAIN_PHONE } from 'constants/contacts'
 import Padding from 'components/Padding/Padding'
 
-const SectionOpenMainMenuDesktop = ({ openMenu }) => {
+const SectionOpenMainMenuDesktop = ({ openMenu, phone }) => {
   return (
   <>
     <div className={css.back} onClick={() => { openMenu(false) }} />
@@ -40,7 +39,7 @@ const SectionOpenMainMenuDesktop = ({ openMenu }) => {
         <div className={cn(css.row, css.borderTop)}>
           <div className={css.phoneBlock}>
             <div>Свяжитесь с нами по номеру</div>
-            <div className={css.phone}>{MAIN_PHONE}</div>
+            <div className={css.phone}><a href={`tel:${phone}`}>{phone}</a></div>
           </div>
         </div>
       </Layout>
@@ -49,7 +48,8 @@ const SectionOpenMainMenuDesktop = ({ openMenu }) => {
   )
 }
 SectionOpenMainMenuDesktop.propTypes = {
-  openMenu: PropTypes.func
+  openMenu: PropTypes.func,
+  phone: PropTypes.string
 }
 
 export default React.memo(SectionOpenMainMenuDesktop)

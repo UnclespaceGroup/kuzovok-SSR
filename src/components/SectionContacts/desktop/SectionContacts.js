@@ -7,7 +7,7 @@ import { MdMail } from 'react-icons/md'
 import { FaVk, FaInstagram } from 'react-icons/fa'
 import YandexMap from '../../YandexMap/desktop/YandexMap'
 
-const SectionContacts = ({ items }) => (
+const SectionContacts = ({ items, vk, mail }) => (
   <div className={css.container}>
     <Layout className={css.wrapper}>
       <div className={css.map} >
@@ -26,8 +26,8 @@ const SectionContacts = ({ items }) => (
             )
           }
           <li className={css.social}>
-            <a><FaVk size={'3rem'} /></a>
-            <a><MdMail size={'3rem'} /></a>
+            <a href={vk}><FaVk size={'3rem'} /></a>
+            <a href={`mailto:${mail}`}><MdMail size={'3rem'} /></a>
             <a><FaInstagram size={'3rem'} /></a>
           </li>
         </ul>
@@ -36,7 +36,9 @@ const SectionContacts = ({ items }) => (
   </div>
 )
 SectionContacts.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.array,
+  vk: PropTypes.string,
+  mail: PropTypes.string
 }
 
 export default React.memo(SectionContacts)

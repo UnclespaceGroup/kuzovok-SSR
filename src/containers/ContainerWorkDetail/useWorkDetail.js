@@ -8,7 +8,13 @@ const useWorkDetail = () => {
 
   const { data } = useAxiosData({ url: URL_WORK, where: { id }, single: true }, [id])
   const { data: items } = useAxiosData({ url: URL_REPORT, where: { parentId: id } }, [id])
-  const { data: sideMenuItems } = useAxiosData({ url: URL_REPORT + 'list', limit: 12 })
+  const { data: sideMenuList } = useAxiosData({ url: URL_REPORT + 'list', limit: 12 })
+
+  const sideMenuItems = _.map(sideMenuList, item => ({
+    title: item.parentTitle,
+    text: item.title,
+    id: item.parentId
+  }))
 
   const header = data && {
     title: data.title,

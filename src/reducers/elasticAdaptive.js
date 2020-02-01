@@ -1,8 +1,7 @@
-import { fromJS } from 'immutable'
 
 export const SET_CURRENT_FONT_SIZE = 'SET_CURRENT_FONT_SIZE'
 
-const initialState = fromJS({
+const initialState = {
   config: {
     desktop: {
       baseSize: 10,
@@ -21,7 +20,7 @@ const initialState = fromJS({
     }
   },
   curFontSize: 10
-})
+}
 
 export default function ElasticAdaptive (state = initialState, action) {
   switch (action.type) {

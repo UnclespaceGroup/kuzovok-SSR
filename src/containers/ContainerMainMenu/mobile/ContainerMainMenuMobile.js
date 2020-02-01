@@ -7,10 +7,14 @@ import Collapse from 'react-collapse'
 import { withRouter } from 'react-router'
 import { menuItems } from 'constants/MAIN_MENU'
 import SectionOpenMainMenuMobile from 'components/SectionOpenMainMenu/mobile/SectionOpenMainMenuMobile'
+import { useSelector } from 'react-redux'
 
 const ContainerMainMenuMobile = ({ location }) => {
   const [ open, setOpen ] = useState(false)
   const [ blackHeader, setBlackHeader ] = useState()
+
+  const { phone } = useSelector(state => state.contacts)
+
   // Подписываемся на скрол
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -54,11 +58,11 @@ const ContainerMainMenuMobile = ({ location }) => {
   return (
     <div className={css.wrapper}>
       <div className={cn(css.menu)}>
-        <SectionHeaderMobile {...{ setOpen: openMenu, open, menuItems, black: blackHeader }} />
+        <SectionHeaderMobile phone={phone} {...{ setOpen: openMenu, open, menuItems, black: blackHeader }} />
       </div>
       <div className={css.container}>
         <Collapse isOpened={open} >
-          <SectionOpenMainMenuMobile openMenu={openMenu} />
+          <SectionOpenMainMenuMobile phone={phone} openMenu={openMenu} />
         </Collapse>
       </div>
     </div>

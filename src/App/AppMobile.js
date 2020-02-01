@@ -3,13 +3,13 @@ import { compose } from 'redux'
 import { hot } from 'react-hot-loader'
 import RoutesMobile from 'pages/RoutesMobile'
 import ContainerMainMenuMobile from 'containers/ContainerMainMenu/mobile/ContainerMainMenuMobile'
-import FooterMobile from 'components/Footer/mobile/FooterMobile'
+import ContainerFooterMobile from 'containers/ContainerFooter/mobile/ContainerFooterMobile'
 
 const AppMobile = () => (
   <div>
     <ContainerMainMenuMobile />
     <RoutesMobile />
-    <FooterMobile />
+    <ContainerFooterMobile />
   </div>
 )
 

@@ -3,14 +3,14 @@ import React from 'react'
 import { compose } from 'redux'
 import { hot } from 'react-hot-loader'
 import RoutesDesktop from 'pages/RoutesDesktop'
-import FooterDesktop from '../components/Footer/desktop/FooterDesktop'
-import ContainerMainMenuDesktop from '../containers/ContainerMainMenu/desktop/ContainerMainMenuDesktop'
+import ContainerMainMenuDesktop from 'containers/ContainerMainMenu/desktop/ContainerMainMenuDesktop'
+import ContainerFooterDesktop from 'containers/ContainerFooter/desktop/ContainerFooterDesktop'
 
 const AppDesktop = () => (
   <div>
     <ContainerMainMenuDesktop />
     <RoutesDesktop />
-    <FooterDesktop />
+    <ContainerFooterDesktop />
   </div>
 )
 

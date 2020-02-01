@@ -5,6 +5,8 @@ export const URL_PAGE = '/page/'
 export const URL_MAIN_PAGE_ADVANTAGES = '/advantages-main/'
 export const URL_MAIN_PAGE_CARDS = '/main-page-cards/'
 export const URL_SLIDES = '/slide/'
+export const URL_CONTACTS = '/contact/'
+export const URL_DATA = '/data/'
 
 const localApi = 'http://localhost:3002/'
 const productionApi = 'https://server.mdf-center.ru/'

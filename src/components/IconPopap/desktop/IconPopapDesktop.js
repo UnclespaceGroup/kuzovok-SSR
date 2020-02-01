@@ -4,18 +4,19 @@ import css from './IconPopap.module.scss'
 import cn from 'classnames'
 import { MdMessage, MdPhone, MdClose } from 'react-icons/md'
 import { FaVk } from 'react-icons/fa'
-import { EMAIL, MAIN_PHONE, VK_ADDRESS } from 'constants/contacts'
+import { useSelector } from 'react-redux'
 
 const IconPopapDesktop = ({ className }) => {
   const [ isOpen, setIsOpen ] = useState()
+  const { phone, mail, vk } = useSelector(state => state.contacts)
   return (
     <div className={cn(className)}>
       <div className={css.wrapper}>
         {
           isOpen && <div className={css.modal}>
-            <div className={css.item}><MdPhone />{MAIN_PHONE}</div>
-            <div className={css.item}><FaVk />{VK_ADDRESS}</div>
-            <div className={css.item}><MdMessage />{EMAIL}</div>
+            <div className={css.item}><MdPhone />{phone}</div>
+            <div className={css.item}><FaVk />{vk}</div>
+            <div className={css.item}><MdMessage />{mail}</div>
             <div className={css.close} onClick={() => setIsOpen(false)}><MdClose /></div>
           </div>
         }

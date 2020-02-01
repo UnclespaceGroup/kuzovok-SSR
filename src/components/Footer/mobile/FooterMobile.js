@@ -1,16 +1,15 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import css from './FooterMobile.module.scss'
 import { Link } from 'react-router-dom'
 import { menu } from 'constants/MAIN_MENU'
 import _ from 'lodash'
-import LayoutMobile from '../../Layout/LayoutMobile'
+import LayoutMobile from 'components/Layout/LayoutMobile'
 import logo from 'static/logo/colored-logo-inverse-resized.png'
 import Padding from 'components/Padding/Padding'
-import { MAIN_PHONE, ADDRESS } from 'constants/contacts'
 import { MdLocationOn } from 'react-icons/md'
+import PropTypes from 'prop-types'
 
-const FooterMobile = () => (
+const FooterMobile = ({ phone, address }) => (
   <>
     <div className={css.container} >
       <LayoutMobile className={css.wrapper}>
@@ -29,8 +28,8 @@ const FooterMobile = () => (
         <hr />
         <Padding value={20} />
         <div className={css.contacts}>
-          <div className={css.phone}>{MAIN_PHONE}</div>
-          <div className={css.addr} ><MdLocationOn size={'2rem'} />{ADDRESS}</div>
+          <div className={css.phone}><a href={`tel:${phone}`}>{phone}</a></div>
+          <div className={css.addr} ><MdLocationOn size={'2rem'} />{address}</div>
         </div>
       </LayoutMobile>
     </div>
@@ -42,7 +41,7 @@ const FooterMobile = () => (
   </>
 )
 FooterMobile.propTypes = {
-  // children: PropTypes.node
+  phone: PropTypes.node,
+  address: PropTypes.node
 }
-
 export default React.memo(FooterMobile)

@@ -1,6 +1,6 @@
-import combineReducers from 'redux-immutable/dist/combineReducers'
-import elasticAdaptive from 'reducers/elasticAdaptive'
+import contacts from 'reducers/contacts'
+import { combineReducers } from 'redux'
 
 export const rootReducer = combineReducers({
-  elasticAdaptive
+  contacts
 })

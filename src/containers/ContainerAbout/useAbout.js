@@ -1,7 +1,6 @@
 import {
   PAGE_ABOUT_MAP,
   PAGE_ABOUT_PHOTOS,
-  PAGE_ABOUT_VIDEO,
   PAGE_ABOUT
 } from 'constants/ROUTES'
 import useAxiosData from 'hooks/useAxiosData'
@@ -21,10 +20,6 @@ const useAbout = () => {
     {
       to: PAGE_ABOUT_PHOTOS,
       title: 'Фото станции'
-    },
-    {
-      to: PAGE_ABOUT_VIDEO,
-      title: 'Видео'
     },
     {
       to: PAGE_ABOUT_MAP,

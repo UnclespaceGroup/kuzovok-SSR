@@ -24,6 +24,7 @@ const SectionReviews = ({ items = [], title, sideMenuItems }) => (
       <div>
         <Padding value={24} />
         <SectionAsideWorksDesktop list={sideMenuItems} />
+        <Padding value={24} />
       </div>
     </Layout>
   </div>

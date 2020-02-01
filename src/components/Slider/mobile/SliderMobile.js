@@ -5,7 +5,7 @@ import css from './SliderMobile.module.scss'
 import Swiper from 'react-id-swiper'
 import 'react-id-swiper/lib/styles/css/swiper.css'
 
-const SliderMobile = ({ items, children, loop, autoplayDelay, className }) => (
+const SliderMobile = ({ items, children, loop, autoplayDelay, className, rebuildOnUpdate }) => (
   <div className={className}>
     <Swiper
       pagination={{
@@ -19,6 +19,7 @@ const SliderMobile = ({ items, children, loop, autoplayDelay, className }) => (
         delay: autoplayDelay
       } : false}
       containerClass={`${css.container}`}
+      rebuildOnUpdate={rebuildOnUpdate}
     >
       {
         !items ? children
@@ -38,7 +39,8 @@ SliderMobile.propTypes = {
   children: PropTypes.node,
   loop: PropTypes.bool,
   className: PropTypes.string,
-  autoplayDelay: PropTypes.number
+  autoplayDelay: PropTypes.number,
+  rebuildOnUpdate: PropTypes.bool
 }
 
 export default React.memo(SliderMobile)

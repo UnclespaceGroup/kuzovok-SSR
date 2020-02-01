@@ -2,23 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionAboutContacts.module.scss'
 import IconWrapper from '../../IconWrapper/IconWrapper'
-import { ADDRESS, EMAIL, MAIN_PHONE, VK_ADDRESS } from '../../../constants/contacts'
 import Layout from '../../Layout/Layout'
 import SectionTitle from '../../SectionTitle/desktop/SectionTitle'
 
-const SectionAboutContacts = ({ contacts }) => (
+const SectionAboutContacts = ({ phone, mail, vk, address }) => (
   <Layout className={css.container}>
     <div >
       <SectionTitle title={'Основные контакты'} />
-      <IconWrapper icon={'phone'}>{MAIN_PHONE}</IconWrapper>
-      <IconWrapper icon={'address'}>{ADDRESS}</IconWrapper>
-      <IconWrapper icon={'mail'}>{EMAIL}</IconWrapper>
-      <IconWrapper icon={'vk'}>{VK_ADDRESS}</IconWrapper>
+      {phone && <IconWrapper icon={'phone'}><a href={`tel:${phone}`}>{phone}</a></IconWrapper>}
+      {address && <IconWrapper icon={'address'}>{address}</IconWrapper>}
+      {mail && <IconWrapper icon={'mail'}>{mail}</IconWrapper>}
+      {vk && <IconWrapper icon={'vk'}>{vk}</IconWrapper>}
     </div>
   </Layout>
 )
 SectionAboutContacts.propTypes = {
-  contacts: PropTypes.object
+  vk: PropTypes.string,
+  phone: PropTypes.string,
+  mail: PropTypes.string,
+  address: PropTypes.string
 }
 
 export default React.memo(SectionAboutContacts)

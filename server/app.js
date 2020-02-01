@@ -72,7 +72,7 @@ const reactApp = ({ clientStats }) => async (req, res) => {
       // console.log(clientStats)
       // console.log(flushOptions)
       const { js, styles, cssHash } = flushChunks(clientStats, flushOptions)
-      const reduxState = store.getState().toJS() // get state to transfer to client
+      const reduxState = store.getState() // get state to transfer to client
       const helmet = Helmet.renderStatic() // get SEO
       const HTML = render({ appHTML, cssHash, helmet, reduxState, scripts: js, styles }) // get result HTML
       res.status(status).send(HTML)
