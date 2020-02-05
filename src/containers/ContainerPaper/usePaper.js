@@ -18,7 +18,7 @@ const usePaper = () => {
 
   const items = _.map(data, item => ({
     title: item.title,
-    date: moment(item.date).format('FF'),
+    date: moment(item.date).format('LL'),
     actor: `Автор: ${item.actor}`,
     text: item.annotation,
     to: PAGE_PAPER + item.id,
