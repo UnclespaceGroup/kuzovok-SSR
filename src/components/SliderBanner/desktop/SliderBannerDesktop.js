@@ -16,7 +16,8 @@ const SliderBannerDesktop = ({ items }) => {
         getSwiper={ref => { swiperRef.current = ref }}
         effect={'fade'}
         items={items}
-        loop autoplayDelay={10000}
+        loop
+        autoplayDelay={10000}
       >
         <Slide />
       </Slider>

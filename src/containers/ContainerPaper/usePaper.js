@@ -1,22 +1,20 @@
-import img from 'static/images/allfons.jpg'
 import { PAGE_PAPER } from 'constants/ROUTES'
 import _ from 'lodash'
-import { fetchDataList } from 'axiosFetch/fetchData'
-import { useState } from 'react'
 import moment from 'moment'
+import useAxiosData from 'hooks/useAxiosData'
+import { URL_PAPER, URL_PAGE } from 'constants/serverURLs'
+import { getImagePath } from 'utils/getImagePath'
 
 const usePaper = () => {
-  const [ data, setData ] = useState()
+  const { data: _bannerData = {} } = useAxiosData({ url: URL_PAGE, single: true, where: { id: 'paper' } })
+
   const bannerData = {
-    title: 'Полезные статьи',
-    text: '',
-    img: img
+    title: _bannerData.title,
+    text: _bannerData.text,
+    img: getImagePath(_bannerData.banner)
   }
 
-  fetchDataList('paper')
-    .then(data => {
-      setData(data)
-    })
+  const { data } = useAxiosData({ url: URL_PAPER })
 
   const items = _.map(data, item => ({
     title: item.title,
@@ -24,7 +22,7 @@ const usePaper = () => {
     actor: `Автор: ${item.actor}`,
     text: item.annotation,
     to: PAGE_PAPER + item.id,
-    img: item.banner
+    img: getImagePath(item.banner)
   }))
 
   return {

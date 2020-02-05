@@ -1,22 +1,13 @@
 .container {
-  padding: 5rem 0;
-  display: flex;
-  justify-content: space-between;
+  padding: 2.4rem 0;
   border-bottom: solid 1px rgba(0,0,0,0.2);
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 50%
 }
 
 .title {
   font-size: 2.4rem;
   line-height: 2.8rem;
   color: #000000;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.6rem;
 }
 
 .text {
@@ -31,7 +22,7 @@
   font-size: 1.4rem;
   line-height: 1.6rem;
   color: #000000;
-  margin-bottom: 1.2rem;
+  margin-bottom: .4rem;
 }
 .actor {
   font-weight: 300;
@@ -46,5 +37,12 @@
 }
 
 .img {
-  height: 28rem;
+  height: 22rem;
+  margin: 0 -2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
 }

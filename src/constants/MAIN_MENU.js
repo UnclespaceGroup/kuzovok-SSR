@@ -16,6 +16,9 @@ export const menuItems = [
     title: 'Автомобили в ремонте', href: PAGE_WORKS
   },
   {
+    title: 'Статьи', href: PAGE_PAPER
+  },
+  {
     title: 'О нас', href: PAGE_ABOUT
   }
 ]

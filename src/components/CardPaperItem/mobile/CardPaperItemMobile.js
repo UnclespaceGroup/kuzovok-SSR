@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import css from 'components/CardPaperItem/desktop/CardPaperItem.module.scss'
+import css from './CardPaperItemMobile.module.scss'
 import BgImage from 'components/BgImage/BgImage'
 import Button from 'components/Button/Button'
 

@@ -36,11 +36,6 @@
     You need to enable JavaScript to run this app.
 </noscript>
 <div id="root">{{{appHTML}}}</div>
-{{#if initialState}}
-    <script>
-        window.__INITIAL_STATE__ = {{{initialState}}}
-    </script>
-{{/if}}
 {{{stylesHash}}}
 {{#each inlineScripts}}
     <script type="application/javascript">

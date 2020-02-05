@@ -15,7 +15,8 @@ const Slider = ({ items, children, loop, autoplayDelay, getSwiper, ...params }) 
         clickable: true,
         dynamicBullets: true
       }}
-      loop={loop}
+      rebuildOnUpdate
+      loop={loop || true}
       autoplay={{
         delay: autoplayDelay
       }}
