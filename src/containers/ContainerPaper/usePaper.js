@@ -25,9 +25,11 @@ const usePaper = () => {
     img: getImagePath(item.banner)
   }))
 
+  const sortedItems = _.sortBy(items, o => moment(o.date).format('YYYYMMDD')).reverse()
+
   return {
     bannerData,
-    items
+    items: sortedItems
   }
 }
 export default usePaper

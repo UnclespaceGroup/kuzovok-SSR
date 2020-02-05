@@ -9,7 +9,7 @@ export const URL_CONTACTS = '/contact/'
 export const URL_DATA = '/data/'
 export const URL_PAPER = '/paper/'
 
-const localApi = 'http://localhost:3002/'
-const productionApi = 'https://server.mdf-center.ru/'
+export const localApi = 'http://localhost:3002/'
+export const productionApi = 'https://server.mdf-center.ru/'
 
 export const SERVER_URL = process.env.NODE_ENV === 'production' ? productionApi : localApi

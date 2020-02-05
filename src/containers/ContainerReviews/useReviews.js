@@ -5,6 +5,7 @@ import { URL_REPORT, URL_PAGE } from 'constants/serverURLs'
 import { getImagePath } from 'utils/getImagePath'
 import { useLocation } from 'react-router'
 import _ from 'lodash'
+import moment from 'moment'
 
 const pageId = 'reports'
 
@@ -44,8 +45,10 @@ const useReviews = () => {
     }
   ]
 
+  const sortedItems = _.sortBy(items, o => moment(o.date).format('YYYYMMDD')).reverse()
+
   return {
-    items,
+    items: sortedItems,
     headerData,
     tabs,
     pending: isPending,
