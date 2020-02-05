@@ -1,11 +1,11 @@
 import React from 'react'
 import Layout from 'components/Layout/Layout'
 import Padding from 'components/Padding/Padding'
-import SectionContacts from 'components/SectionContacts/desktop/SectionContacts'
 import Banner from 'components/Banner/desktop/Banner'
 import Wysiwyg from 'components/Wysiwyg/desktop/Wysiwyg'
 import usePaperDetail from 'containers/ContainerPaperDetail/usePaperDetail'
 import { PAGE_PAPER } from 'constants/ROUTES'
+import ContainerContactsBlock from 'containers/ContainerContactsBlock/desktop/ContainerContactsBlock'
 
 const ContainerPaperDetail = () => {
   const { bannerData, content } = usePaperDetail()
@@ -20,7 +20,7 @@ const ContainerPaperDetail = () => {
       <div />
     </Layout>
     <Padding value={120} />
-    <SectionContacts />
+    <ContainerContactsBlock />
     <Padding value={120} />
   </>
   )

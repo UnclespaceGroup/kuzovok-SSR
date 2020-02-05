@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 
 const useContactsBlock = () => {
   const { address, phone, workTime, mail, vk } = useSelector(state => state.contacts)
-
   const items = [
     {
       icon: <MdLocationOn size={'2rem'} />,
