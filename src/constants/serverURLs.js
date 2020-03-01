@@ -12,4 +12,4 @@ export const URL_PAPER = '/paper/'
 export const localApi = 'http://localhost:3002/'
 export const productionApi = 'https://server.mdf-center.ru/'
 
-export const SERVER_URL = process.env.NODE_ENV === 'production' ? productionApi : localApi
+export const SERVER_URL = productionApi // process.env.NODE_ENV === 'production' ? productionApi : localApi

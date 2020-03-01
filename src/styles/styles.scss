@@ -5,9 +5,16 @@ html {
     font-size: calc( 100vw / 320 * 10 );
   }
 
-  @media all and (min-width: 1600px) {
+  @media all and (max-width: 1600px) {
+    font-size: calc( 100vw / 1500 * 10 );
+  }
 
-    font-size: calc( 100vw / 1700 * 10 );
+  @media all and (min-width: 1601px) {
+    font-size: calc( 100vw / 2000 * 10 );
+  }
+
+  @media all and (min-width: 2000px) {
+    font-size: calc( 100vw / 2500 * 10 );
   }
 }
 
