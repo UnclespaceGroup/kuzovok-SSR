@@ -11,11 +11,13 @@ import ContainerLastWorks from 'containers/ContainerLastWorks/desktop/ContainerL
 import SectionReviewCard from 'components/SectionReviewCard/desktop/SectionReviewCard'
 import Banner from 'components/Banner/desktop/Banner'
 import SectionAsideWorksDesktop from 'components/SectionAsideWorks/desktop/SectionAsideWorksDesktop'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerWorkDetail = () => {
-  const { header, items, text, sideMenuItems } = useWorkDetail()
+  const { helmetData, header, items, text, sideMenuItems } = useWorkDetail()
   return (
     <>
+      <ContainerHelmet {...helmetData} />
       <Banner
         backLink={PAGE_WORKS} {...header}
       />

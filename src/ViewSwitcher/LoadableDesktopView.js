@@ -1,6 +1,7 @@
 import React from 'react'
 // packages
 import universal from 'react-universal-component'
+import logo from 'static/logo/colored-logo.png'
 
 const Loading = ({ error, retry: handleRetry }) => {
   if (error) {
@@ -22,14 +23,15 @@ const Loading = ({ error, retry: handleRetry }) => {
         }}
       >
         <img
-          src={''}
+          src={logo}
+          alt={'Кузовок'}
           style={{
-            height: '60px',
+            height: '300px',
             left: 0,
             margin: '0 auto',
             position: 'absolute',
             right: 0,
-            top: 'calc(50vh - 30px)'
+            top: 'calc(50vh - 150px)'
           }}
         />
       </div>

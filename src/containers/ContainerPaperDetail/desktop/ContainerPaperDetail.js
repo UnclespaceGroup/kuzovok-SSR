@@ -6,11 +6,13 @@ import Wysiwyg from 'components/Wysiwyg/desktop/Wysiwyg'
 import usePaperDetail from 'containers/ContainerPaperDetail/usePaperDetail'
 import { PAGE_PAPER } from 'constants/ROUTES'
 import ContainerContactsBlock from 'containers/ContainerContactsBlock/desktop/ContainerContactsBlock'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerPaperDetail = () => {
-  const { bannerData, content } = usePaperDetail()
+  const { bannerData, content, helmetData } = usePaperDetail()
   return (
   <>
+    <ContainerHelmet {...helmetData} />
     <Banner backLink={PAGE_PAPER} {...bannerData} />
     <Padding value={60} />
     <Layout withAside>

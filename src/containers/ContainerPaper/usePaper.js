@@ -27,7 +27,13 @@ const usePaper = () => {
 
   const sortedItems = _.sortBy(items, o => moment(o.date).format('YYYYMMDD')).reverse()
 
+  const helmetData = {
+    title: 'Список полезных статей по ремонту автомобиля',
+    description: 'Различные статьи на автомобильную тематику.'
+  }
+
   return {
+    helmetData,
     bannerData,
     items: sortedItems
   }

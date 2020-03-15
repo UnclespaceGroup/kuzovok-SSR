@@ -6,7 +6,7 @@ import { URL_WORK, SERVER_URL, URL_REPORT } from 'constants/serverURLs'
 const useWorkDetail = () => {
   const { id } = useParams()
 
-  const { data } = useAxiosData({ url: URL_WORK, where: { id }, single: true }, [id])
+  const { data: { title, text, annotation, banner } = {} } = useAxiosData({ url: URL_WORK, where: { id }, single: true }, [id])
   const { data: items } = useAxiosData({ url: URL_REPORT, where: { parentId: id } }, [id])
   const { data: sideMenuList } = useAxiosData({ url: URL_REPORT + 'list', limit: 12 })
 
@@ -16,19 +16,25 @@ const useWorkDetail = () => {
     id: item.parentId
   }))
 
-  const header = data && {
-    title: data.title,
-    img: SERVER_URL + data.banner,
-    annotation: data.annotation
+  const header = {
+    title,
+    img: SERVER_URL + banner,
+    annotation
   }
 
   const pageItems = _.map(items, item => ({
     ...item
   }))
 
+  const helmetData = {
+    title: `Работа над ${title || 'автомобилем'} | Станция кузовного ремонта Кузовок`,
+    description: annotation
+  }
+
   return {
+    helmetData,
     header,
-    text: data?.text,
+    text,
     items: pageItems,
     sideMenuItems
   }

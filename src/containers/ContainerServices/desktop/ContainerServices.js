@@ -3,11 +3,13 @@ import SectionService from 'components/SectionServices/desktop/SectionServices'
 import useServices from '../useServices'
 import { PAGE_SERVICES } from 'constants/ROUTES'
 import SectionServicesSliderBanner from 'components/SliderBanner/desktop/SliderBannerDesktop'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerServices = () => {
-  const { mainCards = [], cards = [], bannerItems } = useServices()
+  const { mainCards = [], helmetData, cards = [], bannerItems } = useServices()
   return (
     <>
+      <ContainerHelmet {...helmetData} />
       <SectionServicesSliderBanner
         items={bannerItems}
       />

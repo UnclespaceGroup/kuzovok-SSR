@@ -8,13 +8,23 @@ import ContainerContactsBlockMobile from 'containers/ContainerContactsBlock/mobi
 import SliderBannerMobile from 'components/SliderBanner/mobile/SliderBannerMobile'
 import AdvantagesRowMobile from 'components/AdvantagesRow/mobile/AdvantagesRowMobile'
 import SectionMainCardsMobile from 'components/SectionMainCards/mobile/SectionMainCardsMobile'
+import LayoutMobile from 'components/Layout/LayoutMobile'
+import WysiwygMobile from 'components/Wysiwyg/mobile/WysiwygMobile'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerHomeMobile = () => {
-  const { services, mainCards, mainSlider, advantages } = useHome()
+  const { services, mainCards, mainSlider, advantages, helmetData, text } = useHome()
   return (
     <div className={css.container}>
+      <ContainerHelmet {...helmetData} />
       <SliderBannerMobile items={mainSlider} />
       <Padding value={60} />
+      { text && <LayoutMobile>
+        <WysiwygMobile>
+          {text}
+        </WysiwygMobile>
+        <Padding value={60} />
+      </LayoutMobile>}
       <AdvantagesRowMobile items={advantages} />
       <Padding value={60} />
       <SectionMainCardsMobile cards={mainCards} />

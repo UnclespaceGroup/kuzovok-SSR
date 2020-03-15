@@ -3,11 +3,13 @@ import SectionServicesMobile from 'components/SectionServices/mobile/SectionServ
 import SectionServicesSliderBannerMobile from 'components/SliderBanner/mobile/SliderBannerMobile'
 import useServices from '../useServices'
 import { PAGE_SERVICES } from 'constants/ROUTES'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerServicesMobile = () => {
-  const { mainCards = [], cards = [], bannerItems } = useServices()
+  const { mainCards = [], helmetData, cards = [], bannerItems } = useServices()
   return (
     <>
+      <ContainerHelmet {...helmetData} />
       <SectionServicesSliderBannerMobile
         items={bannerItems}
       />

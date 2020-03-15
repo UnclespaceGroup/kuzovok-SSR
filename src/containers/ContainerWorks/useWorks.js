@@ -76,7 +76,17 @@ const useWorks = () => {
 
   const sortedItems = _.sortBy(filteredItems, o => moment(o.date).format('YYYYMMDD')).reverse()
 
+  const helmetData = {
+    title: 'Список работ станции Кузовок',
+    description: `
+      На данной странице представлены все работы станции кузовного ремонта Кузовок.
+      Представлены следующие категории работ: Сварочные работы, покраска автомобиля, кузовной ремонт, обработка порогов
+      и многое другое. Следите за процессом работы станции. Каждые два дня мы выкладываем отчеты с фотографиями.
+    `
+  }
+
   return {
+    helmetData,
     header,
     items: sortedItems,
     tabs,

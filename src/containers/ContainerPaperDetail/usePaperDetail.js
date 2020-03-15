@@ -7,16 +7,22 @@ import { PAGE_PAPER } from 'constants/ROUTES'
 const usePaperDetail = () => {
   const { id } = useParams()
 
-  const { data } = useAxiosData({ url: URL_PAPER, where: { id }, single: true })
+  const { data: { title, annotation, text, banner } = {} } = useAxiosData({ url: URL_PAPER, where: { id }, single: true })
+
+  const helmetData = {
+    title: title,
+    description: annotation
+  }
 
   return {
+    helmetData,
     bannerData: {
       backLink: PAGE_PAPER,
-      title: data?.title,
-      text: data?.annotation,
-      img: getImagePath(data?.banner)
+      title,
+      text: annotation,
+      img: getImagePath(banner)
     },
-    content: data?.text
+    content: text
   }
 }
 export default usePaperDetail

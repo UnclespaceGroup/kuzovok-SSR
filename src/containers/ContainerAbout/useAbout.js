@@ -27,7 +27,15 @@ const useAbout = () => {
     }
   ]
 
+  const helmetData = {
+    title: 'О сервисе кузовного ремонта Кузовок',
+    description: `
+    Контактные данные и описание сервиса кузовного ремонта кузовок.
+     Фотографии и видео станции`
+  }
+
   return {
+    helmetData,
     items,
     bannerData: {
       title: data.title,

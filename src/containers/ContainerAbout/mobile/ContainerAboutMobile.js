@@ -14,13 +14,15 @@ import {
 import useAboutContacts from '../useAboutContacts'
 import useAboutPhotos from '../useAboutPhotos'
 import SectionAboutPhotosMobile from 'components/SectionAboutPhotos/mobile/SectionAboutPhotosMobile'
+import ContainerHelmet from '../../ContainerHelmet/ContainerHelmet'
 
 const ContainerAboutMobile = () => {
-  const { bannerData, items: itemsTabs } = useAbout()
+  const { bannerData, items: itemsTabs, helmetData } = useAbout()
   const { data: dataContacts } = useAboutContacts()
   const { data: dataPhotos } = useAboutPhotos()
   return (
   <>
+    <ContainerHelmet {...helmetData} />
     <BannerMobile {...bannerData} />
     <SectionTabsMobile items={itemsTabs} />
     <Padding value={60} />

@@ -7,6 +7,10 @@ axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
 
 export const axiosInstanse = axios.create()
 
+export const axiosLocal = axios.create({
+  baseURL: ''
+})
+
 export const fetchDataSingle = async (url) => {
   let data = []
   await axios.get(url)

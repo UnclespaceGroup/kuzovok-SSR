@@ -5,11 +5,13 @@ import Layout from 'components/Layout/Layout'
 import Padding from 'components/Padding/Padding'
 import usePaper from 'containers/ContainerPaper/usePaper'
 import Banner from 'components/Banner/desktop/Banner'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerPaper = () => {
-  const { bannerData, items } = usePaper()
+  const { bannerData, helmetData, items } = usePaper()
   return (
   <>
+    <ContainerHelmet {...helmetData} />
     <Banner {...bannerData} />
     <Layout >
       <Padding value={120} />

@@ -11,11 +11,13 @@ import CheckTabsDesktop from 'components/CheckTabs/desktop/CheckTabsDesktop'
 import LayoutMobile from 'components/Layout/LayoutMobile'
 import css from './ContainerWorksMobile.module.scss'
 import FieldSelectMobile from 'components/FieldSelect/mobile/FieldSelectMobile'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerWorksMobile = ({ match }) => {
-  const { header, items, tabs, activeTab, select } = useWorks({ ...match })
+  const { header, items, tabs, helmetData, activeTab, select } = useWorks({ ...match })
   return (
     <>
+      <ContainerHelmet {...helmetData} />
       <BannerMobile withoutTabs {...header} />
       <Padding value={24} />
       <LayoutMobile>

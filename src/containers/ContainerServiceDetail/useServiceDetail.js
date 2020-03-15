@@ -4,16 +4,22 @@ import { URL_SERVICE, SERVER_URL } from 'constants/serverURLs'
 const useServiceDetail = ({ params }) => {
   const { slug } = params
 
-  const { data } = useAxiosData({ url: URL_SERVICE, where: { slug }, single: true })
+  const { data: { title, text, banner, annotation } = {} } = useAxiosData({ url: URL_SERVICE, where: { slug }, single: true })
+
+  const helmetData = {
+    title: `${title || 'Услуга'} | Станция кузовного ремонта Кузовок`,
+    description: annotation
+  }
 
   return {
+    helmetData,
     bannerData: {
-      title: data?.title,
-      text: data?.annotation,
-      img: SERVER_URL + data?.banner
+      title,
+      text: annotation,
+      img: SERVER_URL + banner
     },
     content: {
-      text: data?.text
+      text
     }
   }
 }

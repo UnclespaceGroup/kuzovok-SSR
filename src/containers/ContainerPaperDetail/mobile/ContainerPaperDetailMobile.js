@@ -5,11 +5,13 @@ import LayoutMobile from 'components/Layout/LayoutMobile'
 import WysiwygMobile from 'components/Wysiwyg/mobile/WysiwygMobile'
 import BannerMobile from 'components/Banner/mobile/BannerMobile'
 import ContainerContactsBlockMobile from 'containers/ContainerContactsBlock/mobile/ContainerContactsBlockMobile'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerPaperDetailMobile = () => {
-  const { bannerData, content } = usePaperDetail()
+  const { bannerData, content, helmetData } = usePaperDetail()
   return (
   <>
+    <ContainerHelmet {...helmetData} />
     <BannerMobile {...bannerData} />
     <LayoutMobile>
       <Padding value={60} />

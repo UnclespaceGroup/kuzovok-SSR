@@ -22,8 +22,20 @@ const useServices = () => {
     url: PAGE_SERVICES + item.slug
   }))
 
+  const helmetData = {
+    title: 'Каталог услуг | Станция кузовного ремонта Кузовок',
+    description: `
+Станция предлагаем огромный спектр услуг по кузовному ремонту и кузовной обработке автомобиля,
+такие как ${mainCards.map(item => item.title).join(', ')},
+а также следующие дополнительные услуги: ${cards.map(item => item.title).join(', ')} 
+    `
+  }
+
   return {
-    mainCards, bannerItems, cards
+    helmetData,
+    mainCards,
+    bannerItems,
+    cards
   }
 }
 export default useServices

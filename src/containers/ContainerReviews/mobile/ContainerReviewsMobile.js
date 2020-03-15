@@ -7,12 +7,14 @@ import ContainerLastWorksMobile from '../../ContainerLastWorks/mobile/ContainerL
 import useReviews from '../useReviews'
 import { Route, Switch } from 'react-router'
 import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from 'constants/ROUTES'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerReviewsMobile = () => {
-  const { items = [], headerData, tabs, pending } = useReviews()
+  const { items = [], headerData, tabs, helmetData, pending } = useReviews()
 
   return (
   <>
+    <ContainerHelmet {...helmetData} />
     <BannerMobile
       {...headerData}
       addIcon={

@@ -10,11 +10,13 @@ import { compose } from 'redux'
 import List from 'components/List/List'
 import useWorkDetail from '../useWorkDetail'
 import BannerMobile from 'components/Banner/mobile/BannerMobile'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerWorkDetailMobile = () => {
-  const { header, items, text } = useWorkDetail()
+  const { header, items, helmetData, text } = useWorkDetail()
   return (
     <>
+      <ContainerHelmet {...helmetData} />
       <BannerMobile
         backLink={PAGE_WORKS} {...header} />
       <Padding value={40} />

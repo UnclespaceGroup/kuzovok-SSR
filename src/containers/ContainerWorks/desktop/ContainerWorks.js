@@ -10,11 +10,13 @@ import SectionTitle from 'components/SectionTitle/desktop/SectionTitle'
 import CheckTabsDesktop from 'components/CheckTabs/desktop/CheckTabsDesktop'
 import Layout from 'components/Layout/Layout'
 import FieldSelectDesktop from 'components/FieldSelect/desktop/FieldSelectDesktop'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerWorks = () => {
-  const { header, items, tabs, activeTab, select } = useWorks()
+  const { header, items, helmetData, tabs, activeTab, select } = useWorks()
   return (
     <>
+      <ContainerHelmet {...helmetData} />
       <Banner withoutTabs {...header} />
       <Padding value={80} />
       <Layout>

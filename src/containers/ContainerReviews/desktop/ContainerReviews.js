@@ -6,12 +6,14 @@ import SectionTabs from 'components/SectionTabs/desktop/SectionTabs'
 import { Route, Switch } from 'react-router'
 import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from 'constants/ROUTES'
 import SectionReviews from 'components/SectionReviews/desktop/SectionReviews'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerReviews = () => {
-  const { items = [], headerData, tabs, pending, sideMenuItems } = useReviews()
+  const { items = [], headerData, helmetData, tabs, pending, sideMenuItems } = useReviews()
 
   return (
   <>
+    <ContainerHelmet {...helmetData} />
     <Banner
       {...headerData}
     />

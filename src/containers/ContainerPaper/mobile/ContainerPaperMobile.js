@@ -5,11 +5,13 @@ import usePaper from 'containers/ContainerPaper/usePaper'
 import CardPaperItemMobile from 'components/CardPaperItem/mobile/CardPaperItemMobile'
 import LayoutMobile from 'components/Layout/LayoutMobile'
 import BannerMobile from 'components/Banner/mobile/BannerMobile'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerPaperMobile = () => {
-  const { bannerData, items } = usePaper()
+  const { bannerData, items, helmetData } = usePaper()
   return (
   <>
+    <ContainerHelmet {...helmetData} />
     <BannerMobile {...bannerData} />
     <LayoutMobile>
       <Padding value={40} />

@@ -47,7 +47,17 @@ const useReviews = () => {
 
   const sortedItems = _.sortBy(items, o => moment(o.date).format('YYYYMMDD')).reverse()
 
+  const helmetData = {
+    title: 'Последние работы станции Кузовок',
+    description: `
+    Каждые два дня мы выкладываем отчеты о проделанной работе над каждым автомобилем в ремонте.
+    На этой странице представлены эти отчеты, в хронологическом порядке.
+    Следите за процессом работы, будьте в курсе всех событий
+    `
+  }
+
   return {
+    helmetData,
     items: sortedItems,
     headerData,
     tabs,

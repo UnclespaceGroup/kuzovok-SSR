@@ -10,12 +10,17 @@ import {
   URL_SLIDES
 } from 'constants/serverURLs'
 import { getImagePath } from 'utils/getImagePath'
+import { axiosLocal } from 'axiosFetch/fetchData'
+import { useEffect, useState } from 'react'
 
 const useHome = () => {
+  const [text, setText] = useState()
   const { data: servicesList = [] } = useAxiosData({ url: URL_SERVICE })
+
   const services = servicesList.map(item => ({
     img: getImagePath(item.banner),
-    title: item.title
+    title: item.title,
+    to: PAGE_SERVICES + item.slug
   })).concat({ title: 'Другие', to: PAGE_SERVICES, img: getImagePath(servicesList[0]?.banner) })
 
   const { data: mainCardList } = useAxiosData({ url: URL_MAIN_PAGE_CARDS })
@@ -40,11 +45,33 @@ const useHome = () => {
     img: getImagePath(item.banner)
   }))
 
+  useEffect(() => {
+    async function getText () {
+      try {
+        const { data } = await axiosLocal.get('/server/mainPageData.json')
+        setText(data?.text)
+      } catch (e) {
+        console.error(e)
+      }
+    }
+    getText()
+  }, [])
+
+  const helmetData = {
+    title: 'Кузовок 🚘 - Станция кузовного ремонта',
+    description: `Станция кузовного ремонта в Сыктывкаре.
+     Предоставляем большой спектр услуг, таких как профессиональная покраска автомобиля,
+      кузовной ремонт, и многое другое.
+     Следите за статусом работы на нашем сайте.`
+  }
+
   return {
+    helmetData,
     services,
     advantages,
     mainSlider,
-    mainCards
+    mainCards,
+    text
   }
 }
 export default useHome

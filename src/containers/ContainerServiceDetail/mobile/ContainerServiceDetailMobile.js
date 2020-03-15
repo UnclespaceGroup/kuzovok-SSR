@@ -8,11 +8,13 @@ import { compose } from 'redux'
 import { withRouter } from 'react-router'
 import { PAGE_SERVICES } from 'constants/ROUTES'
 import BannerMobile from 'components/Banner/mobile/BannerMobile'
+import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerServiceDetailMobile = ({ match }) => {
-  const { bannerData, content } = useServiceDetail({ ...match })
+  const { bannerData, content, helmetData } = useServiceDetail({ ...match })
   return (
   <>
+    <ContainerHelmet {...helmetData} />
     <BannerMobile
       backLink={PAGE_SERVICES}
       {...bannerData} />

@@ -14,6 +14,7 @@ const IconPopapDesktop = ({ className }) => {
       <div className={css.wrapper}>
         {
           isOpen && <div className={css.modal}>
+            <div className={css.item}><h3>Сяжитесь с нами</h3></div>
             <div className={css.item}><MdPhone />{phone}</div>
             <div className={css.item}><FaVk />{vk}</div>
             <div className={css.item}><MdMessage />{mail}</div>
