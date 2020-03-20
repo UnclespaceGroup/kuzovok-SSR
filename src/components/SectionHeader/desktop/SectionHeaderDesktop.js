@@ -16,7 +16,7 @@ const SectionHeaderDesktop = ({ setOpen, open, menuItems = [], black, phone }) =
             : <MdMenu onClick={() => setOpen(!open)} className={css.search} color={'white'} size={'2.4rem'} />
         }
         <Link to={'/'} >
-          <img className={css.logoImg} src={logo} />
+          <img className={css.logoImg} src={logo} alt={'Кузовок'} />
         </Link>
       </div>
       <div className={css.block}>
