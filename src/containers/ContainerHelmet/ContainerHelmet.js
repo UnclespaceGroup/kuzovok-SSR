@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet/es/Helmet'
+import { Helmet } from 'react-helmet'
 
 const ContainerHelmet = ({ title, description }) => (
   <div>
     <Helmet>
-      {title && <title>{title}</title>}
-      {description && <meta
+      <title>{title}</title>
+      <meta
         name='description'
         content={description}
-      />}
+      />
     </Helmet>
   </div>
 )

@@ -7,22 +7,24 @@ import MobileView from './LoadableMobileView'
 import DesktopView from './LoadableDesktopView'
 import { withViewContext } from 'HOC/ViewContext'
 import ScrollToTop from '../HOC/ScrollToTop'
-import useAxiosData from 'hooks/useAxiosData'
 import { URL_CONTACTS } from 'constants/serverURLs'
 import { useDispatch } from 'react-redux'
+import { axiosInstanse } from 'axiosFetch/fetchData'
 
 const ViewSwitcher = ({ sizes: { isDesktop, isMobile } }) => {
   const dispatch = useDispatch()
-  const { data } = useAxiosData({ url: URL_CONTACTS, single: true })
   useMemo(() => {
-    dispatch({
-      type: 'addContacts',
-      payload: {
-        ...data,
-        phone: data?.mainPhone
-      }
-    })
-  }, [data])
+    axiosInstanse.post(URL_CONTACTS, { single: true })
+      .then(res => {
+        dispatch({
+          type: 'addContacts',
+          payload: {
+            ...res.data,
+            phone: res?.data?.mainPhone
+          }
+        })
+      })
+  }, [])
   return (
     <ScrollToTop>
       {isMobile ? <MobileView /> : <DesktopView />}
