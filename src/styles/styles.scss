@@ -5,7 +5,7 @@ html {
     font-size: calc( 100vw / 320 * 10 );
   }
 
-  @media all and (max-width: 1600px) {
+  @media all and (min-width: 767px) and (max-width: 1600px) {
     font-size: calc( 100vw / 1500 * 10 );
   }
 

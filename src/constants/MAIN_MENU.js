@@ -10,7 +10,7 @@ export const menuItems = [
     title: 'Услуги станции', href: PAGE_SERVICES
   },
   {
-    title: 'Последние работы', href: PAGE_REVIEWS + 'week'
+    title: 'Лента работ', href: PAGE_REVIEWS + 'week'
   },
   {
     title: 'Автомобили в ремонте', href: PAGE_WORKS

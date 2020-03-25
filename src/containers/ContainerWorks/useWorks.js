@@ -4,18 +4,18 @@ import _ from 'lodash'
 import { getStatusByCode, STATUSES } from 'utils/getNameByValue'
 import { slugs } from 'constants/workSlugs'
 import useAxiosData from 'hooks/useAxiosData'
-import { URL_WORK, URL_PAGE } from 'constants/serverURLs'
+import { URL_WORK, URL_CARDS } from 'constants/serverURLs'
 import { PAGE_WORK_DETAIL } from 'constants/ROUTES'
 import { getImagePath } from 'utils/getImagePath'
 import moment from 'moment'
 
-const pageId = 'works'
+const pageId = 'page-works'
 
 const useWorks = () => {
   const [activeTab, setActiveTab] = useState(0)
   const [activeSelectStatus, setActiveSelectStatus] = useState(-1)
 
-  const { data: pageData = {} } = useAxiosData({ url: URL_PAGE, where: { id: pageId }, single: true })
+  const { data: pageData = {} } = useAxiosData({ url: URL_CARDS, where: { id: pageId }, single: true })
 
   const header = {
     icon: carIcon,

@@ -11,15 +11,16 @@ const useAxiosData = ({
   where,
   single,
   limit,
-  rangeData
+  offset,
+  between
 }, deps) => {
   const [ status, setStatus ] = useState()
-  const [ data, setData ] = useState()
+  const [ data, setData ] = useState({})
   const location = useLocation()
 
   useEffect(() => {
     setStatus(STATUS_PENDING)
-    axiosInstanse.post(url, { where, single, limit, rangeData })
+    axiosInstanse.post(url, { where, single, limit, between, offset })
       .then(res => {
         setData(res?.data)
         setStatus(STATUS_SUCCESS)

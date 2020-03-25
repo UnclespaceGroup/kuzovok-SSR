@@ -3,11 +3,8 @@ import _ from 'lodash'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
 import useAxiosData from 'hooks/useAxiosData'
 import {
-  URL_MAIN_PAGE_ADVANTAGES,
-  SERVER_URL,
-  URL_MAIN_PAGE_CARDS,
   URL_SERVICE,
-  URL_SLIDES
+  URL_SLIDES, URL_CARDS
 } from 'constants/serverURLs'
 import { getImagePath } from 'utils/getImagePath'
 import { axiosLocal } from 'axiosFetch/fetchData'
@@ -23,21 +20,21 @@ const useHome = () => {
     to: PAGE_SERVICES + item.slug
   })).concat({ title: 'Другие', to: PAGE_SERVICES, img: getImagePath(servicesList[0]?.banner) })
 
-  const { data: mainCardList } = useAxiosData({ url: URL_MAIN_PAGE_CARDS })
+  const { data: mainCardList } = useAxiosData({ url: URL_CARDS, where: { type: 'mainPageCard' } })
   const mainCards = _.map(mainCardList, item => ({
     img: getImagePath(item.banner),
     title: item.title,
-    text: item.text
+    text: item.annotation
   }))
 
-  const { data: advantagesList } = useAxiosData({ url: URL_MAIN_PAGE_ADVANTAGES })
+  const { data: advantagesList } = useAxiosData({ url: URL_CARDS, where: { type: 'advantagesCard' } })
   const advantages = _.map(advantagesList, item => ({
     title: item.title,
-    text: item.text,
-    img: SERVER_URL + item.banner
+    text: item.annotation,
+    img: getImagePath(item.banner)
   }))
 
-  const { data: mainSliderList = [] } = useAxiosData({ url: URL_SLIDES, where: { type: 'mainPage' } })
+  const { data: mainSliderList = [] } = useAxiosData({ url: URL_SLIDES })
   const mainSlider = mainSliderList.map(item => ({
     title: item.title,
     text: item.text,

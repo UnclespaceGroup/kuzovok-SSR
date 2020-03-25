@@ -4,7 +4,7 @@ import css from 'components/SectionAsideWorks/desktop/SectionAsideWorks.module.s
 import _ from 'lodash'
 import TagStatus from 'components/TagStatus/TagStatus'
 import { Link } from 'react-router-dom'
-import { PAGE_WORK_DETAIL, PAGE_WORKS } from 'constants/ROUTES'
+import { PAGE_WORKS } from 'constants/ROUTES'
 import Button from 'components/Button/Button'
 
 const SectionAsideWorksDesktop = ({ list }) => (
@@ -12,11 +12,11 @@ const SectionAsideWorksDesktop = ({ list }) => (
     <div className={css.mainTitle} >Другие работы</div>
     {
       _.map(list, (item, key) => (
-        <Link to={PAGE_WORK_DETAIL + item.id} key={key} className={css.item}>
+        <Link to={item.to} key={key} className={css.item}>
           <div className={css.title}>{item.title}
             { (item.status === '1') && <TagStatus className={css.type} status={item.status} />}
           </div>
-          <div className={css.text}>{item.text}</div>
+          <div className={css.text}>{item.annotation}</div>
         </Link>
       ))
     }

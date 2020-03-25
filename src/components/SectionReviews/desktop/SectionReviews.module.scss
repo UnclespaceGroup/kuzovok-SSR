@@ -7,3 +7,17 @@
 
   font-size: 1.8rem;
 }
+
+.btnMore {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 2rem ;
+  background-color: rgba(0,0,0,0.2);
+  margin: 4rem 0;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.4);
+  }
+}

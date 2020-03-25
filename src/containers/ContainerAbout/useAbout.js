@@ -4,13 +4,13 @@ import {
   PAGE_ABOUT
 } from 'constants/ROUTES'
 import useAxiosData from 'hooks/useAxiosData'
-import { URL_PAGE } from 'constants/serverURLs'
+import { URL_CARDS } from 'constants/serverURLs'
 import { getImagePath } from 'utils/getImagePath'
 
-const pageId = 'about'
+const pageId = 'page-about'
 
 const useAbout = () => {
-  const { data = {} } = useAxiosData({ url: URL_PAGE, where: { id: pageId }, single: true })
+  const { data = {} } = useAxiosData({ url: URL_CARDS, where: { id: pageId }, single: true })
 
   const items = [
     {

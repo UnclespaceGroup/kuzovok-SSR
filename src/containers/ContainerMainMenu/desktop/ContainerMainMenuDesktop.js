@@ -8,6 +8,10 @@ import Collapse from 'react-collapse'
 import { withRouter } from 'react-router'
 import { menuItems } from 'constants/MAIN_MENU'
 import { useSelector } from 'react-redux'
+import useAxiosData from 'hooks/useAxiosData'
+import { URL_SERVICE } from 'constants/serverURLs'
+import _ from 'lodash'
+import { PAGE_SERVICES } from 'constants/ROUTES'
 
 const ContainerMainMenuDesktop = ({ location }) => {
   const [ open, setOpen ] = useState(false)
@@ -51,6 +55,12 @@ const ContainerMainMenuDesktop = ({ location }) => {
     }
   }
 
+  const { data: headerWorks } = useAxiosData({ url: URL_SERVICE, limit: 6 })
+  const services = _.map(headerWorks, item => ({
+    title: item.title,
+    to: PAGE_SERVICES + item.slug
+  }))
+
   useMemo(() => {
     openMenu(false, true)
   }, [location])
@@ -66,7 +76,11 @@ const ContainerMainMenuDesktop = ({ location }) => {
       </div>
       <div className={css.container}>
         <Collapse isOpened={open} >
-          <SectionOpenMainMenuDesktop phone={phone} openMenu={openMenu} />
+          <SectionOpenMainMenuDesktop
+            services={services}
+            phone={phone}
+            openMenu={openMenu}
+          />
         </Collapse>
       </div>
     </div>

@@ -1,37 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionReviewCard.module.scss'
-import cn from 'classnames'
-import SectionGalleryVertical from 'components/SectionGalleryVertical/desktop/SectionGalleryVertical'
 import moment from 'moment'
 import Wysiwyg from 'components/Wysiwyg/desktop/Wysiwyg'
 
-const SectionReviewCard = ({ title, galleryData, date, annotation, text, theme = 'white' }) => (
-  <div className={cn(css.container, css[theme])}>
-    <div className={css.row}>
-      <div className={css.content}>
-        <div className={css.header}>
-          <div className={css.title}>{title}</div>
-          <div className={css.date}>{moment(date).format('LL')}</div>
-        </div>
-        <div className={css.annotation}>{annotation}</div>
-        <Wysiwyg>{text}</Wysiwyg>
-      </div>
-      <div className={css.aside}>
-        <SectionGalleryVertical {...galleryData} />
-      </div>
-    </div>
+const SectionReviewCard = ({ title, date, parentTitle, text }) => (
+  <div className={css.container}>
+    <div className={css.title}>{title}</div>
+    <div className={css.parentTitle}>{parentTitle}</div>
+    <div className={css.date}>{moment(date).format('LL')}</div>
+    <Wysiwyg>{text}</Wysiwyg>
   </div>
 )
 SectionReviewCard.propTypes = {
-  galleryData: PropTypes.object,
   title: PropTypes.node,
   text: PropTypes.node,
   date: PropTypes.any,
-  withUrl: PropTypes.bool,
-  annotation: PropTypes.node,
-  number: PropTypes.node,
-  theme: PropTypes.string
+  parentTitle: PropTypes.string
 }
 
 export default React.memo(SectionReviewCard)

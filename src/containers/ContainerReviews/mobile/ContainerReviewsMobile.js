@@ -2,7 +2,6 @@ import React from 'react'
 import BannerMobile from 'components/Banner/mobile/BannerMobile'
 import SectionReviewsMobile from 'components/SectionReviews/mobile/SectionReviewsMobile'
 import SectionTabsMobile from 'components/SectionTabs/mobile/SectionTabsMobile'
-import IconCount from 'components/IconCount/IconCount'
 import ContainerLastWorksMobile from '../../ContainerLastWorks/mobile/ContainerLastWorksMobile'
 import useReviews from '../useReviews'
 import { Route, Switch } from 'react-router'
@@ -10,37 +9,31 @@ import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerReviewsMobile = () => {
-  const { items = [], headerData, tabs, helmetData, pending } = useReviews()
+  const { headerData, tabs, helmetData, pending, ...props } = useReviews()
 
   return (
   <>
     <ContainerHelmet {...helmetData} />
     <BannerMobile
       {...headerData}
-      addIcon={
-        <IconCount
-          count={items.length}
-          texts={['запись', 'записи', 'записей']}
-        />
-      }
     />
     <SectionTabsMobile items={tabs} pending={pending} />
     <Switch>
       <Route
         path={PAGE_REVIEWS_TODAY}
-        render={() => <SectionReviewsMobile title={'Работы за сегодня'} items={items} />}
+        render={() => <SectionReviewsMobile title={'Работы за сегодня'} {...props} />}
       />
       <Route
         path={PAGE_REVIEWS_WEEK}
-        render={() => <SectionReviewsMobile title={'Работы за неделю'} items={items} />}
+        render={() => <SectionReviewsMobile title={'Работы за неделю'} {...props} />}
       />
       <Route
         path={PAGE_REVIEWS_MOUTH}
-        render={() => <SectionReviewsMobile title={'Работы за месяц'} items={items} />}
+        render={() => <SectionReviewsMobile title={'Работы за месяц'} {...props} />}
       />
       <Route
         path={PAGE_REVIEWS}
-        render={() => <SectionReviewsMobile title={'Все работы'} items={items} />}
+        render={() => <SectionReviewsMobile title={'Все работы'} {...props} />}
       />
     </Switch>
     <ContainerLastWorksMobile />

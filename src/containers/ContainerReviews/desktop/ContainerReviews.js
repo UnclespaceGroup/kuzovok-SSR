@@ -9,7 +9,7 @@ import SectionReviews from 'components/SectionReviews/desktop/SectionReviews'
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerReviews = () => {
-  const { items = [], headerData, helmetData, tabs, pending, sideMenuItems } = useReviews()
+  const { headerData, helmetData, tabs, pending, ...props } = useReviews()
 
   return (
   <>
@@ -21,19 +21,19 @@ const ContainerReviews = () => {
     <Switch>
       <Route
         path={PAGE_REVIEWS_TODAY}
-        render={() => <SectionReviews title={'Работы за сегодня'} items={items} sideMenuItems={sideMenuItems} />}
+        render={() => <SectionReviews title={'Работы за сегодня'} {...props} />}
       />
       <Route
         path={PAGE_REVIEWS_WEEK}
-        render={() => <SectionReviews title={'Работы за неделю'} items={items} sideMenuItems={sideMenuItems} />}
+        render={() => <SectionReviews title={'Работы за неделю'} {...props} />}
       />
       <Route
         path={PAGE_REVIEWS_MOUTH}
-        render={() => <SectionReviews title={'Работы за месяц'} items={items} sideMenuItems={sideMenuItems} />}
+        render={() => <SectionReviews title={'Работы за месяц'} {...props} />}
       />
       <Route
         path={PAGE_REVIEWS}
-        render={() => <SectionReviews title={'Все работы'} items={items} sideMenuItems={sideMenuItems} />}
+        render={() => <SectionReviews title={'Все работы'} {...props} />}
       />
     </Switch>
     <ContainerLastWorks />

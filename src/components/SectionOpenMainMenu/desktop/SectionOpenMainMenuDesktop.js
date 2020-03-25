@@ -9,7 +9,7 @@ import { menu } from 'constants/MAIN_MENU'
 import logo from 'static/logo/colored-logo-inverse-resized.png'
 import Padding from 'components/Padding/Padding'
 
-const SectionOpenMainMenuDesktop = ({ openMenu, phone }) => {
+const SectionOpenMainMenuDesktop = ({ openMenu, phone, services }) => {
   return (
   <>
     <div className={css.back} onClick={() => { openMenu(false) }} />
@@ -29,7 +29,7 @@ const SectionOpenMainMenuDesktop = ({ openMenu, phone }) => {
           </div>
           <div className={css.column}>
             {
-              _.map(menu.items, (item, key) => (
+              _.map(services, (item, key) => (
                 <Link to={item.to} className={css.link} key={key}>{item.title}</Link>
               ))
             }
@@ -49,7 +49,8 @@ const SectionOpenMainMenuDesktop = ({ openMenu, phone }) => {
 }
 SectionOpenMainMenuDesktop.propTypes = {
   openMenu: PropTypes.func,
-  phone: PropTypes.string
+  phone: PropTypes.string,
+  services: PropTypes.array
 }
 
 export default React.memo(SectionOpenMainMenuDesktop)

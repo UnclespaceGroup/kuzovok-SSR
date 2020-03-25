@@ -1,14 +1,15 @@
 import useAxiosData from 'hooks/useAxiosData'
-import { URL_SERVICE, SERVER_URL } from 'constants/serverURLs'
+import { URL_SERVICE } from 'constants/serverURLs'
 import _ from 'lodash'
 import { PAGE_SERVICES } from 'constants/ROUTES'
+import { getImagePath } from 'utils/getImagePath'
 
 const useServices = () => {
   const { data: list } = useAxiosData({ url: URL_SERVICE })
 
   const formatCards = _.map(list, item => ({
     ...item,
-    banner: SERVER_URL + item.banner,
+    banner: getImagePath(item.banner),
     to: PAGE_SERVICES + item.slug
   }))
 

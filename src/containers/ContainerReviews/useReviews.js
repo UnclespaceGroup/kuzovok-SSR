@@ -1,26 +1,74 @@
-import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from 'constants/ROUTES'
+import {
+  PAGE_REVIEWS,
+  PAGE_REVIEWS_MOUTH,
+  PAGE_REVIEWS_TODAY,
+  PAGE_REVIEWS_WEEK,
+  PAGE_WORK_DETAIL
+} from 'constants/ROUTES'
 import instrIcon from 'static/icons/kus-build.svg'
 import useAxiosData from 'hooks/useAxiosData'
-import { URL_REPORT, URL_PAGE } from 'constants/serverURLs'
+import { URL_REPORT, URL_CARDS, URL_WORK } from 'constants/serverURLs'
 import { getImagePath } from 'utils/getImagePath'
 import { useLocation } from 'react-router'
 import _ from 'lodash'
-import moment from 'moment'
+// import moment from 'moment'
+import { useMemo, useState } from 'react'
+import { axiosInstanse } from 'axiosFetch/fetchData'
 
-const pageId = 'reports'
+const pageId = 'page-last'
+
+const PAGINATION_STEP = 1
 
 const useReviews = () => {
   const location = useLocation()
-  const rangeData = getPerionParams(location)
+  const between = getPerionParams(location)
 
-  const { data: pageData = {} } = useAxiosData({ url: URL_PAGE, where: { id: pageId }, single: true })
-  const { data: items = [], isPending } = useAxiosData({ url: URL_REPORT, rangeData }, [location])
-  const { data: sideMenuList } = useAxiosData({ url: URL_REPORT + 'list', limit: 12 }, [location])
+  const [ pagination, setPagination ] = useState(0)
+
+  const [items, setItems] = useState([])
+
+  const { data: pageData = {} } = useAxiosData({
+    url: URL_CARDS,
+    where: { id: pageId },
+    single: true
+  }, [pageId])
+
+  const { data: { count } = {} } = useAxiosData({
+    url: URL_REPORT + 'count',
+    between
+  }, [between])
+
+  const notAll = (items && count) ? items.length < count : true
+
+  const btnMoreClick = notAll ? () => {
+    notAll && setPagination(pagination + 1)
+    axiosInstanse.post(
+      URL_REPORT, {
+        limit: PAGINATION_STEP,
+        between,
+        offset: pagination
+      })
+      .then(res => {
+        setItems(items.concat(res.data))
+      })
+      .catch(e => {
+        console.log(e)
+      })
+  } : undefined
+
+  useMemo(() => {
+    btnMoreClick && btnMoreClick()
+  }, [location])
+
+  const { data: sideMenuList } = useAxiosData({
+    url: URL_WORK,
+    limit: 12
+  }, [location])
 
   const sideMenuItems = _.map(sideMenuList, item => ({
-    title: item.parentTitle,
-    text: item.title,
-    id: item.parentId
+    title: item.title,
+    annotation: item.annotation,
+    to: PAGE_WORK_DETAIL + item.id
   }))
 
   const headerData = {
@@ -40,13 +88,15 @@ const useReviews = () => {
       to: PAGE_REVIEWS_WEEK
     },
     {
-      title: 'За месяц',
-      to: PAGE_REVIEWS_MOUTH
+      title: 'За все время',
+      to: PAGE_REVIEWS
     }
   ]
 
-  const sortedItems = _.sortBy(items, o => moment(o.date).format('YYYYMMDD')).reverse()
-
+  const _items = _.map(items, item => ({
+    ...item,
+    date: item.createdAt
+  }))
   const helmetData = {
     title: 'Последние работы станции Кузовок',
     description: `
@@ -58,11 +108,12 @@ const useReviews = () => {
 
   return {
     helmetData,
-    items: sortedItems,
+    items: _items,
     headerData,
     tabs,
-    pending: isPending,
-    sideMenuItems
+    count,
+    sideMenuItems,
+    btnMoreClick
   }
 }
 
@@ -80,7 +131,7 @@ const getPerionParams = ({ pathname }) => {
       startData.setDate(todayDate.getMonth() - 1)
       return [startData, todayDate]
     case PAGE_REVIEWS:
-      return '0'
+      return null
     default:
       return ''
   }
