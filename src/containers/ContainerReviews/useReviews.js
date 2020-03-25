@@ -17,7 +17,7 @@ import { axiosInstanse } from 'axiosFetch/fetchData'
 
 const pageId = 'page-last'
 
-const PAGINATION_STEP = 1
+const PAGINATION_STEP = 6
 
 const useReviews = () => {
   const location = useLocation()
@@ -41,7 +41,7 @@ const useReviews = () => {
   const notAll = (items && count) ? items.length < count : true
 
   const btnMoreClick = notAll ? () => {
-    notAll && setPagination(pagination + 1)
+    notAll && setPagination(pagination + PAGINATION_STEP)
     axiosInstanse.post(
       URL_REPORT, {
         limit: PAGINATION_STEP,

@@ -1,5 +1,6 @@
 import useAxiosData from 'hooks/useAxiosData'
-import { URL_SERVICE, SERVER_URL } from 'constants/serverURLs'
+import { URL_SERVICE } from 'constants/serverURLs'
+import { getImagePath } from 'utils/getImagePath'
 
 const useServiceDetail = ({ params }) => {
   const { slug } = params
@@ -16,7 +17,7 @@ const useServiceDetail = ({ params }) => {
     bannerData: {
       title,
       text: annotation,
-      img: SERVER_URL + banner
+      img: getImagePath(banner)
     },
     content: {
       text

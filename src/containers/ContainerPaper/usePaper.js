@@ -25,8 +25,6 @@ const usePaper = () => {
     img: getImagePath(item.banner)
   }))
 
-  const sortedItems = _.sortBy(items, o => moment(o.date).format('YYYYMMDD')).reverse()
-
   const helmetData = {
     title: 'Список полезных статей по ремонту автомобиля',
     description: 'Различные статьи на автомобильную тематику.'
@@ -35,7 +33,7 @@ const usePaper = () => {
   return {
     helmetData,
     bannerData,
-    items: sortedItems
+    items
   }
 }
 export default usePaper

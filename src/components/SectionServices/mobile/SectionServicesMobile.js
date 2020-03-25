@@ -13,19 +13,22 @@ const SectionServicesMobile = ({ mainCards, cards }) => (
   <div className={css.container}>
     <LayoutMobile >
       <Padding value={24} />
-      <SectionTitleMobile title={'Основные услуги'} count={mainCards?.items?.length} />
+      <SectionTitleMobile title={'Основные услуги'} count={mainCards?.length} />
       <div className={css.main} >
-        <RowCardsMobile {...mainCards}>
+        <RowCardsMobile items={mainCards}>
           <CardCatalogImageMobile />
         </RowCardsMobile>
       </div>
       <Padding value={48} />
-      <div className={css.cards} >
-        <SectionTitleMobile title={'Все услуги'} count={cards?.items?.length} />
-        <RowCardsMobile {...cards}>
-          <CardCatalogImageMobile />
-        </RowCardsMobile>
-      </div>
+      {
+        !!cards?.length &&
+        <div className={css.cards}>
+          <SectionTitleMobile title={'Все услуги'} count={cards?.length} />
+          <RowCardsMobile items={cards}>
+            <CardCatalogImageMobile />
+          </RowCardsMobile>
+        </div>
+      }
       <Padding value={48} />
     </LayoutMobile>
     <div className={css.bottom}>
@@ -35,11 +38,8 @@ const SectionServicesMobile = ({ mainCards, cards }) => (
   </div>
 )
 SectionServicesMobile.propTypes = {
-  banner: PropTypes.object,
-  cards: PropTypes.object,
-  mainCards: PropTypes.object,
-  onChange: PropTypes.func,
-  onSearchClick: PropTypes.func
+  cards: PropTypes.array,
+  mainCards: PropTypes.array
 }
 
 export default React.memo(SectionServicesMobile)

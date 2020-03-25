@@ -14,7 +14,7 @@ const useHome = () => {
   const [text, setText] = useState()
   const { data: servicesList = [] } = useAxiosData({ url: URL_SERVICE })
 
-  const services = servicesList.map(item => ({
+  const services = _.map(servicesList, item => ({
     img: getImagePath(item.banner),
     title: item.title,
     to: PAGE_SERVICES + item.slug
@@ -35,7 +35,7 @@ const useHome = () => {
   }))
 
   const { data: mainSliderList = [] } = useAxiosData({ url: URL_SLIDES })
-  const mainSlider = mainSliderList.map(item => ({
+  const mainSlider = _.map(mainSliderList, item => ({
     title: item.title,
     text: item.text,
     onClick: () => scrollWindowTo('toThis'),

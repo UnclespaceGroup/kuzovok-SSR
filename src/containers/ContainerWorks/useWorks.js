@@ -7,7 +7,6 @@ import useAxiosData from 'hooks/useAxiosData'
 import { URL_WORK, URL_CARDS } from 'constants/serverURLs'
 import { PAGE_WORK_DETAIL } from 'constants/ROUTES'
 import { getImagePath } from 'utils/getImagePath'
-import moment from 'moment'
 
 const pageId = 'page-works'
 
@@ -74,8 +73,6 @@ const useWorks = () => {
 
   const filteredItems = activeSelectStatus === -1 ? items : _.filter(items, item => +item.status === activeSelectStatus)
 
-  const sortedItems = _.sortBy(filteredItems, o => moment(o.date).format('YYYYMMDD')).reverse()
-
   const helmetData = {
     title: 'Список работ станции Кузовок',
     description: `
@@ -88,7 +85,7 @@ const useWorks = () => {
   return {
     helmetData,
     header,
-    items: sortedItems,
+    items: filteredItems,
     tabs,
     pending: isPending,
     activeTab,

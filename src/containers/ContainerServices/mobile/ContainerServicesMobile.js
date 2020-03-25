@@ -14,12 +14,8 @@ const ContainerServicesMobile = () => {
         items={bannerItems}
       />
     <SectionServicesMobile
-      mainCards={{
-        items: mainCards
-      }}
-      cards={{
-        items: cards
-      }}
+      mainCards={mainCards}
+      cards={cards}
       url={PAGE_SERVICES}
     />
     </>

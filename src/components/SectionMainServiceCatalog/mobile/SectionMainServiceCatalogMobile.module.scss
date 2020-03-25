@@ -59,21 +59,13 @@
 .item {
   position: relative;
   height: 20rem;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   padding: 2rem;
   text-align: center;
   color: white;
   font-size: 2.4rem;
   background: rgba(0, 0, 0, 0.5);
-
-  .link {
-    position: absolute;
-    right: 2rem;
-    bottom: 2rem;
-  }
-
-  svg {
-    color: white;
-  }
 }

@@ -6,7 +6,7 @@ import SectionServicesSliderBanner from 'components/SliderBanner/desktop/SliderB
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
 const ContainerServices = () => {
-  const { mainCards = [], helmetData, cards = [], bannerItems } = useServices()
+  const { mainCards, helmetData, cards, bannerItems } = useServices()
   return (
     <>
       <ContainerHelmet {...helmetData} />
@@ -14,12 +14,8 @@ const ContainerServices = () => {
         items={bannerItems}
       />
     <SectionService
-      mainCards={{
-        items: mainCards
-      }}
-      cards={{
-        items: cards
-      }}
+      mainCards={mainCards}
+      cards={cards}
       url={PAGE_SERVICES}
     />
     </>

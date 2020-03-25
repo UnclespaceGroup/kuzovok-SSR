@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionMainServiceCatalogMobile.module.scss'
-import { Link } from 'react-router-dom'
 import LayoutMobile from 'components/Layout/LayoutMobile'
 import SliderMobile from 'components/Slider/mobile/SliderMobile'
-import { FaArrowCircleRight } from 'react-icons/fa'
 import BgImage from 'components/BgImage/BgImage'
+import Button from 'components/Button/Button'
 
 const SectionMainServiceCatalogMobile = ({ items = [], text }) => {
   return (
@@ -26,9 +25,9 @@ const SectionMainServiceCatalogMobile = ({ items = [], text }) => {
                   className={css.item}
                 >
                   <div>{item.title}</div>
-                  <Link to={item.to || '#'} className={css.link}>
-                    <FaArrowCircleRight size={'6.4rem'} />
-                  </Link>
+                  <Button
+                    to={item.to || '#'}
+                  >Перейти</Button>
                 </div>
               </BgImage>
             </div>

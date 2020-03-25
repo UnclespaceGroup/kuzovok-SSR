@@ -12,19 +12,22 @@ const SectionServices = ({ mainCards, cards }) => (
   <div className={css.container}>
     <Layout >
       <Padding value={60} />
-      <SectionTitle title={'Основные услуги'} count={mainCards?.items?.length} />
+      <SectionTitle title={'Основные услуги'} count={mainCards?.length} />
       <div className={css.main} >
-        <RowCards {...mainCards}>
+        <RowCards items={mainCards}>
           <CardCatalogImage />
         </RowCards>
       </div>
       <Padding value={120} />
-      <div className={css.cards} >
-        <SectionTitle title={'Все услуги'} count={cards?.items?.length} />
-        <RowCards {...cards}>
-          <CardCatalogImage />
-        </RowCards>
-      </div>
+      {
+        !!cards?.length &&
+        <div className={css.cards}>
+          <SectionTitle title={'Все услуги'} count={cards?.length} />
+          <RowCards items={cards}>
+            <CardCatalogImage />
+          </RowCards>
+        </div>
+      }
       <Padding value={120} />
     </Layout>
     <div className={css.bottom}>
@@ -34,11 +37,8 @@ const SectionServices = ({ mainCards, cards }) => (
   </div>
 )
 SectionServices.propTypes = {
-  banner: PropTypes.object,
-  cards: PropTypes.object,
-  mainCards: PropTypes.object,
-  onChange: PropTypes.func,
-  onSearchClick: PropTypes.func
+  cards: PropTypes.array,
+  mainCards: PropTypes.array
 }
 
 export default React.memo(SectionServices)
