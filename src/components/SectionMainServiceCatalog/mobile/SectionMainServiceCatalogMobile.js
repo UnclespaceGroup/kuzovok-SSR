@@ -6,6 +6,8 @@ import Slider from 'components/Slider/Slider'
 import BgImage from 'components/BgImage/BgImage'
 import Button from 'components/Button/Button'
 import _ from 'lodash'
+import { Link } from 'react-router-dom'
+import { PAGE_SERVICES } from '../../../constants/ROUTES'
 
 const SectionMainServiceCatalogMobile = ({ items = [], text }) => {
   return (
@@ -20,7 +22,7 @@ const SectionMainServiceCatalogMobile = ({ items = [], text }) => {
           {
             _.map(items, (item, key) => (
               <div key={key} >
-                <BgImage img={item.img}>
+                <BgImage className={css.itemWrapper} img={item.img}>
                   <div
                     className={css.item}
                   >
@@ -34,6 +36,7 @@ const SectionMainServiceCatalogMobile = ({ items = [], text }) => {
             ))
           }
         </Slider>
+        <Link to={PAGE_SERVICES} className={css.footer}>Посмотреть все услуги</Link>
       </LayoutMobile>
 
     </div>

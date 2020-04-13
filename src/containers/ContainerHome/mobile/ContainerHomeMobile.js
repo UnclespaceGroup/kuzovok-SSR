@@ -27,7 +27,9 @@ const ContainerHomeMobile = () => {
       </LayoutMobile>
       <AdvantagesRowMobile items={advantages} />
       <Padding value={60} />
-      <SectionMainCardsMobile cards={mainCards} />
+      <LayoutMobile>
+        <SectionMainCardsMobile cards={mainCards} />
+      </LayoutMobile>
       <Padding value={60} />
       <SectionMainServiceCatalogMobile items={services} />
       <Padding value={60} />

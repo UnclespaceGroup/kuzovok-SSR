@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import css from './SectionHeaderDesktop.module.scss'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { MdMenu, MdClose } from 'react-icons/md'
 import logo from 'static/logo/colored-logo-text.png'
 
@@ -22,7 +22,12 @@ const SectionHeaderDesktop = ({ setOpen, open, menuItems = [], black, phone }) =
       <div className={css.block}>
         {
           menuItems.map(({ title, href }, key) => (
-            <Link to={href} className={css.item} key={key} >{title}</Link>
+            <NavLink
+              to={href}
+              className={css.item}
+              key={key}
+              activeClassName={css.itemActive}
+            >{title}</NavLink>
           ))
         }
         <div className={cn(css.item, css.phone)}><a href={`tel:${phone}`}>{phone}</a></div>

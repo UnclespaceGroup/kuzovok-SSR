@@ -5,7 +5,7 @@
   border-bottom: solid 1px #4d4d4d;
 
   a:hover {
-    color: #c37306;
+    color: #c4c4c4;
   }
 }
 
@@ -24,10 +24,22 @@
   align-items: center;
 
   .item {
+    position: relative;
     font-weight: 300;
     font-size: 2rem;
     color: white;
     margin: 0 2rem;
+
+    &Active {
+      &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        bottom: -1.9rem;
+        width: 100%;
+        border-bottom: solid .2rem darkgrey;
+      }
+    }
   }
   .phone {
     font-size: 2.4rem;

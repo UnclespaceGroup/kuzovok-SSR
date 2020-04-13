@@ -84,7 +84,7 @@ const reactApp = ({ clientStats }) => async (req, res) => {
     }
   } catch (e) {
     console.error(e)
-    res.status(500).send('Что то сломалось :\'(')
+    res.status(500).send('<h1>Что то сломалось :\'(</h1>')
   }
 }
 
