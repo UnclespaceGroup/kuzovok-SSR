@@ -6,9 +6,11 @@ import WysiwygMobile from 'components/Wysiwyg/mobile/WysiwygMobile'
 import BannerMobile from 'components/Banner/mobile/BannerMobile'
 import ContainerContactsBlockMobile from 'containers/ContainerContactsBlock/mobile/ContainerContactsBlockMobile'
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
+import Page404Mobile from 'pages/Page404/Page404Mobile'
 
 const ContainerPaperDetailMobile = () => {
-  const { bannerData, content, helmetData } = usePaperDetail()
+  const { bannerData, content, helmetData, isEmpty } = usePaperDetail()
+  if (isEmpty) return <Page404Mobile />
   return (
   <>
     <ContainerHelmet {...helmetData} />

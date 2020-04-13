@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import css from 'components/SliderBanner/mobile/SliderBannerMobile.module.scss'
-import Slider from 'components/Slider/desktop/Slider'
+import Slider from 'components/Slider/Slider'
 import BgImage from 'components/BgImage/BgImage'
 import Button from 'components/Button/Button'
 
 const SliderBannerMobile = ({ items }) => (
   <div className={css.container}>
-    <Slider effect={'fade'} items={items} loop autoplayDelay={10000}>
+    <Slider items={items} loop autoplayDelay={10000}>
       <Slide />
     </Slider>
   </div>
@@ -17,7 +17,7 @@ SliderBannerMobile.propTypes = {
 }
 
 const Slide = ({ img, title, text, url, onClick }) => (
-  <BgImage img={img}>
+  <BgImage img={img} withLoader>
     <div className={css.slide}>
       <div className={css.title}>{title}</div>
       <div className={css.text}>{text}</div>

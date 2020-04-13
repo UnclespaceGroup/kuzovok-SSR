@@ -40,7 +40,7 @@ const ContainerMainMenuMobile = ({ location }) => {
   }
 
   const handleScroll = () => {
-    const OFFSET = 100
+    const OFFSET = 50
     if (!window) return
     if (window.pageYOffset > OFFSET) {
       // Сделать черным

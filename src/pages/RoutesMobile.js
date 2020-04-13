@@ -19,6 +19,7 @@ import PageWorkDetailMobile from 'pages/PageWorkDetail/mobile/PageWorkDetailMobi
 import PageWorksMobile from 'pages/PageWorks/mobile/PageWorksMobile'
 import PagePaperMobile from 'pages/PagePaper/mobile/PagePaperMobile'
 import PagePaperDetailMobile from 'pages/PagePaperDetail/mobile/PagePaperDetailMobile'
+import Page404Mobile from 'pages/Page404/Page404Mobile'
 
 const RoutesMobile = () => (
   <Switch>
@@ -56,6 +57,7 @@ const RoutesMobile = () => (
       exact
       path={PAGE_PAPER_DETAIL}
     />
+    <Route component={Page404Mobile} path='*' />
   </Switch>
 )
 

@@ -11,7 +11,7 @@ import { scrollWindowTo } from 'utils/scrollWindowTo'
 import Button from 'components/Button/Button'
 
 const BannerMobile = ({ title, text, img, withoutTabs, backLink }) => (
-  <BgImage img={img}>
+  <BgImage img={img} withLoader>
     <div className={cn(css.container, { [css.withoutTabs]: withoutTabs })}>
       <LayoutMobile>
         { backLink && <Link className={css.back} to={backLink}><MdArrowBack /></Link>}

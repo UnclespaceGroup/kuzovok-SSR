@@ -12,9 +12,11 @@ import SectionReviewCard from 'components/SectionReviewCard/desktop/SectionRevie
 import Banner from 'components/Banner/desktop/Banner'
 import SectionAsideWorksDesktop from 'components/SectionAsideWorks/desktop/SectionAsideWorksDesktop'
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
+import Section404Desktop from 'components/Section404/desktop/Section404Desktop'
 
 const ContainerWorkDetail = () => {
-  const { helmetData, header, items, text, sideMenuItems } = useWorkDetail()
+  const { isEmpty, helmetData, header, items, text, sideMenuItems } = useWorkDetail()
+  if (isEmpty) return <Section404Desktop />
   return (
     <>
       <ContainerHelmet {...helmetData} />

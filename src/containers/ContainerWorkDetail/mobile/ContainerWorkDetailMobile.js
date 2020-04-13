@@ -11,9 +11,11 @@ import List from 'components/List/List'
 import useWorkDetail from '../useWorkDetail'
 import BannerMobile from 'components/Banner/mobile/BannerMobile'
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
+import Section404Mobile from 'components/Section404/mobile/Section404Mobile'
 
 const ContainerWorkDetailMobile = () => {
-  const { header, items, helmetData, text } = useWorkDetail()
+  const { isEmpty, header, items, helmetData, text } = useWorkDetail()
+  if (isEmpty) return <Section404Mobile />
   return (
     <>
       <ContainerHelmet {...helmetData} />

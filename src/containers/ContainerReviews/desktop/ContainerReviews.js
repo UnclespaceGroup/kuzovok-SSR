@@ -4,7 +4,7 @@ import useReviews from '../useReviews'
 import Banner from 'components/Banner/desktop/Banner'
 import SectionTabs from 'components/SectionTabs/desktop/SectionTabs'
 import { Route, Switch } from 'react-router'
-import { PAGE_REVIEWS, PAGE_REVIEWS_MOUTH, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from 'constants/ROUTES'
+import { PAGE_REVIEWS, PAGE_REVIEWS_TODAY, PAGE_REVIEWS_WEEK } from 'constants/ROUTES'
 import SectionReviews from 'components/SectionReviews/desktop/SectionReviews'
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
 
@@ -26,10 +26,6 @@ const ContainerReviews = () => {
       <Route
         path={PAGE_REVIEWS_WEEK}
         render={() => <SectionReviews title={'Работы за неделю'} {...props} />}
-      />
-      <Route
-        path={PAGE_REVIEWS_MOUTH}
-        render={() => <SectionReviews title={'Работы за месяц'} {...props} />}
       />
       <Route
         path={PAGE_REVIEWS}

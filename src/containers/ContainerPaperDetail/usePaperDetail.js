@@ -7,7 +7,10 @@ import { PAGE_PAPER } from 'constants/ROUTES'
 const usePaperDetail = () => {
   const { id } = useParams()
 
-  const { data: { title, annotation, text, banner } = {} } = useAxiosData({ url: URL_PAPER, where: { id }, single: true })
+  const {
+    data: { title, annotation, text, banner } = {},
+    isEmpty
+  } = useAxiosData({ url: URL_PAPER, where: { id }, single: true })
 
   const helmetData = {
     title: title,
@@ -22,7 +25,8 @@ const usePaperDetail = () => {
       text: annotation,
       img: getImagePath(banner)
     },
-    content: text
+    content: text,
+    isEmpty
   }
 }
 export default usePaperDetail

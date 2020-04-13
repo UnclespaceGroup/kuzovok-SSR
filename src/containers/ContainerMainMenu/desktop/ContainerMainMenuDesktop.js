@@ -44,7 +44,7 @@ const ContainerMainMenuDesktop = ({ location }) => {
   }
 
   const handleScroll = () => {
-    const OFFSET = 300
+    const OFFSET = 100
     if (!window) return
     if (window.pageYOffset > OFFSET) {
       // Сделать черным

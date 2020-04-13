@@ -18,6 +18,7 @@ import PageServiceDetailDesktop from './PageServiceDetail/desktop/PageServiceDet
 import PageReviewsDesktop from './PageReviews/desktop/PageReviewsDesktop'
 import PagePaperDetailDesktop from './PagePaperDetail/desktop/PagePaperDetailDesktop'
 import PagePaperDesktop from './PagePaper/desktop/PagePaperDesktop'
+import Page404Desktop from 'pages/Page404/Page404Desktop'
 
 const RoutesDesktop = () => (
   <Switch>
@@ -55,6 +56,7 @@ const RoutesDesktop = () => (
       exact
       path={PAGE_PAPER_DETAIL}
     />
+    <Route component={Page404Desktop} path='*' />
   </Switch>
 )
 

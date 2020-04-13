@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-expressions */
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import css from 'components/SliderBanner/desktop/SliderBannerDesktop.module.scss'
-import Slider from '../../Slider/desktop/Slider'
+import Slider from 'components/Slider/Slider'
 import BgImage from '../../BgImage/BgImage'
 import Button from '../../Button/Button'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
@@ -21,16 +20,19 @@ const SliderBannerDesktop = ({ items }) => {
       >
         <Slide />
       </Slider>
-      <div className={css.btns}>
-        <Layout className={css.wrapper}>
-          <div className={css.prev}><FaArrowLeft size={'3rem'}
-            onClick={() => swiperRef.current?.slidePrev()}
-          /></div>
-          <div className={css.next}><FaArrowRight size={'3rem'}
-            onClick={() => swiperRef.current?.slideNext()}
-          /></div>
-        </Layout>
-      </div>
+      {
+        (items?.length > 1) &&
+        <div className={css.btns}>
+          <Layout className={css.wrapper}>
+            <div className={css.prev}><FaArrowLeft size={'3rem'}
+              onClick={() => swiperRef.current?.slidePrev()}
+            /></div>
+            <div className={css.next}><FaArrowRight size={'3rem'}
+              onClick={() => swiperRef.current?.slideNext()}
+            /></div>
+          </Layout>
+        </div>
+      }
     </div>
   )
 }
@@ -39,7 +41,7 @@ SliderBannerDesktop.propTypes = {
 }
 
 const Slide = ({ img = '', title, text, url, onClick }) => (
-  <BgImage img={img} className={css.back}>
+  <BgImage img={img} withLoader className={css.back}>
     <div className={css.slide}>
       <Layout className={css.slideWrapper}>
         <div className={css.title}>{title}</div>

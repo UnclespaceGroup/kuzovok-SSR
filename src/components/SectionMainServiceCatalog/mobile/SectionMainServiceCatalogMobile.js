@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from './SectionMainServiceCatalogMobile.module.scss'
 import LayoutMobile from 'components/Layout/LayoutMobile'
-import SliderMobile from 'components/Slider/mobile/SliderMobile'
+import Slider from 'components/Slider/Slider'
 import BgImage from 'components/BgImage/BgImage'
 import Button from 'components/Button/Button'
 
@@ -16,7 +16,7 @@ const SectionMainServiceCatalogMobile = ({ items = [], text }) => {
         </div>
       </LayoutMobile>
 
-      <SliderMobile rebuildOnUpdate className={css.slider} >
+      <Slider rebuildOnUpdate className={css.slider} >
         {
           items.map((item, key) => (
             <div key={key} >
@@ -33,7 +33,7 @@ const SectionMainServiceCatalogMobile = ({ items = [], text }) => {
             </div>
           ))
         }
-      </SliderMobile>
+      </Slider>
     </div>
   )
 }

@@ -16,3 +16,5 @@ export const PAGE_ABOUT_VIDEO = '/about/video'
 export const PAGE_ABOUT_MAP = '/about/map'
 export const PAGE_PAPER = '/paper/'
 export const PAGE_PAPER_DETAIL = '/paper/:id/'
+
+export const PAGE_404 = '/not-found'

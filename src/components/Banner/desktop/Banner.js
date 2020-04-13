@@ -12,7 +12,7 @@ import Button from 'components/Button/Button'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
 
 const Banner = ({ title, text, img, icon, backLink, beforeTitleBlock }) => (
-  <BgImage img={img}>
+  <BgImage img={img} withLoader>
     <div className={cn(css.container)}>
       <Layout className={css.layout}>
         { backLink && <Link className={css.back} to={backLink}><MdArrowBack /></Link>}

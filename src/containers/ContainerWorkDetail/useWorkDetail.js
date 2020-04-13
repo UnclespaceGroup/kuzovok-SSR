@@ -8,7 +8,10 @@ import { PAGE_WORK_DETAIL } from 'constants/ROUTES'
 const useWorkDetail = () => {
   const { id } = useParams()
 
-  const { data: { title, text, annotation, banner } = {} } = useAxiosData({ url: URL_WORK, where: { id }, single: true }, [id])
+  const {
+    data: { title, text, annotation, banner } = {},
+    isEmpty
+  } = useAxiosData({ url: URL_WORK, where: { id }, single: true }, [id])
   const { data: items } = useAxiosData({ url: URL_REPORT, where: { parentId: id } }, [id])
   const { data: sideMenuList } = useAxiosData({ url: URL_WORK, limit: 12 })
 
@@ -37,6 +40,7 @@ const useWorkDetail = () => {
   return {
     helmetData,
     header,
+    isEmpty,
     text,
     items: pageItems,
     sideMenuItems

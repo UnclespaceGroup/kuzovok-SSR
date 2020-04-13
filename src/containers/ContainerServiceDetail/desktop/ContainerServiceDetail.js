@@ -9,9 +9,13 @@ import { withRouter } from 'react-router'
 import { PAGE_SERVICES } from 'constants/ROUTES'
 import Banner from 'components/Banner/desktop/Banner'
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
+import Section404Desktop from 'components/Section404/desktop/Section404Desktop'
 
 const ContainerServiceDetail = ({ match }) => {
-  const { bannerData, helmetData, content } = useServiceDetail({ ...match })
+  const { bannerData, helmetData, content, isEmpty } = useServiceDetail({ ...match })
+
+  if (isEmpty) return <Section404Desktop />
+
   return (
   <>
     <ContainerHelmet {...helmetData} />

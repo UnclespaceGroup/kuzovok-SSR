@@ -7,9 +7,11 @@ import usePaperDetail from 'containers/ContainerPaperDetail/usePaperDetail'
 import { PAGE_PAPER } from 'constants/ROUTES'
 import ContainerContactsBlock from 'containers/ContainerContactsBlock/desktop/ContainerContactsBlock'
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
+import Section404Desktop from 'components/Section404/desktop/Section404Desktop'
 
 const ContainerPaperDetail = () => {
-  const { bannerData, content, helmetData } = usePaperDetail()
+  const { bannerData, content, helmetData, isEmpty } = usePaperDetail()
+  if (isEmpty) return <Section404Desktop />
   return (
   <>
     <ContainerHelmet {...helmetData} />

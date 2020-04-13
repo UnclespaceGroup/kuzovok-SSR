@@ -17,13 +17,14 @@ import { axiosInstanse } from 'axiosFetch/fetchData'
 
 const pageId = 'page-last'
 
-const PAGINATION_STEP = 6
+const PAGINATION_STEP = 2
 
 const useReviews = () => {
   const location = useLocation()
+  const locationString = location.pathname + location.search
   const between = getPerionParams(location)
 
-  const [ pagination, setPagination ] = useState(0)
+  const [ offset, setOffset ] = useState(0)
 
   const [items, setItems] = useState([])
 
@@ -36,34 +37,43 @@ const useReviews = () => {
   const { data: { count } = {} } = useAxiosData({
     url: URL_REPORT + 'count',
     between
-  }, [between])
+  }, [locationString])
 
   const notAll = (items && count) ? items.length < count : true
 
-  const btnMoreClick = notAll ? () => {
-    notAll && setPagination(pagination + PAGINATION_STEP)
+  const loadList = (offset, isNewList) => {
     axiosInstanse.post(
       URL_REPORT, {
         limit: PAGINATION_STEP,
         between,
-        offset: pagination
+        offset
       })
       .then(res => {
-        setItems(items.concat(res.data))
+        console.log(isNewList, res.data)
+        setItems(isNewList ? res.data : items.concat(res.data))
       })
       .catch(e => {
         console.log(e)
       })
+  }
+
+  const btnMoreClick = (notAll && count) ? () => {
+    if (notAll) {
+      const _offset = offset + PAGINATION_STEP
+      setOffset(_offset)
+      loadList(_offset, false)
+    }
   } : undefined
 
   useMemo(() => {
-    btnMoreClick && btnMoreClick()
-  }, [location])
+    setOffset(0)
+    loadList(0, true)
+  }, [locationString])
 
   const { data: sideMenuList } = useAxiosData({
     url: URL_WORK,
     limit: 12
-  }, [location])
+  }, [locationString])
 
   const sideMenuItems = _.map(sideMenuList, item => ({
     title: item.title,

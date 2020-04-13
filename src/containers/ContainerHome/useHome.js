@@ -4,15 +4,14 @@ import { scrollWindowTo } from 'utils/scrollWindowTo'
 import useAxiosData from 'hooks/useAxiosData'
 import {
   URL_SERVICE,
-  URL_SLIDES, URL_CARDS
+  URL_SLIDES, URL_CARDS, URL_DATA
 } from 'constants/serverURLs'
 import { getImagePath } from 'utils/getImagePath'
-import { axiosLocal } from 'axiosFetch/fetchData'
-import { useEffect, useState } from 'react'
 
 const useHome = () => {
-  const [text, setText] = useState()
   const { data: servicesList = [] } = useAxiosData({ url: URL_SERVICE })
+
+  const { data: { text } } = useAxiosData({ url: URL_DATA, where: { id: 'mainPageText' }, single: true })
 
   const services = _.map(servicesList, item => ({
     img: getImagePath(item.banner),
@@ -42,18 +41,6 @@ const useHome = () => {
     img: getImagePath(item.banner)
   }))
 
-  useEffect(() => {
-    async function getText () {
-      try {
-        const { data } = await axiosLocal.get('/server/mainPageData.json')
-        setText(data?.text)
-      } catch (e) {
-        console.error(e)
-      }
-    }
-    getText()
-  }, [])
-
   const helmetData = {
     title: 'Кузовок 🚘 - Станция кузовного ремонта',
     description: `Станция кузовного ремонта в Сыктывкаре.
@@ -62,6 +49,7 @@ const useHome = () => {
      Следите за статусом работы на нашем сайте.`
   }
 
+  console.log(text)
   return {
     helmetData,
     services,
