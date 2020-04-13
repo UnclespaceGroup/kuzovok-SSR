@@ -53,7 +53,13 @@
 }
 
 .slider {
-  height: 25rem;
+  padding-bottom: 2.4rem;
+
+  :global {
+    .swiper-pagination-bullets {
+      bottom: -1.5rem!important;
+    }
+  }
 }
 
 .item {

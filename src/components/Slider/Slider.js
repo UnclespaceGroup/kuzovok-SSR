@@ -3,16 +3,17 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 import css from 'components/Slider/Slider.module.scss'
 import Swiper from 'react-id-swiper'
+import cn from 'classnames'
 import 'react-id-swiper/lib/styles/css/swiper.css'
 
-const Slider = ({ items, children, loop, autoplayDelay, getSwiper, ...params }) => {
+const Slider = ({ items, children, loop, autoplayDelay, getSwiper, className, slideClassName, ...params }) => {
   if (items?.length < 2) {
     return (
       <div className={css.slide}>{React.cloneElement(children, { ...items?.[0] })}</div>
     )
   }
   return (
-    <div >
+    <div className={className} >
       <Swiper
         getSwiper={ref => getSwiper(ref)}
         observer
@@ -23,20 +24,20 @@ const Slider = ({ items, children, loop, autoplayDelay, getSwiper, ...params }) 
         }}
         rebuildOnUpdate
         loop={loop || true}
-        autoplay={{
+        autoplay={autoplayDelay && {
           delay: autoplayDelay
         }}
         containerClass={`${css.container}`}
         {...params}
       >
-        {_.map(items, (item, key) => (
-          <div key={key} className={css.slide}>
+        {items ? _.map(items, (item, key) => (
+          <div key={key} className={cn(css.slide, slideClassName)}>
             {
               React.cloneElement(children, { ...item })
             }
           </div>
         ))
-        }
+          : children}
       </Swiper>
     </div>
   )
@@ -46,7 +47,9 @@ Slider.propTypes = {
   items: PropTypes.array,
   children: PropTypes.node,
   loop: PropTypes.bool,
-  autoplayDelay: PropTypes.number
+  autoplayDelay: PropTypes.number,
+  slideClassName: PropTypes.any,
+  className: PropTypes.string
 }
 Slider.defaultProps = {
   getSwiper: () => {}

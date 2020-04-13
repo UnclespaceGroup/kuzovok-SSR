@@ -1,6 +1,7 @@
 .container {
   font-size: 1.6rem;
   font-weight: 300;
+  word-wrap: break-word;
 
   h2, h1, span, p {
     background-color: inherit!important;
@@ -32,6 +33,11 @@
   h5, h5 * {
     font-size: 2rem!important;
     font-weight: 300!important;
+  }
+
+  img {
+    max-width: 100%;
+    margin: 1rem 0;
   }
 
   h6, h6 *  {

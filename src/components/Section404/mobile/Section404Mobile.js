@@ -1,6 +1,5 @@
 import React from 'react'
-import css from 'components/Section404/mobile/Section404Mobile.module.scss'
-import logo from 'static/logo/colored-logo-inverse.png'
+import css from './Section404Mobile.module.scss'
 import Button from 'components/Button/Button'
 import Padding from 'components/Padding/Padding'
 import LayoutMobile from 'components/Layout/LayoutMobile'
@@ -9,7 +8,7 @@ const Section404Mobile = () => (
   <div className={css.container}>
     <div className={css.header} >
       <LayoutMobile>
-        <img className={css.logo} src={logo} />
+        404
       </LayoutMobile>
     </div>
     <LayoutMobile>

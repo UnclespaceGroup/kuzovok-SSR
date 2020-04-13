@@ -6,6 +6,7 @@ import Padding from 'components/Padding/Padding'
 import usePaper from 'containers/ContainerPaper/usePaper'
 import Banner from 'components/Banner/desktop/Banner'
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
+import SectionTabs from 'components/SectionTabs/desktop/SectionTabs'
 
 const ContainerPaper = () => {
   const { bannerData, helmetData, items } = usePaper()
@@ -13,6 +14,7 @@ const ContainerPaper = () => {
   <>
     <ContainerHelmet {...helmetData} />
     <Banner {...bannerData} />
+    <SectionTabs />
     <Layout >
       <Padding value={120} />
       <List

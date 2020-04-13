@@ -1,7 +1,7 @@
 import React from 'react'
-import Section404Desktop from 'components/Section404/desktop/Section404Desktop'
+import Section404Mobile from 'components/Section404/mobile/Section404Mobile'
 
 const Page404Mobile = () => (
-  <Section404Desktop />
+  <Section404Mobile />
 )
 export default React.memo(Page404Mobile)

@@ -6,6 +6,7 @@ import BgImage from '../../BgImage/BgImage'
 import Button from '../../Button/Button'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 import Layout from 'components/Layout/Layout'
+import IconPopapDesktop from 'components/IconPopap/desktop/IconPopapDesktop'
 
 const SliderBannerDesktop = ({ items }) => {
   const swiperRef = useRef(null)
@@ -33,6 +34,9 @@ const SliderBannerDesktop = ({ items }) => {
           </Layout>
         </div>
       }
+      <Layout className={css.popapWrapper}>
+        <IconPopapDesktop className={css.popap} />
+      </Layout>
     </div>
   )
 }

@@ -8,7 +8,7 @@ import { withRouter } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import Layout from '../../Layout/Layout'
 
-const SectionTabs = ({ items, pending }) => (
+const SectionTabs = ({ items = [], pending }) => (
   <div className={cn(css.container, { [css.pending]: pending })}>
     <Layout className={css.wrapper}>
       {

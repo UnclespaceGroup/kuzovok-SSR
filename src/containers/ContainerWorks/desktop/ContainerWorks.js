@@ -11,6 +11,7 @@ import CheckTabsDesktop from 'components/CheckTabs/desktop/CheckTabsDesktop'
 import Layout from 'components/Layout/Layout'
 import FieldSelectDesktop from 'components/FieldSelect/desktop/FieldSelectDesktop'
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
+import SectionTabs from 'components/SectionTabs/desktop/SectionTabs'
 
 const ContainerWorks = () => {
   const { header, items, helmetData, tabs, activeTab, select } = useWorks()
@@ -18,6 +19,7 @@ const ContainerWorks = () => {
     <>
       <ContainerHelmet {...helmetData} />
       <Banner withoutTabs {...header} />
+      <SectionTabs />
       <Padding value={80} />
       <Layout>
         <SectionTitle title={'Работы станции'} count={items?.length}

@@ -83,7 +83,7 @@ const useReviews = () => {
 
   const headerData = {
     title: pageData.title,
-    text: pageData.text,
+    text: pageData.annotation,
     img: getImagePath(pageData.banner),
     icon: instrIcon
   }

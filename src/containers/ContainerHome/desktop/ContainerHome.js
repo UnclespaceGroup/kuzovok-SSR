@@ -12,6 +12,8 @@ import SectionMainCardsDesktop from 'components/SectionMainCards/desktop/Section
 import Layout from 'components/Layout/Layout'
 import Wysiwyg from 'components/Wysiwyg/desktop/Wysiwyg'
 import ContainerHelmet from '../../ContainerHelmet/ContainerHelmet'
+import SectionTabs from 'components/SectionTabs/desktop/SectionTabs'
+import Margin from 'components/Margin/Margin'
 
 const ContainerHome = () => {
   const { services, mainCards, helmetData, advantages, mainSlider, text } = useHome()
@@ -19,11 +21,11 @@ const ContainerHome = () => {
     <div className={css.container}>
       <ContainerHelmet {...helmetData} />
       <SliderBannerDesktop items={mainSlider} />
-      <Padding value={120} />
-      { text && <Layout>
+      <SectionTabs />
+      <Margin value={120} />
+      <Layout>
         <Wysiwyg>{text}</Wysiwyg>
-        <Padding value={120} />
-      </Layout>}
+      </Layout>
       <AdvantagesRowDesktop items={advantages} />
       <Padding value={160} />
       <SectionMainCardsDesktop cards={mainCards} />

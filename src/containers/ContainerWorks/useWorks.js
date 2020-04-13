@@ -19,7 +19,7 @@ const useWorks = () => {
   const header = {
     icon: carIcon,
     title: pageData.title,
-    text: pageData.text,
+    text: pageData.annotation,
     img: getImagePath(pageData.banner)
   }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import css from './Section404Desktop.module.scss'
 import Layout from 'components/Layout/Layout'
-import logo from 'static/logo/colored-logo-inverse.png'
 import Button from 'components/Button/Button'
 import Padding from 'components/Padding/Padding'
 
@@ -9,7 +8,7 @@ const Section404Desktop = () => (
   <div className={css.container}>
     <div className={css.header} >
       <Layout>
-        <img className={css.logo} src={logo} />
+        404
       </Layout>
     </div>
     <Layout>

@@ -39,6 +39,7 @@ const useAbout = () => {
     items,
     bannerData: {
       title: data.title,
+      text: data.annotation,
       img: getImagePath(data.banner)
     }
   }

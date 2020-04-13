@@ -13,7 +13,7 @@ const useHome = () => {
 
   const { data: { text } } = useAxiosData({ url: URL_DATA, where: { id: 'mainPageText' }, single: true })
 
-  const services = _.map(servicesList, item => ({
+  const services = servicesList && _.map(servicesList, item => ({
     img: getImagePath(item.banner),
     title: item.title,
     to: PAGE_SERVICES + item.slug
@@ -49,7 +49,6 @@ const useHome = () => {
      Следите за статусом работы на нашем сайте.`
   }
 
-  console.log(text)
   return {
     helmetData,
     services,

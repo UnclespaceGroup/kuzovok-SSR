@@ -4,6 +4,7 @@ import useServices from '../useServices'
 import { PAGE_SERVICES } from 'constants/ROUTES'
 import SectionServicesSliderBanner from 'components/SliderBanner/desktop/SliderBannerDesktop'
 import ContainerHelmet from 'containers/ContainerHelmet/ContainerHelmet'
+import SectionTabs from 'components/SectionTabs/desktop/SectionTabs'
 
 const ContainerServices = () => {
   const { mainCards, helmetData, cards, bannerItems } = useServices()
@@ -13,11 +14,12 @@ const ContainerServices = () => {
       <SectionServicesSliderBanner
         items={bannerItems}
       />
-    <SectionService
-      mainCards={mainCards}
-      cards={cards}
-      url={PAGE_SERVICES}
-    />
+      <SectionTabs />
+      <SectionService
+        mainCards={mainCards}
+        cards={cards}
+        url={PAGE_SERVICES}
+      />
     </>
   )
 }

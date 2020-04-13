@@ -2,7 +2,8 @@ import React from 'react'
 import css from './ContainerHomeMobile.module.scss'
 import Padding from 'components/Padding/Padding'
 import useHome from '../useHome'
-import SectionMainServiceCatalogMobile from 'components/SectionMainServiceCatalog/mobile/SectionMainServiceCatalogMobile'
+import SectionMainServiceCatalogMobile
+  from 'components/SectionMainServiceCatalog/mobile/SectionMainServiceCatalogMobile'
 import ContainerLastWorksMobile from 'containers/ContainerLastWorks/mobile/ContainerLastWorksMobile'
 import ContainerContactsBlockMobile from 'containers/ContainerContactsBlock/mobile/ContainerContactsBlockMobile'
 import SliderBannerMobile from 'components/SliderBanner/mobile/SliderBannerMobile'
@@ -18,13 +19,12 @@ const ContainerHomeMobile = () => {
     <div className={css.container}>
       <ContainerHelmet {...helmetData} />
       <SliderBannerMobile items={mainSlider} />
-      <Padding value={60} />
-      { text && <LayoutMobile>
+      <Padding value={40} />
+      <LayoutMobile>
         <WysiwygMobile>
           {text}
         </WysiwygMobile>
-        <Padding value={60} />
-      </LayoutMobile>}
+      </LayoutMobile>
       <AdvantagesRowMobile items={advantages} />
       <Padding value={60} />
       <SectionMainCardsMobile cards={mainCards} />
