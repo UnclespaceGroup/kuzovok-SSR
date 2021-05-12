@@ -115,7 +115,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "scriptjs": "^2.5.9",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "webpack-flush-chunks": "^2.0.3",
     "whatwg-fetch": "2.0.3",
     "xml-js": "1.6.11"
